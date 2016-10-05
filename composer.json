@@ -1,0 +1,17 @@
+{
+    "name": "sundial/theme-frontend-sheamoisture",
+    "description": "N/A",
+    "require": {
+        "php": "~5.6.0|7.0.2|~7.0.6",
+        "magento/theme-frontend-blank": "100.1.*",
+        "magento/framework": "100.1.*"
+    },
+    "type": "magento2-theme",
+    "version": "100.1.0",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

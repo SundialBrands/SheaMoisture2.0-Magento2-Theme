@@ -1,0 +1,338 @@
+// /*
+// * app\design\frontend\Sundial\sheamoisture\Magento_Theme\web\css\source\_homepage.less
+// */
+@discount-color: #572500;
+@discount-text: #292929;
+@font18:18px;
+@font20:20px;
+@font30:30px;
+@font40:40px;
+@body-color:#512C1D;
+@community-bg: url("../images/ingridients-bg.png") no-repeat;
+@header-bg: url('../images/headertopleft_img.png') no-repeat;
+@store-config: url('../images/storeconfig.png');
+@language-flag: url('../images/flag.png'); 
+@body-color: #512C1D;
+
+
+
+
+
+.hm-block-1 {
+    .slider-block {
+        float: left;
+        width: 80%;
+    }
+    .promotion-block-top {
+        float: left;
+        width: 21%;
+        margin-left: -1%;
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                //margin-bottom: 11px;
+                list-style-type: none;
+            }
+        }
+    }
+}
+.clearboth {
+    clear: both;
+    height: 0;
+    text-indent: -9999px
+}
+.video-block {
+    .view-link {
+        text-align: right;
+        margin: 15px 0;
+        font-family: 'Futura Heavy font';
+        a {
+            color: #008DD4;
+            text-decoration: underline;
+        }
+    }	
+    .video-link {
+        overflow: hidden;
+        div{	
+            float: left;
+            width: 24.4%;
+            margin-right: .8%;
+        }
+        .last-div {
+            margin-right: 0;
+            float: right;
+        }
+        a {
+            span{
+                font-size: @font18;
+                color: @body-color;
+            }
+        }
+    }
+}
+.best-offer,
+.best-selling {
+    .best-offer-titile,
+    .best-selling-titile {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 25px 0;
+        font-size: @font20;
+        font-family: 'Futura Heavy font';
+    }
+    .best-product {
+        .product-carousel {
+            float: left;
+            width:33%;
+            text-align: center;
+        }
+    }
+}
+.promotional-bottom-block1 {
+    position: relative;
+    margin: 35px 0;
+    overflow: hidden;
+    width:100%;
+    .text-block {
+        position: absolute;
+        left: 43%;
+        top: 30%;
+        padding: 20px 35px;
+        background: #fff;
+        text-align: center;
+        font-family: Futura Heavy font;
+        .sm-discount {
+            font-size: @font30;
+            color: @discount-color;
+        }
+        a {
+            color: @discount-color;
+            text-decoration: underline;
+        }
+        .sm-discount-text {
+            color: @discount-text;
+        }
+    }
+}
+.spacing {
+    margin:0 1%;
+}
+.promotional-bottom-block2 {
+    padding: 25px 0 60px;
+    .promo-banner {
+        float: left;
+        width: 32.6%;
+    }
+}
+
+.community-block {
+    padding:1px 1px;  
+    width: 31%;
+    margin-right: 36px;
+}
+.root-block {
+    padding:1px 1px;
+    width: 31%;
+    margin-right: 36px;
+}
+.ingredients {
+    padding:1px 1px;
+    width: 31%;
+}
+.promo-banner img {
+height: 577px;
+border:1px solid #ccc;
+}
+.promotional-bottom-block3 {
+    background: @community-bg;
+    background-size: contain;
+    font-family: 'Futura Heavy font';
+    padding: 78px 0 140px;
+    .root-block,
+    .community-block,
+    .ingredients {
+        h1 {
+            text-align: center;
+            font-size: @font20;
+            font-weight: bold;
+            margin: 20px 0;
+            text-transform: uppercase;
+        }
+
+        .story {
+            padding: 3px 11px 12px;
+            font-family: futura light bt;
+            line-height: 22px;
+            font-size: @font18;
+            color: #000;
+        }
+        .link {
+            padding: 0 0 20px 20px;
+            a {
+                color: @color-white;
+                font-size: 16px;
+                font-family: futura light bt;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
+    .root-block {
+        background-color: #db986f;
+        a{
+            background-color: #c67340;
+            padding: 7px 22px;
+        }
+    }
+    .community-block {
+        background-color: #f9e666;
+        a{
+            background-color: #bca300;
+            padding: 7px 22px;
+        }
+    }
+    .ingredients {
+        background-color: #64bd54;
+        a{
+            background-color: #38a324;
+            padding: 7px 22px;
+        }
+    }
+
+}
+
+img.cc_image {
+    float: left;
+}
+
+span.cc_link {
+    float: left;
+}
+    .our-promise-block-divider{
+        border: 1px solid @color-gray80;
+        //border: 1px solid #ccc;
+        margin: 0 20%;
+    }
+.our-promise-block {
+    margin: 30px 0;
+    .our-promise-block-content{
+        text-align:center;
+    }
+    h1 {
+        font-size: 56px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    .promise-text {
+        font-size: @font18;
+        font-family: 'Futura Heavy font';
+        text-transform: uppercase;
+    }
+    span.promise-text-span {
+        font-weight: bold;
+        font-size: 18px;
+    }
+        
+    .strick-siblings{
+        font-size: @font18;
+        p{
+            font-weight:bold;
+            margin-top:11px;
+        }
+    }
+	
+    /*.strick-out {
+        margin:0 auto;
+        width:37%;
+        border-bottom: 2px solid @color-gray80;
+        .strick-siblings {
+            float: left;
+            width: 24%;
+            margin-right: 1%;
+            line-height: 22px;
+            .big-no {
+                font-size: 72px;
+                text-transform: uppercase;
+                text-decoration: none;
+                line-height: 99px;
+            }
+            p {
+                //text-decoration: line-through;
+                font-size: @font20;
+            }
+        }
+    }*/
+}
+.promotional-bottom-block4{
+    text-align: center;
+    padding: 1%;
+    color: #512C1D;
+    font-size: 16px;
+
+    h1{
+        text-transform:uppercase;
+        color: rgb(81,44,29);
+        font-weight:bold;
+        font-size: 24px;
+        text-align: center;
+        line-height: 29.91px;
+    }
+}
+
+.page-header {        
+    .panel.wrapper {
+        //border-bottom: 1px solid @secondary__color;
+    }
+    .header.panel {		
+        padding-top: @indent__s;
+        padding-bottom: @indent__s;
+        background:@header-bg left top;			
+    }
+    .switcher {
+        display: inline-block;
+    }
+}
+/*Customised by 23702*/
+.custom-slider{
+    .content-heading > h2.title {
+        text-transform: uppercase;
+        font-weight: 900;
+        text-align: center;
+        font-size: 42px;
+    }
+    .content-heading:before{
+        display: none;
+    }
+}
+
+.product-social-links{
+    .product-addto-links{
+        > a{
+            >span{
+                color:#007bdb;
+                text-transform: capitalize !important;
+            }
+        }
+    }
+    > a{
+        >span{
+            text-transform: capitalize !important;
+            color:#007bdb;
+        }
+    }
+}
+
+/*buyNow */
+.buyNow{
+   line-height: 2.2rem;
+   padding: 14px 17px;
+   font-size: 1.8rem;
+   width: 47%;
+ }
+
+/*End of customisation*/
+
+
+

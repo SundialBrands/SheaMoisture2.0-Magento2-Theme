@@ -1,0 +1,92 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php if ($_product->isSaleable()): ?>
+<div class="box-tocart">
+    <div class="fieldset">
+        <?php if ($block->shouldRenderQuantity()): ?>
+		<label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
+        <div class="field qty">
+            
+            <div class="control" id="testing">
+                <input type="number"
+                       name="qty"
+                       id="qty"
+                       maxlength="12"
+                       value="<?php /* @escapeNotVerified */ echo $block->getProductDefaultQty() * 1 ?>"
+                       title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty"
+                       data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                       />
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="actions">
+            <button type="submit"
+                    title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
+                    class="action primary tocartt"
+                    id="product-addtocart-button">
+                <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
+            </button>
+            <?php echo $block->getChildHtml('', true) ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+<script>
+    require([
+        'jquery'
+    ], function($){
+        
+jQuery("div#testing").append('<input type="button" value="&#xf067;" id="add1" class="plus"   />').prepend('<input type="button" value="&#xf068;" id="minus1" class="minus" />');
+    jQuery(".plus").click(function()
+    {
+        var currentVal = parseInt(jQuery(this).prev(".qty").val());
+
+        if (!currentVal || currentVal=="" || currentVal == "NaN") currentVal = 0;
+
+        jQuery(this).prev(".qty").val(currentVal + 1);
+    });
+
+    jQuery(".minus").click(function()
+    {
+        var currentVal = parseInt(jQuery(this).next(".qty").val());
+        if (currentVal == "NaN") currentVal = 0;
+        if (currentVal > 0)
+        {
+            jQuery(this).next(".qty").val(currentVal - 1);
+        }
+    });
+        
+
+        
+    });
+</script>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/product/view/validation": {
+                "radioCheckboxClosest": ".nested"
+            }
+        }
+    }
+</script>
+<?php if (!$block->isRedirectToCartEnabled()) : ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "catalogAddToCart": {
+                "bindSubmit": false
+            }
+        }
+    }
+</script>
+<?php endif; ?>

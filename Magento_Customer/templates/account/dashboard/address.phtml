@@ -1,0 +1,45 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Account\Dashboard\Address $block */
+?>
+<div class="block block-dashboard-addresses">
+    <div class="block-title">
+        <strong><?php /* @escapeNotVerified */ echo __('ADDRESS BOOK') ?></strong>
+        <a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getAddressBookUrl() ?>"><span><?php /* @escapeNotVerified */ echo __('MANAGE ADDRESSES') ?></span></a>
+    </div>
+    <div class="block-content">
+        <div class="box box-billing-address">
+            <strong class="box-title">
+                <span><?php /* @escapeNotVerified */ echo __('DEFAULT BILLING ADDRESS') ?></span>
+                <a class="action edit billing" href="<?php /* @escapeNotVerified */ echo $block->getPrimaryBillingAddressEditUrl() ?>" data-ui-id="default-billing-edit-link"><span><?php /* @escapeNotVerified */ echo __('Edit') ?></span></a>
+            </strong>
+            <div class="box-content">
+                <address>
+                    <?php echo $block->getPrimaryBillingAddressHtml() ?>
+                </address>
+            </div>            
+        </div>
+        <div class="box box-shipping-address">
+            <strong class="box-title">
+                <span><?php /* @escapeNotVerified */ echo __('DEFAULT SHIPPING ADDRESS') ?></span>
+                <a class="action edit shipping" href="<?php /* @escapeNotVerified */ echo $block->getPrimaryShippingAddressEditUrl() ?>" data-ui-id="default-shipping-edit-link"><span><?php /* @escapeNotVerified */ echo __('Edit') ?></span></a>
+            </strong>
+            <div class="box-content">
+                <address>
+                    <?php echo $block->getPrimaryShippingAddressHtml() ?>
+                </address>
+            </div>            
+        </div>
+    </div>
+</div>
+<div class="our-promise-block-account-info">
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('our-promise-block')->toHtml(); ?>    
+</div>
+
+

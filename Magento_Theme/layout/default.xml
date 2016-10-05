@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="free_shipping">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">free_shipping</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <!-- <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer> -->
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">148</argument>
+                <argument name="logo_img_height" xsi:type="number">43</argument>
+            </arguments>
+        </referenceBlock>
+        <!-- Header Links Customisation -->
+            <referenceBlock  name="header.links">
+                <block class="Magento\Framework\View\Element\Html\Link" name="storelocate.link" before="-">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Store Locator</argument>
+                        <argument name="path" xsi:type="string" translate="false">store-locator</argument>
+                        <argument name="class" xsi:type="string">store_locator</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="aboutus.link" after="authorization-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">English </argument>
+                        <argument name="path" xsi:type="string" translate="false">language</argument>
+                        <argument name="class" xsi:type="string">language</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="comcom.link" after="about-us">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Community Commerce</argument>
+                        <argument name="path" xsi:type="string" translate="false">community-commerce</argument>
+                        <argument name="class" xsi:type="string">community_commerece</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="story.link" after="comunity-commerce">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Our Story</argument>
+                        <argument name="path" xsi:type="string" translate="false">our-story</argument>
+                        <argument name="class" xsi:type="string">our_story</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="ingred.link" after="our-story">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Our Ingredients</argument>
+                        <argument name="path" xsi:type="string" translate="false">our-ingredients</argument>
+                        <argument name="class" xsi:type="string">our_ingredients</argument>
+                    </arguments>
+                </block>
+                <referenceBlock name="register-link" remove="true" />                
+                <referenceBlock name="skip_to_content" remove="true" />
+            </referenceBlock >
+        <!-- End of customisation -->
+       <!--  <referenceContainer name="footer">
+            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="switch/stores.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="before.body.end"/> -->
+        <referenceContainer name="footer-container">
+            <container name="footer-content-customised" htmlTag="div" htmlClass="footer-content-customised" before="-">
+                <container name="footer-top" label="Footer Top" htmlTag="div" htmlClass="footer-top page-main sheamoisture_footer_contents" before="-">
+                    <block class="Magento\Cms\Block\Block" name="footer-content-top">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-content-top</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="footer-bottom" as="footer content" label="Footer Bottom" htmlTag="div" htmlClass="footer content" after="-">
+                    <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
+                        <arguments>
+                            <argument name="css_class" xsi:type="string">footer links</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <referenceBlock name="footer_links">
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="FAQ">
+                        <arguments>
+                            <argument name="label" xsi:type="string">FAQ</argument>
+                            <argument name="path" xsi:type="string">faq</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Privacy Policy">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Privacy Policy</argument>
+                            <argument name="path" xsi:type="string">privacy-policy</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Terms of Use">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Terms of Use</argument>
+                            <argument name="path" xsi:type="string">terms-of-use</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Returns Policy">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Returns Policy</argument>
+                            <argument name="path" xsi:type="string">return-policy</argument>
+                        </arguments>
+                    </block>            
+                </referenceBlock>
+            </container>            
+        </referenceContainer>
+        <move element="footer-bottom" destination="footer-content-customised" />
+        <!-- <move element="footer-content-customised" destination="footer"/> -->
+        
+        <move element="catalog-search-advanced-link" destination="footer_links" before="-"/>
+        <referenceBlock name="search-term-popular-link" remove="true"/>
+		<referenceBlock name="privacy-policy-link" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="true"/>
+		<referenceBlock name="catalog-search-advanced-link" remove="true"/>
+        <referenceBlock name="sales-guest-form-link" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="footer-bottom"/>
+        <referenceBlock name="contact-us-link" remove="true"/>
+        <!-- <move element="our-promise-block" destination="footer-container" before="page-footer"/> -->
+    </body>
+</page>
+

@@ -6,7 +6,7 @@ var config = {
   	"shim": {
      	"bootstrap": {
      		"deps":["jquery"]
-     	}
+     	},
      	"youtubepopup": {
      		"deps":["jquery"]
      	}

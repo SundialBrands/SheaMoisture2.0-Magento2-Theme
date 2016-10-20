@@ -14,10 +14,10 @@
 <div class="box-tocart">
     <div class="fieldset">
         <?php if ($block->shouldRenderQuantity()): ?>
-		<label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
+		<label class="label col-lg-1" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
         <div class="field qty">
             
-            <div class="control" id="testing">
+            <div class="control" id="QtyBox">
                 <input type="number"
                        name="qty"
                        id="qty"
@@ -30,9 +30,9 @@
         </div>
         <?php endif; ?>
         <div class="actions">
-            <button type="submit"
+			 <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
-                    class="action primary tocartt"
+                    class="action primary tocart col-lg-5 col-md-4 col-sm-12 col-xs-12"
                     id="product-addtocart-button">
                 <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
             </button>
@@ -46,7 +46,7 @@
         'jquery'
     ], function($){
         
-jQuery("div#testing").append('<input type="button" value="&#xf067;" id="add1" class="plus"   />').prepend('<input type="button" value="&#xf068;" id="minus1" class="minus" />');
+jQuery("div#QtyBox").append('<input type="button" value="&#xf067;" id="add1" class="plus"/>').prepend('<input type="button" value="&#xf068;" id="minus1" class="minus" />');
     jQuery(".plus").click(function()
     {
         var currentVal = parseInt(jQuery(this).prev(".qty").val());
@@ -84,7 +84,7 @@ jQuery("div#testing").append('<input type="button" value="&#xf067;" id="add1" cl
     {
         "#product_addtocart_form": {
             "catalogAddToCart": {
-                "bindSubmit": false
+                "bindSubmit": true
             }
         }
     }

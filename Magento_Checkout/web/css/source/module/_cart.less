@@ -1,4 +1,4 @@
-// /**
+// /** FromServer
 //  * Copyright © 2016 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
@@ -6,6 +6,8 @@
 @mobile-cart-padding: 15px;
 @cart-price-color: @color-gray40;
 @cart-item-cell-padding-top: 20px;
+@font-heavy: 'Futura Heavy font';		
+@font-w-normal: normal;
 
 //
 //  Common
@@ -44,9 +46,10 @@
         padding: 1px 0 @indent__m;
 
         > .title {
+			font-family:@font-heavy;
             .lib-font-size(24);
             display: none;
-            font-weight: @font-weight__light;
+            font-weight: @font-w-normal;
             margin: 12px 0;
         }
 
@@ -90,8 +93,9 @@
             &:extend(.abs-cart-block all);
             .title {
                 strong {
-                    .lib-font-size(14);
-                    font-weight: @font-weight__semibold;
+					font-family:@font-heavy;
+                    .lib-font-size(14) !important;
+                    font-weight: @font-w-normal;
                 }
             }
 
@@ -501,6 +505,10 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .checkout-cart-index {
+		/*h1{		
+			font-size: 30px;		
+			font-family: @font-heavy;		
+		}*/
         .page-main {
             padding-left: @layout__width-xs-indent;
             padding-right: @layout__width-xs-indent;
@@ -574,6 +582,16 @@
 
     //  Products table
     .cart {
+		#shopping-cart-table{		
+			thead{		
+				background: @color-SheaBrown;		
+				color:#fff;		
+				th{		
+					font-weight: @font-w-normal;		
+					font-size: 16px;		
+				}		
+			}		
+		}
         &.table-wrapper {
             .items { // Google Chrome version 44.0.2403.107 m fix
                 min-width: 100%;

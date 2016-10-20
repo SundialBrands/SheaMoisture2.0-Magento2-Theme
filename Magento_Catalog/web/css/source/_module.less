@@ -1,5 +1,5 @@
 // /**
-//	* app\design\frontend\Sundial\sheamoisture\Magento_Catalog\web\css\source\_module.less
+//	* FromServer app\design\frontend\Sundial\sheamoisture\Magento_Catalog\web\css\source\_module.less
 //  * Copyright © 2016 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
@@ -180,7 +180,7 @@
             .price-box {
                 display: table-cell;
                 vertical-align: top;
-                width: 1px;
+                //width: 1px;
 
                 .price-container {
                     > span {
@@ -265,7 +265,6 @@
                     .type {
                         font-weight: normal;
                         margin-right: @indent__xs;
-
                         &:after {
                             content: '#:';
                         }
@@ -395,9 +394,11 @@
         }
 
         .action.tocart {
-            &:extend(.abs-button-l all);
-            &:extend(.abs-button-responsive all);
-
+            //&:extend(.abs-button-l all);
+            //&:extend(.abs-button-responsive all);
+			line-height: 2.2rem;
+			margin-right: 1%;
+			
             &:not(:last-child) {
                 margin-bottom: 15px;
             }
@@ -564,6 +565,10 @@
             }
         }
     }
+	.box-tocart{
+		height:auto;
+		overflow:hidden;
+	}
 }
 
 //
@@ -624,6 +629,8 @@
             h1 {
                 .lib-css(margin-bottom, @product-h1-margin-bottom-desktop);
                 text-transform: uppercase;
+		font-weight:600;
+		font-size:30px;
             }
         }
 
@@ -633,11 +640,10 @@
     }
 
     .box-tocart {
-        .action.tocartt {
-            margin-bottom: 0;
-            margin-right: 1%;
-            width: 47%;
-        }
+		height:auto;
+		overflow:hidden;
+        .action.tocartt {           
+	 margin-right: 1%;        }
     }
 
     .product-social-links {
@@ -757,6 +763,14 @@
             }
         }
     }
+	.box-tocart{
+		.fieldset{
+			.label{
+				padding-left: 0;
+				padding-top: 5px;
+			}
+		}
+	}
 }
 
 //
@@ -952,11 +966,13 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .compare.wrapper {
         float: right;
+		clear: both;
         .lib-list-reset-styles();
-
+		
         .action.compare {
             line-height: @form-element-input__height;
-            .lib-link(
+			color: #512c1d;
+            /*.lib-link(
                 @_link-color: @primary__color,
                 @_link-text-decoration: none,
                 @_link-color-visited: @primary__color,
@@ -965,11 +981,13 @@
                 @_link-text-decoration-hover: underline,
                 @_link-color-active: @primary__color,
                 @_link-text-decoration-active: underline
-            );
+            );*/
         }
 
         .counter.qty {
-            .lib-css(color, @primary__color__lighter);
+            //.lib-css(color, @primary__color__lighter);
+			color: #512c1d;
+			font-family: 'Futura Heavy font';
 
             &:before {
                 content: '(';
@@ -980,6 +998,10 @@
             }
         }
     }
+	.catalog-product-view .product-info-main .page-title-wrapper h1{
+		font-weight: normal;
+		font-family: 'Futura Heavy font';
+	}
 }
 
 //

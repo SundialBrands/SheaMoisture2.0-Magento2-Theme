@@ -3,6 +3,13 @@
 //  * See COPYING.txt for license details.
 //  */
 
+
+//  Variables
+//  _____________________________________________
+
+@color-SheaBrown: #512C1D;
+
+
 //
 //    Common
 //--------------------------------------
@@ -12,15 +19,22 @@
 //
 //    Using buttons mixins
 //--------------------------------------
+
 button,
 a.action.primary {
     .lib-css(border-radius, @button__border-radius);
 }
 .action.primary,button{
-    background: rgb(81,44,29);
-    border: 1px solid rgb(81,44,29);
+    background: @color-SheaBrown;
+    border: 1px solid @color-SheaBrown;
     font-size: 24px;
     color: rgb(255,255,255);
+}
+
+.action.primary:hover, .action.primary:visited, .action.primary:active, .action.primary:focus{
+	background: @color-SheaBrown;
+	border: 1px solid @color-SheaBrown;
+	color: #fff;
 }
 
 button {
@@ -39,7 +53,7 @@ button {
             font-weight: bold;
             text-transform: uppercase;
             border: none;
-        }
+        }		
     }
 }
 
@@ -59,8 +73,8 @@ a.action.primary {
 
 .action.primary {
     .lib-button-primary();
-     background: #512C13 !important;
-    border: 1px solid #512C13 !important;
+     background: @color-SheaBrown;
+    border: 1px solid @color-SheaBrown;
 }
 
 }

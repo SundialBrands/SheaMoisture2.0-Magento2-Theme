@@ -8,6 +8,7 @@
 //  _____________________________________________
 
 @review-ratings-left: 280px;
+@color-SheaBrown: #512C1D;
 
 //
 //  Common
@@ -82,10 +83,20 @@
 
         &-form {
             .action.submit.primary {
+			
 			    .lib-button-primary();
                 /*.lib-button-revert-secondary-color();*/
                 .lib-button-revert-secondary-size();
+				background: @color-SheaBrown;
+				border: 1px solid @color-SheaBrown;
+				color: #fff;
                 margin: 0;
+				
+				&:hover{
+					background: @color-SheaBrown;
+					border: 1px solid @color-SheaBrown;
+					color: #fff;
+				}
             }
 
             .actions-toolbar .actions-primary {

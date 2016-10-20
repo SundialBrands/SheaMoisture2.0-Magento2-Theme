@@ -9,7 +9,7 @@
     <body>
         <referenceBlock name="header.links">
             <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
-            <!-- <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="account/link/authorization.phtml"/> -->
+            <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="account/link/authorization.phtml"/>
         </referenceBlock>
         <block class="Magento\Theme\Block\Html\Header" name="header" as="header">
             <arguments>
@@ -19,15 +19,14 @@
         <move element="header" destination="header.links" before="-"/>
         <move element="register-link" destination="header.links"/>
         <move element="top.links" destination="customer"/>
-        <move element="authorization-link" destination="header.links" after="storelocate.link"/>		
-		
-		<!-- Customised  -->
-		<referenceBlock name="catalog.compare.sidebar" remove="true"/>
-		<referenceBlock name="wishlist_sidebar" remove="true"/>
-		<referenceBlock name="sale.reorder.sidebar" remove="true"/>
-		
-		<!-- <move element="our-promise-block" destination="footer-container" before="page-footer"/> -->
-		<!-- End of Customisation -->
-		
+        <move element="authorization-link" destination="top.links" after="-"/>
+
+        <!-- Customised  -->
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        
+        <!-- <move element="our-promise-block" destination="footer-container" before="page-footer"/> -->
+        <!-- End of Customisation -->
     </body>
 </page>

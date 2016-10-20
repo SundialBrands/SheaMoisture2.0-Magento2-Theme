@@ -12,7 +12,9 @@
 	Copyright (c) 2016 - Qassim Hassan
 */
 
-(function ( $ ) {
+require([
+        'jquery'
+    ], function($){
  
     $.fn.YouTubePopUp = function(options) {
 
@@ -72,4 +74,4 @@
 
     };
  
-}( jQuery ));
+});

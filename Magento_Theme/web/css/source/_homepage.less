@@ -1,23 +1,36 @@
 // /*
-// * app\design\frontend\Sundial\sheamoisture\Magento_Theme\web\css\source\_homepage.less
+// * FromServer\_homepage.less
 // */
 @discount-color: #572500;
 @discount-text: #292929;
+@font16:16px;
 @font18:18px;
 @font20:20px;
 @font30:30px;
 @font40:40px;
-@body-color:#512C1D;
+
 @community-bg: url("../images/ingridients-bg.png") no-repeat;
 @header-bg: url('../images/headertopleft_img.png') no-repeat;
 @store-config: url('../images/storeconfig.png');
 @language-flag: url('../images/flag.png'); 
 @body-color: #512C1D;
+@font-heavy: 'Futura Heavy font';		
+@font-w-normal: normal;		
+@color-SheaBrown:#512C1D;
 
 
 
-
-
+// Common Css		
+.text-right{
+    text-align:right;		
+}		
+.text-left{		
+    text-align:left;		
+}		
+.text-center{		
+    text-align:center;		
+}		
+// Other Parts follows
 .hm-block-1 {
     .slider-block {
         float: left;
@@ -43,7 +56,21 @@
     text-indent: -9999px
 }
 .video-block {
+	.view-link.overlayEffect{		
+        position:relative;		
+    }		
+    .overlayDiv{		
+        position: absolute;		
+        top: 0px;		
+        left: 0px;		
+        bottom: 0px;		
+        right: 0px;		
+        background-color: #000;		
+        opacity: 0.25;		
+    }
     .view-link {
+		height:auto;		
+        overflow:hidden;
         text-align: right;
         margin: 15px 0;
         font-family: 'Futura Heavy font';
@@ -54,6 +81,9 @@
     }	
     .video-link {
         overflow: hidden;
+		ul.gallery li{		
+            list-style-type:none;		
+        }
         div{	
             float: left;
             width: 24.4%;
@@ -120,29 +150,30 @@
 }
 .promotional-bottom-block2 {
     padding: 25px 0 60px;
-    .promo-banner {
+    /*.promo-banner {
         float: left;
         width: 32.6%;
-    }
+    }*/
 }
 
 .community-block {
     padding:1px 1px;  
     width: 31%;
-    margin-right: 36px;
+    margin-right: 2%;
 }
 .root-block {
     padding:1px 1px;
     width: 31%;
-    margin-right: 36px;
+    margin-right: 2%;
 }
 .ingredients {
     padding:1px 1px;
     width: 31%;
 }
 .promo-banner img {
-height: 577px;
+//height: 577px;
 border:1px solid #ccc;
+margin:auto;
 }
 .promotional-bottom-block3 {
     background: @community-bg;
@@ -155,7 +186,7 @@ border:1px solid #ccc;
         h1 {
             text-align: center;
             font-size: @font20;
-            font-weight: bold;
+            font-weight: normal;
             margin: 20px 0;
             text-transform: uppercase;
         }
@@ -164,17 +195,17 @@ border:1px solid #ccc;
             padding: 3px 11px 12px;
             font-family: futura light bt;
             line-height: 22px;
-            font-size: @font18;
-            color: #000;
+            font-size: @font16;
+            color: @color-SheaBrown;
         }
         .link {
             padding: 0 0 20px 20px;
             a {
                 color: @color-white;
-                font-size: 16px;
-                font-family: futura light bt;
+                font-size: 12px;
+                font-family: @font-heavy;
                 text-transform: uppercase;
-                font-weight: bold;
+                font-weight: @font-w-normal;
             }
         }
     }
@@ -208,6 +239,7 @@ img.cc_image {
 
 span.cc_link {
     float: left;
+    text-align: left;
 }
     .our-promise-block-divider{
         border: 1px solid @color-gray80;
@@ -220,15 +252,16 @@ span.cc_link {
         text-align:center;
     }
     h1 {
-        font-size: 56px;
+        font-size: 40px;
         text-transform: uppercase;
         margin-bottom: 15px;
         font-weight: bold;
     }
     .promise-text {
         font-size: @font18;
-        font-family: 'Futura Heavy font';
+        font-family: @font-heavy;
         text-transform: uppercase;
+		font-weight: @font-w-normal;
     }
     span.promise-text-span {
         font-weight: bold;
@@ -238,7 +271,8 @@ span.cc_link {
     .strick-siblings{
         font-size: @font18;
         p{
-            font-weight:bold;
+            font-family: @font-heavy;
+			font-weight: @font-w-normal;
             margin-top:11px;
         }
     }
@@ -269,16 +303,21 @@ span.cc_link {
     text-align: center;
     padding: 1%;
     color: #512C1D;
-    font-size: 16px;
+    font-size: 14px;
 
     h1{
+		font-family: Futura Heavy font;
         text-transform:uppercase;
         color: rgb(81,44,29);
-        font-weight:bold;
-        font-size: 24px;
+        font-weight:normal;
+        font-size: 18px;
         text-align: center;
         line-height: 29.91px;
+		margin-bottom: 20px;
     }
+	.story{		
+        margin-bottom: 20px;
+	}
 }
 
 .page-header {        
@@ -324,15 +363,57 @@ span.cc_link {
     }
 }
 
-/*buyNow */
+/*buyNow 
 .buyNow{
    line-height: 2.2rem;
    padding: 14px 17px;
    font-size: 1.8rem;
    width: 47%;
  }
-
+*/
 /*End of customisation*/
 
 
 
+.our-promise-block{
+	.our-promise-block-outer{
+		margin: auto;
+		.our-promise-block-inner{
+			margin: auto;
+			clear: both;
+			float: none;
+		}
+	}
+}
+// DeskTop >>>>>>>>>>>>>>>>
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .promotional-bottom-block2{
+        .promo-banner{
+        padding-right:0;
+        }
+        .promo-banner img {
+            height: 577px;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.promotional-bottom-block1{
+		.text-block{
+			left: 0;
+			top: 0;
+			width: 40%;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	}
+}
+//Small screens(mobiles)
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+	.promotional-bottom-block2 {
+		.promo-banner{
+			margin-bottom:15px;
+		}
+	}
+}

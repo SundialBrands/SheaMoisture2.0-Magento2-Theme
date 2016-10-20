@@ -35,6 +35,22 @@
                     <?php /* @escapeNotVerified */ echo $html; ?>
                 </div>
             <?php endforeach;?>
+			<!-- Start For Ask a Question Block -->
+				<div class="data item title"
+                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo 'ask';?>-title"
+                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo 'ask';?>">
+                    <a class="data switch"
+                       tabindex="-1"
+                       data-toggle="switch"
+                       href="#<?php /* @escapeNotVerified */ echo 'ask'; ?>"
+                       id="tab-label-<?php /* @escapeNotVerified */ echo 'ask';?>-title">
+                        <?php /* @escapeNotVerified */ echo 'Ask a Question'; ?>
+                    </a>
+                </div>
+                <div class="data item content" id="<?php /* @escapeNotVerified */ echo 'ask'; ?>" data-role="content">
+                    <?php /* @escapeNotVerified */ echo "Ask a Question"; ?>
+                </div>
+		<!-- End For Ask a Question Block -->
         </div>
     </div>
 <?php endif; ?>

@@ -1,3 +1,4 @@
+//weltpixel/m2-weltpixel-owl-carousel-slider v1.0.1
 var OWL = {
 	init: function () {
 	},

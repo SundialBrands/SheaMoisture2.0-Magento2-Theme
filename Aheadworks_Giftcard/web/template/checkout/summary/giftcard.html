@@ -1,0 +1,13 @@
+<!-- ko foreach: { data: giftCardsData, as: 'giftCard' } -->
+<tr class="totals aw-gc-totals">
+    <th class="mark" scope="row" colspan="2">
+        <a href="#" data-bind="attr: {href: giftCard.remove_url, 'title': $t('Remove') }">
+            <span class="action-delete-icon"></span>
+        </a>
+        <span data-bind="i18n: $parent.title"></span> <span class="giftcard-code" data-bind="html: giftCard.code"></span>
+    </th>
+    <td class="amount" data-bind="attr: {'data-th': $t($parent.title) }">
+        -<span class="price" data-bind="text: $parent.getValue(giftCard.amount)"></span>
+    </td>
+</tr>
+<!-- /ko -->

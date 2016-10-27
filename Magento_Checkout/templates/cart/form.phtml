@@ -1,0 +1,113 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**  @var $block \Magento\Checkout\Block\Cart */
+?>
+<?php $mergedCells = ($this->helper('Magento\Tax\Helper\Data')->displayCartBothPrices() ? 2 : 1); ?>
+<?php echo $block->getChildHtml('form_before') ?>
+<form action="<?php /* @escapeNotVerified */ echo $block->getUrl('checkout/cart/updatePost') ?>"
+          method="post"
+          id="form-validate"
+          data-mage-init='{"validation":{}}'
+          class="form form-cart">
+    <?php echo $block->getBlockHtml('formkey'); ?>
+    <div class="cart table-wrapper<?php echo $mergedCells == 2 ? ' detailed' : ''; ?>">
+        <table id="shopping-cart-table"
+               class="cart items data table"
+               data-mage-init='{"shoppingCart":{"emptyCartButton": "action.clear",
+               "updateCartActionContainer": "#update_cart_action_container"}}'>
+            <caption role="heading" aria-level="2" class="table-caption"><?php /* @escapeNotVerified */ echo __('Shopping Cart Items') ?></caption>
+            <thead>
+                <tr>
+                    <th class="col item" scope="col"><span><?php /* @escapeNotVerified */ echo __('Item/Desciption') ?></span></th>
+                    <th class="col price" scope="col"><span><?php /* @escapeNotVerified */ echo __('Price') ?></span></th>
+                    <th class="col qty" scope="col"><span><?php /* @escapeNotVerified */ echo __('Quantity') ?></span></th>
+                    <th class="col subtotal" scope="col"><span><?php /* @escapeNotVerified */ echo __('Subtotal') ?></span></th>
+                </tr>
+            </thead>
+            <?php foreach ($block->getItems() as $_item): ?>
+                <?php echo $block->getItemHtml($_item) ?>
+            <?php endforeach ?>
+        </table>
+    </div>
+    <div class="cart main actions">
+        <?php if ($block->getContinueShoppingUrl()): ?>
+            <a class="action continue"
+               href="<?php echo $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
+               title="<?php echo $block->escapeHtml(__('Continue Shopping')); ?>">
+                <span><?php /* @escapeNotVerified */ echo __('Continue Shopping') ?></span>
+            </a>
+        <?php endif; ?>
+        <button type="submit"
+                name="update_cart_action"
+                data-cart-empty=""
+                value="empty_cart"
+                title="<?php echo $block->escapeHtml(__('Clear Shopping Cart')); ?>"
+                class="action clear" id="empty_cart_button">
+            <span><?php /* @escapeNotVerified */ echo __('Clear Shopping Cart'); ?></span>
+        </button>
+        <button type="submit"
+                name="update_cart_action"
+                data-cart-item-update=""
+                value="update_qty"
+                title="<?php echo $block->escapeHtml(__('Update Shopping Cart')); ?>"
+                class="action update">
+            <span><?php /* @escapeNotVerified */ echo __('Update Shopping Cart'); ?></span>
+        </button>
+        <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update=""/>
+    </div>
+</form>
+<?php echo $block->getChildHtml('checkout.cart.order.actions') ?>
+<?php echo $block->getChildHtml('shopping.cart.table.after'); ?>
+<script>
+    require([
+        'jquery',
+        'mage/mage',
+        'Magento_Catalog/product/view/validation',
+        'Magento_Catalog/js/catalog-add-to-cart'
+    ], function ($) {
+        'use strict';     
+	$(document).ready(function(){
+	// Creating closure property
+		var abstractFn = function(inputTag,operator){
+				var inputTag = inputTag;
+				var testval = inputTag.val();
+				var operator = operator;
+				this.setQty = function(inputTag,testval,operator){
+					if(operator == '-'){
+						if(testval >1){
+							var testresult = eval(--testval);
+						} else {
+							//inputTag.val(1);
+							testresult = 1;
+						}
+					} else {
+							testresult =  eval(++testval)
+					}
+					inputTag.val(testresult);
+				}
+			this.setQty(inputTag,testval,operator);
+		}
+		
+		//var fgh = document.getElementById("cart-<?php /* @escapeNotVerified */ echo $_item->getId() ?>-qty");
+		$( ".item-info" ).each(function( index ) {
+			$(this).find( ".control.qty" ).append('<input type="button" value="&#xf067;" class="add1" id="add1"/>').prepend('<input type="button" value="&#xf068;" id="minus1" class="minus1" />');
+		});
+		$('.minus1').on('click', function(e){
+			e.preventDefault();
+			var test1 =new abstractFn($(this).parent().find('.input-text.qty'),'-');
+		});
+		$('.add1').on('click', function(e){
+			e.preventDefault();
+			var test = new abstractFn($(this).parent().find('.input-text.qty'),'+');
+		});
+        
+    });
+		
+    });
+</script>

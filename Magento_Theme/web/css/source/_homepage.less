@@ -4,6 +4,7 @@
 @discount-color: #572500;
 @discount-text: #292929;
 @font16:16px;
+@font17:17px;
 @font18:18px;
 @font20:20px;
 @font30:30px;
@@ -158,17 +159,17 @@
 
 .community-block {
     padding:1px 1px;  
-    width: 31%;
-    margin-right: 2%;
+    width: 100%;
+    margin-right: 0%;
 }
 .root-block {
     padding:1px 1px;
-    width: 31%;
-    margin-right: 2%;
+    width: 100%;
+    margin-right: 0%;
 }
 .ingredients {
     padding:1px 1px;
-    width: 31%;
+    width: 100%;
 }
 .promo-banner img {
 //height: 577px;
@@ -269,7 +270,7 @@ span.cc_link {
     }
         
     .strick-siblings{
-        font-size: @font18;
+        font-size: @font17;
         p{
             font-family: @font-heavy;
 			font-weight: @font-w-normal;
@@ -392,6 +393,9 @@ span.cc_link {
         .promo-banner{
         padding-right:0;
         }
+		.promo-banner:first-child{
+			padding-left:0;
+		}
         .promo-banner img {
             height: 577px;
         }

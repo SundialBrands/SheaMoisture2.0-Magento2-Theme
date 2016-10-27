@@ -9,9 +9,9 @@
     <body>
         <referenceContainer name="header.panel">
 			<block class="Magento\Cms\Block\Block" name="free_shipping">
-			   <arguments>
-			     <argument name="block_id" xsi:type="string">free_shipping</argument>
-			   </arguments>
+			<arguments>
+			<argument name="block_id" xsi:type="string">free_shipping</argument>
+			</arguments>
 			</block>
             <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
                 <arguments>
@@ -26,48 +26,47 @@
             </arguments>
         </referenceBlock>
 		<referenceBlock  name="header.links">
-            <block class="Magento\Framework\View\Element\Html\Link" name="storelocate.link" before="-">
+            <block class="Magento\Framework\View\Element\Html\Link" name="storelocate.link" after="-">
                     <arguments>
                         <argument name="label" xsi:type="string" translate="true">Store Locator</argument>
                         <argument name="path" xsi:type="string" translate="false">store-locator</argument>
                         <argument name="class" xsi:type="string">store_locator</argument>
                     </arguments>
-                </block>
-            <!-- <block class="Magento\Framework\View\Element\Html\Link" name="aboutus.link" after="-">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">English </argument>
-                    <argument name="path" xsi:type="string" translate="false">language</argument>
-                    <argument name="class" xsi:type="string">language</argument>
-                </arguments>
-            </block> -->
-            <referenceBlock name="register-link" remove="true" />                
+			</block>
+			<block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
+				<arguments>
+					<argument name="label" xsi:type="string" translate="true">SignUp</argument>
+					<argument name="class" xsi:type="string">createAccount</argument>
+				</arguments>
+			</block>			
+			<block class="Magento\Framework\View\Element\Html\Link" name="comcom.link" after="about-us">
+				<arguments>
+					<argument name="label" xsi:type="string" translate="true">Community Commerce</argument>
+					<argument name="path" xsi:type="string" translate="false">community-commerce</argument>
+					<argument name="class" xsi:type="string">community_commerece</argument>
+				</arguments>
+			</block>
+			<block class="Magento\Framework\View\Element\Html\Link" name="story.link" after="comunity-commerce">
+				<arguments>
+					<argument name="label" xsi:type="string" translate="true">Our Story</argument>
+					<argument name="path" xsi:type="string" translate="false">our-story</argument>
+					<argument name="class" xsi:type="string">our_story</argument>
+				</arguments>
+			</block>
+			<block class="Magento\Framework\View\Element\Html\Link" name="ingred.link" after="our-story">
+				<arguments>
+					<argument name="label" xsi:type="string" translate="true">Our Ingredients</argument>
+					<argument name="path" xsi:type="string" translate="false">our-ingredients</argument>
+					<argument name="class" xsi:type="string">our_ingredients</argument>
+				</arguments>
+			</block>         
             <referenceBlock name="skip_to_content" remove="true" />
         </referenceBlock>
-		<referenceContainer name="header.panel">                
-            <container name="header-links-nxt" as="header links" label="Header links" htmlTag="ul" htmlClass="header links secondary" after="-">                    
-                <block class="Magento\Framework\View\Element\Html\Link" name="comcom.link" after="about-us">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Community Commerce</argument>
-                        <argument name="path" xsi:type="string" translate="false">community-commerce</argument>
-                        <argument name="class" xsi:type="string">community_commerece</argument>
-                    </arguments>
-                </block>
-                <block class="Magento\Framework\View\Element\Html\Link" name="story.link" after="comunity-commerce">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Our Story</argument>
-                        <argument name="path" xsi:type="string" translate="false">our-story</argument>
-                        <argument name="class" xsi:type="string">our_story</argument>
-                    </arguments>
-                </block>
-                <block class="Magento\Framework\View\Element\Html\Link" name="ingred.link" after="our-story">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Our Ingredients</argument>
-                        <argument name="path" xsi:type="string" translate="false">our-ingredients</argument>
-                        <argument name="class" xsi:type="string">our_ingredients</argument>
-                    </arguments>
-                </block>            
+		<!-- <referenceContainer name="header.panel">                
+            <container name="header-links-nxt" as="header links" label="Header links" htmlTag="ul" htmlClass="header links secondary" after="-">
+				          
             </container>
-        </referenceContainer>
+        </referenceContainer> -->
 		
 		
         <referenceContainer name="footer-container">
@@ -107,7 +106,7 @@
                     </block>
                     <block class="Magento\Framework\View\Element\Html\Link\Current" name="Returns Policy">
                         <arguments>
-                            <argument name="label" xsi:type="string">Returns Policy</argument>
+                            <argument name="label" xsi:type="string">Return Policy</argument>
                             <argument name="path" xsi:type="string">return-policy</argument>
                         </arguments>
                     </block>            
@@ -115,11 +114,15 @@
             </container>            
         </referenceContainer>
         <move element="footer-bottom" destination="footer-content-customised" />
-        <!--<move element="minicart" destination="header.links" before="-"/>
-        <move element="top.search" destination="header.links" after="-"/>-->
+        
+<!-- <move element="minicart" destination="header.links" before="-"/>
+        <move element="top.search" destination="header.links" after="-"/> -->
         
         <move element="catalog-search-advanced-link" destination="footer_links" before="-"/>
         <referenceBlock name="search-term-popular-link" remove="true"/>
+	<referenceBlock name="points.balance" remove="true"/>
+
+
         <referenceBlock name="privacy-policy-link" remove="true"/>
         <referenceBlock name="form.subscribe" remove="true"/>
         <referenceBlock name="catalog-search-advanced-link" remove="true"/>

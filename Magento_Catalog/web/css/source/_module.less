@@ -11,15 +11,18 @@
 //  Variables
 //  _____________________________________________
 
-@product-info-price: @color-gray34;
+@product-info-price: #512C1D;
 @product-h1-margin-bottom-desktop: @indent__s + @indent__xs;
-
+@text__color__muted: #512C1D;
 //
 //  Common
 //  _____________________________________________
 
 & when (@media-common = true) {
-
+	.product.data.items > .item.title > .switch
+	{
+		color:#512c1d !important;
+	}
     //  Category view
     .old-price,
     .old.price {
@@ -337,7 +340,7 @@
 
     .product-options-bottom .price-box,
     .product-info-price .price-box {
-        .lib-css(color, @product-info-price);
+        .lib-css(color, @text__color__muted);
         display: table-cell;
         padding-bottom: @indent__s;
         vertical-align: top;
@@ -396,7 +399,6 @@
         .action.tocart {
             //&:extend(.abs-button-l all);
             //&:extend(.abs-button-responsive all);
-			line-height: 2.2rem;
 			margin-right: 1%;
 			
             &:not(:last-child) {

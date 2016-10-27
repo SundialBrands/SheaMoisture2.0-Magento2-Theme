@@ -18,7 +18,7 @@
         <div class="field qty">
             
             <div class="control" id="QtyBox">
-                <input type="number"
+                <input type="number" onkeypress="return isNumberValidReturn(event)"
                        name="qty"
                        id="qty"
                        maxlength="12"
@@ -67,24 +67,46 @@ jQuery("div#QtyBox").append('<input type="button" value="&#xf067;" id="add1" cla
     });
         
 
-        
+     var isNumberValidReturn= function(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}   
     });
 </script>
+<?php if (!$block->isRedirectToCartEnabled()) : ?>
+<script>
+    require([
+        'jquery',
+        'mage/mage',
+        'Magento_Catalog/product/view/validation',
+        'Magento_Catalog/js/catalog-add-to-cart'
+    ], function ($) {
+        'use strict';
+
+        $('#product_addtocart_form').mage('validation', {
+            radioCheckboxClosest: '.nested',
+            submitHandler: function (form) {
+                var widget = $(form).catalogAddToCart({
+                    bindSubmit: false
+                });
+
+                widget.catalogAddToCart('submitForm', $(form));
+
+                return false;
+            }
+        });
+    });
+</script>
+<?php else : ?>
 <script type="text/x-magento-init">
     {
         "#product_addtocart_form": {
             "Magento_Catalog/product/view/validation": {
                 "radioCheckboxClosest": ".nested"
-            }
-        }
-    }
-</script>
-<?php if (!$block->isRedirectToCartEnabled()) : ?>
-<script type="text/x-magento-init">
-    {
-        "#product_addtocart_form": {
-            "catalogAddToCart": {
-                "bindSubmit": true
             }
         }
     }

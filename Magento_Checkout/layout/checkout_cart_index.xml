@@ -11,8 +11,10 @@
         <referenceContainer name="checkout.cart.container">
             <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-" />
         </referenceContainer>
-        <move element="checkout.cart.crosssell" destination="checkout.cart.container" after="-" />
+       
         <move element="checkout.cart.coupon" destination="cart.discount" />
         <move element="checkout.cart.shortcut.buttons" destination="checkout.cart.methods" after="checkout.cart.methods.onepage.bottom"/>
+		
+	<move element="cart.summary" destination="checkout.cart.container" />
     </body>
 </page>

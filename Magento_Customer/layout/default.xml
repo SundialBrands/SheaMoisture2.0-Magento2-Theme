@@ -17,7 +17,7 @@
             </arguments>
         </block>
         <move element="header" destination="header.links" before="-"/>
-        <move element="register-link" destination="header.links"/>
+        <!-- <move element="register-link" destination="header.links"/> -->
         <move element="top.links" destination="customer"/>
         <move element="authorization-link" destination="top.links" after="-"/>
 
@@ -25,7 +25,15 @@
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceBlock name="wishlist_sidebar" remove="true"/>
         <referenceBlock name="sale.reorder.sidebar" remove="true"/>
-        
+        <referenceContainer name="content">
+            <!--<container name="our-promise-block-info" label="our Promise Block" htmlTag="div" htmlClass="our-promise-block-account-info" after="-">
+                <block class="Magento\Cms\Block\Block" name="our-promise-block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">our-promise-block</argument>
+                    </arguments>
+                </block>
+            </container>-->
+        </referenceContainer>
         <!-- <move element="our-promise-block" destination="footer-container" before="page-footer"/> -->
         <!-- End of Customisation -->
     </body>

@@ -99,6 +99,10 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+.split.button.wishlist{		
+    background: none;		
+    border: none;		
+}
 #quickview-container {
 	.communityImg, .product-info-price{
 		clear: both;
@@ -672,6 +676,20 @@ box-shadow: none !important;
 //  ---------------------------------------------
     // Targets Medium screens
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+.promotional-bottom-block3 > div:first-child{
+	    padding-left: 15px;
+}
+.promotional-bottom-block3 div.col-sm-12 {
+    padding-right: 15px;
+}
+	.panel.wrapper{
+		.panel.header{
+			.banner_str_img{
+				    margin-left: 30px;
+					line-height: 1;
+			}
+		}
+	}
     .customer-name,
     .customer-welcome + .authorization-link {
         display: none;
@@ -742,6 +760,20 @@ box-shadow: none !important;
 
 //Small screens(mobiles)
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+.ChatBox{
+	display:none;
+}
+.ves-megamenu li.level0 > a{
+	    font-size: 12px;
+}
+.panel.wrapper{
+		.panel.header{
+			.banner_str_img{
+				    margin-left: 30px;
+					line-height: 1;
+			}
+		}
+	}
 #subcategoriesBlock{		
 		.sub-cat-info{		
 			position:static;		
@@ -914,6 +946,28 @@ button#product-addtocart-button {
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.slider-block  .flexslider{
+	box-shadow: 0 0 0;
+}
+	.ChatBox {
+    position: fixed;
+    top: 60%;
+    right: 0;
+    color: #fff;
+}
+
+	.promotional-bottom-block3{ 
+		h1 + p{
+		    height: 295px;
+		}
+		h1 + p img{
+			width: 100%;
+    			height: 100%;
+		}
+	}
+	.ves-menu ul.ves-megamenu{
+		    margin-top: 5px;
+	}
 	#subcategoriesBlock{		
 		ul li:first-child{		
 			.show-subcat-info div{		
@@ -1218,9 +1272,9 @@ a.store_locator {
             max-width: 100%;
             float: left;
             margin-top: 0px;
-            margin-left:50px;
 	     width:25%;
-	     line-height: 0.5;
+	     line-height:1;
+		 font-size: 14px;
         }
     } 
 } 
@@ -1307,8 +1361,6 @@ a.store_locator {
 .authorization-link{
     &:before{
         -webkit-font-smoothing: antialiased;
-        font-size: 22px;
-        line-height: 21px;
         color: @color-SheaBrown;
         content: '\f007';
         font-family: 'FontAwesome';
@@ -1324,8 +1376,6 @@ a.store_locator {
 .store_locator{
     &:before{
         -webkit-font-smoothing: antialiased;
-        font-size: 22px;
-        line-height: 21px;
         color: @color-SheaBrown;
         content: @store-config;        
         margin: 0;
@@ -1342,8 +1392,6 @@ a.store_locator {
 .createAccount{
 	&:before {
 		-webkit-font-smoothing: antialiased;
-		font-size: 17px;
-		line-height: 17px;
 		color: @color-SheaBrown;
 		content: '\f0e0';
 		font-family: 'FontAwesome';
@@ -1485,6 +1533,7 @@ div#testing{
                     color:@color-SheaBrown;
                     padding-right: 10px;
                     border-right: 1px solid black;
+					line-height: 1;
                     &.welcome,
                     > a {
                         font-size:12px;
@@ -1636,20 +1685,57 @@ div#testing{
                 > li {                    
 			margin: 0;
                     padding: 0 25px;
+					display: inline-block;
                 }
 		  > li:first-child{
 			padding-left: 0;
 		  }
 }
+
+	.ves-megamenu li.level0 > a{		
+		font-size:14px;		
+	}
 }
 
 }
-
+	// For Large Screens		
+@media (min-width: 1200px) {		
+	.panel.wrapper{		
+    .panel.header{		
+        .banner_str_img{		
+            margin-left:50px;		
+			line-height: 1;		
+        }		
+    }		
+	.ves-megamenu li.level0 > a{		
+		font-size:16px;		
+	}		
+} 		
+}
 //
 //  Common Media all
 //  _____________________________________________
 
 & when (@media-common = true) {
+.charity-details {
+	height:auto;
+	overflow:hidden;
+	margin-bottom: 10px;
+	#CHToggle{
+		color:@color-SheaBrown;
+	}
+	.CHhide{
+		display:none;
+	}
+}
+#charity-form{
+	.actions-toolbar{
+		margin-bottom: 10px;
+	}
+}
+.checkout-cart-index .cart-summary .cart-totals tbody th.mark{
+    background: #fff;
+}
 //For Collection Page
 #subcategoriesBlock{
 	.sub-categories{

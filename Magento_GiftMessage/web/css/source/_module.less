@@ -121,7 +121,7 @@
             @_icon-font-size: 18px,
             @_icon-font-line-height: 20px,
             @_icon-font-text-hide: true,
-            @_icon-font-color: @minicart-icons-color,
+            @_icon-font-color: #512C1D,
             @_icon-font-color-hover: @primary__color,
             @_icon-font-color-active: @minicart-icons-color
             );
@@ -350,6 +350,10 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+button:hover
+{
+	border:none !important;
+}
 #block-shipping .title {
 text-align: left;
 }
@@ -479,8 +483,8 @@ content: '\f068';
 			box-shadow: none;		
 		}		
 		.cart-discount .actions-toolbar .action.primary:hover{		
-			background:#ede9e8;		
-			color: #512c1d !important;		
+			background:#512C1D;		
+			color: #fff !important;		
 		}		
 		.cart.table-wrapper .actions-toolbar{		
 			width: 69%;		

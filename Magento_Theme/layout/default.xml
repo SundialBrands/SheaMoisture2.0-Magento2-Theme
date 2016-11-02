@@ -35,7 +35,7 @@
 			</block>
 			<block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
 				<arguments>
-					<argument name="label" xsi:type="string" translate="true">SignUp</argument>
+					<argument name="label" xsi:type="string" translate="true">Email SignUp</argument>
 					<argument name="class" xsi:type="string">createAccount</argument>
 				</arguments>
 			</block>			

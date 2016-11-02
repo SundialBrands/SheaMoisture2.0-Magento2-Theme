@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+	app\design\frontend\Sundial\sheamoisture\Magento_Review\layout
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Review\Block\Customer\Recent" name="customer_account_dashboard_info1" template="customer/recent.phtml" after="customer_account_dashboard_address" cacheable="false"/>
+        </referenceContainer>
+		<referenceContainer name="content">
+            <container name="our-promise-block-info" label="our Promise Block" htmlTag="div" htmlClass="our-promise-block-account-info" after="-">
+                <block class="Magento\Cms\Block\Block" name="our-promise-block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">our-promise-block</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

@@ -8,7 +8,9 @@
     },
     "type": "magento2-theme",
     "version": "100.1.2",
-    "license": "MIT",
+    "license": [
+    	"MIT"
+    ],
     "autoload": {
         "files": [
             "registration.php"

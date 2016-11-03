@@ -1,0 +1,102 @@
+<?php $_settings = $this->getFrontendConfiguration(); ?>
+<script type="text/javascript">
+    /* grid mode or list mode , different settings ... */
+    require([
+        'jquery',
+        'mango_quickview',
+        'domReady!'], function ($) {
+        /*target :  '#quickview-container',
+         css_class : 'action primary',
+         button_container: 'div.product-item-info',
+         product_container : 'div.product-item-info',
+         link_container : 'product.photo.product-item-photo'*/
+        _QUICKVIEW_SETTINGS = <?php echo $this->getFrontendConfigurationJson(); ?>;
+        //_QUICKVIEW_SETTINGS.size = 'lg';
+        _QUICKVIEW_SETTINGS.target = '#quickview-container';
+
+
+        if ((_QUICKVIEW_SETTINGS.close_button == 2 || _QUICKVIEW_SETTINGS.close_button == 3)) {
+            _QUICKVIEW_SETTINGS.buttons = [{
+                    text: '<?php echo __("Close"); ?>',
+                    class: '',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }];
+        } else {
+            _QUICKVIEW_SETTINGS.buttons = false;
+        }
+
+        $(_QUICKVIEW_SETTINGS.product_container).mango_quickview(_QUICKVIEW_SETTINGS);
+		/*  compatibility with mango-ajaxlayered navigation */
+		 $( document ).on( "afterAjaxProductsLoaded", function( event, reloadFiltersBlock ) {
+            $(_QUICKVIEW_SETTINGS.product_container).mango_quickview(_QUICKVIEW_SETTINGS);
+        });
+    });
+</script>
+<div id="quickview-container" style="display:none;">
+    <div data-role="loader" class="loading-mask" id="quickview-loader">
+        <div class="loader">
+            <img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                 alt="<?php /* @escapeNotVerified */ echo __('Loading...') ?>">
+        </div>
+    </div>
+    <?php
+    /**
+     * QUICKVIEW MESSAGES CONTAINER: FOR ADD TO CART ACTIONS
+     * */
+    ?>
+    <div data-placeholder="quickviewmessages"></div><div data-bind="scope: 'quickviewmessages'">
+        <div data-bind="foreach: { data: quickviewmessages().messages, as: 'message' }" class="quickviewmessages messages">
+            <div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+                <div data-bind="html: message.text"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/x-magento-init">
+        {
+        "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "quickviewmessages": {
+                            "component": "Mango_Quickview/messages",
+                            "displayArea": "quickviewmessages"
+                        }
+                    }
+                }
+            }
+        }
+		
+		
+
+    </script>
+
+    <div id="quickview-contents">
+
+    </div>
+</div>
+<style type="text/css">
+    <?php echo $_settings['product_container']; ?>{
+        /*display:inline-block;*/
+        position:relative;
+    }
+    <?php echo $_settings['product_container']; ?> .quickview-button{
+        /*display:none;*/
+        opacity: 0;
+        display:none;
+        position:absolute;
+        position:absolute;
+        <?php echo $_settings['button_position_horizontal']; ?>:<?php echo $_settings['button_position_horizontal_value']; ?>;
+        <?php echo $_settings['button_position_vertical']; ?>:<?php echo $_settings['button_position_vertical_value']; ?>;
+        <?php if (trim($_settings["button_2d_translation"])): ?>transform: translate(<?php echo $_settings["button_2d_translation"]; ?>);<?php endif; ?>
+        z-index: 100;
+    }
+    <?php echo $_settings['product_container']; ?>:hover .quickview-button,
+    <?php echo $_settings['product_container']; ?> .quickview-button.quickview-button-touch-screen{
+        display: inline-block;/*  */
+        opacity: 1;
+    }
+</style>

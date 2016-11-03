@@ -34,6 +34,8 @@
     //  Cart container
     .cart-container {
         .form-cart {
+			width:100% !important;		
+			padding-right: 0% !important;
             &:extend(.abs-shopping-cart-items all);
         }
     }
@@ -210,7 +212,7 @@
                     }
 
                     .input-text {
-                        height: 36px;
+                        height: 32px;
                         margin-top: -7px;
                         text-align: center;
                         width: 45px;
@@ -271,6 +273,10 @@
                     @_icon-font-content: @icon-trash
                     );
                 }
+		> .action-edit:before,
+                > .action-delete:before{
+			color:#512C1D !important;
+		}
             }
 
             .action {
@@ -504,6 +510,41 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.checkout-cart-index .page-main > .page-title-wrapper .page-title{
+	text-transform: uppercase;
+    		font-weight: 900;
+   		text-align: center;
+    		font-size: 42px;
+    		display: block;
+
+}
+a.continue1:hover
+{
+	text-decoration:none !important;
+}
+a.continue1 {
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'futura light bt', 'Arial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	padding: 13px 22px;
+	font-size: 18px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	background: #512C13;
+	border-radius: 4px;
+	float: left;
+}
+.multicheckout {
+display: none;
+}
+	th.col
+	{
+		.price{
+			color:#FFF;
+		}
+	}
     .checkout-cart-index {
 		/*h1{		
 			font-size: 30px;		
@@ -539,6 +580,8 @@
         .lib-layout-column(2, 2, @layout-column-checkout__width-left);
         padding: 1px @indent__base @indent__m;
         position: relative;
+		display:block;		
+		top:0px !important;	
 
         > .title {
             display: block;
@@ -645,6 +688,7 @@
         padding-right: 4%;
 
         .block {
+			width:100% !important;	
             .title {
                 &:after {
                     display: inline;
@@ -665,8 +709,8 @@
         &.crosssell {
             .lib-layout-column(2, 1, @layout-column-checkout__width-main);
             &:extend(.abs-add-box-sizing-desktop all);
-            padding: 0 4% 0 0;
-
+            padding: 0 0 0 0;
+	     width:100%;
             .products-grid .product-item {
                 width: 100%/4;
             }

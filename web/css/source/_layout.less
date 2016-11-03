@@ -94,11 +94,27 @@
         max-width: @layout__max-width;
         box-sizing: border-box;
     }
+	
+	/* For static-scroll*/
+	.page-wrapper{
+		.page-header .header.panel{
+			max-width:100%;
+		}
+			.page-header, .sections.nav-sections{
+			width: 100%;
+			z-index: 3;
+			background: #fff;
+		}
+		.page-header{
+			z-index: 999;
+		}
+	}
+	/*End of static-scroll*/
 	.footer.content{
 		margin-left: auto;
         margin-right: auto;
         width: auto;
-        max-width: @layout__max-width;
+        max-width: 100%;
         box-sizing: border-box;
 	}
     .page-main {

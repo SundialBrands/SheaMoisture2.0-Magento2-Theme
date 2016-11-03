@@ -27,8 +27,8 @@
             @_dropdown-split-toggle-icon-content: @icon-down,
             @_dropdown-split-toggle-active-icon-content: @icon-up,
             @_icon-font-size: 12px,
-            @_icon-font-color: @addto-color,
-            @_icon-font-color-hover: @addto-hover-color,
+            @_icon-font-color: #512c1d,
+            @_icon-font-color-hover: #512c1d,
             @_icon-font-vertical-align: middle,
             @_dropdown-split-list-pointer-position: left,
             @_dropdown-split-list-min-width: 200px
@@ -64,7 +64,10 @@
                 &:active,
                 &:focus,
                 &:hover {
-                    .lib-css(color, @addto-hover-color);
+                    //.lib-css(color, @addto-hover-color);
+					background: #512C1D;
+                    cursor: pointer;
+                    color: #fff;
                 }
             }
 

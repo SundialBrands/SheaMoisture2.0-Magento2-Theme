@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<div id="gift-options-cart" data-bind="scope:'giftOptionsCart'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#gift-options-cart": {
+                "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+            }
+        }
+    </script>
+    <script>
+        window.giftOptionsConfig = <?php /* @escapeNotVerified */ echo $block->getGiftOptionsConfigJson(); ?>;
+    </script>
+</div>
+
+<script>
+ require([
+    'jquery'
+], function ($) {
+	$(document).ready(function(){
+		$( "#gift-options-cart, .cart-discount, #block-charity, #cart-block-giftcard").wrapAll( "<div class='cart-container-Box col-md-6 col-lg-6 col-sm-6 col-xs-12'></div>" );
+	});	
+});
+</script>

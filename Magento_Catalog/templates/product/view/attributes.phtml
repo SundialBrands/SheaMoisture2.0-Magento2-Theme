@@ -12,6 +12,10 @@
  * @var $block \Magento\Catalog\Block\Product\View\Attributes
  */
 ?>
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct()
+?>
 <?php if ($_additional = $block->getAdditionalData()): ?>
     <div class="additional-attributes-wrapper table-wrapper">
         <table class="data table additional-attributes" id="product-attribute-specs-table">

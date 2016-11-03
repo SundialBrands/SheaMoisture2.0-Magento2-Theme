@@ -9,9 +9,9 @@
     <body>
         <referenceContainer name="header.panel">
 			<block class="Magento\Cms\Block\Block" name="free_shipping">
-			   <arguments>
-			     <argument name="block_id" xsi:type="string">free_shipping</argument>
-			   </arguments>
+			<arguments>
+			<argument name="block_id" xsi:type="string">free_shipping</argument>
+			</arguments>
 			</block>
             <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
                 <arguments>
@@ -33,18 +33,12 @@
                         <argument name="class" xsi:type="string">store_locator</argument>
                     </arguments>
                 </block>
-            <!-- <block class="Magento\Framework\View\Element\Html\Link" name="aboutus.link" after="-">
+			<block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">English </argument>
-                    <argument name="path" xsi:type="string" translate="false">language</argument>
-                    <argument name="class" xsi:type="string">language</argument>
+					<argument name="label" xsi:type="string" translate="true">Email SignUp</argument>
+					<argument name="class" xsi:type="string">createAccount</argument>
                 </arguments>
-            </block> -->
-            <referenceBlock name="register-link" remove="true" />                
-            <referenceBlock name="skip_to_content" remove="true" />
-        </referenceBlock>
-		<referenceContainer name="header.panel">                
-            <container name="header-links-nxt" as="header links" label="Header links" htmlTag="ul" htmlClass="header links secondary" after="-">                    
+			</block>			
                 <block class="Magento\Framework\View\Element\Html\Link" name="comcom.link" after="about-us">
                     <arguments>
                         <argument name="label" xsi:type="string" translate="true">Community Commerce</argument>
@@ -66,8 +60,13 @@
                         <argument name="class" xsi:type="string">our_ingredients</argument>
                     </arguments>
                 </block>            
+            <referenceBlock name="skip_to_content" remove="true" />
+        </referenceBlock>
+		<!-- <referenceContainer name="header.panel">                
+            <container name="header-links-nxt" as="header links" label="Header links" htmlTag="ul" htmlClass="header links secondary" after="-">
+				          
             </container>
-        </referenceContainer>
+        </referenceContainer> -->
 		
 		
         <referenceContainer name="footer-container">
@@ -107,7 +106,7 @@
                     </block>
                     <block class="Magento\Framework\View\Element\Html\Link\Current" name="Returns Policy">
                         <arguments>
-                            <argument name="label" xsi:type="string">Returns Policy</argument>
+                            <argument name="label" xsi:type="string">Return Policy</argument>
                             <argument name="path" xsi:type="string">return-policy</argument>
                         </arguments>
                     </block>            
@@ -115,11 +114,15 @@
             </container>            
         </referenceContainer>
         <move element="footer-bottom" destination="footer-content-customised" />
-        <!--<move element="minicart" destination="header.links" before="-"/>
-        <move element="top.search" destination="header.links" after="-"/>-->
+        
+<!-- <move element="minicart" destination="header.links" before="-"/>
+        <move element="top.search" destination="header.links" after="-"/> -->
         
         <move element="catalog-search-advanced-link" destination="footer_links" before="-"/>
         <referenceBlock name="search-term-popular-link" remove="true"/>
+	<referenceBlock name="points.balance" remove="true"/>
+
+
         <referenceBlock name="privacy-policy-link" remove="true"/>
         <referenceBlock name="form.subscribe" remove="true"/>
         <referenceBlock name="catalog-search-advanced-link" remove="true"/>

@@ -14,30 +14,41 @@
 		<move element="product.info.overview" destination="product.info.main" before="product.info.price"/>
 		<move element="product.info.details" destination="product.info.main" after="product.info.main"/>
 		<move element="product.info.sku" destination="product.info.stock.sku" after="product.info.price"/>
-			  <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
-                            <arguments>
-                                <argument name="at_call" xsi:type="string">getSku</argument>
-                                <argument name="at_code" xsi:type="string">sku</argument>
-                                <argument name="css_class" xsi:type="string">sku</argument>
-                                <argument name="at_label" xsi:type="string">Item Code</argument>
-                                <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
-                            </arguments>
-                        </block>
-						 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details" template="product/view/details.phtml" after="product.info.media">
-                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description" template="product/view/attribute.phtml" group="detailed_info">
-                    <arguments>
-                        <argument name="at_call" xsi:type="string">getDescription</argument>
-                        <argument name="at_code" xsi:type="string">description</argument>
-                        <argument name="css_class" xsi:type="string">description</argument>
-                        <argument name="at_label" xsi:type="string">none</argument>
-                        <argument name="title" translate="true" xsi:type="string">Full Product Description</argument>
-                    </arguments>
-                </block>
-                <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes" as="additional" template="product/view/attributes.phtml" group="detailed_info">
-                    <arguments>
-                        <argument translate="true" name="title" xsi:type="string">Product Details</argument>
-                    </arguments>
-                </block>
+		<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+			<arguments>
+				<argument name="at_call" xsi:type="string">getSku</argument>
+				<argument name="at_code" xsi:type="string">sku</argument>
+				<argument name="css_class" xsi:type="string">sku</argument>
+				<argument name="at_label" xsi:type="string">Item Code</argument>
+				<argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+			</arguments>
+		</block>
+		<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details" template="product/view/details.phtml" after="product.info.media">
+			<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description" template="product/view/attribute.phtml" group="detailed_info">
+				<arguments>
+					<argument name="at_call" xsi:type="string">getDescription</argument>
+					<argument name="at_code" xsi:type="string">description</argument>
+					<argument name="css_class" xsi:type="string">description</argument>
+					<argument name="at_label" xsi:type="string">none</argument>
+					<argument name="title" translate="true" xsi:type="string">Full Product Description</argument>
+				</arguments>
+			</block>
+			<block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes" as="additional" template="product/view/attributes.phtml" group="detailed_info">
+				<arguments>
+					<argument translate="true" name="title" xsi:type="string">Product Details</argument>
+				</arguments>
+			</block>
+		</block>
+		<referenceContainer name="content.aside">
+            <block class="Magento\Cms\Block\Block" name="promotional-bottom-block1" after="product.info.upsell">
+              <arguments>
+              <argument name="block_id" xsi:type="string">promotional-bottom-block1</argument>
+              </arguments>
+            </block>        
+            <block class="Magento\Cms\Block\Block" name="our-promise-block" after="promotional-bottom-block1">
+              <arguments>
+              <argument name="block_id" xsi:type="string">our-promise-block</argument>
+              </arguments>
             </block>
 		<referenceContainer name="content.aside">
             <block class="Magento\Cms\Block\Block" name="promotional-bottom-block1" after="product.info.upsell">
@@ -50,6 +61,5 @@
               <argument name="block_id" xsi:type="string">our-promise-block</argument>
               </arguments>
             </block>
-                </referenceContainer>
     </body>
 </page>

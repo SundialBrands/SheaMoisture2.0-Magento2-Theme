@@ -14,5 +14,14 @@
        
         <move element="checkout.cart.coupon" destination="cart.discount" />
         <move element="checkout.cart.shortcut.buttons" destination="checkout.cart.methods" after="checkout.cart.methods.onepage.bottom"/>
+		
+	<move element="cart.summary" destination="checkout.cart.container" />
+	<referenceContainer name="content">    
+		<block class="Magento\Cms\Block\Block" name="our-promise-block" after="checkout.cart.crosssell">
+		  <arguments>
+		  <argument name="block_id" xsi:type="string">our-promise-block</argument>
+		  </arguments>
+		</block>
+	</referenceContainer>
     </body>
 </page>

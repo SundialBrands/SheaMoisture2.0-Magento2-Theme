@@ -24,8 +24,7 @@
         <!-- Customised  -->
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceBlock name="wishlist_sidebar" remove="true"/>
-        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
-        
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>        
         <!-- <move element="our-promise-block" destination="footer-container" before="page-footer"/> -->
         <!-- End of Customisation -->
     </body>

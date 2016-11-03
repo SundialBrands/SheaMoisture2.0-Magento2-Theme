@@ -315,7 +315,11 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .opc-wrapper {
         .shipping-address-item {
-            .lib-css(width, @checkout-shipping-item__width);
+                     width: 33.33333333%;
+			height: 300px;
+			border: 1px solid transparent;
+			box-shadow: 0px 0px 5px 0px;
+
 
             &:before {
                 .lib-css(background, @checkout-shipping-item-before__border-color);

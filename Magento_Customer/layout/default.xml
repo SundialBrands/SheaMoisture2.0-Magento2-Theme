@@ -17,7 +17,7 @@
             </arguments>
         </block>
         <move element="header" destination="header.links" before="-"/>
-        <move element="register-link" destination="header.links"/>
+        <!-- <move element="register-link" destination="header.links"/> -->
         <move element="top.links" destination="customer"/>
         <move element="authorization-link" destination="top.links" after="-"/>
 

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 MangoExtensions. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="head" remove="true"/>
+        <referenceContainer name="head.components" remove="true"/>
+        <referenceContainer name="header.container" remove="true"/>
+        <referenceContainer name="require.js" remove="true"/>
+        <referenceContainer name="head.additional" remove="true"/>
+        <referenceContainer name="columns" htmlClass="quickview-columns">
+            <referenceContainer name="main" htmlClass="quickview-column quickview-main" htmlId="quickview-column-main">
+                <container name="quickview.page.messages" htmlTag="div" htmlClass="quickviewmessages">
+                    <block class="Magento\Framework\View\Element\Template" name="ajax.message.placeholder" template="Magento_Theme::html/messages.phtml"/>
+                    <!--block class="Magento\Framework\View\Element\Messages" name="quickviewmessages" as="quickviewmessages" template="Mango_Quickview::messages.phtml"/-->
+                </container>
+            </referenceContainer>
+        </referenceContainer>
+        
+        <!-- move product name - title -->
+        <move element="page.main.title" destination="content" before="-"/>
+        <!--referenceBlock name="page.main.title">
+        <action method="unsetChild"  ifconfig="quickview/frontend/title_top">
+            <argument name="block" xsi:type="string">page.main.title</argument>
+        </action-->
+        <!-- replace gallery -->
+        
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.media">
+                <referenceBlock name="product.info.media.image" template="Mango_Quickview::product/view/gallery.phtml"/>
+            </referenceContainer>
+        </referenceContainer>
+        <move element="product.info.media" destination="content" after="page.main.title"/>
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.main" htmlClass="quickview-product-info-main">
+                <!--referenceContainer name="product.info.price">
+                </referenceContainer-->
+                <block ifconfig="quickview/frontend/show_description" class="Magento\Catalog\Block\Product\View\Description" name="product.info.description" template="product/view/attribute.phtml" after="product.info.price">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getDescription</argument>
+                        <argument name="at_code" xsi:type="string">description</argument>
+                        <argument name="css_class" xsi:type="string">description</argument>
+                        <!--argument name="at_label" xsi:type="string">default</argument-->
+                        <argument name="add_attribute" xsi:type="string">itemprop="description"</argument>
+                    </arguments>
+                </block>
+            </referenceContainer>
+            
+            <referenceContainer name="product.info.details" remove="true"/>
+        </referenceContainer>
+		
+		<move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+		<move element="product.info.overview" destination="product.info.main" before="product.info.price"/>
+        <move element="product.info.description" destination="product.info.main" after="product.info.social"/>
+        <move element="product.info.sku" destination="product.info.stock.sku" after="product.info.price"/>
+        <move element="product.info.description" destination="product.info.main" after="product.info.stock.sku"/>
+
+       <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+            <arguments>
+                <argument name="at_call" xsi:type="string">getSku</argument>
+                <argument name="at_code" xsi:type="string">sku</argument>
+                <argument name="css_class" xsi:type="string">sku</argument>
+                <argument name="at_label" xsi:type="string">Item Code</argument>
+                <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+            </arguments>
+        </block>
+       <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details" template="product/view/details.phtml" after="product.info.media">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description" template="product/view/attribute.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getDescription</argument>
+                    <argument name="at_code" xsi:type="string">description</argument>
+                    <argument name="css_class" xsi:type="string">description</argument>
+                    <argument name="at_label" xsi:type="string">none</argument>
+                    <argument name="title" translate="true" xsi:type="string">Full Product Description</argument>
+                </arguments>
+            </block>
+           
+        </block>
+        <referenceContainer name="content.aside" remove="true"/>
+        <referenceContainer name="footer-container" remove="true">
+            <referenceBlock name="copyright" remove="true"/>
+        </referenceContainer>
+        <referenceContainer name="page.bottom.container" remove="true"/>
+        
+    </body>
+</page>

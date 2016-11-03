@@ -31,7 +31,7 @@ a.action.primary {
     color: rgb(255,255,255);
 }
 
-.action.primary:hover, .action.primary:visited, .action.primary:active, .action.primary:focus{
+.action.primary:hover, .action.primary:visited, .action.primary:active, .action.primary:focus, .button:hover, .button:visited, .button:active, .button:focus{
 	background: @color-SheaBrown;
 	border: 1px solid @color-SheaBrown;
 	color: #fff;
@@ -49,12 +49,17 @@ button {
         &:active {
             //.lib-css(box-shadow, @button__shadow-active);
             box-shadow: inset 0 1px 0 0 #fff, inset 0 -1px 0 0 rgba(81,44,29,0.1);
-            color: #000;
+            color: #fff;
             font-weight: bold;
             text-transform: uppercase;
             border: none;
         }		
     }
+}
+button:focus, button:active, button:hover {
+    background: #512C1D;
+    border: 1px solid #ccc;
+    color: #fff;
 }
 
 body {

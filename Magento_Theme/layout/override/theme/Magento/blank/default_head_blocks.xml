@@ -13,7 +13,9 @@
 		<link src="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic" src_type="url"/>	
 		
 		<css src="css/YouTubePopUp.css" />
-
+		<css src="css/styles-m.css" />
+		<css src="css/styles-l.css" media="screen and (min-width: 768px)"/>
+		<css src="css/print.css" media="print" />
 		<css src="css/bootstrap-theme.min.css" />
 		<css src="css/fontawesome/font-awesome.min.css" />
 		<!--<script src="js/bootstrap.min.js" />-->

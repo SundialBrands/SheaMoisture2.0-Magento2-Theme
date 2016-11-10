@@ -74,7 +74,15 @@
 //--------------------------------------
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
 
-
+.page-main {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        max-width: 1366px;
+        box-sizing: border-box;
+    }
 
 
     .navigation,
@@ -84,8 +92,7 @@
     .page-wrapper > .widget,
     .page-wrapper > .page-bottom,
     .block.category.event,
-    .top-container,
-    .page-main {
+    .top-container{
         padding-left: @layout-indent__width;
         padding-right: @layout-indent__width;
         margin-left: auto;
@@ -100,7 +107,7 @@
 		.page-header .header.panel{
 			max-width:100%;
 		}
-			.page-header, .sections.nav-sections{
+			.sections.nav-sections{
 			width: 100%;
 			z-index: 3;
 			background: #fff;

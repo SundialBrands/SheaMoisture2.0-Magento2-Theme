@@ -67,6 +67,7 @@
             position: relative;		
         }		
     }
+	
     .cart.table-wrapper {
         .item-gift {
             &._active {
@@ -120,7 +121,7 @@
             @_icon-font-size: 18px,
             @_icon-font-line-height: 20px,
             @_icon-font-text-hide: true,
-            @_icon-font-color: #512C1D,
+            @_icon-font-color: @gift-message-field-label__color,
             @_icon-font-color-hover: @primary__color,
             @_icon-font-color-active: @minicart-icons-color
             );
@@ -349,29 +350,25 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-button:hover
-{
-	border:none !important;
+#block-shipping .title {
+text-align: left;
 }
-#block-shipping .title{
-text-align:left;
-}
-.cart-container .cart .update{
-margin-right:15px;
-clear:both;
+.cart-container .cart .update {
+margin-right: 15px;
+clear: both;
 }
 
-.continue1:hover{
-text-decoration:none;
-}	.action-update:hover{
-		border:none;
+.continue1:hover {
+text-decoration: none;
+}	.action-update:hover {
+		border: none;
 	}
 .cart #shopping-cart-table thead th.col.item{
 	padding-left: 50px;
 }
 .checkout-cart-index .block.crosssell .block-title.title:after{    content: none; }
 .checkout-cart-index .cart-discount .actions-toolbar .action.primary:hover {
-background: #512c1d;
+background: @gift-message-field-label__color;
 color: #FFF !important;
 }
 .action-update:hover
@@ -384,7 +381,7 @@ border: none;
 .checkout-cart-index .page-title-wrapper
 {
 	text-align:center;
-	text-transform:uppercase;
+	text-transform: uppercase;
 }
 .checkout-cart-index .gift-item-block._active .title::after {
 content: '\f068';
@@ -408,7 +405,7 @@ content: '\f068';
 }
 .cart-price span
 	{
-		color:#512C1D;
+		color:@gift-message-field-label__color;
 	}
 .check {
 	font-size: 17px;
@@ -435,7 +432,7 @@ content: '\f068';
 			text-align:left;
 		}
 	}
-	#block-giftcard-heading{
+	#block-giftcard-heading {
 		.title{
 			text-align:left;
 		}
@@ -460,14 +457,14 @@ content: '\f068';
 				top: 16px;		
 				font-family: 'FontAwesome';		
 				content: '\f067';		
-				border: 1px solid #512c1d;		
+				border: 1px solid @gift-message-field-label__color;		
 				border-radius: 50%;		
 				line-height: 16px;		
 				height: 18px;		
 				padding: 1px 3px 0px 3px;		
 				overflow: initial;		
 				float: right;
-				color:#512C1D;
+				color:@gift-message-field-label__color;
 			}		
 		}		
 		.cart-discount .actions-toolbar .secondary{		
@@ -477,12 +474,12 @@ content: '\f068';
 			margin-top: 1px;		
 		}		
 		.cart-discount .actions-toolbar .action.primary{		
-			background: #512c1d;		
+			background: @gift-message-field-label__color;		
 			border: none;		
 			box-shadow: none;		
 		}		
 		.cart-discount .actions-toolbar .action.primary:hover{		
-			background:#512C1D;		
+			background:@gift-message-field-label__color;		
 			color: #fff !important;		
 		}		
 		.cart.table-wrapper .actions-toolbar{		
@@ -507,7 +504,7 @@ content: '\f068';
 			padding-right: 0;		
 		}		
 		 .cart-discount .block > .title strong{		
-			color:#512C1D;		
+			color:@gift-message-field-label__color;		
 			font-size: 18px;		
 			text-transform: uppercase;		
 			font-family: Futura Heavy font;		
@@ -516,7 +513,7 @@ content: '\f068';
 		.gift-item-block {		
 		border-bottom: 0;		
 			.title{		
-				color:#512C1D;		
+				color:@gift-message-field-label__color;		
 				font-size: 18px;		
 			text-transform: uppercase;		
 			font-family: Futura Heavy font;		
@@ -526,18 +523,18 @@ content: '\f068';
 				top: 16px;		
 				font-family: 'FontAwesome';		
 				content: '\f067';		
-				border: 1px solid #512c1d;		
+				border: 1px solid @gift-message-field-label__color;		
 				border-radius: 50%;		
 				line-height: 16px;		
 				height: 18px;		
 				padding: 1px 3px 0px 3px;		
 				overflow: initial;		
 			float: right;
-			color:#512C1D;			
+			color:@gift-message-field-label__color;			
 			}		
 		}	
 		select:not([disabled]):focus {
-			box-shadow: 0 0 3px 1px #512c1d;
+			box-shadow: 0 0 3px 1px @gift-message-field-label__color;
 		}
 
 		.cart-discount{		
@@ -550,14 +547,14 @@ content: '\f068';
 					top: 16px;		
 					font-family: 'FontAwesome';		
 					content: '\f067';		
-					border: 1px solid #512c1d;		
+					border: 1px solid @gift-message-field-label__color;		
 					border-radius: 50%;		
 					line-height: 16px;		
 					height: 18px;		
 					padding: 1px 3px 0px 3px;		
 					overflow: initial;		
 					float: right;	
-					color:#512C1D;
+					color:@gift-message-field-label__color;
 				}		
 			}		
 		}	
@@ -579,18 +576,18 @@ content: '\f068';
 					top: 16px;
 					font-family: 'FontAwesome';
 					content: '\f067';
-					border: 1px solid #512c1d;
+					border: 1px solid @gift-message-field-label__color;
 					border-radius: 50%;
 					line-height: 16px;
 					height: 18px;
 					padding: 1px 3px 0px 3px;
 					overflow: initial;
 					float: right;
-					color:#512C1D;
+					color:@gift-message-field-label__color;
 				}
 			}
 		#cart-block-giftcard-heading{
-			color: #512C1D;
+			color: @gift-message-field-label__color;
 			font-size: 18px;
 			text-transform: uppercase;
 			font-family: Futura Heavy font;
@@ -606,7 +603,7 @@ content: '\f068';
 		}		
 				
 		#block-charity-heading {		
-			color: #512C1D;		
+			color: @gift-message-field-label__color;		
 			font-size: 18px;		
 			text-transform: uppercase;		
 			font-family: Futura Heavy font;		
@@ -627,11 +624,7 @@ content: '\f068';
 			}		
 			.cart-totals .grand .mark{		
 				padding-right: 0 !important;		
-			}		
-			.checkout-methods-items .action.primary.checkout{		
-				width: 50%;		
-				float: right;		
-			}		
+			}			
 			.block > .title, .cart-totals .grand .mark, .cart-totals .grand .amount{		
 				border-top: none;		
 			}		

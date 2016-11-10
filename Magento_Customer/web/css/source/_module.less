@@ -11,11 +11,11 @@
 //
 //  Common
 //  ---------------------------------------------
-
+@collapsible-nav-title-color:#512C1D;
 & when (@media-common = true) {
 
 .block-collapsible-nav .block-collapsible-nav-title .item a{
-	color: #512C1D;
+	color: @collapsible-nav-title-color;
 }
 /*Customised by 23702*/
 
@@ -38,11 +38,11 @@
     }
 
     .block-collapsible-nav .item.current a, .block-collapsible-nav .item.current {
-        background-color: #512C1D !important;
+        background-color: @collapsible-nav-title-color !important;
     }
 
     .block-collapsible-nav .item.current a, .block-collapsible-nav .item.current > strong {
-        border-color: #512C1D !important; 
+        border-color: @collapsible-nav-title-color !important; 
         color: #fff !important;
         font-weight: 600;
     }

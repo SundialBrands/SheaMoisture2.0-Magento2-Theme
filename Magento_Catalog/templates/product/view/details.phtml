@@ -58,7 +58,8 @@
     require([
         'jquery'
     ], function($){
-        $(document).ready(function(){
+		'use strict'; 
+            $(document).ready(function(){
             setTimeout(function(){ 
                 $('.data.item.title').removeClass('active');
                 $('.data.item.content').css('display','none');
@@ -81,7 +82,8 @@
         
 
     
-        })
+        }) 
         
     });
 </script>
+		

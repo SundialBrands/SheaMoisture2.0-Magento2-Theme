@@ -29,8 +29,15 @@
     //  Category view
     .old-price,
     .old.price {
-        .lib-css(color, @text__color__muted);
+        .lib-css(color, @text__color__muted);		
     }
+	.old-price{
+		.price-wrapper{
+			> span.price {
+				text-decoration: line-through;
+			}
+		}
+	}
 
     .prices-tier {
         .price-container {
@@ -633,9 +640,9 @@
         .page-title-wrapper {
             h1 {
                 .lib-css(margin-bottom, @product-h1-margin-bottom-desktop);
-                text-transform: uppercase;
-		font-weight:600;
-		font-size:30px;
+                text-transform: capitalize;
+				font-weight:600;
+				font-size:30px;
             }
         }
 

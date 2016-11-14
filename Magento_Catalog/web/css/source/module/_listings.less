@@ -17,8 +17,11 @@
 @product-name-link__text-decoration__hover: @link__hover__text-decoration;
 @product-name-link__text-decoration__visited: @link__hover__text-decoration;
 
+@product-item__hover__background-color1: rgb(238, 234, 233);
+@product-item__hover__background-color1-boxShadow : 3px 3px 4px 0 rgba(238, 234, 233, 0.1);
+
 @product-item__hover__background-color: @color-white;
-@product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
+@product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
 //
 //  Common
@@ -109,6 +112,7 @@
                 .price-label {
                     .lib-css(color, @text__color__muted);
                     font-size: @font-size__s;
+					display:none;
                 }
             }
 
@@ -166,7 +170,8 @@
 
     .price-container {
         .price {
-            .lib-font-size(14);
+            //.lib-font-size(14);
+			font-size: 18px;
         }
 
         .price-including-tax + .price-excluding-tax,
@@ -252,8 +257,8 @@
         .products-grid & {
             &:hover,
             &.active {
-                .lib-css(background, @product-item__hover__background-color);
-                .lib-css(box-shadow, @product-item__hover__box-shadow);
+                .lib-css(background, @product-item__hover__background-color1);
+                .lib-css(box-shadow, @product-item__hover__background-color1-boxShadow);
                 border: 1px solid @color-gray-light2;
                 margin: -10px;
                 padding: 9px;
@@ -269,8 +274,8 @@
 
     .product-item-inner {
         .products-grid & {
-            .lib-css(background, @product-item__hover__background-color);
-            .lib-css(box-shadow, @product-item__hover__box-shadow);
+            .lib-css(background, @product-item__hover__background-color1);
+            .lib-css(box-shadow, @product-item__hover__background-color1-boxShadow);
             border: 1px solid @color-gray-light2;
             border-top: none;
             left: 0;
@@ -287,7 +292,8 @@
 
         .products-grid & {
             //margin: -@indent__s 0 @indent__s;
-			margin: -10px 0 0 66px;
+			//margin: -10px 0 0 66px;
+			margin: -10px 0 0 34%;
         }
 
         .actions-primary + .actions-secondary {
@@ -299,7 +305,8 @@
                 margin-right: 10px;
 
                 &:last-child {
-                    margin-right: 0;
+                    //margin-right: 0;
+					margin-right: 100%;
                 }
             }
         }
@@ -313,7 +320,7 @@
         .products-grid {
             .product-item-inner {
                 &:before {
-                    .lib-css(background, @product-item__hover__background-color);
+                    .lib-css(background, @product-item__hover__background-color1);
                     content: '';
                     height: 3px;
                     left: 0;
@@ -362,7 +369,18 @@
         }
     }
 }
-
+	.products-list {
+        .product {
+            &-item {
+                &:hover{
+                    .lib-css(background, @product-item__hover__background-color1);
+                    .lib-css(box-shadow, @product-item__hover__background-color1-boxShadow);
+                    border: 1px solid @color-gray-light2;
+                    padding: 2% 0px 0px 0px;
+                }
+            }
+        }
+    }
 //
 //  Desktop
 //  _____________________________________________

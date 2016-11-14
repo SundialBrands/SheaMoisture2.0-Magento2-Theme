@@ -1,0 +1,102 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/* @var $block \Magento\MultipleWishlist\Block\Customer\Wishlist\Management */
+?>
+<?php if ($block->getCurrentWishlist()): ?>
+    <div class="block-wishlist-management">
+
+        <div class="wishlist-select">
+            <span class="wishlist-name" data-mage-init='{"toggleAdvanced": {"toggleContainers": "#wishlists-select", "selectorsToggleClass": "active"}}' >
+                <span class="wishlist-name-label"><?php /* @escapeNotVerified */ echo __('Wish List');?></span>
+                <span class="wishlist-name-current">
+                    <?php echo $block->escapeHtml($block->getCurrentWishlist()->getName());?>
+                </span>
+            </span>
+            <ul class="wishlist-select-items" data-target="dropdown" id="wishlists-select">
+                <?php foreach ($block->getWishlists() as $wishlist): ?>
+                    <?php if ($wishlist->getId() == $block->getCurrentWishlist()->getId()): ?>
+                        <li class="current item"><span title="<?php echo $block->escapeHtml($wishlist->getName());?>"><?php echo $block->escapeHtml($wishlist->getName());?></span></li>
+                    <?php else: ?>
+                        <li class="item"><a title="<?php echo $block->escapeHtml($wishlist->getName());?>" href="<?php /* @escapeNotVerified */ echo $block->getWishlistManagementUrl($wishlist);?>"><?php echo $block->escapeHtml($wishlist->getName());?></a></li>
+                    <?php endif; ?>
+
+                <?php endforeach;?>
+                <?php if ($block->canCreateWishlists($block->getWishlists())): ?>
+                    <li class="item wishlist-add">
+                        <a href="#" id="wishlist-create-button" data-wishlist-create='{"url":"<?php /* @escapeNotVerified */ echo $block->getCreateUrl();?>"}' title="<?php /* @escapeNotVerified */ echo __('Create New Wish List') ?>" class="action add wishlist"><span><?php /* @escapeNotVerified */ echo __('Create New Wish List') ?></span></a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+
+        <div class="wishlist-title">
+            <strong><?php echo $block->escapeHtml($block->getCurrentWishlist()->getName());?></strong>
+            <a href="#" data-wishlist-edit='{"url":"<?php /* @escapeNotVerified */ echo $block->getEditUrl($block->getCurrentWishlist()->getId());?>", "name":"<?php echo $block->escapeQuote($block->getCurrentWishlist()->getName(), true);?>", "isPublic":<?php /* @escapeNotVerified */ echo $block->getCurrentWishlist()->getVisibility() ? 'true' : 'false';?>}' title="<?php /* @escapeNotVerified */ echo __('Edit Wish List')?>" class="action edit">
+                <?php /* @escapeNotVerified */ echo __('Edit')?>
+            </a>
+        </div>
+
+        <div class="wishlist-info">
+            <?php if ($block->getCurrentWishlist()->getVisibility()): ?>
+                <div class="wishlist-notice public"><?php /* @escapeNotVerified */ echo __('Public Wish List');?></div>
+            <?php else: ?>
+                <div class="wishlist-notice private"><?php /* @escapeNotVerified */ echo __('Private Wish List');?></div>
+            <?php endif; ?>
+            <span class="counter qty">
+                <?php /* @escapeNotVerified */ echo $block->getItemCount($block->getCurrentWishlist());?>
+            </span>
+        </div>
+
+        <?php if ($block->getCurrentWishlist()->getItemsCount()): ?>
+        <div class="wishlist-toolbar">
+            <div class="wishlist-toolbar-select">
+                <input type="checkbox" name="" id="wishlist-select-all" data-role="select-all" />
+                <label class="label" for="wishlist-select-all"><?php /* @escapeNotVerified */ echo __('Select all');?></label>
+            </div>
+            <div class="wishlist-toolbar-actions">
+                <div id="wishlists-move" class="wishlist-dropdown move" data-wishlist-move='{"moveSelectedUrl":"<?php /* @escapeNotVerified */ echo $block->getMoveSelectedUrl();?>", "moveItemUrl":"<?php /* @escapeNotVerified */ echo $block->getMoveItemUrl();?>"}'>
+                    <span class="action toggle" data-mage-init='{"dropdown":{}}' <?php if ($block->getCurrentWishlist()->getId() != $block->getDefaultWishlist()->getId()): ?>data-wishlist-move-selected='{"wishlistId":"<?php /* @escapeNotVerified */ echo $block->getDefaultWishlist()->getId();?>"}'<?php endif;?>><span><?php /* @escapeNotVerified */ echo __('Move Selected to Wish List');?></span></span>
+                    <ul class="items dropdown" data-target="dropdown">
+                        <?php foreach ($block->getWishlists() as $wishlist): ?>
+                            <?php if ($wishlist->getId() !== $block->getCurrentWishlist()->getId()): ?>
+                                <li class="item"><span class="action new" data-wishlist-move-selected='{"wishlistId":"<?php /* @escapeNotVerified */ echo $wishlist->getId();?>"}' title="<?php echo $block->escapeHtml($wishlist->getName());?>"><?php echo $block->escapeHtml($wishlist->getName());?></span></li>
+                            <?php endif; ?>
+                        <?php endforeach;?>
+                        <?php if ($block->canCreateWishlists($block->getWishlists())): ?>
+                            <li class="item"><span class="action new" data-wishlist-move-selected='{"new":true}' title="<?php /* @escapeNotVerified */ echo __('Create New Wish List');?>" ><span><?php /* @escapeNotVerified */ echo __('Create New Wish List');?></span></span></li>
+                        <?php endif;?>
+                    </ul>
+                </div>
+                <div id="wishlists-copy" class="wishlist-dropdown copy" data-wishlist-copy='{"copySelectedUrl":"<?php /* @escapeNotVerified */ echo $block->getCopySelectedUrl();?>", "copyItemUrl":"<?php /* @escapeNotVerified */ echo $block->getCopyItemUrl();?>"}'>
+                    <span class="action toggle" data-mage-init='{"dropdown":{}}' <?php if ($block->getCurrentWishlist()->getId() != $block->getDefaultWishlist()->getId()): ?>data-wishlist-copy-selected='{"wishlistId":"<?php /* @escapeNotVerified */ echo $block->getDefaultWishlist()->getId();?>"}'<?php endif;?>><?php /* @escapeNotVerified */ echo __('Copy Selected to Wish List');?></span></span>
+                    <ul class="items dropdown" data-target="dropdown">
+                        <?php foreach ($block->getWishlists() as $wishlist): ?>
+                            <?php if ($wishlist->getId() !== $block->getCurrentWishlist()->getId()): ?>
+                                <li class="item"><span class="action new" data-wishlist-copy-selected='{"wishlistId":"<?php /* @escapeNotVerified */ echo $wishlist->getId();?>"}' title="<?php echo $block->escapeHtml($wishlist->getName());?>"><?php echo $block->escapeHtml($wishlist->getName());?></span></li>
+                            <?php endif;?>
+                        <?php endforeach;?>
+                        <?php if ($block->canCreateWishlists($block->getWishlists())): ?>
+                            <li class="item"><span class="action new" data-wishlist-copy-selected='{"new":true}' title="<?php /* @escapeNotVerified */ echo __('Create New Wish List')?>"><span><?php /* @escapeNotVerified */ echo __('Create New Wish List')?></span></span></li>
+                        <?php endif;?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <?php endif;?>
+    </div>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "[data-role='select-all']": {
+            "Magento_MultipleWishlist/js/select-all-change": {}
+        }
+    }
+</script>

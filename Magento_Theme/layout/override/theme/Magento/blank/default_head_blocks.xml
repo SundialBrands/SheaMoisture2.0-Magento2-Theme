@@ -18,10 +18,37 @@
 		<css src="css/print.css" media="print" />
 		<css src="css/bootstrap-theme.min.css" />
 		<css src="css/fontawesome/font-awesome.min.css" />
+		<css src="css/bootstrap-tiny.css"/>
 		<!--<script src="js/bootstrap.min.js" />-->
 		<script src="js/YouTubePopUp_jquery.js" />
 		<script src="https://cdn.livefyre.com/Livefyre.js" src_type="url" />
+		<script src="js/mp_linkcode.js" />
 		<script src="js/customHead.js" />
-		<css src="css/bootstrap-tiny.css"/>
+		<!--– mp_snippet_begins -->
+		<script>
+		MP.UrlLang='mp_js_current_lang';
+		MP.SrcUrl=decodeURIComponent('mp_js_orgin_url');
+		MP.oSite=decodeURIComponent('mp_js_origin_baseUrl');
+		MP.tSite=decodeURIComponent('mp_js_translated_baseUrl');
+		MP.init();
+		window.onload = function() {
+			var langlinks = document.querySelectorAll('.langLink');
+			for (var i = 0; i < langlinks.length; i++) {
+				langlinks.item(i).onclick = function() {
+					var lang = this.getAttribute('data-lang');
+					var url = this.getAttribute('data-href');
+					var tSite = MP.tSite.replace('http://', '').replace('https://', '').replace('mage2dev', 'www');
+					url = url.replace('http://', '').replace('https://', '');
+					MP.switchLanguage(tSite.search(url) != -1 ? MP.oSite : url, lang, true);
+					return false;
+				}
+			}
+		}
+		</script>
+		<!--– mp_snippet_ends -->
+		<!--mp_easylink_begins-->
+		<script type="text/javascript" id="mpelid"
+		src="//sundialsheamoisturecom.mpeasylink.com/mpel/mpel.js" async></script>
+		<!--mp_easylink_ends-->
     </head>
 </page>

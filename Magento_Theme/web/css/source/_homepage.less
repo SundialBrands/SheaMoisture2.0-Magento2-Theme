@@ -1,25 +1,12 @@
 // /*
 // * FromServer\_homepage.less
 // */
-@discount-color: #572500;
-@discount-text: #292929;
-@font16:16px;
-@font17:17px;
-@font18:18px;
-@font20:20px;
-@font30:30px;
-@font40:40px;
-
 @community-bg: url("../images/ingridients-bg.png") no-repeat;
 @header-bg: url('../images/headertopleft_img.png') no-repeat;
 @store-config: url('../images/storeconfig.png');
 @language-flag: url('../images/flag.png'); 
-@body-color: #512C1D;
 @font-heavy: 'Futura Heavy font';		
 @font-w-normal: normal;		
-@color-SheaBrown:#512C1D;
-
-
 
 // Common Css		
 .text-right{
@@ -79,7 +66,7 @@
         left: 0px;		
         bottom: 0px;		
         right: 0px;		
-        background-color: #000;		
+        background-color: @colorBlack;		
         opacity: 0.25;		
     }
     .view-link {
@@ -89,7 +76,7 @@
         margin: 15px 0;
         font-family: 'Futura Heavy font';
         a {
-            color: #008DD4;
+            color: @view-link;
             text-decoration: underline;
         }
     }	
@@ -141,7 +128,7 @@
     .text-block {
         position: absolute;
         padding: 20px 35px;
-        background: #fff;
+        background: @colorWhite;
         text-align: center;
         font-family: Futura Heavy font;
         .sm-discount {
@@ -223,23 +210,23 @@ margin:auto;
         }
     }
     .root-block {
-        background-color: #db986f;
+        background-color: @rootBlockBackground;
         a{
-            background-color: #c67340;
+            background-color: @rootBlockBackground__link;
             padding: 7px 22px;
         }
     }
     .community-block {
-        background-color: #f9e666;
+        background-color: @communityBlockBackground;
         a{
-            background-color: #bca300;
+            background-color: @communityBlockBackground__link;
             padding: 7px 22px;
         }
     }
     .ingredients {
-        background-color: #64bd54;
+        background-color: @ingredientsBackground;
         a{
-            background-color: #38a324;
+            background-color: @ingredientsBackground__link;
             padding: 7px 22px;
         }
     }
@@ -359,7 +346,7 @@ span.cc_link {
     .product-addto-links{
         > a{
             >span{
-                color:#007bdb;
+                color:@productAddtoLinksSpanColor;
                 text-transform: capitalize !important;
             }
         }
@@ -367,7 +354,7 @@ span.cc_link {
     > a{
         >span{
             text-transform: capitalize !important;
-            color:#007bdb;
+            color:@productAddtoLinksSpanColor;
         }
     }
 }

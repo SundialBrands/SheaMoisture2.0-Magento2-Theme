@@ -1983,14 +1983,14 @@ box-shadow: none !important;
                 }
                 a {
                     .lib-link(
-                    @_link-color: @color-SheaBrown,
+                    @_link-color: @color-SheaHoverPink,
                     @_link-text-decoration: none,
-                    @_link-color-visited: @color-SheaBrown,
+                    @_link-color-visited: @color-SheaHoverPink,
                     @_link-text-decoration-visited: none,
-                    @_link-color-hover: @color-SheaBrown,
-                    @_link-text-decoration-hover: underline,
-                    @_link-color-active: @color-SheaBrown,
-                    @_link-text-decoration-active: underline
+                    @_link-color-hover: fade(@color-SheaHoverPink, 50%),
+                    @_link-text-decoration-hover: none,
+                    @_link-color-active: @color-SheaHoverPink,
+                    @_link-text-decoration-active: none
                     );
                 }
             }

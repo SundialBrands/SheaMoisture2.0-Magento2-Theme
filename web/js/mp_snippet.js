@@ -1,0 +1,18 @@
+MP.UrlLang='mp_js_current_lang';
+MP.SrcUrl=decodeURIComponent('mp_js_orgin_url');
+MP.oSite=decodeURIComponent('mp_js_origin_baseUrl');
+MP.tSite=decodeURIComponent('mp_js_translated_baseUrl');
+MP.init();
+window.onload = function() {
+	var langlinks = document.querySelectorAll('.langLink');
+	for (var i = 0; i < langlinks.length; i++) {
+		langlinks.item(i).onclick = function() {
+			var lang = this.getAttribute('data-lang');
+			var url = this.getAttribute('data-href');
+			var tSite = MP.tSite.replace('http://', '').replace('https://', '').replace('mage2dev', 'www');
+			url = url.replace('http://', '').replace('https://', '');
+			MP.switchLanguage(tSite.search(url) != -1 ? MP.oSite : url, lang, true);
+			return false;
+		}
+	}
+}

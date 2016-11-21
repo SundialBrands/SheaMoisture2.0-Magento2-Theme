@@ -26,8 +26,9 @@
     }
     .promotion-block-top {
         float: left;
-        width: 21%;
-        margin-left: -1%;
+        width: 19%;
+        margin-left: 0%;
+        padding-right: 0;
         ul {
             margin: 0;
             padding: 0;
@@ -149,10 +150,6 @@
 }
 .promotional-bottom-block2 {
     padding: 25px 0 60px;
-    /*.promo-banner {
-        float: left;
-        width: 32.6%;
-    }*/
 }
 
 .community-block {
@@ -384,6 +381,11 @@ span.cc_link {
 // DeskTop >>>>>>>>>>>>>>>>
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.promotional-bottom-block3{
+    &,.col-xs-12{
+        display: flex;
+    }
+  }
     .promotional-bottom-block2{
         .promo-banner{
         padding-right:0;
@@ -392,7 +394,7 @@ span.cc_link {
 			padding-left:0;
 		}
         .promo-banner img {
-            height: 577px;
+            height: 600px;
         }
     }
 }
@@ -415,4 +417,23 @@ span.cc_link {
 			margin-bottom:15px;
 		}
 	}
+	.promotional-bottom-block3{
+		.root-block,.community-block,.ingredients{
+			  margin-bottom: 10px;
+		}
+  }
+}
+//Large screens
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .hm-block-1 {
+      .slider-block {
+          float: left;
+          width: 80%;
+      }
+      .promotion-block-top {
+          float: left;
+          width: 21%;
+          margin-left: -1%;
+      }
+  }
 }

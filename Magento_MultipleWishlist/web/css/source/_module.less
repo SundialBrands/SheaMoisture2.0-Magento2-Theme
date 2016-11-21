@@ -11,8 +11,6 @@
 @desktop-popup-margin-left: -((@desktop-popup-width + (@popup__padding * 2)) / 2);
 @desktop-popup-position-left: 50%;
 @desktop-popup-position-top: 20%;
-@shea-brown:	#512c1d;
-@shea-red:		#ef555a;
 
 //
 //  Common
@@ -32,13 +30,13 @@
             @_dropdown-split-toggle-icon-content: @icon-down,
             @_dropdown-split-toggle-active-icon-content: @icon-up,
             @_icon-font-size: 12px,
-            @_icon-font-color: @shea-brown,
-            @_icon-font-color-hover: @shea-red,
+            @_icon-font-color: #512c1d,
+            @_icon-font-color-hover: #512c1d,
             @_icon-font-vertical-align: middle,
             @_dropdown-split-list-pointer-position: left,
             @_dropdown-split-list-min-width: 200px
             );
-            margin-right: 5%;
+            margin-right: 0%;
             vertical-align: middle;
             &:extend(.abs-dropdown-items-new all);
 
@@ -55,7 +53,7 @@
                     @_icon-font-content: @icon-wishlist-full
                     );
                     &:extend(.abs-actions-addto all);
-                    margin-right: 5px;
+                    margin-right: 4px;
 
                     &:before {
                         margin: 0;
@@ -70,9 +68,9 @@
                 &:focus,
                 &:hover {
                     //.lib-css(color, @addto-hover-color);
-					background: @shea-red;
+					/*background: #512C1D;
                     cursor: pointer;
-                    /*color: #fff;*/
+                    color: #fff;*/
                 }
             }
 
@@ -207,7 +205,7 @@
                 &.private {
                     .lib-icon-font(
                     @_icon-font-content: @icon-private,
-                    @_icon-font-color: lighten(@shea-brown, 15%),
+                    @_icon-font-color: lighten(@text__color__muted, 15%),
                     @_icon-font-vertical-align: text-bottom,
                     @_icon-font-margin: 0 @indent__xs 0 0
                     );

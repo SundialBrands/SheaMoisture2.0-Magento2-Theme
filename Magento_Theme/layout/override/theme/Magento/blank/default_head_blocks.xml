@@ -26,6 +26,7 @@
 		<script src="js/customHead.js" />
 		<!--– mp_snippet_begins -->
 		<script>
+		<![CDATA[
 		MP.UrlLang='mp_js_current_lang';
 		MP.SrcUrl=decodeURIComponent('mp_js_orgin_url');
 		MP.oSite=decodeURIComponent('mp_js_origin_baseUrl');
@@ -44,6 +45,7 @@
 				}
 			}
 		}
+		]]>
 		</script>
 		<!--– mp_snippet_ends -->
 		<!--mp_easylink_begins-->

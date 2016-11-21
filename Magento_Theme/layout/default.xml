@@ -25,45 +25,6 @@
                 <argument name="logo_img_height" xsi:type="number">43</argument>
             </arguments>
         </referenceBlock>
-<<<<<<< HEAD
-		<referenceBlock  name="header.links">
-            <block class="Magento\Framework\View\Element\Html\Link" name="storelocate.link" after="-">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Store Locator</argument>
-                        <argument name="path" xsi:type="string" translate="false">store-locator</argument>
-                        <argument name="class" xsi:type="string">store_locator</argument>
-                    </arguments>
-			</block>
-			<block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
-				<arguments>
-					<argument name="label" xsi:type="string" translate="true">Email SignUp</argument>
-					<argument name="class" xsi:type="string">createAccount</argument>
-				</arguments>
-			</block>			
-			<block class="Magento\Framework\View\Element\Html\Link" name="comcom.link" after="about-us">
-				<arguments>
-					<argument name="label" xsi:type="string" translate="true">Community Commerce</argument>
-					<argument name="path" xsi:type="string" translate="false">community-commerce</argument>
-					<argument name="class" xsi:type="string">community_commerece</argument>
-				</arguments>
-			</block>
-			<block class="Magento\Framework\View\Element\Html\Link" name="story.link" after="comunity-commerce">
-				<arguments>
-					<argument name="label" xsi:type="string" translate="true">Our Story</argument>
-					<argument name="path" xsi:type="string" translate="false">our-story</argument>
-					<argument name="class" xsi:type="string">our_story</argument>
-				</arguments>
-			</block>
-			<block class="Magento\Framework\View\Element\Html\Link" name="ingred.link" after="our-story">
-				<arguments>
-					<argument name="label" xsi:type="string" translate="true">Our Ingredients</argument>
-					<argument name="path" xsi:type="string" translate="false">our-ingredients</argument>
-					<argument name="class" xsi:type="string">our_ingredients</argument>
-				</arguments>
-			</block>         
-			<block class="Magento\Framework\View\Element\Html\Link" name="lang.link" after="store-locator">
-=======
-		
 		<block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
 			<arguments>
 				<argument name="label" xsi:type="string" translate="true">Email SignUp</argument>
@@ -108,7 +69,7 @@
 		</block>
 		<move element="storelocate.link" destination="header.links" after="-"/>
 		<block class="Magento\Framework\View\Element\Html\Link" name="motion.link" after="store-locator">
->>>>>>> 21c7315799257b53b6a339452f4d3d7913f19740
+
 				<arguments>
 					<argument name="label" xsi:type="string" translate="false">Español</argument>
 					<argument name="href" xsi:type="string" translate="false">es.sheamoisture.com</argument>

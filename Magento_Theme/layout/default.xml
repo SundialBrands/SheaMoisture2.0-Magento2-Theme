@@ -60,7 +60,7 @@
 					<argument name="class" xsi:type="string">our_ingredients</argument>
 				</arguments>
 			</block>         
-			<block class="Magento\Framework\View\Element\Html\Link" name="ingred.link" after="store-locator">
+			<block class="Magento\Framework\View\Element\Html\Link" name="lang.link" after="store-locator">
 				<arguments>
 					<argument name="label" xsi:type="string" translate="false">Español</argument>
 					<argument name="href" xsi:type="string" translate="false">es.sheamoisture.com</argument>

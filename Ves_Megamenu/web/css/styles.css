@@ -102,12 +102,11 @@
 
 .ves-megamenu li.level0 > a {
 	font-family: 'futura-pt', Futura, 'Trebuchet MS', Arial, sans-serif;
-	font-weight: 800;
+	font-weight: 700;
     position: relative;
     line-height: 45px;
     float: left;
     color: #512C1D;
-    font-weight: normal;
     text-transform: uppercase;
     transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
@@ -117,6 +116,10 @@
     padding: 0 20px;
     transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
+
+.ves-megamenu .nav-item > a i.fa {
+	display: none;
+} 
 
 .ves-megamenu .opener {
     position: absolute;
@@ -384,10 +387,12 @@
     text-transform: uppercase;
 }
 
+/* 
 .ves-megamenu li.active>a {
     background: #512C1D;
     color: #FFF;
 }
+ */
 
 .ves-menu .navigation .level0 .submenu {
     background: none;
@@ -482,7 +487,6 @@
     .navigation .ves-megamenu .level0 .submenu .submenu-right  .submenu{
         left: auto !important;
         right: 80% !important;
-        background: red;
     }
     .ves-megamenu .dynamic-content > .nav-item > .content-wrap{
         float: left;
@@ -631,8 +635,8 @@
         position: absolute;
     }
 
-    .level0 .submenu a:hover, .level0 .submenu a.ui-state-focus {
-        background: none;
+    .ves-menu .navigation .level0 .submenu a:hover, .ves-menu .navigation .level0 .submenu a.ui-state-focus {
+        background: transparent !important;
     }
 
     .ves-megamenu .level0 .submenu a {

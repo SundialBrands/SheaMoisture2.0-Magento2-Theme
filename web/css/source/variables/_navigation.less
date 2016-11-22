@@ -23,7 +23,7 @@
 @navigation-level0-item__text-decoration: none;
 
 @navigation-level0-item__active__background: '';
-@navigation-level0-item__active__border-color: @color-orange-red1;
+@navigation-level0-item__active__border-color: @secondary__color;
 @navigation-level0-item__active__border-style: solid;
 @navigation-level0-item__active__border-width: 0 0 0 8px;
 @navigation-level0-item__active__color: '';
@@ -76,7 +76,7 @@
 @navigation-desktop-level0-item__hover__text-decoration: @navigation-desktop-level0-item__text-decoration;
 
 @navigation-desktop-level0-item__active__background: '';
-@navigation-desktop-level0-item__active__border-color: @color-orange-red1;
+@navigation-desktop-level0-item__active__border-color: @secondary__color;
 @navigation-desktop-level0-item__active__border-style: solid;
 @navigation-desktop-level0-item__active__border-width: 0 0 3px;
 @navigation-desktop-level0-item__active__color: @navigation-desktop-level0-item__hover__color;
@@ -92,7 +92,7 @@
 @submenu-desktop__min-width: 230px;
 @submenu-desktop__padding: 15px 0;
 
-@submenu-desktop-arrow: true; // [true|false]
+@submenu-desktop-arrow: false; // [true|false]
 @submenu-desktop-arrow__size: 10px;
 @submenu-desktop-arrow__left: 20px;
 
@@ -102,14 +102,14 @@
 @submenu-desktop-item__color: @navigation-desktop-level0-item__color;
 @submenu-desktop-item__text-decoration: '';
 
-@submenu-desktop-item__hover__background: @secondary__color;
+@submenu-desktop-item__hover__background: transparent;
 @submenu-desktop-item__hover__border: '';
-@submenu-desktop-item__hover__color: @navigation-desktop-level0-item__hover__color;
-@submenu-desktop-item__hover__text-decoration: @navigation-desktop-level0-item__text-decoration;
+@submenu-desktop-item__hover__color: @primary__color__light;
+@submenu-desktop-item__hover__text-decoration: @none;
 
-@submenu-desktop-item__active__background: '';
-@submenu-desktop-item__active__border-color: @color-orange-red1;
+@submenu-desktop-item__active__background: transparent;
+@submenu-desktop-item__active__border-color: @secondary__color;
 @submenu-desktop-item__active__border-style: solid;
 @submenu-desktop-item__active__border-width: 0 0 0 3px;
-@submenu-desktop-item__active__color: '';
-@submenu-desktop-item__active__text-decoration: '';
+@submenu-desktop-item__active__color: @submenu-desktop-item__hover__color;
+@submenu-desktop-item__hover__text-decoration: '';

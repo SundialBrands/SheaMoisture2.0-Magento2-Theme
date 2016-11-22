@@ -86,6 +86,22 @@ a {
 	transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
+a,.alink {
+    color: @primary__color;
+    text-decoration: none;
+    
+    &:visited {
+		color: @primary__color;
+		text-decoration: none;
+	}
+	
+	&:hover, &:active {
+		color: @primary__color__light;
+		text-decoration: none;
+	}
+	
+}
+
 
 //
 //  Footer
@@ -1463,7 +1479,7 @@ max-height: 400px;
 & when (@media-common = true) {
 .page-wrapper{
 	.navigation .level0 .submenu a{
-		padding: 5px;
+		padding: 0;
 	}
 }
 .charity-details {
@@ -1767,6 +1783,14 @@ box-shadow: none !important;
         }
     }
     .minicart-wrapper{
+    	.action {
+    		border: 0;
+    		
+    		&:active, &:hover {
+    			border: 0;
+    		}
+    		
+    	}
         .action.showcart.active,.action.showcart{
             &:before{
             -webkit-font-smoothing: antialiased;

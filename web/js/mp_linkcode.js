@@ -32,7 +32,7 @@ var MP = {
 			if (url == oSite) {
 				script.src = location.protocol + '//' + tSite +'?1023749634;' + encodeURIComponent(location.href);
 			} else {
-				script.src = location.protocol + '//' + url +'?1023749632;' + encodeURIComponent(MP.SrcUrl);
+				script.src = location.protocol + '//' + url +'?1023749632;' + encodeURIComponent(MP.SrcUrl.replace('mage2dev', 'www'));
 			}
 			var target = document.getElementsByTagName('script')[0];
 			target.parentNode.insertBefore(script, target);

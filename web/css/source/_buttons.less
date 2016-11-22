@@ -39,16 +39,16 @@ a.action.primary {
 	color: #fff;
 }
 
-button, .action {
+button {
    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
     &:not(.primary) {
         /*.lib-css(box-shadow, @button__shadow);*/
         /*Customised by 23702*/
             color: @secondary__color;
-            background: @color-white;
+            background: transparent;
             font-weight: bold;
             text-transform: uppercase;
-            border: 2px solid @secondary__color;
+            border: 0;
         /*End of customisation*/
         &:active, &:hover {
             //.lib-css(box-shadow, @button__shadow-active);
@@ -56,7 +56,7 @@ button, .action {
             color: @secondary__color__light;
             font-weight: bold;
             text-transform: uppercase;
-            border: 2px solid @secondary__color__light;
+            border: 0;
         }		
     }
 }
@@ -77,8 +77,8 @@ a.action.primary {
 
 .action.primary {
     .lib-button-primary();
-     background: @color-SheaBrown;
-    border: 1px solid @color-SheaBrown;
+     background: @secondary__color;
+    border: 0;
 }
 
 }

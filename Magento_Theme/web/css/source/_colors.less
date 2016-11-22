@@ -11,8 +11,8 @@
 @color-black: #000;
 
 @color-gray19: #303030;
-@color-gray20: #512C1D;
-@color-gray34: #512C1D;
+@color-gray20: #333;
+@color-gray34: #555;
 @color-gray40: #666;
 @color-gray52: #858585;
 @color-gray55: #8c8c8c;
@@ -81,52 +81,52 @@
 @color-yellow-light2: #ffee9c;
 @color-yellow-light3: #d6ca8e;
 
-//SheaMoisture Colors
-@color-SheaBrown: #512C1D;
-
-//
-//  Color nesting
-//  ---------------------------------------------
-
-@primary__color: @color-gray20;
-@primary__color__dark: darken(@primary__color, 35%); // #000
-@primary__color__darker: darken(@primary__color, 13.5%); // #111
-@primary__color__lighter: #512C1D; // #7d7d7d
-@primary__color__light: lighten(@primary__color, 45%); // #a6a6a6
-
-@secondary__color: @color-gray91;
-@secondary__color__light: lighten(@secondary__color, 5%);
-
-@page__background-color: @color-white;
-@panel__background-color: darken(@page__background-color, 6%);
-
-@active__color: @color-orange-red1;
-@error__color: @color-red10;
-
-
 //------------------------------
 //Sheamoisture Defined Colors
 //------------------------------
 
-@color-SheaBrown:rgb(81,44,29); //#512C1D
-@color-SheaBrownOpacity: rgba(81,44,29,0.5);
+@color-SheaBrown: #512C1D
+@color-SheaBrownOpacity: fade(@color-SheaBrown,0.5);
+@color-SheaRed: #ef555a;
 @color-SheaHoverPink: rgb(239,85,90); //#ef555a
-@hoverColor:@color-SheaHoverPink;
+@hoverColor:@color-SheaRed;
 @body-color: @color-SheaBrown;
 @colorWhite: rgb(255,255,255); //#ffffff
 @colorBlack: rgb(0,0,0); //#000000
 @productName: @color-SheaBrown;
 
+
+//
+//  Color nesting
+//  ---------------------------------------------
+
+@primary__color: @color-SheaBrown;
+@primary__color__dark: darken(@primary__color, 25%);
+@primary__color__darker: darken(@primary__color, 12.5%);
+@primary__color__lighter: @primary__color;
+@primary__color__light: fade(@primary__color, 50%);
+
+@secondary__color: @color-SheaRed;
+@secondary__color__light: fade(@secondary__color, 50%);
+
+@page__background-color: @color-white;
+@panel__background-color: darken(@page__background-color, 6%);
+
+@active__color: @color-SheaRed;
+@error__color: #ff3333;
+
+
+
 //-------------------------
 // Text
 //-------------------------
 
-@textLink: @color-SheaHoverPink;
-@textLink__hover: @color-SheaBrownOpacity;
-@textLink__active: @color-SheaBrownOpacity;
-@shortDescription: @color-SheaBrown;
-@sectionTab: @color-SheaBrown;
-@view-link: rgb(0,141,212); //#008DD4
+@textLink: @secondary__color;
+@textLink__hover: @secondary__color__light;
+@textLink__active: @secondary__color__light;
+@shortDescription: @primary__color;
+@sectionTab: @primary__color;
+@view-link: @secondary__color;
 
 //-------------------------
 // Border
@@ -139,31 +139,31 @@
 //-------------------------
 // Breadcrumbs
 //-------------------------
-@activeBreadcrumb: @color-SheaBrown;
-@inactiveBreadcrumb: @color-SheaBrownOpacity;
+@activeBreadcrumb: @primary__color;
+@inactiveBreadcrumb: @primary__color__light;
 
 //-------------------------
 // Price
 //-------------------------
 
-@specialPrice: @color-SheaBrown;
-@retailPrice: @color-SheaBrownOpacity;
-@discount-color: rgb(87,37,0); //#572500
-@discount-text: rgb(41,41,41); //#292929
-@Stock: @color-SheaBrown;
+@specialPrice: @primary__color;
+@retailPrice: @primary__color__light;
+@discount-color: @primary__color__darker;
+@discount-text: @primary__color__darker;
+@Stock: @primary__color;
 
 //-------------------------
 //Rating
 //-------------------------
 
-@activeStarRating: @color-SheaBrown;
-@inactiveStarRating: @color-SheaBrownOpacity;
+@activeStarRating: @primary__color;
+@inactiveStarRating: @primary__color__light;
 
 //-------------------------
 //Qty control
 //-------------------------
 
-@QTYControl: @color-SheaHoverPink;
+@QTYControl: @secondary__color;
 
 //-------------------------
 //Button
@@ -172,9 +172,9 @@
 @buttonColor: @colorWhite;
 @buttonColor__hover: @colorWhite;
 @buttonColor__active: @colorWhite;
-@buttonBackgroundColor: @QTYControl;
-@buttonBackgroundColor__hover: @color-SheaBrownOpacity;
-@buttonBackgroundColor__active: @color-SheaBrownOpacity;
+@buttonBackgroundColor: @secondary__color;
+@buttonBackgroundColor__hover: @secondary__color__light;
+@buttonBackgroundColor__active: @secondary__color__light;
 
 //-------------------------
 //Messages

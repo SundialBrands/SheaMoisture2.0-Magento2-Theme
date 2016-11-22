@@ -25,46 +25,38 @@ button,
 a.action.primary {
     .lib-css(border-radius, @button__border-radius);
 }
-.action.primary,button{
-    background: @color-SheaBrown;
-    border: 1px solid @color-SheaBrown;
+.action.primary,button.primary{
+    background: @secondary__color;
+    border: 0;
     font-size: 24px;
-    color: rgb(255,255,255);
+    color: @color-white;
 }
 
-.action.primary:hover, .action.primary:visited, .action.primary:active, .action.primary:focus{
-	background: @color-SheaBrown;
-	border: 1px solid @color-SheaBrown;
+.action.primary:hover, .action.primary:active, .action.primary:focus, .button.primary:hover, .button.primary:active, .button.primary:focus{
+	background: @secondary__color__light;
+	border: 0;
 	color: #fff;
 }
-/*.button:hover, .button:visited, .button:active, .button:focus{
-	background: @color-SheaBrown;
-	border: 1px solid @color-SheaBrown;
-	color: #fff;
-}*/
 
 button {
     &:not(.primary) {
         /*.lib-css(box-shadow, @button__shadow);*/
         /*Customised by 23702*/
-            color: #fff;
+            color: @secondary__color;
+            background: @color-white;
             font-weight: bold;
             text-transform: uppercase;
-            border: none;
+            border: 2px solid @secondary__color;
         /*End of customisation*/
-        &:active {
+        &:active, &:hover {
             //.lib-css(box-shadow, @button__shadow-active);
-            box-shadow: inset 0 1px 0 0 #fff, inset 0 -1px 0 0 rgba(81,44,29,0.1);
-            color: #fff;
+            //box-shadow: inset 0 1px 0 0 #fff, inset 0 -1px 0 0 rgba(81,44,29,0.1);
+            color: @secondary__color__light;
             font-weight: bold;
             text-transform: uppercase;
-            border: none;
+            border: 2px solid @secondary__color__light;
         }		
     }
-}
-button:focus, button:active, button:hover {
-    background: @hoverColor;
-    color: @color-white;
 }
 
 body {

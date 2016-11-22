@@ -75,10 +75,14 @@
         overflow:hidden;
         text-align: right;
         margin: 15px 0;
-        font-family: 'Futura Heavy font';
+        font-family: @font-family__sans-serif;
+        font-weight: 700;
         a {
             color: @view-link;
-            text-decoration: underline;
+            text-decoration: none;
+            &:hover {
+            	color: @textLink__hover;
+            }
         }
     }	
     .video-link {
@@ -111,7 +115,8 @@
         text-transform: uppercase;
         margin: 25px 0;
         font-size: @font20;
-        font-family: 'Futura Heavy font';
+        font-family: @font-family__sans-serif;
+        font-weight: 700;
     }
     .best-product {
         .product-carousel {
@@ -131,7 +136,8 @@
         padding: 20px 35px;
         background: @colorWhite;
         text-align: center;
-        font-family: Futura Heavy font;
+        font-family: @font-family__sans-serif;
+        font-weight: 700;
         .sm-discount {
             font-size: @font30;
             color: @discount-color;
@@ -174,7 +180,8 @@ margin:auto;
 .promotional-bottom-block3 {
     background: @community-bg;
     background-size: 100%;
-    font-family: 'Futura Heavy font';
+    font-family: @font-family__sans-serif;
+    font-weight: 700;
     padding: 78px 0 140px;
 	height: auto;
 	overflow: hidden;
@@ -183,26 +190,28 @@ margin:auto;
     .ingredients {
         h1 {
             text-align: center;
-            font-weight: normal;
             margin: 20px 0;
             text-transform: uppercase;
         }
 
         .story {
             padding: 3px 11px 12px;
-            font-family: futura light bt;
+            font-weight: 300;
             line-height: 22px;
             font-size: @font16;
-            color: @color-SheaBrown;
+            color: @primary__color;
         }
         .link {
             padding: 0 0 20px 20px;
             a {
                 color: @color-white;
                 font-size: 12px;
-                font-family: @font-heavy;
+                font-family: @font-family__sans-serif;
+        		font-weight: 700;
                 text-transform: uppercase;
-                font-weight: @font-w-normal;
+                &:hover {
+                	color: fade(@color-white, 50%);
+                }
             }
         }
     }
@@ -254,9 +263,9 @@ span.cc_link {
         font-weight: bold;
     }
     .promise-text {
-        font-family: @font-heavy;
+        font-family: @font-family__sans-serif;
+        font-weight: 700;
         text-transform: uppercase;
-		font-weight: @font-w-normal;
     }
     span.promise-text-span {
         font-weight: bold;
@@ -265,8 +274,8 @@ span.cc_link {
     .strick-siblings{
         font-size: @font17;
         p{
-            font-family: @font-heavy;
-			font-weight: @font-w-normal;
+            font-family: @font-family__sans-serif;
+			font-weight: 700;
             margin-top:11px;
         }
     }
@@ -296,14 +305,14 @@ span.cc_link {
 .promotional-bottom-block4{
     text-align: center;
     padding: 1%;
-    color: @color-SheaBrown;
+    color: @primary__color;
     font-size: 14px;
 
     h1{
-		font-family: Futura Heavy font;
+		font-family: @font-family__sans-serif;
+        font-weight: 700;
         text-transform:uppercase;
         color: rgb(81,44,29);
-        font-weight:normal;
         font-size: 18px;
         text-align: center;
         line-height: 29.91px;

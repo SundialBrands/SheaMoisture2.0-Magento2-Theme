@@ -13,7 +13,6 @@
 
 @product-info-price: #512C1D;
 @product-h1-margin-bottom-desktop: @indent__s + @indent__xs;
-@text__color__muted: #512C1D;
 //
 //  Common
 //  _____________________________________________
@@ -24,7 +23,7 @@
 }
 	.product.data.items > .item.title > .switch
 	{
-		color:@text__color__muted !important;
+		color:@text__color !important;
 	}
     //  Category view
     .old-price,
@@ -999,7 +998,7 @@
         .counter.qty {
             //.lib-css(color, @primary__color__lighter);
 			color: @text__color__muted;
-			font-family: 'Futura Heavy font';
+			font-family: @font-family__sans-serif;
 
             &:before {
                 content: '(';
@@ -1012,7 +1011,7 @@
     }
 	.catalog-product-view .product-info-main .page-title-wrapper h1{
 		font-weight: normal;
-		font-family: 'Futura Heavy font';
+		font-family: @font-family__sans-serif;
 	}
 }
 

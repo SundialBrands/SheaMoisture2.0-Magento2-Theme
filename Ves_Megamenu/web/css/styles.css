@@ -101,7 +101,8 @@
 }
 
 .ves-megamenu li.level0 > a {
-	font-family: 'Futura Heavy font';
+	font-family: 'futura-pt', Futura, 'Trebuchet MS', Arial, sans-serif;
+	font-weight: 800;
     position: relative;
     line-height: 45px;
     float: left;

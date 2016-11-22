@@ -19,7 +19,7 @@
 @icons__font-name: 'icons-blank-theme'; // ToDo UI: we need to rename (it shouldn't use blank theme name) or move icon fonts to blank theme
 
 //  Font families
-@font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family__sans-serif: 'futura-pt', Futura, Trebuchet MS, Arial, sans-serif;
 @font-family__serif: Georgia, 'Times New Roman', Times, serif;
 @font-family__monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 
@@ -43,7 +43,7 @@
 @font-weight__light: 300;
 @font-weight__regular: 400;
 @font-weight__heavier: 500;
-@font-weight__semibold: 600;
+@font-weight__semibold: 700;
 @font-weight__bold: 700;
 
 //  Styles
@@ -87,23 +87,23 @@
 @color-SheaBrownVisited = rgba(81, 44, 29,0.7);
 @color-SheaBrownHover = rgba(81, 44, 29,0.5);
 
-@link__color: @color-SheaBrownVisited;
+@link__color: @secondary__color;
 @link__text-decoration: none;
 
 @link__visited__color: @link__color;
 @link__visited__text-decoration: none;
 
-@link__hover__color: @color-SheaBrownHover;
-@link__hover__text-decoration: underline;
+@link__hover__color: @secondary__color__light;
+@link__hover__text-decoration: none;
 
-@link__active__color: @active__color;
-@link__active__text-decoration: underline;
+@link__active__color: @secondary__color__light;
+@link__active__text-decoration: none;
 
 //
 //  Focus
 //  ---------------------------------------------
 
-@focus__color: @color-SheaBrown;
+@focus__color: @primary__color;
 @focus__box-shadow: 0 0 0px 1px @focus__color;
 
 //
@@ -139,7 +139,7 @@
 //  Headings
 //  ---------------------------------------------
 
-@heading__font-family__base: false;
+@heading__font-family__base: font-family__base;
 @heading__font-weight__base: @font-weight__light;
 @heading__line-height__base: 1.1;
 @heading__color__base: false;

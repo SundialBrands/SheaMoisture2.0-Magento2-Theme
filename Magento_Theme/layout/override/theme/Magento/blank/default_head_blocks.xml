@@ -27,6 +27,6 @@
 		<!--– mp_snippet_begins -->
 		<script src="js/mp_snippet.js" />
 		<!--– mp_snippet_ends -->
-		<script src="https://use.typekit.net/kba8lra.js"></script>
+		<script src="https://use.typekit.net/kba8lra.js" src_type="url" />
     </head>
 </page>

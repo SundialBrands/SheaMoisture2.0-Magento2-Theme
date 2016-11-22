@@ -47,7 +47,11 @@ $welcomeMessage = $block->getWelcome();
             $(document).ready(function(){
                 $('.page-header, .sections.nav-sections').wrapAll('<div class="mainHeader"></div>');
 				$('.mainHeader').after('<div class="GuttSpace"></div>') 
-
+				$('.langLink').each( function() {
+					if($(this).text() === 'Español') {
+						$(this).attr('href', 'https://es.sheamoisture.com');
+					}
+				});
             });
         
     });

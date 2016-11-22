@@ -27,8 +27,5 @@
 		<!--– mp_snippet_begins -->
 		<script src="js/mp_snippet.js" />
 		<!--– mp_snippet_ends -->
-		<!--mp_easylink_begins-->
-		<script type="text/javascript" src="//sundialsheamoisturecom.mpeasylink.com/mpel/mpel.js" async="async" src_type="url" />
-		<!--mp_easylink_ends-->
     </head>
 </page>

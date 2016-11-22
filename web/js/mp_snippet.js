@@ -6,7 +6,7 @@ MP.init();
 window.onload = function() {
 	var langlinks = document.querySelectorAll('.langLink');
 	for (var i = 0; i < langlinks.length; i++) {
-		if(!(langlinks.item(i).hasAttribute('data-href')) || langlinks.item(i).getAttribute('data-url') == '') {
+		if(!(langlinks.item(i).hasAttribute('data-href')) || langlinks.item(i).getAttribute('data-href') == '') {
 			langlinks.item(i).setAttribute('data-href', 'es.sheamoisture.com');
 		}
 		if(!(langlinks.item(i).hasAttribute('data-lang')) || langlinks.item(i).getAttribute('data-lang') == '') {

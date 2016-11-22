@@ -6,6 +6,15 @@ MP.init();
 window.onload = function() {
 	var langlinks = document.querySelectorAll('.langLink');
 	for (var i = 0; i < langlinks.length; i++) {
+		if(!(langlinks.item(i).hasAttribute('data-url')) || langlinks.item(i).getAttribute('data-url') = '') {
+			langlinks.item(i).setAttribute('data-url', 'es.sheamoisture.com');
+		}
+		if(!(langlinks.item(i).hasAttribute('data-lang')) || langlinks.item(i).getAttribute('data-lang') = '') {
+			langlinks.item(i).setAttribute('data-lang', 'es');
+		}
+		if(!(langlinks.item(i).hasAttribute('mporgnav'))) {
+			langlinks.item(i).setAttribute('mporgnav', '');
+		}
 		langlinks.item(i).onclick = function() {
 			var lang = this.getAttribute('data-lang');
 			var url = this.getAttribute('data-href');

@@ -82,7 +82,9 @@
     @font-style: normal
 );
 
-
+a {
+	transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
 
 
 //
@@ -572,7 +574,7 @@ button#product-addtocart-button {
 		width: 100%;
 		z-index: 1000;
 		min-height: 193px;
-		max-height: 193px;
+		max-height: 200px;
     }
 	.GuttSpace{
 		margin-top: 200px;
@@ -885,12 +887,19 @@ a.store_locator {
         }
     }
 
+    .navigation ul.submenu {
+    	background:@colorWhite;
+    }
+    
     .navigation ul {
-        padding: 0 8px;
         text-align:center;
-        background:@colorWhite;
         font-size: initial;
     }
+    
+    .navigation > ul {
+    	background: transparent;
+    }
+    
     .page-header {
         border: 0;
         margin-bottom: 0;
@@ -942,7 +951,7 @@ a.store_locator {
 .authorization-link{
     &:before{
         -webkit-font-smoothing: antialiased;
-        color:  @primary__color;
+        color:  inherit;
         content: '\f007';
         font-family: 'FontAwesome';
         margin: 0;
@@ -959,7 +968,7 @@ a.store_locator {
         -webkit-font-smoothing: antialiased;
         font-size: 22px;
         line-height: 21px;
-        color:  @primary__color;
+        color:  inherit;
         content: @store-config;        
         margin: 0;
         vertical-align: top;
@@ -975,7 +984,7 @@ a.store_locator {
 .createAccount{
 	&:before {
 		-webkit-font-smoothing: antialiased;
-		color:  @primary__color;
+		color:  inherit;
 		content: '\f0e0';
 		font-family: 'FontAwesome';
 		margin: 0 6px 0 0;
@@ -994,7 +1003,7 @@ a.store_locator {
         -webkit-font-smoothing: antialiased;
         font-size: 22px;
         line-height: 16px;
-        color:  @primary__color;
+        color:  inherit;
         content: @language-flag;        
         margin: 0;
         vertical-align: top;
@@ -1111,6 +1120,8 @@ div#testing{
                 float: right;
                 margin-left: auto;
 				clear:both;
+				position: relative;
+				top: -24px;
                 > li {
                     margin: 0 0 0 15px;
                     color: @primary__color;
@@ -1170,7 +1181,7 @@ div#testing{
 		margin: -2% auto 0;
 		width: 25%;
         img {
-            max-height: inherit;
+            max-height: 100px;
         }
     }
     .page-wrapper {
@@ -1530,8 +1541,7 @@ max-height: 400px;
 		color:  @primary__color;	
 	}
 	.nav-sections .navigation .level0 .submenu a:hover{
-		background:  @primary__color;
-		color: @colorWhite;
+		color:  @primary__color__light;
 	}
 	.nav-sections .navigation li:nth-child(-n+2) .submenu.dropdown-mega,.nav-sections .navigation li:nth-child(4) .submenu.dropdown-mega{
 		column-count: 2;
@@ -1708,13 +1718,13 @@ box-shadow: none !important;
                     font-family: @font-family__sans-serif;
 					font-weight: 800;
                     .lib-link(
-						@_link-color: @secondary__color,
+						@_link-color: @primary__color,
 						@_link-text-decoration: none,
-						@_link-color-visited: @secondary__color,
+						@_link-color-visited: @primary__color,
 						@_link-text-decoration-visited: none,
-						@_link-color-hover: @secondary__color__light,
+						@_link-color-hover: @primary__color__light,
 						@_link-text-decoration-hover: none,
-						@_link-color-active: @secondary__color__light,
+						@_link-color-active: @primary__color__light,
 						@_link-text-decoration-active: none
                     );
 					clear: both;

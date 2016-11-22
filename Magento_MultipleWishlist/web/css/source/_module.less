@@ -60,7 +60,13 @@
                         width: 18px;
                     }
 					span{
-						color:#007bdb;
+						color: @secondary__color;
+						transition: all 0.25s ease-in-out;
+						 &:active,
+						&:focus,
+						&:hover {
+							color: @secondary__color__light;
+						}
 					}
                 }
 

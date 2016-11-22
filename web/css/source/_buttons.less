@@ -30,6 +30,7 @@ a.action.primary {
     border: 0;
     font-size: 24px;
     color: @color-white;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 .action.primary:hover, .action.primary:active, .action.primary:focus, .button.primary:hover, .button.primary:active, .button.primary:focus{
@@ -38,7 +39,8 @@ a.action.primary {
 	color: #fff;
 }
 
-button {
+button, .action {
+   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
     &:not(.primary) {
         /*.lib-css(box-shadow, @button__shadow);*/
         /*Customised by 23702*/

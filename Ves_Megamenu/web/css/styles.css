@@ -89,7 +89,7 @@
 }
 
 .ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content {
-    margin: 20px 0;
+    margin: 20px 0 20px 20px;
 }
 
 .ves-megamenu .dropdown-menu .megamenu-header {
@@ -109,11 +109,13 @@
     color: #512C1D;
     font-weight: normal;
     text-transform: uppercase;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 .ves-megamenu .nav-item > a {
     line-height: 45px;
     padding: 0 20px;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 .ves-megamenu .opener {

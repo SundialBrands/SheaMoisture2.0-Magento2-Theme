@@ -344,6 +344,9 @@ button#product-addtocart-button {
 //  _____________________________________________
 
 @media (min-width: 768px) {
+aside.modal-popup.quickview-modal-popup.modal-slide._show{
+        z-index: 9999 !important;
+  }
 .products.wrapper:not(.grid) div.product-item-info{
   .item.product.product-item{
     padding-top: 10px;
@@ -572,11 +575,11 @@ button#product-addtocart-button {
 		max-width: 100%;
 		width: 100%;
 		z-index: 1000;
-		min-height: 193px;
-		max-height: 193px;
+		min-height: 232px;
+		max-height: 232px;
     }
 	.GuttSpace{
-		margin-top: 200px;
+		margin-top: 232px;
 	}
 	.modal-popup .modal-inner-wrap {
 		margin: 20rem auto !important;
@@ -1354,10 +1357,16 @@ max-height: 400px;
     }
     .page-wrapper .header.content{
         margin-bottom: 61px;
+		
     }
     .mainHeader{
         background-size: 425px;
+		min-height: 193px;
+		max-height: 193px;
     }
+	.GuttSpace{
+		margin-top: 200px;
+	}
     .our-promise-block {
         h1{
             font-size:40px;
@@ -1441,7 +1450,7 @@ max-height: 400px;
 	}
 	.logo{
 		width: 18%;
-        margin: 0% auto 0;
+        margin: -1% auto 0;
 	}
 }
 

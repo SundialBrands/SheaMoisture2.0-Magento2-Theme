@@ -210,6 +210,25 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  #search_autocomplete{
+    top: 31px;
+  }
+  .search-autocomplete {
+      ul {
+          &:not(:empty) {
+              background: #dbd5d1;
+              border-radius: 15px;
+          }
+
+          li {
+              &:hover,
+              &.selected {
+                  //.lib-css(background, @autocomplete-item__hover__color);
+                  background: #dbd5d1;
+              }
+          }
+      }
+  }
     .block-search {
         float: right;
         padding-left: 15px;

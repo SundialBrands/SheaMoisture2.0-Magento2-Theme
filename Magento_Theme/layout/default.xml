@@ -67,7 +67,7 @@
 				<argument name="class" xsi:type="string">store_locator</argument>
 			</arguments>		
 		</block>
-		<move element="storelocate.link" destination="header.links" after="-"/>
+		<move element="storelocate.link" destination="header.links" after="-"/>	
 		<block class="Magento\Framework\View\Element\Html\Link" name="motion.link" after="store-locator">
 				<arguments>
 					<argument name="label" xsi:type="string" translate="false">Español</argument>

@@ -89,7 +89,7 @@
 }
 
 .ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content {
-    margin: 20px 0 20px 20px;
+    margin: 20px 0;
 }
 
 .ves-megamenu .dropdown-menu .megamenu-header {
@@ -101,25 +101,19 @@
 }
 
 .ves-megamenu li.level0 > a {
-	font-family: 'futura-pt', Futura, 'Trebuchet MS', Arial, sans-serif;
-	font-weight: 700;
+	font-family: 'Futura Heavy font';
     position: relative;
     line-height: 45px;
     float: left;
     color: #512C1D;
+    font-weight: normal;
     text-transform: uppercase;
-    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 .ves-megamenu .nav-item > a {
     line-height: 45px;
     padding: 0 20px;
-    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
-
-.ves-megamenu .nav-item > a i.fa {
-	display: none;
-} 
 
 .ves-megamenu .opener {
     position: absolute;
@@ -387,12 +381,10 @@
     text-transform: uppercase;
 }
 
-/* 
 .ves-megamenu li.active>a {
     background: #512C1D;
     color: #FFF;
 }
- */
 
 .ves-menu .navigation .level0 .submenu {
     background: none;
@@ -635,8 +627,8 @@
         position: absolute;
     }
 
-    .ves-menu .navigation .level0 .submenu a:hover, .ves-menu .navigation .level0 .submenu a.ui-state-focus {
-        background: transparent !important;
+    .level0 .submenu a:hover, .level0 .submenu a.ui-state-focus {
+        background: none;
     }
 
     .ves-megamenu .level0 .submenu a {

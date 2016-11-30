@@ -8,7 +8,7 @@
 
 ?>
 <?php /** @var $block \Magento\Catalog\Block\Product\AbstractProduct */ ?>
-<?php echo $block->getReviewsSummaryHtml($block->getProduct(), false, true)?>
+<?php /** echo $block->getReviewsSummaryHtml($block->getProduct(), false, true) */?>
 <?php 
 $_product = $block->getProduct();
 $charityAvailable  = $_product->getResource()->getAttribute('charity_available')->getFrontend()->getValue($_product);

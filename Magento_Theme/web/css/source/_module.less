@@ -1274,7 +1274,7 @@ div#testing{
                     padding: inherit;
                     display:inline-block;
                     //border-right:1px solid  @primary__color;
-                    border-right: 1px solid @secondary__color__light;
+                    border-right: 1px solid fade(@color-white, 80%);
                 }
                 > li:last-child{
                     border-right: none;
@@ -1286,7 +1286,7 @@ div#testing{
                 a{
                     font-size: 14px;
                     //color:  @primary__color;
-                    color: @secondary__color__light;
+                    color: fade(@color-white, 80%);
                     &:active, &:hover {
                     	color: @color-white;
                     }

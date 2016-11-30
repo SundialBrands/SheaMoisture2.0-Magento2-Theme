@@ -128,8 +128,8 @@
         <move element="catalog-search-advanced-link" destination="footer_links" before="-"/>
         <referenceBlock name="search-term-popular-link" remove="true"/>
 		<referenceBlock name="points.balance" remove="true"/>
-
-
+		<referenceBlock name="reviews.tab" remove="true" />
+		<referenceBlock name="ask.tab" remove="true" />
         <referenceBlock name="privacy-policy-link" remove="true"/>
         <referenceBlock name="form.subscribe" remove="true"/>
         <referenceBlock name="catalog-search-advanced-link" remove="true"/>

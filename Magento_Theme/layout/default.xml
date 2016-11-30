@@ -95,13 +95,7 @@
                         </arguments>
                     </block>
                 </container>
-                <container name="footer-tags" label="Footer Tags" htmlTag="div" htmlClass="footer-tags" after="-">
-                    <block class="Magento\Cms\Block\Block" name="footer-tags">
-                        <arguments>
-                            <argument name="block_id" xsi:type="string">footer-tags</argument>
-                        </arguments>
-                    </block>
-                </container>
+                
                 <referenceBlock name="footer_links">
                     <block class="Magento\Framework\View\Element\Html\Link\Current" name="FAQ">
                         <arguments>

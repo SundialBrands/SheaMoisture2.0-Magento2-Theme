@@ -102,9 +102,9 @@
 
 .ves-megamenu li.level0 > a {
 	font-family: 'futura-pt', Futura, 'Trebuchet MS', Arial, sans-serif;
-	font-weight: 500;
+	font-weight: 700;
     position: relative;
-    line-height: 1.5em;
+    line-height: 45px;
     float: left;
     color: #512C1D;
     text-transform: uppercase;
@@ -625,12 +625,6 @@
 
     .ves-megamenu .level0 {
         float: left;
-        border-right: 1px solid;
-        line-height: 1em;
-    }
-    
-    .ves-megamenu .level0:last-child {
-    	border-right: 0;
     }
 
     .nav-sections-item-content .ves-menu {
@@ -664,7 +658,6 @@
 
     .ves-megamenu {
         position: relative;
-        float: none;
         display: inline-block;
         margin: 0;
         padding: 0;

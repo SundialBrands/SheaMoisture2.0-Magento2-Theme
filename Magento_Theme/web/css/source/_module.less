@@ -244,7 +244,7 @@ a,.alink {
             right: 0;
             margin: auto;           
         img{
-        width:auto;
+        width:100%;
         height:100%;
         }
     }
@@ -807,7 +807,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 }		
 .header.links{		
     li{		
-        font-weight: 500;		
+        font-weight: bold;		
         font-size: 12px;		
     }		
 }		
@@ -985,9 +985,10 @@ a.store_locator {
 .store_locator{
     &:before{
         -webkit-font-smoothing: antialiased;
-		font-family: 'FontAwesome';
+        font-size: 22px;
+        line-height: 21px;
         color:  inherit;
-        content: '\f041';        
+        content: @store-config;        
         margin: 0;
         vertical-align: top;
         display: inline-block;
@@ -1877,7 +1878,7 @@ box-shadow: none !important;
 
     .promotional-bottom-block4{
         p.story{
-            font-weight:500;            
+            font-weight:800;            
         }
         p.story.jtf{
             padding: 0% 5% 5% 7%;
@@ -2050,6 +2051,7 @@ box-shadow: none !important;
     //  ---------------------------------------------
     .footer.content .links a {
         font-size: 16px;
+        color: @colorMiscOne !important;
         text-transform: uppercase;
         font-weight: normal;
 		font-family: @font-family__sans-serif;

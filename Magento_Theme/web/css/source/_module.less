@@ -397,6 +397,9 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 .products-list:not(.grid) ol.product-items .product-item-actions{
 	    display: inline-block;
 }
+.nav-sections .ves-megamenu li.level0 {
+	margin: 0;
+}
 .nav-sections .ves-megamenu .dropdown-menu .subgroup.level1 > a{
 		padding-left: 20px;
 	}
@@ -627,7 +630,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 	}
     .navigation .level0 > .level-top{		
         font-family: @font-family__sans-serif;
-        font-weight: 800;	
+        font-weight: 500;	
     }		
     .breadcrumbs{		
          margin: 0 auto 25px auto;		
@@ -980,6 +983,9 @@ a.store_locator {
         overflow: hidden;
         speak: none;
         text-align: center;
+        &:active, &:hover {
+        	color: @primary__color__light;
+        }
     }
 }
 .store_locator{
@@ -1268,7 +1274,7 @@ div#testing{
                     padding: inherit;
                     display:inline-block;
                     //border-right:1px solid  @primary__color;
-                    border-right: 1px solid rgb(255,168,182);
+                    border-right: 1px solid @secondary__color__light;
                 }
                 > li:last-child{
                     border-right: none;
@@ -1280,7 +1286,10 @@ div#testing{
                 a{
                     font-size: 14px;
                     //color:  @primary__color;
-                    color: rgb(255,197,206) !important;
+                    color: @secondary__color__light;
+                    &:active, &:hover {
+                    	color: @color-white;
+                    }
                 }
                 a,
                 strong {
@@ -1540,9 +1549,13 @@ max-height: 400px;
 		color: @colorWhite;		
 		}		
 }
-.page-wrapper{.minicart-wrapper .action.showcart:hover:before, .minicart-items .action.edit:hover:before, .minicart-items .action.delete:hover:before{
-	color: rgba(81,44,29,0.8);
-}
+.page-wrapper{
+	.minicart-wrapper .action.showcart:before, .minicart-items .action.edit:before, .minicart-items .action.delete:before {
+		color: @primary__color;
+		&:active, &hover {
+			color: @primary__color__light
+		}
+	}
 }
 	// For Classification Videos
 	.cms-bytutorial{
@@ -1742,7 +1755,7 @@ box-shadow: none !important;
                     font-size: 10px;
                     font-weight:normal;
                     font-family: @font-family__sans-serif;
-					font-weight: 800;
+					font-weight: 500;
                     .lib-link(
 						@_link-color: @primary__color,
 						@_link-text-decoration: none,
@@ -1806,7 +1819,7 @@ box-shadow: none !important;
             -webkit-font-smoothing: antialiased;
             font-size: 28px;
             line-height: 31px;
-            color: rgba(81, 44, 29,0.8);
+            color: @primary__color;
             content: '\f290';
             font-family: 'FontAwesome';
             margin: 0;
@@ -1817,6 +1830,9 @@ box-shadow: none !important;
             speak: none;
             float:right;
             text-align: center;
+            	&:active, &:hover {
+            		color: @primary__color__light;
+            	}
             }
         }
     }
@@ -2053,7 +2069,7 @@ box-shadow: none !important;
         text-transform: uppercase;
         font-weight: normal;
 		font-family: @font-family__sans-serif;
-		font-weight: 800;
+		font-weight: 700;
     }
     .page-footer {
         margin-top: @indent__m;

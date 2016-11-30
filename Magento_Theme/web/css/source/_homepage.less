@@ -352,16 +352,24 @@ span.cc_link {
     .product-addto-links{
         > a{
             >span{
-                color:@productAddtoLinksSpanColor;
-                text-transform: capitalize !important;
+                color:@secondary__color;
             }
+        	&:active, &:hover {
+        		> span {
+        			color: @secondary__color__light;
+        		}
+        	}
         }
     }
     > a{
         >span{
-            text-transform: capitalize !important;
             color:@productAddtoLinksSpanColor;
         }
+    	&:active, &:hover {
+			> span {
+				color: @secondary__color__light;
+			}
+		}
     }
 }
 

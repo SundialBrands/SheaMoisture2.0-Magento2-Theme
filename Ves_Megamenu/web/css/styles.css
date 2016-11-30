@@ -113,7 +113,7 @@
 
 .ves-megamenu .nav-item > a {
     line-height: 45px;
-    padding: 0 20px;
+    padding: 0 0.5em;
     transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 

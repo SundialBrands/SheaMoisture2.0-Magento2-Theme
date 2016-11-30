@@ -244,7 +244,7 @@ a,.alink {
             right: 0;
             margin: auto;           
         img{
-        width:100%;
+        width:auto;
         height:100%;
         }
     }
@@ -807,7 +807,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 }		
 .header.links{		
     li{		
-        font-weight: bold;		
+        font-weight: 500;		
         font-size: 12px;		
     }		
 }		
@@ -985,10 +985,9 @@ a.store_locator {
 .store_locator{
     &:before{
         -webkit-font-smoothing: antialiased;
-        font-size: 22px;
-        line-height: 21px;
+		font-family: 'FontAwesome';
         color:  inherit;
-        content: @store-config;        
+        content: '\f041';        
         margin: 0;
         vertical-align: top;
         display: inline-block;
@@ -1878,7 +1877,7 @@ box-shadow: none !important;
 
     .promotional-bottom-block4{
         p.story{
-            font-weight:800;            
+            font-weight:500;            
         }
         p.story.jtf{
             padding: 0% 5% 5% 7%;
@@ -2051,7 +2050,6 @@ box-shadow: none !important;
     //  ---------------------------------------------
     .footer.content .links a {
         font-size: 16px;
-        color: @colorMiscOne !important;
         text-transform: uppercase;
         font-weight: normal;
 		font-family: @font-family__sans-serif;

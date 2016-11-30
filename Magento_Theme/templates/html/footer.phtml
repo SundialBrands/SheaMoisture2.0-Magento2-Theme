@@ -17,6 +17,55 @@
         <address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
     </div>
 </div>
+<link href="https://cdn.desk.com/assets/widget_embed_191.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="https://cdn.desk.com/assets/widget_embed_libraries_191.js" type="text/javascript"></script>
+<div id="live-chat-widget">
+	<script>                      
+		// ********************************************************************************
+		// This needs to be placed in the document body where you want the widget to render
+		// ********************************************************************************
+	
+		new DESK.Widget({ 
+				version: 1, 
+				site: 'sheamoisture.desk.com', 
+				port: '80', 
+				type: 'chat', 
+				displayMode: 1,  //0 for popup, 1 for lightbox
+				features: {  
+						offerAlways: true, 
+						offerAgentsOnline: false, 
+						offerRoutingAgentsAvailable: false,  
+						offerEmailIfChatUnavailable: false 
+				},  
+				fields: { 
+						ticket: { 
+								// desc: &#x27;&#x27;,
+				// labels_new: &#x27;&#x27;,
+				// priority: &#x27;&#x27;,
+				// subject: &#x27;&#x27;,
+				// custom_e_commerce: &#x27;&#x27;,
+				// custom_old_desk_id: &#x27;&#x27;
+						}, 
+						interaction: { 
+								// email: &#x27;&#x27;,
+				// name: &#x27;&#x27;
+						}, 
+						chat: { 
+								//subject: '' 
+						}, 
+						customer: { 
+								// company: &#x27;&#x27;,
+				// desc: &#x27;&#x27;,
+				// first_name: &#x27;&#x27;,
+				// last_name: &#x27;&#x27;,
+				// locale_code: &#x27;&#x27;,
+				// title: &#x27;&#x27;,
+				// custom_e_commerce: &#x27;&#x27;
+						} 
+				} 
+		}).render();  
+	</script>
+</div>
 <!--mp_easylink_begins-->
 <script type="text/javascript" id="mpelid"
 src="//sundialsheamoisturecom.mpeasylink.com/mpel/mpel.js" async></script>

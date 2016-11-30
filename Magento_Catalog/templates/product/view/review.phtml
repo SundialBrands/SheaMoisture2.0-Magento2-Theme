@@ -14,20 +14,12 @@ $_product = $block->getProduct();
 $charityAvailable  = $_product->getResource()->getAttribute('charity_available')->getFrontend()->getValue($_product);
 $curls =$block->getUrl('pub/media/wysiwyg');
 ?>
+<div class="communityImg" style="clear: both;">
+
 <?php if ($charityAvailable == "Yes") { ?>
-	<div class="communityImg" style="
-    clear: both;
-">
-  <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-<?php	 echo "<img src=\"".$curls."onsale.png"."\">"; ?>   
-      </div>
 	<div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">	
-<?php		echo "<img src=\"".$curls."communitycommercess.png"."\">"; ?>
+	<?php	echo "<img src=\"".$curls."communitycommercess.png"."\">"; ?>
 	</div>
-       <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12 ">
-      		<h3>Earn X points with purchase</h3>
-	  </div>
+<?php } ?>
+
 </div>
-
-  <?php } ?>
-

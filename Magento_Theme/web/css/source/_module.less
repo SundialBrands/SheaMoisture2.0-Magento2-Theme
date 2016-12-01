@@ -2283,13 +2283,13 @@ box-shadow: none !important;
 			cursor: pointer;
 			text-transform: uppercase;
 			transition: color .25s ease-in-out, background-color .25s ease-in-out;
-			&.active {
-				color: @secondary__color;
-				background: fade(@color-white, 50%);
-				&:hover {
-					color: @secondary__color__light;
-					background: @color-white;
-				}
+		}
+		&.active > div.chat-button {
+			color: @secondary__color;
+			background: fade(@color-white, 50%);
+			&:hover {
+				color: @secondary__color__light;
+				background: @color-white;
 			}
 		}
     }

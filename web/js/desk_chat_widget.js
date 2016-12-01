@@ -36,7 +36,7 @@ window.onload = function() {
 	chat_button_container.click( function(e) {
 	
 		if(jQuery(this).hasClass('active')) {
-			window.open(chat_base_url + new_chat_path, 'sundialLiveChat', 'resizable=1, status=0, toolbar=0,width="400",height="400"');
+			window.open(chat_base_url + new_chat_path, 'sundialLiveChat', 'resizable=1, status=0, toolbar=0,width=400,height=400');
 		}
 	
 	});

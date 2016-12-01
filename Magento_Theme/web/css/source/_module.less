@@ -2261,12 +2261,35 @@ box-shadow: none !important;
 		right: 0;
 		margin: 0;
 		z-index: 9999;
+		
+		//desk's orig code:
 		.assistly-widget {
 			a {
 				background-image: url(../images/chat_sprite.png) !important;
 			}
 			span {
 				background-image: url(../images/chat_sprite.png) !important;
+			}
+		}
+		
+		//new, slim, hopefully working code:
+		> div.chat-button {
+			padding: 0.5em 1em;
+			background: transparent;
+			color: @primary__color;
+			border: 2px solid;
+			border-radius: 5px;
+			margin: 1em;
+			cursor: pointer;
+			text-transform: uppercase;
+			transition: color .25s ease-in-out, background-color .25s ease-in-out;
+			&.active {
+				color: @secondary__color;
+				background: rgba(@color-white, .5);
+				&:hover {
+					color: @secondary__color__light;
+					background: @color-white;
+				}
 			}
 		}
     }

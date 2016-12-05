@@ -26,12 +26,13 @@ window.onload = function() {
     jQuery.getJSON(chat_agents_url + "?callback=?", function(data) {
 		if (data) {
 			chat_agents = data;
+			if(chat_agents.online_agents > 0) {
+				chat_button_container.addClass('active');
+			}
 		}
 	});
 	
-	if(chat_agents.online_agents > 0) {
-		chat_button_container.addClass('active');
-	}
+
 	
 	chat_button_container.click( function(e) {
 	

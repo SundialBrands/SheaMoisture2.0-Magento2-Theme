@@ -34,8 +34,16 @@
     .checkout-index-index,
     .checkout-onepage-success {
         .page-title-wrapper {
-            &:extend(.abs-visually-hidden all);
-        }
+            border: 0;
+			clip: rect(0, 0, 0, 0);
+			height: 100px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: relative;
+			width: 100%;
+			text-align: center;
+		}
     }
 
     .checkout-container {

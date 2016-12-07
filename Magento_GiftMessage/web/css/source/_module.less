@@ -102,9 +102,19 @@
             margin: 0 0 @indent__base;
         }
     }
-
+	.gift-message-summary span {
+		clear: both;
+		display: inline-table;
+		margin-right: 19px;
+	}
+	.gift-message-summary {
+		clear: both;
+		display: flex;
+	}
     .gift-summary {
         position: relative;
+		clear: both;
+		display: inline-flex;
         .actions-toolbar {
             > .secondary {
                 .action {
@@ -351,18 +361,18 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-#block-shipping .title {
-text-align: left;
+#block-shipping .title {
+text-align: left;
 }
-.cart-container .cart .update {
-margin-right: 15px;
-clear: both;
+.cart-container .cart .update {
+margin-right: 15px;
+clear: both;
 }
 
-.continue1:hover {
-text-decoration: none;
-}	.action-update:hover {
-		border: none;
+.continue1:hover {
+text-decoration: none;
+}	.action-update:hover {
+		border: none;
 	}
 .cart #shopping-cart-table thead th.col.item{
 	padding-left: 50px;
@@ -384,7 +394,7 @@ color: #FFF !important;
 .checkout-cart-index .page-title-wrapper
 {
 	text-align:center;
-	text-transform: uppercase;
+	text-transform: uppercase;
 }
 .checkout-cart-index .gift-item-block._active .title::after {
 content: '\f068';
@@ -435,7 +445,7 @@ content: '\f068';
 			text-align:left;
 		}
 	}
-	#block-giftcard-heading {
+	#block-giftcard-heading {
 		.title{
 			text-align:left;
 		}

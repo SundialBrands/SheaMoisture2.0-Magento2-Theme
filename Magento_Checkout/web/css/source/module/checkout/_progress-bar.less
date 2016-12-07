@@ -111,7 +111,7 @@
 
             &:before, // Item element
             &:after {
-                .lib-css(background, @checkout-progress-bar-item__background-color);
+                .lib-css(background, @color-SheaBrown);
                 .lib-css(height, @checkout-progress-bar-item-element__height);
                 .lib-css(margin-left, -(@checkout-progress-bar-item-element__width/2));
                 .lib-css(transition, @checkout-progress-bar-item__transition);
@@ -162,6 +162,7 @@
 
                 &:after {
                     .lib-css(font-family, @icons__font-name);
+                    .lib-css(content, @checkout-progress-bar-item-element-inner__active__content);
                 }
             }
         }
@@ -180,6 +181,7 @@
 
                 &:after {
                     .lib-css(font-family, @icons__font-name);
+                    .lib-css(content, @checkout-progress-bar-item-element-inner__active__content);
                 }
             }
         }

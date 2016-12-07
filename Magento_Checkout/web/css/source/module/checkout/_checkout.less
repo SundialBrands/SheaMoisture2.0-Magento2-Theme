@@ -29,21 +29,28 @@
 
     /*.logo {
 	margin: 0px auto 25px 27% !important;
-    }*/	
+    }*/
 
+	.checkout-index-index .page-main > .page-title-wrapper .page-title{		
+		text-transform: uppercase;		
+    	font-weight: 900;		
+   		text-align: center;		
+    	font-size: 42px;		
+    	display: block;		
+	}
     .checkout-index-index,
     .checkout-onepage-success {
         .page-title-wrapper {
             border: 0;
-			clip: rect(0, 0, 0, 0);
-			height: 100px;
-			margin: -1px;
-			overflow: hidden;
-			padding: 0;
-			position: relative;
-			width: 100%;
+			clip: rect(0, 0, 0, 0);		
+			height: 100px;		
+			margin: -1px;		
+			overflow: hidden;		
+			padding: 0;		
+			position: relative;		
+			width: 100%;		
 			text-align: center;
-		}
+        }
     }
 
     .checkout-container {
@@ -124,10 +131,13 @@ color:#512C1D !important;
 background: #512c1d;
 }
 .opc-progress-bar-item._active > span:before {
-	background: #512c1d !important;
+	background: @color-gray-middle1 !important;
+}
+.opc-progress-bar-item._active > span {		
+	color: @color-gray-middle1 !important;		
 }
 .opc-progress-bar-item._active:before {
-	background: #512c1d !important;
+	background: @color-gray-middle1 !important;
 }
     .opc-wrapper {
         &:extend(.abs-add-box-sizing-desktop-m all);

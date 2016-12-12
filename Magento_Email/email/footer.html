@@ -17,25 +17,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    <p><a href="#">{{trans "About Us"}}</a></p>
-                                    <p><a href="#">{{trans "Customer Service"}}</a></p>
-                                </td>
-                                <td>
-                                    {{depend store_phone}}
-                                        <p class="phone">
-                                            {{trans '<a href="tel:%store_phone">%store_phone</a>' store_phone=$store_phone |raw}}
-                                        </p>
-                                    {{/depend}}
-                                    {{depend store_hours}}
-                                        <p class="hours">
-                                            {{trans 'Hours of Operation:<br /><span class="no-link">%store_hours</span>.' store_hours=$store_hours |raw}}
-                                        </p>
-                                    {{/depend}}
-                                </td>
-                                <td>
-                                    <p class="address">
-                                        {{var store.getFormattedAddress()|raw}}
-                                    </p>
+                                    <p><a href="http://www.sheamoisture.com/our-story">{{trans "Our Story"}}</a></p>
+                                    <p><a href="http://www.sheamoisture.com/contact-us">{{trans "Contact Us"}}</a></p>
                                 </td>
                             </tr>
                         </table>

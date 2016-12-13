@@ -21,6 +21,7 @@
 		<css src="css/bootstrap-tiny.css"/>
 		<!--<script src="js/bootstrap.min.js" />-->
 		<script src="js/YouTubePopUp_jquery.js" />
+		<script src ="js/code.jqueryui.js"/>
 		<script src="https://cdn.livefyre.com/Livefyre.js" src_type="url" />
 		<script src="js/mp_linkcode.js" />
 		<script src="js/customHead.js" />

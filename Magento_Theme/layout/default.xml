@@ -25,9 +25,10 @@
                 <argument name="logo_img_height" xsi:type="number">43</argument>
             </arguments>
         </referenceBlock>
-		<block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
+		<block class="Magento\Framework\View\Element\Html\Link" name="register-link">
 			<arguments>
 				<argument name="label" xsi:type="string" translate="true">Email SignUp</argument>
+				<argument name="path" xsi:type="string" translate="false">email-signup</argument>
 				<argument name="class" xsi:type="string">createAccount</argument>
 			</arguments>
 		</block>			

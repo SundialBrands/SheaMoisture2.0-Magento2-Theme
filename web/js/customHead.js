@@ -19,6 +19,7 @@ require([
  					}
  				}
  			});
-
+			$( ".terms_of_use" ).accordion();
+			$(".terms_of_use_div").css('height','auto !important');
  		});
     });

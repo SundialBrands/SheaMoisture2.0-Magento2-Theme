@@ -18,9 +18,16 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-.fotorama-item:hover {
-    cursor: pointer;
-}
+	#BVRRContainer .bv-cv2-cleanslate .bv-core-container-94 h2.bv-action-bar-header { 
+		text-transform: capitalize !important; 
+	} 
+	.bv-cv2-cleanslate .bv-core-container-94 .bv-action-bar-header { 
+		float: left!important; 
+		text-transform: capitalize !important; 
+	}
+	.fotorama-item:hover {
+		cursor: pointer;
+	}
 	.product.data.items > .item.title > .switch
 	{
 		color:@text__color !important;
@@ -541,6 +548,7 @@
 
         .action.tocart {
             border-radius: 0;
+			text-transform: uppercase;
         }
 
         .subtitle {
@@ -580,9 +588,8 @@
 		height:auto;
 		overflow:hidden;
 	}
-	
-	button#product-addtocart-button {
-		text-transform: uppercase;
+	.box-tocart button {
+		text-transform: uppercase;
 	}
 	
 }
@@ -1015,7 +1022,7 @@
         }
     }
 	.catalog-product-view .product-info-main .page-title-wrapper h1{
-		font-weight: normal;
+		font-weight: bold;
 		font-family: @font-family__sans-serif;
 	}
 }

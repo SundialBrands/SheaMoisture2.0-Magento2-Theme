@@ -102,6 +102,30 @@
                     </block>
                 </container>
                 <referenceBlock name="footer_links">
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Press">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Press</argument>
+                            <argument name="path" xsi:type="string">press</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Events">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Events</argument>
+                            <argument name="path" xsi:type="string">events</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Retail Partners">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Retail Partners</argument>
+                            <argument name="path" xsi:type="string">retail-partners</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Contact Us">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Contact Us</argument>
+                            <argument name="path" xsi:type="string">contact-us</argument>
+                        </arguments>
+                    </block>
                     <block class="Magento\Framework\View\Element\Html\Link\Current" name="FAQ">
                         <arguments>
                             <argument name="label" xsi:type="string">FAQ</argument>

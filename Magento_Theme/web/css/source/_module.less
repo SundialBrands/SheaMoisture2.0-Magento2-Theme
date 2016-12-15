@@ -830,7 +830,8 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
             color: @primary__color;		
         }		
         .action:hover{		
-             background:none;		
+             background:none;
+             color: @primary__color__light;
         }		
         .action:before{		
             font-weight: 700;		
@@ -839,6 +840,9 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 		a.page {
 			//color: @primary__color;
 			color: @secondary__color;
+			&:hover, &:active {
+				color: @secondary__color__light;
+			}
 		}	
     }		
 }		

@@ -45,11 +45,6 @@
               <argument name="block_id" xsi:type="string">promotional-bottom-block1</argument>
               </arguments>
             </block>        
-            <block class="Magento\Cms\Block\Block" name="our-promise-block" after="promotional-bottom-block1">
-              <arguments>
-              <argument name="block_id" xsi:type="string">our-promise-block</argument>
-              </arguments>
-            </block>
         </referenceContainer>
     </body>
 </page>

@@ -20,8 +20,9 @@
         left:0px;
     }
 }
-
-
+div#quickview-gallery-placeholder{
+	pointer-events: none;
+}
 #quickview-loader.loading-mask{
     position:absolute;
 }

@@ -110,9 +110,29 @@
             }
         }
     }
-
+	.modes span {
+		display: none;
+	}
+	.modes-mode:before {
+		-webkit-font-smoothing: antialiased;
+		font-size: 16px;
+		line-height: inherit;
+		color: #512c1d;
+		content: '\e60d';
+		font-family: 'luma-icons';
+		vertical-align: middle;
+		display: inline-block;
+		font-weight: normal;
+		overflow: hidden;
+		speak: none;
+		padding: 4px;
+		text-align: center;
+	}
+	.mode-list:before {
+		content: '\e60b';
+	}
     .modes {
-        display: none;
+        display: block;
     }
 
     .limiter {

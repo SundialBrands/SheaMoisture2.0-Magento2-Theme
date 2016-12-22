@@ -12,7 +12,13 @@ $product = $item->getProduct();
 ?>
 
 <?php if ($product->isVisibleInSiteVisibility()): ?>
+<<<<<<< HEAD
     <a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getItemConfigureUrl($item) ?>">
         <span><?php /* @escapeNotVerified */ //echo __('Edit') ?></span>
     </a>
+=======
+    <!--<a class="action edit" href="<?php /* @escapeNotVerified */ //echo $block->getItemConfigureUrl($item) ?>">
+        <span><?php /* @escapeNotVerified */ //echo __('Edit') ?></span>
+    </a>-->
+>>>>>>> 0a7a5e72324ba92e5d0533119499cb33e77ba9c0
 <?php endif ?>

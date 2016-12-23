@@ -418,8 +418,9 @@
                 &:extend(.abs-blocks-2columns all);
                 margin-bottom: @indent__base;
                 &:nth-last-child(1),
-                &:nth-last-child(2) {
+                &:nth-last-child(n+1) {
                     margin-bottom: 0;
+					float: left;
                 }
             }
         }

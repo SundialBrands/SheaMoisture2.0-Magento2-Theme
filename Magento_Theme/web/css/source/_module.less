@@ -714,6 +714,11 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 		}
 	}
 	// For Classification Videos
+	.cms-bytutorial .video-link .gallery p {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
 	.cms-bytutorial{
 		.video-link {
 				p{
@@ -1671,6 +1676,35 @@ max-height: 400px;
 //  _____________________________________________
 
 & when (@media-common = true) {
+.continue1 {
+	text-align: center;
+	background-image: none;
+	background: #1979c3;
+	border: 1px solid #1979c3;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'futura-pt', Futura, Trebuchet MS, Arial, sans-serif;
+	font-weight: 700;
+	box-sizing: border-box;
+	vertical-align: middle;
+	background: #ef555a;
+	margin-bottom: 6px;
+	border: 0;
+	border-radius: 2px;
+	width: 100%;
+	line-height: 2.2rem;
+	padding: 14px 17px;
+	font-size: 1.8rem;
+}
+.page-wrapper .quickview-button, .modal-popup .quickview-button, .page-wrapper .action.primary, .modal-popup .action.primary, .page-wrapper button#product-addtocart-button, .modal-popup button#product-addtocart-button, .page-wrapper .action.continue1, .modal-popup .action.continue1, .page-wrapper .cart button.action.update, .modal-popup .cart button.action.update
+{
+	text-align:center;
+}
+.multicheckout .action.primary, .order-review-form .action.primary, .bundle-actions .action.primary.customize, .bundle-options-container .block-bundle-summary .box-tocart .action.primary, .cart-summary .checkout-methods-items .action.primary.checkout, .block-minicart .block-content > .actions > .primary .action.primary, .methods-shipping .actions-toolbar .action.primary, .block-authentication .action.action-register, .block-authentication .action.action-login, .checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary, .form-address-edit .actions-toolbar .action.primary
+{
+	text-align:center;
+}
 .page-wrapper{
 	.navigation .level0 .submenu a{
 		padding: 0;
@@ -2089,6 +2123,7 @@ box-shadow: none !important;
             display: block;
             max-height: 50px;
             max-width: 100%;
+			margin: 0 auto;
         }
         .page-print & {
             display: table;

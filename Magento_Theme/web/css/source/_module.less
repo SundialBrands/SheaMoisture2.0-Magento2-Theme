@@ -279,12 +279,7 @@ ul, ol {
 .page-footer .footer.content{
         padding-top: 0;
 }
-.products-grid  div.product-item-info .quickview-button{
-       position: static;
-       display: block !important;
-       transform: none;
-    padding: 5px;
-}
+
 
 //EoB
 
@@ -2859,10 +2854,26 @@ box-shadow: none !important;
 		text-align: center;
 	}	
 	//BOD
+	.page-wrapper.IContainer .products-grid  div.product-item-info .quickview-button{
+        position: static;
+        display: block !important;
+        transform: none;
+		padding: 5px;
+	}
+	.page-wrapper.IContainer .products-grid .product-item-info:not(:hover):not(.active) .product-item-inner{
+		clip: auto;
+		border: 0;
+		margin: 0;
+		overflow: visible;
+		padding: 0;
+		position: static;
+		background: #fff;
+		box-shadow: none;
+	}
 	.page-wrapper.IContainer .page-header .panel.header{
 			display: none;
 			}
-       .page-wrapper.IContainer a.logo{
+       .page-wrapper.IContainer .logo{
               position: absolute;
               top: 0;
               right: 0;
@@ -2879,9 +2890,18 @@ box-shadow: none !important;
 			width: 75%;
 			white-space: nowrap;
 	   }
+	   .page-wrapper.IContainer .actions-primary,.product.actions.product-item-actions .actions-primary + .actions-secondary {
+                float: left;
+}
+	.page-wrapper.IContainer .product.actions.product-item-actions .actions-primary + .actions-secondary{
+                margin-top: 3%;
+    margin-left: 5px;
+    display: inline-block;
+}
 
-.toolbar-products .pages .pages-items a.page span{
-	color:#512c1d !important;
+
+.toolbar-products .pages .pages-items a.page span, .nav-sections .header.links li > a{
+	color:@color-SheaBrown !important;
 }
 //EoB
 }

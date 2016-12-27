@@ -19,5 +19,8 @@ require([
  					}
  				}
  			});
+			if($('.nav-toggle').css('display') == 'block'){
+                $('.page-wrapper').addClass('IContainer');
+			}
  		});
     });

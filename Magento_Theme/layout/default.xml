@@ -82,13 +82,14 @@
 		<!-- Footer -->
         <referenceContainer name="footer-container">
             <container name="footer-content-customised" htmlTag="div" htmlClass="footer-content-customised" before="-">
-                <container name="footer-top" label="Footer Top" htmlTag="div" htmlClass="footer-top page-main sheamoisture_footer_contents" before="-">
-                    <block class="Magento\Cms\Block\Block" name="footer-content-top">
+                <block class="Magento\Cms\Block\Block" name="footer-content-top">
                         <arguments>
                             <argument name="block_id" xsi:type="string">footer-content-top</argument>
                         </arguments>
-                    </block>
-                </container>
+                </block>
+                <!-- <container name="footer-top" label="Footer Top" htmlTag="div" htmlClass="footer-top page-main sheamoisture_footer_contents" before="-">
+
+                </container> -->
                 <container name="footer-bottom" as="footer content" label="Footer Bottom" htmlTag="div" htmlClass="footer content" after="-">
                     <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
                         <arguments>

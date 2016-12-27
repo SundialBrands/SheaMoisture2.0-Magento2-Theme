@@ -32,7 +32,7 @@
         <div class="actions">
 			 <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
-                    class="action primary tocart col-lg-5 col-md-4 col-sm-12 col-xs-12"
+                    class="tocart col-lg-5 col-md-4 col-sm-12 col-xs-12"
                     id="product-addtocart-button">
                 <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
             </button>
@@ -99,6 +99,14 @@ jQuery("div#QtyBox").append('<input type="button" value="&#xf067;" id="add1" cla
                 return false;
             }
         });
+		$('.buynow').on('click',function(){
+	$(this).html('Processing...');
+	});
+	$('.tocart').on('click',function(){
+	$(this).find('span').html('Adding..')
+	setTimeout(function(){   $('.tocart').find('span').html('Add to Cart') }, 5000);
+
+});
     });
 </script>
 <?php else : ?>

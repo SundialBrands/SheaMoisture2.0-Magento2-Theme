@@ -27,7 +27,9 @@
             z-index: 1;
         }
     }
-
+	.category-description iframe{
+        width: 100% !important;
+	}
     .toolbar {
         &:extend(.abs-add-clearfix all);
         margin-bottom: @indent__l;
@@ -62,6 +64,7 @@
 
         &-products {
             .lib-css(background-color, @toolbar-background);
+			clear: both;
 
             .pages {
                 display: none;

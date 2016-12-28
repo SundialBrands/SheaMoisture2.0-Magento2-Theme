@@ -543,6 +543,14 @@ ul.items.pages-items a.page, ul.items.pages-items a.page:visited, ul.items.pages
 //  _____________________________________________
 
 @media (min-width: 768px) {
+.page-wrapper:not(.IContainer) .submenu.dropdown-mega.animated{
+	    padding-top: 15px;
+}
+.page-wrapper:not(.IContainer) .ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content{
+	clear: both;
+    float: none;
+    margin-top: 0;
+}
 .checkout-cart-index .actions-toolbar .charity {
 	clear: both;
 	margin-top: 4px;
@@ -3044,6 +3052,19 @@ height: auto;
 }
 .customer-account-index .page-wrapper.IContainer .block-wishlist .product-item-actions .actions-primary + .actions-secondary > .action:last-child{
 	margin-right:0;
+}
+.page-wrapper.IContainer .nav-sections .navigation .level0 .submenu a{
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+	line-height: 1.5;
+}
+.page-wrapper.IContainer .ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content{
+	margin-left:0;
+}
+.page-wrapper.IContainer .ves-megamenu .dropdown-menu .subgroup.level1 > .submenu {
+    padding-left: 0;
 }
 //EoB
 }

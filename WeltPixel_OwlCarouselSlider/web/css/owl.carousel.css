@@ -237,9 +237,9 @@
 	content: "";
 	border-top: 2px solid #000;
 	transform: rotate(40deg);
-	-webkit-transform: rotate(-40deg);
-	-ms-transform: rotate(-40deg);
-	-moz-transform: rotate(-40deg);
+	-webkit-transform: rotate(40deg);
+	-ms-transform: rotate(40deg);
+	-moz-transform: rotate(40deg);
 	border-radius: 20px;
 	text-indent: 0;
 }
@@ -275,9 +275,9 @@
 	content: "";
 	border-top: 2px solid #000;
 	transform: rotate(40deg);
-	-webkit-transform: rotate(-40deg);
-	-ms-transform: rotate(-40deg);
-	-moz-transform: rotate(-40deg);
+	-webkit-transform: rotate(40deg);
+	-ms-transform: rotate(40deg);
+	-moz-transform: rotate(40deg);
 	border-radius: 20px;
 }
 .owl-theme .owl-controls .owl-nav [class*=owl-].owl-next:after {

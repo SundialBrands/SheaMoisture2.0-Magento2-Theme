@@ -43,7 +43,7 @@
         .page-title-wrapper {
             border: 0;
 			clip: rect(0, 0, 0, 0);		
-			height: 100px;		
+			height: auto;		
 			margin: -1px;		
 			overflow: hidden;		
 			padding: 0;		
@@ -52,7 +52,9 @@
 			text-align: center;
         }
     }
-
+	opc-estimated-wrapper{
+		clear: both;
+	}
     .checkout-container {
         &:extend(.abs-add-clearfix all);
         .lib-css(margin, 0 0 @checkout-wrapper__margin);

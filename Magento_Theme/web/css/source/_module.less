@@ -545,6 +545,9 @@ ul.items.pages-items a.page, ul.items.pages-items a.page:visited, ul.items.pages
 //  _____________________________________________
 
 @media (min-width: 768px) {
+.nav-sections .navigation .level0 .submenu a{
+	width: 150px;
+}
 .checkout-cart-index #block-charity .primary{
 	width: 100%;
 }
@@ -1737,6 +1740,11 @@ max-height: 400px;
 //  _____________________________________________
 
 & when (@media-common = true) {
+.nav-sections .navigation .level0 .submenu a{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .continue1 {
 	text-align: center;
 	background-image: none;

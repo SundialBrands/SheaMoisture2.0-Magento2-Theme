@@ -2502,18 +2502,7 @@ box-shadow: none !important;
 		font-family: @font-family__sans-serif;
 		font-weight: 700;
     }
-    .page-footer {
-        margin-top: @indent__m;
-
-        .footer-content-customised{            
-            margin:0 auto;
-            background-image: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png');
-                background-repeat: no-repeat;
-                background-size: 400px 285px, 652px 300px;
-                background-position: left bottom, right bottom;
-        }
-    }
-
+    
     .footer {
         &.content {
             text-align:center;
@@ -2559,16 +2548,37 @@ box-shadow: none !important;
         }
     }
 
-    .copyright{
-        text-transform: uppercase;
-        text-align: center;
-        color: fade(@color-white, 75%);
-        font-size: 16px;
-        background-color: transparent;
-        width:100%;
-        background: transparent !important;
-        display: block;
+    
+    .page-footer {
+        margin-top: @indent__m;
+
+        .footer-content-customised{            
+            margin:0 auto;
+            background-image: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png');
+			background-repeat: no-repeat;
+			background-size: 400px 285px, 652px 300px;
+			background-position: left bottom, right bottom;
+			background-color: @secondary__color;
+			.content {
+				height: auto;
+				background-color: @secondary__color;
+				padding: 1em 0;
+			}
+			
+			.copyright{
+				text-transform: uppercase;
+				text-align: center;
+				color: fade(@color-white, 75%);
+				font-size: 16px;
+				background-color: transparent;
+				width:100%;
+				background: transparent !important;
+				display: block;
+			}
+			
+        }
     }
+
 
     .page-header,
     .page-footer {

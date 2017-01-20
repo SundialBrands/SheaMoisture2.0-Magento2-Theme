@@ -61,6 +61,7 @@
     });
 	require(['jquery', 'jquery/ui'], function($){ 
 		$('#buy-now').click(function () {
+			$(this).attr("disabled", true);
 			var form = $(".product-add-form form");
 			var widget = form.catalogAddToCart({
 					bindSubmit: false

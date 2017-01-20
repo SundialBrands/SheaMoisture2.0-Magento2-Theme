@@ -545,6 +545,9 @@ ul.items.pages-items a.page, ul.items.pages-items a.page:visited, ul.items.pages
 //  _____________________________________________
 
 @media (min-width: 768px) {
+.nav-sections .navigation .level0 .submenu a{
+	width: 150px;
+}
 .checkout-cart-index #block-charity .primary{
 	width: 100%;
 }
@@ -1737,6 +1740,11 @@ max-height: 400px;
 //  _____________________________________________
 
 & when (@media-common = true) {
+.nav-sections .navigation .level0 .submenu a{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .continue1 {
 	text-align: center;
 	background-image: none;
@@ -1996,7 +2004,10 @@ max-height: 400px;
 //  _____________________________________________
 
 & when (@media-common = true) {
-
+	
+      ol.terms_of_use {
+          list-style-position: inherit;
+       }
 	.newsletter_email_sign-up {
 		margin: 0 auto;
 		float: none;
@@ -2299,6 +2310,7 @@ box-shadow: none !important;
         .newsletter_jtf {
             width: 80%;
             margin: 9%;
+            margin-bottom: 0;
         }
         .block.newsletter input {
             border: 1px solid  @primary__color;
@@ -2493,27 +2505,13 @@ box-shadow: none !important;
 		font-family: @font-family__sans-serif;
 		font-weight: 700;
     }
-    .page-footer {
-        margin-top: @indent__m;
-
-        .footer-content-customised{            
-            margin:0 auto;
-            background-image: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png');
-                background-repeat: no-repeat;
-                background-size: 400px 285px, 652px 300px;
-                background-position: left bottom, right bottom;
-        }
-    }
-
+    
     .footer {
         &.content {
             text-align:center;
-            padding-top:1%;
-            padding-bottom:1%;
-             background: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png') @colorMiscTwo;
-                background-repeat: no-repeat;
-                background-size: 400px 285px, 652px 300px;
-                background-position: left bottom, right bottom;
+            height: 0;
+            padding: 0;
+             background: transparent;
             //background: @colorMiscTwo;
             //margin-top: 25px;
             border-top: 1px solid @footer-links-separator-border-color;
@@ -2553,15 +2551,36 @@ box-shadow: none !important;
         }
     }
 
-    .copyright{
-        text-transform: uppercase;
-        text-align: center;
-        color: fade(@color-white, 75%);
-        font-size: 16px;
-        background-color: transparent;
-        width:100%;
-        background: transparent !important;
+    
+    .page-footer {
+        margin-top: @indent__m;
+
+        .footer-content-customised{            
+            margin:0 auto;
+            background-image: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png');
+			background-repeat: no-repeat;
+			background-size: 400px 285px, 652px 300px;
+			background-position: left bottom, right bottom;
+			> .content {
+				height: auto;
+				background-color: @secondary__color;
+				padding: 1em 0;
+			}
+			
+			.copyright{
+				text-transform: uppercase;
+				text-align: center;
+				color: fade(@color-white, 75%);
+				font-size: 16px;
+				background-color: transparent;
+				width:100%;
+				background: transparent !important;
+				display: block;
+			}
+			
+        }
     }
+
 
     .page-header,
     .page-footer {

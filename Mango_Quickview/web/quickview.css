@@ -15,7 +15,9 @@
         opacity: 1 !important;
     }
     
-    
+	button#product-addtocart-button{
+	   white-space: nowrap;
+	}
     .modal-popup.quickview-modal-popup.modal-slide{
         left:0px;
     }

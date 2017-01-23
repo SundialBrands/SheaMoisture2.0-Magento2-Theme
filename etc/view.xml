@@ -76,7 +76,10 @@
                 <width>140</width>
                 <height>140</height>
             </image>
-            <image id="product_page_image_large" type="image"/>
+            <image id="product_page_image_large" type="image">
+            	<width>768</width>
+                <height>1080</height>
+            </image>
             <image id="product_page_image_medium" type="image">
                 <width>700</width>
                 <height>560</height>
@@ -90,8 +93,8 @@
                 <height>560</height>
             </image>
             <image id="product_page_main_image_default" type="image">
-                <width>700</width>
-                <height>560</height>
+                <width>768</width>
+                <height>1080</height>
             </image>
             <image id="product_page_more_views" type="thumbnail">
                 <width>88</width>

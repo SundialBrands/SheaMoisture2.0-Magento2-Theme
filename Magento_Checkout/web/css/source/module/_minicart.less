@@ -127,7 +127,8 @@
         .block-minicart {
             .lib-css(padding, 25px @minicart__padding-horizontal);
             right: 0;
-            width: 320px;            
+            width: 320px;
+            z-index: 9999;        
 
             .block-title {
                 display: none;
@@ -437,7 +438,6 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .minicart-wrapper {
         margin-left: 13px;
-
         .block-minicart {
             right: -15px;
             width: 390px;

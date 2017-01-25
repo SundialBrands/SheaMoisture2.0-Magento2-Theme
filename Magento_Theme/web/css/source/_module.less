@@ -266,6 +266,15 @@ ul, ol {
 }
 
 //BOD
+.minicart-wrapper.active{
+    float: right;
+    text-align: right;
+    .mage-dropdown-dialog{
+        position: absolute;
+        right: 0px;
+    }
+}
+
 .nav-sections .header.links li.greet.welcome {
     border-top: none;
 }
@@ -348,6 +357,14 @@ ul, ol {
 	clear: both;
 	margin-top: 4px;
 	min-width: 100%;
+}
+.minicart-wrapper.active{
+    float: right;
+    text-align: right;
+    .mage-dropdown-dialog{
+        position: absolute;
+        right: 0px;
+    }
 }
 
 .product-item-actions {
@@ -824,12 +841,13 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 	.mainHeader{
 	    background: url(../images/headertopleft_img.png) no-repeat @colorWhite;
 	    background-size: 285px;
-           position: fixed;
+        position: fixed;
 		max-width: 100%;
 		width: 100%;
 		z-index: 1000;
 		min-height: 232px;
 		max-height: 232px;
+        top: 0px;
     }
 	.GuttSpace{
 		margin-top: 232px;
@@ -1110,7 +1128,7 @@ a.store_locator {
         .banner_str_img{
             max-width: 100%;
             float: left;
-            margin-top: -10px;
+            margin-top: 0px;
 			font-size:10px;
 			width:25%;
 			line-height: 1;
@@ -1171,7 +1189,7 @@ a.store_locator {
            // padding-bottom: @indent__s;
            // padding-top: @indent__s;
             padding-bottom: 20px;
-            padding-top: 15px;
+            padding-top: 10px;
             background: @header-bg;
             text-transform: uppercase;
             background-size: 382px;
@@ -1375,7 +1393,7 @@ div#testing{
                 margin-left: auto;
 				clear:both;
 				position: relative;
-				top: -24px;
+				top: -10px;
                 > li {
                     margin: 0 0 0 15px;
                     color: @primary__color;
@@ -1744,6 +1762,9 @@ max-height: 400px;
 	white-space: nowrap;
 	/*overflow: hidden;
 	text-overflow: ellipsis;*/
+}
+.product-options-bottom button#product-addtocart-button {
+    white-space: nowrap;
 }
 .continue1 {
 	text-align: center;

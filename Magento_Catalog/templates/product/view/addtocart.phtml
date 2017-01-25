@@ -9,7 +9,7 @@
 /** @var $block \Magento\Catalog\Block\Product\View */
 ?>
 <?php $_product = $block->getProduct(); ?>
-<?php $buttonTitle = __('Add to Cart'); ?>
+<?php $buttonTitle = __('Add to Bag'); ?>
 <?php if ($_product->isSaleable()): ?>
 <div class="box-tocart">
     <div class="fieldset">
@@ -104,7 +104,7 @@ jQuery("div#QtyBox").append('<input type="button" value="&#xf067;" id="add1" cla
 	});
 	$('.tocart').on('click',function(){
 	$(this).find('span').html('Adding..')
-	setTimeout(function(){   $('.tocart').find('span').html('Add to Cart') }, 5000);
+	setTimeout(function(){   $('.tocart').find('span').html('Add to Bag') }, 5000);
 
 });
     });

@@ -229,7 +229,7 @@ switch ($type = $block->getType()) {
                                     <?php if (!$_item->getRequiredOptions()): ?>
                                         <div class="field choice related">
                                             <input type="checkbox" class="checkbox related" id="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>" name="related_products[]" value="<?php /* @escapeNotVerified */ echo $_item->getId() ?>" />
-                                            <label class="label" for="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>"><span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span></label>
+                                            <label class="label" for="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>"><span><?php /* @escapeNotVerified */ echo __('Add to Bag') ?></span></label>
                                         </div>
                                     <?php endif; ?>
                                 <?php endif; ?>
@@ -240,8 +240,8 @@ switch ($type = $block->getType()) {
                                             <div class="actions-primary">
                                                 <?php if ($_item->isSaleable()): ?>
                                                     <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
-                                                        <button class="action tocart primary" data-mage-init='{"redirectUrl": {"url": "<?php /* @escapeNotVerified */ echo $block->getAddToCartUrl($_item) ?>"}}' type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
-                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                                        <button class="action tocart primary" data-mage-init='{"redirectUrl": {"url": "<?php /* @escapeNotVerified */ echo $block->getAddToCartUrl($_item) ?>"}}' type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Bag') ?>">
+                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Bag') ?></span>
                                                         </button>
                                                     <?php else: ?>
                                                         <?php $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
@@ -249,8 +249,8 @@ switch ($type = $block->getType()) {
                                                         ?>
                                                         <button class="action tocart primary"
                                                                 data-post='<?php /* @escapeNotVerified */ echo $postData; ?>'
-                                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
-                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Bag') ?>">
+                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Bag') ?></span>
                                                         </button>
                                                     <?php endif; ?>
                                                 <?php else: ?>

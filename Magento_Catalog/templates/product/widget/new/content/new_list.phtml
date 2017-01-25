@@ -69,8 +69,8 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
                                                     <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
                                                         <button class="action tocart primary"
                                                                 data-mage-init='{"redirectUrl":{"url":"<?php /* @escapeNotVerified */ echo $block->getAddToCartUrl($_item) ?>"}}'
-                                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
-                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Bag') ?>">
+                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Bag') ?></span>
                                                         </button>
                                                     <?php else: ?>
                                                         <?php
@@ -79,8 +79,8 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
                                                         ?>
                                                         <button class="action tocart primary"
                                                                 data-post='<?php /* @escapeNotVerified */ echo $postData; ?>'
-                                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
-                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Bag') ?>">
+                                                            <span><?php /* @escapeNotVerified */ echo __('Add to Bag') ?></span>
                                                         </button>
                                                     <?php endif; ?>
                                                 <?php else: ?>

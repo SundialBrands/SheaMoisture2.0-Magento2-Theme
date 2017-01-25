@@ -35,8 +35,7 @@
             @_icon-font-vertical-align: middle,
             @_dropdown-split-list-pointer-position: left,
             @_dropdown-split-list-min-width: 200px
-            );
-            margin-right: -50px;
+            );            
             vertical-align: middle;
             &:extend(.abs-dropdown-items-new all);
 
@@ -352,6 +351,11 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .wishlist {        
+        &.split.button{
+            margin-right: -80px;
+        }
+    }
     .block-wishlist-management {
         clear: both;
         margin-top: -21px;

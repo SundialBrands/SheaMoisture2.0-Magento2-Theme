@@ -9,7 +9,7 @@
     <body>
         <referenceContainer name="content">
             <!-- customer.form.login.extra -->
-            <block class="Magento\Cms\Block\Block" name="customer_password">
+            <block class="Magento\Cms\Block\Block" name="customer_password" before="-">
                 <arguments>
                     <argument name="block_id" xsi:type="string">customer_password</argument>
                 </arguments>

@@ -23,7 +23,7 @@
     }
 }
 div#quickview-gallery-placeholder{
-	pointer-events: none;
+	pointer-events: all;
 }
 #quickview-loader.loading-mask{
     position:absolute;

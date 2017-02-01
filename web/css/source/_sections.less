@@ -52,7 +52,7 @@
 
 .product.data.items {
     .item.title {
-        a {
+        >a {
             position: relative;
             -webkit-font-smoothing: antialiased;
             font-size: 14px;
@@ -74,6 +74,10 @@
                 padding: 0px 4px;
                 text-indent: 1px;
                 font-weight: 200;
+            }
+            & .switch {
+            	font-weight: 400;
+            	text-transform: uppercase;
             }
         }
         &.active a:after {

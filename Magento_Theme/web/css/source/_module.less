@@ -259,6 +259,12 @@ ul, ol {
 
 //Small screens(mobiles)
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+#live-chat-widget {
+	position: static !important;
+	display: block;
+	margin: 1em auto;
+	width: 80%;
+}
 .checkout-cart-index .actions-toolbar .charity {
 	clear: both;
 	margin-top: 4px;
@@ -843,7 +849,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 		float: none;
 	}
 	.mainHeader{
-	    background: url(../images/headertopleft_img.png) no-repeat @colorWhite;
+	    background: url(../images/headertopleft_img.png) no-repeat #f5f5f5;
 	    background-size: 285px;
         position: fixed;
 		max-width: 100%;
@@ -1226,7 +1232,7 @@ a.store_locator {
 .authorization-link{
     &:before{
         -webkit-font-smoothing: antialiased;
-        color:  inherit;
+        color:  @secondary__color;
         content: '\f007';
         font-family: 'FontAwesome';
         margin: 0;
@@ -1237,7 +1243,7 @@ a.store_locator {
         speak: none;
         text-align: center;
         &:active, &:hover {
-        	color: @primary__color__light;
+        	color: @secondary__color__light;
         }
     }
 }
@@ -1245,7 +1251,7 @@ a.store_locator {
     &:before{
         -webkit-font-smoothing: antialiased;
 		font-family: 'FontAwesome';
-        color:  inherit;
+        color:  @secondary__color;
         content: '\f041';        
         margin: 0;
         vertical-align: top;
@@ -1261,7 +1267,7 @@ a.store_locator {
 .createAccount{
 	&:before {
 		-webkit-font-smoothing: antialiased;
-		color:  inherit;
+		color:  @secondary__color;
 		content: '\f0e0';
 		font-family: 'FontAwesome';
 		margin: 0 6px 0 0;
@@ -1403,13 +1409,15 @@ div#testing{
                     margin: 0 0 0 15px;
                     color: @primary__color;
                     padding-right: 10px;
-                    border-right: 1px solid black;
-                    &.welcome,
-                    > a {
+                    border-right: 1px solid @primary__color;
+                    &.welcome, > a, > a:visited {
                         font-size:10px;
                         display: inline-block;
                         line-height: 1.4;
-                        color: @primary__color;
+                        color: @secondary__color;
+                    }
+                    > a:hover, >a:active {
+                    	color: @secondary__color__light;
                     }
                     &.welcome {
                          line-height: 2;
@@ -1558,13 +1566,16 @@ div#testing{
             .links {
                 > li {                    
 			        margin: 0;
-                    padding: 0 25px;
+                    padding: 0 0.5em;
                     font-size: 12px;
                 }
 		  > li:first-child{
 			padding-left: 0;
 		  }
-}
+		  > li:last-child{
+			padding-right: 0;
+		  }
+	}
 }
 .ves-megamenu li.level0 > a{
 		    font-size: 10px;
@@ -2645,7 +2656,7 @@ box-shadow: none !important;
 				text-transform: uppercase;
 				text-align: center;
 				color: fade(@color-white, 75%);
-				font-size: 16px;
+				font-size: 12px;
 				background-color: transparent;
 				width:100%;
 				background: transparent !important;

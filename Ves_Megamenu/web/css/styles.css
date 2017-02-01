@@ -372,7 +372,7 @@
     position: static !important;
 }
 
-.ves-megamenu.ves-vertical li.level0>.submenu {
+.ves-megamenu.ves-vertical li.level0>.submenu, .ves-megamenu.ves-vertical li.level0>.submenu {
     box-shadow: none;
     border: 1px solid #DDD;
     border-radius: 1px;
@@ -399,7 +399,9 @@
 }
 
 .ves-menu .navigation .level0 > .submenu {
-    background: #FFF;
+    background: #efefef;
+    box-shadow: none;
+    border-color: #ddd;
 }
 
 .ves-menu .submenu .products-grid .product-item-photo {

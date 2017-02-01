@@ -17,6 +17,10 @@
         //margin-right: -@layout__width-xs-indent;
         .item.title {
             a {
+            	&.switch {
+            		font-weight: 400;
+            		text-transform: uppercase;
+            	}
                 position: relative;
                 /*.lib-icon-font(
                     @_icon-font-content: @icon-down,
@@ -52,7 +56,7 @@
 
 .product.data.items {
     .item.title {
-        >a {
+        > a {
             position: relative;
             -webkit-font-smoothing: antialiased;
             font-size: 14px;
@@ -80,7 +84,7 @@
             	text-transform: uppercase;
             }
         }
-        &.active a:after {
+        &.active > a:after {
             content: '\f068';
             font-family: 'FontAwesome';
         }

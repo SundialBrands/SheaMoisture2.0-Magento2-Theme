@@ -20,12 +20,10 @@ var OWL = {
 
 		if (carouselContainer >= windowWidth) {
 			carouselControls.find('.owl-prev').css({
-				'left': 0,
-				'top': -15
+				'left': 0
 			});
 			carouselControls.find('.owl-next').css({
-				'right': 0,
-				'top': -15
+				'right': 0
 			});
 		} else {
 			carouselControls.find('.owl-prev').removeAttr('style');

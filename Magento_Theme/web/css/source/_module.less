@@ -157,6 +157,14 @@ ul, ol {
 //  ---------------------------------------------
     // Targets Medium screens
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+.nav-sections .navigation .level0 .submenu a{	
+	color:  @primary__color;	
+	display: inline-block;
+	width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .checkout-cart-index .actions-toolbar .charity {
 	clear: both;
 	margin-top: 4px;

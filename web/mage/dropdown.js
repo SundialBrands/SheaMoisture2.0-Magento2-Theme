@@ -63,10 +63,7 @@ define([
                     if(!_self._isOpen) {
                         $('.' + _self.options.defaultDialogClass + ' > .ui-dialog-content').dropdownDialog("close");
                         _self.open();
-                    }
-                    else {
-                        _self.close(event);
-                    }
+                    }                    
                 });
             }
 

@@ -857,7 +857,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 		float: none;
 	}
 	.page-header, .sections.nav-sections {
-		background-color #f5f5f5;
+		background-color: #f5f5f5;
 	}
 	.mainHeader{
 	    background: url(../images/headertopleft_img.png) no-repeat #f5f5f5;
@@ -1476,7 +1476,7 @@ div#testing{
 		bottom: 0;
 		left: 0;
 		text-align: center;
-		//margin: -2% auto 0;
+		margin: -2% auto 0;
 		width: 25%;
         img {
             max-height: 100px;
@@ -2394,6 +2394,8 @@ box-shadow: none !important;
 	.video-link{
 		ul.gallery {
 			list-style-type: none;
+            margin: 0 auto;
+            text-align: center;
 		}
 	}
     
@@ -2751,9 +2753,15 @@ box-shadow: none !important;
             text-transform: capitalize;		
         }		
     }
-	.page-wrapper.YBox .mainHeader, .page-wrapper.YBox #live-chat-widget{
+	
+    /*.page-wrapper.YBox .mainHeader, .page-wrapper.YBox #live-chat-widget{
 		z-index: 0;
-	}
+	}*/
+
+    .page-wrapper.youTubeFullWidth .mainHeader, .page-wrapper.youTubeFullWidth #live-chat-widget{
+        z-index: 0;
+    }
+
     .sidebar {
         .widget.block:not(:last-child),
         .widget:not(:last-child) {

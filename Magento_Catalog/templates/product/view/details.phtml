@@ -62,7 +62,15 @@
                 }
                 e.stopPropagation();
             });
-        
+		    
+        /* select first option for custom options */
+            if ($( ".product-options-wrapper" ).length > 0) {
+                if ($(".product-options-wrapper option:first").val() != "") {
+                    $(".product-options-wrapper option:first").attr('selected','selected');
+                } else {
+                    $(".product-options-wrapper option:eq(1)").attr('selected','selected');
+                }
+            }
     
         }); 
         

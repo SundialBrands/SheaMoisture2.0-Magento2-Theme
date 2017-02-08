@@ -843,10 +843,10 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 		padding-right:0;
 	}
 	}
-.page-wrapper .page-header {
-	background: transparent;
+.page-wrapper .mainHeader .page-header {
+	background: transparent !important;
 	.header.panel{
-		background: none;
+		background: transparent !important;
 		padding-bottom: 10px;
 	}
 	.panel.wrapper{
@@ -856,16 +856,15 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 .nav-sections  .ves-megamenu .level0 {
 		float: none;
 	}
-<<<<<<< HEAD
-	.page-header, .sections.nav-sections {
-		background-color: #f5f5f5;
-=======
+
 	.page-header, .sections.nav-sections, .page-wrapper > div {
 		background-color: #f5f5f5 !important;
->>>>>>> 40e55e73d32e361c3665c505a34dabb1cde461ad
+
 	}
 	.mainHeader{
-	    background: url(../images/headertopleft_img.png) no-repeat #f5f5f5;
+	    background-image: url(../images/headertopleft_img.png) !important;
+	    background-repeat:  no-repeat !important;
+	    background-color: #f5f5f5 !important;
 	    background-size: 285px;
         position: fixed;
 		max-width: 100%;
@@ -1217,9 +1216,7 @@ a.store_locator {
            // padding-top: @indent__s;
             padding-bottom: 20px;
             padding-top: 10px;
-            background: @header-bg;
             text-transform: uppercase;
-            background-size: 382px;
         }
         .switcher {
             float: right;
@@ -1429,7 +1426,7 @@ div#testing{
                     padding-right: 5px;
                     border-right: 1px solid @primary__color;
                     &.welcome, > a, > a:visited {
-                        font-size: 10px !important;
+                        font-size: 12px !important;
                         display: inline-block;
                         line-height: 1.4;
                         color: @secondary__color;
@@ -1626,6 +1623,7 @@ div#testing{
 }
 .page-wrapper #maincontent{
     width: 100%;
+    margin-top: 4em;
 }
 
 .submenu.dropdown-menu{
@@ -1788,8 +1786,11 @@ max-height: 400px;
 		font-size:14px;
 	}
 	.logo{
-		width: 18%;
-        margin: 0% auto 0;
+		width: 25%;
+        margin: -2em auto 0;
+        img {
+        	max-height: 166.67px;
+        }
 	}
 }
 
@@ -3244,3 +3245,4 @@ height: auto;
 }
 //EoB
 }
+

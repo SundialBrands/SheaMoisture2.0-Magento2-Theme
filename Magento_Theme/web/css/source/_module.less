@@ -1481,7 +1481,8 @@ div#testing{
 		bottom: 0;
 		left: 0;
 		text-align: center;
-		margin: -2% auto 0;
+		//margin: -2% auto 0;
+        margin: -17px auto;
 		width: 25%;
         img {
             max-height: 100px;
@@ -1806,7 +1807,9 @@ max-height: 400px;
 form#shipping-zip-form option[value="delimiter"] {
     display: none;
 }
-
+form#co-shipping-form #shipping-new-address-form .control option[value="delimiter"]{
+    display: none;   
+}
 h3.videoTitle{
     float: none;
     clear: both;
@@ -3073,6 +3076,7 @@ box-shadow: none !important;
 	   }
 	   .page-wrapper.IContainer .actions-primary,.product.actions.product-item-actions .actions-primary + .actions-secondary {
                 float: left;
+                white-space: nowrap;
 }
 	.page-wrapper.IContainer .product.actions.product-item-actions .actions-primary + .actions-secondary{
         margin-top: 0%;

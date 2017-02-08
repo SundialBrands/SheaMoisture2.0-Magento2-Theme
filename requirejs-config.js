@@ -10,5 +10,11 @@ var config = {
      	"youtubepopup": {
      		"deps":["jquery"]
      	}
+    },
+    map: {
+        '*': {
+            'Magento_Checkout/view/frontend/web/templates/summary/cart-items.html':
+                'sundialbrands/theme-frontend-sheamoisture/Magento_Checkout/templates/summary/cart-items.html'
+        }
     }
 };

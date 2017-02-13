@@ -142,7 +142,13 @@
                             <argument name="label" xsi:type="string">Return Policy</argument>
                             <argument name="path" xsi:type="string">return-policy</argument>
                         </arguments>
-                    </block>            
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="Special Offers">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Special Offers</argument>
+                            <argument name="path" xsi:type="string">special-offers</argument>
+                        </arguments>
+                    </block>      
                 </referenceBlock>
             </container>            
         </referenceContainer>

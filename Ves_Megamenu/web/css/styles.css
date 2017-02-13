@@ -400,6 +400,7 @@
 
 .ves-menu .navigation .level0 > .submenu {
     background: #efefef;
+    //background: #f5f5f5;
     box-shadow: none;
     border-color: #ddd;
 }
@@ -686,7 +687,8 @@
     }
 
     .ves-megamenu.menu-hover .subhover:hover .dropdown-menu {
-        padding: 20px 50px 20px 20px;
+        //padding: 20px 50px 20px 20px;
+        padding: 19px;
     }
 
     .dynamic-items li:hover,

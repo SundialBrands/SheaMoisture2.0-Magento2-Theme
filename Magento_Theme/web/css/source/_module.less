@@ -1605,11 +1605,14 @@ div#testing{
 	padding-top: 0;
 }
 
-body.checkout-index-index.page-layout-checkout #maincontent {
+/*body.checkout-index-index.page-layout-checkout #maincontent {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+main#maincontent {
     padding-left: 15px;
     padding-right: 15px;
 }
-
 .checkout-cart-index #block-charity .primary {
     width: 45%;
     margin-right: 10px;
@@ -1790,7 +1793,7 @@ max-height: 400px;
 		font-size:16px;
 	}
 	.navigation .level0 .submenu a{
-		font-size:15px;
+		font-size:16px;
 	}
 	.logo{
 		width: 25%;
@@ -2085,6 +2088,8 @@ span.existingMembers{
 	}
 	.nav-sections .navigation li:nth-child(-n+2) .submenu.dropdown-mega,.nav-sections .navigation li:nth-child(4) .submenu.dropdown-mega{
 		column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
 	}
     .ui-tooltip {
         border: @tooltip__border-width solid @tooltip__border-color;
@@ -2465,6 +2470,18 @@ box-shadow: none !important;
             overflow: hidden;
             speak: none;
             transition: color 0.25s ease-in-out;
+            border: 1px solid @color-SheaHoverPink;
+            padding: 0px 9px;
+            display: inline-block;
+            -moz-border-radius: 100px;
+            -webkit-border-radius: 100px;
+            border-radius: 100px;
+            -moz-box-shadow: 0px 0px 2px @color-SheaHoverPink;
+            -webkit-box-shadow: 0px 0px 2px @color-SheaHoverPink;
+            box-shadow: 0px 0px 2px @color-SheaHoverPink;
+            background-color: @color-SheaHoverPink;
+
+
 		}
 		&:hover:before, &:active:before {
 			color: @primary__color__light;
@@ -2486,6 +2503,17 @@ box-shadow: none !important;
             overflow: hidden;
             speak: none;
             transition: color 0.25s ease-in-out;
+            border: 1px solid @color-SheaHoverPink;
+            padding: 0px 9px;
+            display: inline-block;
+            -moz-border-radius: 100px;
+            -webkit-border-radius: 100px;
+            border-radius: 100px;
+            -moz-box-shadow: 0px 0px 2px @color-SheaHoverPink;
+            -webkit-box-shadow: 0px 0px 2px @color-SheaHoverPink;
+            box-shadow: 0px 0px 2px @color-SheaHoverPink;
+            background-color: @color-SheaHoverPink;
+
 		}
 		&:hover:before, &:active:before {
 			color: @primary__color__light;
@@ -2570,7 +2598,18 @@ box-shadow: none !important;
         overflow: hidden;
         speak: none;
         transition: color 0.25s ease-in-out;
+        border: 1px solid @color-SheaHoverPink;
+        padding: 0px 9px;
+        display: inline-block;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+        border-radius: 100px;
+        -moz-box-shadow: 0px 0px 2px @color-SheaHoverPink;
+        -webkit-box-shadow: 0px 0px 2px @color-SheaHoverPink;
+        box-shadow: 0px 0px 2px @color-SheaHoverPink;
+        background-color: @color-SheaHoverPink;
 		}
+        
 		&:hover:before, &:active:before {
 			color: @primary__color__light;
         }   
@@ -2782,6 +2821,12 @@ box-shadow: none !important;
 	}*/
     .fotorama-item.fotorama.fotorama--fullscreen {
         z-index: 10000000 !important;
+    }
+
+    .page-wrapper .quickview-button {
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
     }
 
     .page-wrapper.youTubeFullWidth .mainHeader, .page-wrapper.youTubeFullWidth #live-chat-widget{
@@ -3054,12 +3099,15 @@ box-shadow: none !important;
 		width: 29px;
 		position: absolute;
 		text-align: center;
-	}	
+	}    
 	//BOD
 	.page-wrapper.IContainer .products-grid  div.product-item-info .quickview-button{
         position: static;
         display: block !important;
         transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        -moz-transform: none;
 		padding: 5px;
 	}
 	.page-wrapper.IContainer .products-grid .product-item-info:not(:hover):not(.active) .product-item-inner{

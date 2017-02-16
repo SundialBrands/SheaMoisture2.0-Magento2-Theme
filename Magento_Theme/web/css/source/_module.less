@@ -9,6 +9,7 @@
 @import '_messages.less';
 @import '_breadcrumbs.less';
 @import '_colors.less';
+@import '_sheaMixins.less';
 
 @font10:10px;
 @font12:12px;
@@ -549,9 +550,9 @@ top: 56%;
 .block-collapsible-nav{
        z-index: 999 !important;
 }
-.footer_social_links a:before {
+/*.footer_social_links a:before {
     padding: 10px;
-}
+}*/
 .product-info-main h1.page-title{
        font-size: 2rem;
 }
@@ -1797,7 +1798,7 @@ max-height: 400px;
 	}
 	.logo{
 		width: 25%;
-        margin: -3em auto 0;
+        margin: -1em auto 0;
         img {
         	max-height: 128px;
         }
@@ -2457,68 +2458,43 @@ box-shadow: none !important;
 	
     .facebook_icon{
         &:before{
-            -webkit-font-smoothing: antialiased;
-            font-size: 22px;
-            line-height: 21px;
-            color:  @primary__color;
             content: '\f09a';
-            font-family: 'FontAwesome';
-            margin: 0;
-            vertical-align: top;
-            display: inline-block;
-            font-weight: normal;
-            overflow: hidden;
-            speak: none;
-            transition: color 0.25s ease-in-out;
+            .fontAwesomeSocialIconsCircle;
 		}
 		&:hover:before, &:active:before {
-			color: @primary__color__light;
+			color: @color-SheaHoverPinkHover;
         }
     }
 
     .twitter_icon{
         &:before{
-            -webkit-font-smoothing: antialiased;
-            font-size: 22px;
-            line-height: 21px;
-            color:  @primary__color;
             content: '\f099';
-            font-family: 'FontAwesome';
-            margin: 0;
-            vertical-align: top;
-            display: inline-block;
-            font-weight: normal;
-            overflow: hidden;
-            speak: none;
-            transition: color 0.25s ease-in-out;
+            .fontAwesomeSocialIconsCircle;
 		}
 		&:hover:before, &:active:before {
-			color: @primary__color__light;
+			color: @color-SheaHoverPinkHover;
         }   
     }
 
     .youtube_icon{
         &:before{
-           -webkit-font-smoothing: antialiased;
-            font-size: 22px;
-            line-height: 21px;
-            color:  @primary__color;
-            content: '\f167';
-            font-family: 'FontAwesome';
-            margin: 0;
-            vertical-align: top;
-            display: inline-block;
-            font-weight: normal;
-            overflow: hidden;
-            speak: none;
-            transition: color 0.25s ease-in-out;
+            content: '\f04b';
+            .fontAwesomeSocialIconsCircle;
 		}
 		&:hover:before, &:active:before {
-			color: @primary__color__light;
+			color: @color-SheaHoverPinkHover;
         }   
     }
-
-    .pinterest_icon{
+    .instagram_icon{
+        &:before{        
+            content: '\f16d';
+            .fontAwesomeSocialIconsCircle;       
+        }
+        &:hover:before, &:active:before {
+            color: @color-SheaHoverPinkHover;
+        }   
+    }
+    /*.pinterest_icon{
         &:before{
             -webkit-font-smoothing: antialiased;
             font-size: 22px;
@@ -2558,28 +2534,7 @@ box-shadow: none !important;
 		&:hover:before, &:active:before {
 			color: @primary__color__light;
         }   
-    }
-
-    .instagram_icon{
-        &:before{
-        -webkit-font-smoothing: antialiased;
-        font-size: 22px;
-        line-height: 21px;
-        color:  @primary__color;
-        content: '\f16d';
-        font-family: 'FontAwesome';
-        margin: 0;
-        vertical-align: top;
-        display: inline-block;
-        font-weight: normal;
-        overflow: hidden;
-        speak: none;
-        transition: color 0.25s ease-in-out;
-		}
-		&:hover:before, &:active:before {
-			color: @primary__color__light;
-        }   
-    }
+    }*/    
 
     .action.skip {
         &:not(:focus) {

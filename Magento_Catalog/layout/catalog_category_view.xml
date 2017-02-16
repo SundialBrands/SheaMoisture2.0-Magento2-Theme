@@ -4,8 +4,7 @@
          <referenceBlock name="page.main.title" remove="true"/>
 		 <move element="category.description" destination="content" before="category.products" />
 		 <move element="category.image" destination="content" before="category.description" />
-		 <move element="category.cms" destination="content" after="category.description" />
-		 <move element="sidebar.main" destination="content" before="column.main" />
+		 <move element="category.cms" destination="content" after="category.description" />		 
     </body>
 </page>
 	

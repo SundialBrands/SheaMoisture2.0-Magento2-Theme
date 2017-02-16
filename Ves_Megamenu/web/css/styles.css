@@ -686,8 +686,7 @@
         z-index: 99;
     }
 
-    .ves-megamenu.menu-hover .subhover:hover .dropdown-menu {
-        //padding: 20px 50px 20px 20px;
+    .ves-megamenu.menu-hover .subhover:hover .dropdown-menu {        
         padding: 19px;
     }
 

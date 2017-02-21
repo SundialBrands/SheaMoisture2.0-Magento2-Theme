@@ -104,6 +104,7 @@
 
             .price-box {
                 margin: @indent__s 0 @indent__m;
+		text-align: center;
                 
                 .price {
                     font-weight: @font-weight__bold;
@@ -314,9 +315,12 @@
             }
         }
 
-        .actions-primary {
-            display: table-cell;
-        }
+        .owl-item .product-item-actions .actions-primary {
+		display: block;
+		text-align: center;
+		clear: both;
+	 	float: none;
+	}
     }
 
     .page-products {

@@ -266,103 +266,108 @@ ul, ol {
 
 //Small screens(mobiles)
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-#live-chat-widget {
-	position: static !important;
-	display: block;
-	margin: 1em auto;
-	width: 80%;
-}
-.checkout-cart-index .actions-toolbar .charity {
-	clear: both;
-	margin-top: 4px;
-	min-width: 100%;
-}
-.owl-carousel.owl-theme.owl-loaded .product-item-name{
-    height: 70px;    
-}
-//BOD
-.minicart-wrapper.active{
-    float: right;
-    text-align: right;
-    .mage-dropdown-dialog{
-        position: absolute;
-        right: 0px;
-    }
-}
-
-.nav-sections .header.links li.greet.welcome {
-    border-top: none;
-}
-.nav-sections .header.links a, .nav-sections .header.links a:hover{
-           color: #512c1d !important;
-}
-
-.ves-megamenu.nav-mobile .dropdown-menu .subgroup.level1 > a {
-    font-size: 12px;
-}
-.page-footer .footer.content{
-        padding-top: 0;
-}
-.checkout-cart-index button.action.charitycancel.primary{
-	    margin-bottom: 10px;
-}
-
-//EoB
-
-.product-item-actions {
-        display: block;
-        .products-grid & {
-         	margin: -10px 0 0 0%;
-        }
+	#get-help-container {
+		position: static !important;
+		display: block;
+		margin: 1em auto;
+		width: 80%;
+		
+		.help-links {
+			max-width: 300px;
+		}
+		
 	}
-.our-ingredients-one {
-    width: 100% !important;
-    clear: both;
-    display: block;
-	padding: 0 0 0 0px;
-}
-.ChatBox{
-	display:none;
-}
-.ves-megamenu li.level0 > a{
-	    font-size: 12px;
-}
-.panel.wrapper{
-		.panel.header{
-			.banner_str_img{
-				    margin-left: 30px;
-					line-height: 1;
-			}
+	.checkout-cart-index .actions-toolbar .charity {
+		clear: both;
+		margin-top: 4px;
+		min-width: 100%;
+	}
+	.owl-carousel.owl-theme.owl-loaded .product-item-name{
+		height: 70px;    
+	}
+	//BOD
+	.minicart-wrapper.active{
+		float: right;
+		text-align: right;
+		.mage-dropdown-dialog{
+			position: absolute;
+			right: 0px;
 		}
 	}
-#subcategoriesBlock{		
-		.sub-cat-info{		
-			position:static;		
-		}		
-		ul.columns-4{		
-			padding-bottom:0 !important;		
-		}		
+
+	.nav-sections .header.links li.greet.welcome {
+		border-top: none;
 	}
-    .logo {        
-        margin-top: 0px; //before 4px
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;           
-        img{
-        width:auto;
-        height:100%;
-        }
-    }
-    .page-footer 
-        .footer-content-customised{
-            background:none;
-        }
-        .footer.content {
-            background:none;
-        }
+	.nav-sections .header.links a, .nav-sections .header.links a:hover{
+			   color: #512c1d !important;
+	}
+
+	.ves-megamenu.nav-mobile .dropdown-menu .subgroup.level1 > a {
+		font-size: 12px;
+	}
+	.page-footer .footer.content{
+			padding-top: 0;
+	}
+	.checkout-cart-index button.action.charitycancel.primary{
+			margin-bottom: 10px;
+	}
+
+	//EoB
+
+	.product-item-actions {
+			display: block;
+			.products-grid & {
+				margin: -10px 0 0 0%;
+			}
+		}
+	.our-ingredients-one {
+		width: 100% !important;
+		clear: both;
+		display: block;
+		padding: 0 0 0 0px;
+	}
+	.ChatBox{
+		display:none;
+	}
+	.ves-megamenu li.level0 > a{
+			font-size: 12px;
+	}
+	.panel.wrapper{
+			.panel.header{
+				.banner_str_img{
+						margin-left: 30px;
+						line-height: 1;
+				}
+			}
+		}
+	#subcategoriesBlock{		
+			.sub-cat-info{		
+				position:static;		
+			}		
+			ul.columns-4{		
+				padding-bottom:0 !important;		
+			}		
+		}
+		.logo {        
+			margin-top: 0px; //before 4px
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;           
+			img{
+			width:auto;
+			height:100%;
+			}
+		}
+		.page-footer 
+			.footer-content-customised{
+				background:none;
+			}
+			.footer.content {
+				background:none;
+			}
 }
 
 
@@ -2891,7 +2896,7 @@ box-shadow: none !important;
 				span {
 					text-transform: lowercase;
 					
-					&.chat-link {
+					&.live-chat {
 						cursor: pointer;
 						color: @secondary__color;
 						transition: color 0.2s ease-in-out;
@@ -2907,6 +2912,7 @@ box-shadow: none !important;
 			}
 		}
     }
+    
     
     //bv inline ratings
     

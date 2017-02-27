@@ -44,7 +44,7 @@ window.onload = function() {
 	
 	chat_button_container.find('.help-button').click( function(e) {
 	
-		if(jQuery(this).hasClass('active')) {
+		if(jQuery(chat_button_container).hasClass('active')) {
 			chat_button_container.find('.help-links').toggle();
 		}
 	

@@ -2744,7 +2744,7 @@ box-shadow: none !important;
         }		
     }
 	
-    /*.page-wrapper.YBox .mainHeader, .page-wrapper.YBox #live-chat-widget{
+    /*.page-wrapper.YBox .mainHeader, .page-wrapper.YBox #get-help-container{
 		z-index: 0;
 	}*/
     .fotorama-item.fotorama.fotorama--fullscreen {
@@ -2757,7 +2757,7 @@ box-shadow: none !important;
         -moz-transform: translate(-50%,-50%);
     }
 
-    .page-wrapper.youTubeFullWidth .mainHeader, .page-wrapper.youTubeFullWidth #live-chat-widget{
+    .page-wrapper.youTubeFullWidth .mainHeader, .page-wrapper.youTubeFullWidth #get-help-container{
         z-index: 0;
     }
 
@@ -2810,7 +2810,7 @@ box-shadow: none !important;
         }		
     }
     
-    #live-chat-widget {
+    #get-help-container {
 		position: fixed;
 		bottom: 0;
 		right: 0;
@@ -2828,7 +2828,7 @@ box-shadow: none !important;
 		}
 		
 		//new, slim, hopefully working code:
-		> div.chat-button {
+		> div.help-button {
 			padding: 0.5em 1em;
 			background: transparent;
 			color: @primary__color;
@@ -2839,7 +2839,7 @@ box-shadow: none !important;
 			text-transform: uppercase;
 			transition: color .25s ease-in-out, background-color .25s ease-in-out;
 		}
-		&.active > div.chat-button {
+		&.active > div.help-button {
 			color: @secondary__color;
 			background: fade(@color-white, 50%);
 			&:hover {

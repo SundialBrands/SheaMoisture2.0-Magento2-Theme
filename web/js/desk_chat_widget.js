@@ -16,7 +16,7 @@ window.onload = function() {
 	if(chat_button_container.length < 1 || jQuery('#live-chat-widget div.chat-button').length > 0 ) {
 		return;
 	}
-	var helpdiv = '<div class="help-links" style="display:none;"><div class="help-links-close">X</div><div class="help-header">Our Customer Support Team is available from 10AM-5PM EST. Contact us via phone or live chat now.</div><div class="help-link>Chat: <span class="live-chat">Click here to chat now.</span></div><div class="help-link>Phone: <span><a href="tel:18552025180">1-855-202-5180</a></span></div><div class="help-link><a href="#" onclick="window.coBrowsingInstance &amp;&amp; coBrowsingInstance.showPopup();return false;">Share Screen</a> <span>Please Chat or Call First</span></div></div>';
+	var helpdiv = '<div class="help-links" style="display:none;"><div class="help-links-close">X</div><div class="help-header">Our Customer Support Team is available from 10AM-5PM EST. Contact us via phone or live chat now.</div><div class="help-link">Chat: <span class="live-chat">Click here to chat now.</span></div><div class="help-link">Phone: <span><a href="tel:18552025180">1-855-202-5180</a></span></div><div class="help-link"><a href="#" onclick="window.coBrowsingInstance &amp;&amp; coBrowsingInstance.showPopup();return false;">Share Screen</a>: <span>Please Chat or Call First</span></div></div>';
 	chat_button_container.append(helpdiv + '<div title="Available from 10AM-5PM EST" class="help-button">Get Help</div>');
 	
 	var chat_agents = {
@@ -42,7 +42,7 @@ window.onload = function() {
 	});
 	
 	
-	chat_button_container.click( function(e) {
+	chat_button_container.find('.help-button').click( function(e) {
 	
 		if(jQuery(this).hasClass('active')) {
 			chat_button_container.find('.help-links').toggle();
@@ -52,7 +52,7 @@ window.onload = function() {
 	
 	chat_button_container.find('.help-links-close').click( function(e) {
 	
-		chat_button_container.find('.help-links').hide();
+		jQuery('#get-help-container .help-links').hide();
 	
 	});
 	

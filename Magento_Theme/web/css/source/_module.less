@@ -2834,17 +2834,76 @@ box-shadow: none !important;
 			color: @primary__color;
 			border: 2px solid;
 			border-radius: 5px;
-			margin: 1em;
+			margin: 0 1em 1em;
 			cursor: pointer;
 			text-transform: uppercase;
 			transition: color .25s ease-in-out, background-color .25s ease-in-out;
 		}
+		
 		&.active > div.help-button {
 			color: @secondary__color;
 			background: fade(@color-white, 50%);
 			&:hover {
 				color: @secondary__color__light;
 				background: @color-white;
+			}
+		}
+		
+		&.active .help-links {
+			background-color: #f5f5f5;
+			padding: 1em;
+			position: relative;
+			right: 1em;
+			
+			.help-links-close {
+				position: absolute;
+				right: 0.5em;
+				top: 0.5em;
+				cursor: pointer;
+				color: @secondary__color;
+				transition: color 0.2s ease-in-out;
+				font-size: 1.5em;
+				
+				&:hover {
+					color: @secondary__color__light;
+				}
+				
+			}
+			
+			.help-header {
+				margin: 0.5em auto;
+				text-align: left;
+				border-bottom: 1px solid;
+				padding-bottom: 0.5em;
+				padding-right: 1.5em;
+			}
+			
+			.help-link {
+				font-size: 1.5em;
+				text-transform: uppercase;
+				text-align: left;
+				border-bottom: 1px solid #ccc;
+				
+				&:last-child {
+					border-bottom: 0;
+				}
+				
+				span {
+					text-transform: lowercase;
+					
+					&.chat-link {
+						cursor: pointer;
+						color: @secondary__color;
+						transition: color 0.2s ease-in-out;
+						
+						&:hover {
+							color: @secondary__color__light;
+						}
+						
+					}
+					
+				}
+			
 			}
 		}
     }

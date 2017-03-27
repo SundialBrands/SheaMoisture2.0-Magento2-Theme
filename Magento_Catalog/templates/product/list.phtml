@@ -48,7 +48,8 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
         <ol class="products list items product-items">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
-            <?php
+            <?php 
+            $now = date( "Y-m-d" );
 			$newsFrom = substr( $_product->getData( 'news_from_date' ), 0, 10);
 			$newsTo =  substr( $_product->getData( 'news_to_date' ), 0, 10 );
 			$newClass = '';

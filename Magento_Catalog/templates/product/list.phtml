@@ -52,13 +52,13 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 			$newsFrom = substr( $_product->getData( 'news_from_date' ), 0, 10);
 			$newsTo =  substr( $_product->getData( 'news_to_date' ), 0, 10 );
 			$newClass = '';
-			if( !empty( $newsFrom ) && $now >= $newsFrom && ( empty( $newsTo ) || $now <= $newsTo ) ) {
+			if( $now >= $newsFrom && $now <= $newsTo ) {
 			
 				$newClass = " product-new";
 			
 			}
 			?>
-                <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li newfrom="' . $newsFrom . '" newto="' . $newsTo . '" class="item product product-item' . $newClass . '">' : '</li><li newfrom="' . $newsFrom . '" newto="' . $newsTo . '" class="item product product-item' . $newClass . '">' ?>
+                <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item product product-item' . $newClass . '">' : '</li><li class="item product product-item' . $newClass . '">' ?>
                 <div class="product-item-info" data-container="product-grid">
                     <?php
                     $productImage = $block->getImage($_product, $image);

@@ -129,15 +129,14 @@
             .lib-list-reset-styles();
             border-bottom: 1px solid @color-gray82;
             li {
-                font-size: 1.6rem;
                 margin: 0;
                 &.greet.welcome {
-                    border-top: 1px solid @color-gray82;
+                    border-top: 1px dotted #ccc;
                     font-weight: 700;
                     padding: .8rem @indent__base;
                 }
                 > a {
-                    border-top: 1px solid @color-gray82;
+                    border-top: 1px dotted #ccc;
                 }
             }
             a,
@@ -255,7 +254,7 @@
             }
             padding: 0 0 @indent__m;
             
-            .nav-mobile {
+            .nav-mobile, .header.links {
             	background: transparent;
             	border-top: 4px solid @secondary__color;
             	

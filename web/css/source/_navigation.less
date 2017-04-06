@@ -128,16 +128,19 @@
         .header.links {
             .lib-list-reset-styles();
             border-bottom: 1px solid @color-gray82;
-            li {
-                font-size: 1.6rem;
+            > li {
                 margin: 0;
+                line-height: 45px;
+    			text-transform: uppercase;
+    			font-size: 12px;
                 &.greet.welcome {
-                    border-top: 1px solid @color-gray82;
+                    border-top: 1px dotted #ccc;
                     font-weight: 700;
-                    padding: .8rem @indent__base;
+                    padding: 0 @indent__base;
+                    
                 }
                 > a {
-                    border-top: 1px solid @color-gray82;
+                    border-top: 1px dotted #ccc;
                 }
             }
             a,
@@ -146,7 +149,7 @@
                 .lib-css(text-decoration, @navigation-level0-item__text-decoration);
                 display: block;
                 font-weight: 700;
-                padding: .8rem @indent__base;
+                padding: 0 @indent__base;
             }
             .header.links {
                 border: 0;
@@ -211,17 +214,31 @@
 
         &-item-title {
             background: transparent;
-            //border: solid darken(@navigation__background,10%);
-            border-width: 0 0 1px 1px;
+            border-radius: 25% 25% 0 0;
+            border: 4px solid @secondary__color;
+			border-left-width: 0;
+			border-bottom-width: 0;
             box-sizing: border-box;
             float: left;
             height: 71px;
             padding-top: 24px;
             text-align: center;
             width: 33.33%;
+            text-transform: uppercase;
+            
+            &:first-child {
+            	border-left-width: 4px;
+            }
+            
             &.active {
-                background: darken(@navigation__background,5%);
+                background: @secondary__color;
                 border-bottom: 0;
+                
+                a.nav-sections-item-switch {
+                	color: @color-white;
+                	font-weight: 700;
+                }
+                
             }
             .nav-sections-item-switch {
                 &:hover {
@@ -230,7 +247,7 @@
             }
         }
 
-        &-item-content {
+        .nav-sections-item-content {
             .lib-clearfix();
             box-sizing: border-box;
             float: right;
@@ -240,7 +257,59 @@
             &.active {
                 display: block;
             }
-            padding: @indent__m 0;
+            padding: 0 0 @indent__m;
+            
+            .nav-mobile, .header.links {
+            	background: transparent;
+            	border-top: 4px solid @secondary__color;
+            	
+            	
+            	
+            	.nav-item {
+            		border-top: 1px dotted #ccc;
+            		
+            		.opener.item-active {
+						background: @secondary__color;
+						color: @color-white;
+            		}
+            		
+            		&.level0 > .submenu {
+            			background: @secondary__color;
+						color: @color-white;
+						
+						> a span:first-child {
+							color: white;
+						}
+
+            		}
+            		
+            		&.level1 {
+            		
+						> a {
+							color: @color-white;
+						
+							.opener.item-active {
+								background: @color-white;
+								color: @secondary__color;
+							}
+						
+						}
+						
+						> .submenu {
+							background: @color-white;
+							
+							a {
+								color: @primary__color;
+							}
+							
+						}
+						
+					}
+            		
+            	}
+            	
+            }
+            
         }
     }
 

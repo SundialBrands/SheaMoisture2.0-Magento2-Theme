@@ -46,7 +46,24 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
         <ol class="products list items product-items">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
-                <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
+            <?php
+			$newsFrom = substr( $_product->getData( 'news_from_date' ), 0, 10);
+			$newsTo =  substr( $_product->getData( 'news_to_date' ), 0, 10 );
+			$isCC =  trim( $_product->getData( 'charity_available' ) );
+			$newClass = '';
+			if( !empty( $newsFrom ) && $now >= $newsFrom && ( empty( $newsTo ) || $now <= $newsTo ) ) {
+			
+				$newClass = " product-new";
+			
+			}
+			$ccClass = '';
+			if( 'Yes' === $isCC || 1 == $isCC ) {
+			
+				$ccClass = " product-cc";
+			
+			}
+			?>
+                <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li newfrom="' . $newsFrom . '" newto="' . $newsTo . '" class="item product product-item' . $newClass . $ccClass .'">' : '</li><li newfrom="' . $newsFrom . '" newto="' . $newsTo . '" class="item product product-item' . $newClass . $ccClass . '">' ?>
                 <div class="product-item-info" data-container="product-grid">
                     <?php
                     $productImage = $block->getImage($_product, $image);

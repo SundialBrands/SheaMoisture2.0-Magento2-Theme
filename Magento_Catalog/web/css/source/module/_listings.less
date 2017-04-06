@@ -32,8 +32,59 @@
     .products {
         margin: @indent__l 0;
     }
+    
+    .list {
+    
+    	li.item.product.product-item {
+    	
+    		position: relative;
+    	
+    	}
+    
+    }
 
     .product {
+    
+    	&-new {
+    	
+    		.product-item-info {
+    		
+    			&:before {
+					content: "NEW";
+					background: #ef555a;
+					padding: 1em 0.7em;
+					border-radius: 50%;
+					color: #fff;
+					position: absolute;
+					z-index: 10;
+    			}
+    		
+    		}
+    	
+    	}
+    	
+    	&-cc {
+    	
+    		.product-item-info {
+    		
+    			&:after {
+    			
+    				content: ' ';
+					height: 4em;
+					width: 4em;
+					position: absolute;
+					right: 3em;
+					top: 0.5em;
+					background-image: url(/static/frontend/Sundialbrands/sheamoisture/en_US/images/CommunityCommerce.svg);
+					background-size: cover;
+					z-index: 10;
+    			
+    			}
+    		
+    		}
+    	
+    	}
+    	
         &-items {
             &:extend(.abs-reset-list all);
         }
@@ -242,16 +293,220 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .products-list .product {
-        &-item {
-            table-layout: fixed;
+    
+	.column.main {
+		
+		.products-grid {
+	
+			.product-items {
+				margin: 30px -20px;
+			
+				.product-item {
+					padding: 2em 1em;
+					width: 100%;
+					border-bottom: 1px dotted #ccc;
+					
+					&:last-child {
+						border-bottom: 0;
+					}
+					
+					.product-item-info {
+						text-align: center;
+						
+						&:before {
+							left: 2em;
+							top: 1em;
+						}
+					
+						.product-image-container {
+							margin: 0 auto;
+							display: inline;
+						}
+						
+						.quickview-button.quickview-button-touch-screen {
+							    display: inline-block !important;
+								font-size: 13px;
+								padding: 7px 15px;
+								margin: 0 auto;
+								width: 10em;
+						}
+						
+					}
+					
+					.product-item-details {
+					
+						.price-box {
+						
+							.price-container {
+							
+								display: inline-block;
+								margin: 0 auto;
+								min-width: 5em;
+								position: relative;
+								//left: -1em;
+							
+							}
+						
+						}
+						
+						.product-item-inner {
+						
+							.product-item-actions {
+							
+								.actions-primary {
+									float:none;
+									//margin-left: -1em;
+									text-align: center;
+								}
+								
+								.actions-secondary {
+									float: none;
+									text-align: center;
+									margin-top: 1em;
+									//margin-left: -1em;
+									width: 100%;
+									
+									.action.towishlist:before {
+										font-size: 2em;
+										line-height: 1;
+										width: 2em;
+									}
+								
+								}
+							
+							}
+						
+						}
+					
+					}
+			
+				}
+		
+			}
+	
+		}
+    
+		.products-list {
 
-            &-photo {
-                padding: 0 @indent__s @indent__s 0;
-                width: 30%;
-            }
-        }
-    }
+			.product-items {
+				margin: 2em -1em;
+			
+				.product-cc {
+					
+					.product-item-info {
+					
+						&:after {
+							height: 2em;
+							width: 2em;
+							right: initial;
+							left: 1em;
+							top: 1em;
+						}
+					
+					}
+					
+					&.product-new {
+					
+						.product-item-info {
+					
+							&:after {
+								left: 6em;
+							}
+					
+						}
+					
+					}
+					
+				}
+				
+				.product-item {
+					table-layout: fixed;
+					padding: 1em;
+					border-bottom: 1px dotted #ccc;
+					
+					&:last-child {
+						border-bottom: 0;
+					}
+					
+					.product-item-info {
+					
+						&:before {
+							font-size: 0.5em;
+						}
+
+						.product-item-photo {
+					
+							padding: 0 @indent__s @indent__s 0;
+							width: 30%;
+							
+							.quickview-button.quickview-button-touch-screen {
+								margin-top: 5px;
+							}
+					
+						}
+					
+					}
+					
+					.product-item-details {
+						width: 70%;
+					
+						.product-item-name {
+							min-height: 4.75em;
+						
+							a {
+								text-transform: uppercase;
+							}
+						
+						}
+					
+						.price-box {
+							margin: 1em auto;
+						}
+						
+						.product-item-inner {
+							text-align: center;
+							
+							.product-item-actions {
+								text-align: center;
+							
+								.actions-primary, .actions-secondary {
+									float: none;
+									display: inline-block;
+									
+									button {
+										font-size: 10px;
+									}
+									
+									.action.towishlist {
+									
+										&:before {
+											font-size: 20px;
+											width: 24px;
+											line-height: 30px;
+										}
+									
+									}
+									
+								}
+							
+							}
+						
+							.product-item-description {
+								display:none;
+							}
+						
+						}
+					
+					}
+
+				}
+			
+			}
+
+		}
+
+	}
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {

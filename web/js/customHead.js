@@ -22,5 +22,9 @@ require([
 			if($('.nav-toggle').css('display') == 'block'){
                 $('.page-wrapper').addClass('IContainer');
 			}
+			if($('.header.links > li > a.langLink').length > 0){
+				var $ll = jQuery('.header.links > li > a.langLink').first().clone();
+				$('.ves-menu nav.navigation .ves-megamenu').append($ll);	
+			}
  		});
     });

@@ -128,6 +128,8 @@
         .header.links {
             .lib-list-reset-styles();
             border-bottom: 1px solid @color-gray82;
+            background: transparent;
+			border-top: 4px solid @secondary__color;
             > li {
                 margin: 0;
                 line-height: 45px;
@@ -141,6 +143,22 @@
                 }
                 > a {
                     border-top: 1px dotted #ccc;
+                    
+                    &.langLink {
+                    	position: absolute;
+						top: -2.5em;
+						right: 0;
+						color: @secondary__color !important;
+						border-top: 0;
+						font-size: 1.25em;
+    					font-weight: 400;
+						
+						&:hover, &:active {
+							color: color: @secondary__color__light !important;
+						}
+                    
+                    }
+                    
                 }
             }
             a,
@@ -259,11 +277,27 @@
             }
             padding: 0 0 @indent__m;
             
-            .nav-mobile, .header.links {
+            .nav-mobile {
             	background: transparent;
             	border-top: 4px solid @secondary__color;
             	
-            	
+            	> a.langLink {
+						position: absolute;
+						top: -2.5em;
+						right: 0;
+						color: @secondary__color !important;
+						border-top: 0;
+						font-size: 1.5rem;
+						font-weight: 400;
+						text-transform: uppercase;
+						padding: 0 20px;
+						line-height: 45px;
+					
+						&:hover, &:active {
+							color: color: @secondary__color__light !important;
+						}
+					
+					}
             	
             	.nav-item {
             		border-top: 1px dotted #ccc;
@@ -272,6 +306,7 @@
 						background: @secondary__color;
 						color: @color-white;
             		}
+            		
             		
             		&.level0 > .submenu {
             			background: @secondary__color;
@@ -335,6 +370,19 @@
         }
         &-item-content {
             display: block !important;
+            
+            nav.navigation {
+            
+            	.ves-megamenu {
+            		
+            		> a.langLink {
+            			display: none !important;
+            		}
+            		
+            	}
+            
+            }
+            
         }
         &-item-content > * {
             display: none;

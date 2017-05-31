@@ -1,0 +1,14 @@
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="opc-block-summary" data-bind="blockLoader: isLoading">
+
+    <span data-bind="i18n: 'Order Summary'" class="title"></span>    
+    <span><a data-bind="attr: {href: cartURL}">Edit Cart</a></span>
+    <!-- ko foreach: elems() -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    <!-- /ko -->
+</div>

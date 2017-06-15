@@ -1,13 +1,10 @@
 var MP = {
-<!--mp_trans_disable_start -->
 	Version: '3.1.1.0',
 	SrcLang: 'en',
-<!--mp_trans_disable_end -->
 	UrlLang: 'mp_js_current_lang',
 	SrcUrl: decodeURIComponent('mp_js_orgin_url'),
 	oSite: decodeURIComponent('mp_js_origin_baseUrl'),
 	tSite: decodeURIComponent('mp_js_translated_baseUrl'),
-<!--mp_trans_disable_start -->
 	init: function() {
 		if (MP.oSite.indexOf('p_js_') == 1) {
 			MP.SrcUrl = window.top.document.location.href;
@@ -47,5 +44,4 @@ var MP = {
 			window.top.location.href = url;
 		}
 	}
-	<!-- mp_trans_disable_end -->   
 };

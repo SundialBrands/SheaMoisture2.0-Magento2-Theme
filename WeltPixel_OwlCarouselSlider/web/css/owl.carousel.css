@@ -75,8 +75,9 @@
 }
 .owl-carousel .owl-item img {
 	display: block;
-	width: 100%;
+	width: auto;
 	transform-style: preserve-3d;
+	height 100%;
 }
 .owl-carousel .owl-item .owl-lazy {
 	opacity: 0;

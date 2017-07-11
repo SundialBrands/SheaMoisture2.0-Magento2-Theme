@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation_reward">
+            <block class="Magento\Reward\Block\Customer\AccountLink" name="customer-account-navigation-reward-link" cacheable="false">
+                <arguments>
+                    <argument name="path" xsi:type="string">magento_reward/customer/info</argument>
+                    <argument name="label" xsi:type="string">Reward Points</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

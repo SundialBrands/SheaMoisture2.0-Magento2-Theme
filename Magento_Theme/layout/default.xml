@@ -78,7 +78,7 @@
 		</block>
 		<move element="motion.link" destination="header.links" after="store-locator"/>
 		<referenceBlock name="skip_to_content" remove="true" />
-		
+        
 		<!-- Footer -->
         <referenceContainer name="footer-container">
             <container name="footer-content-customised" htmlTag="div" htmlClass="footer-content-customised" before="-">
@@ -160,10 +160,14 @@
                 </referenceBlock>
             </container>            
         </referenceContainer>
+
+
+
         <move element="footer-bottom" destination="footer-content-customised" />
 		
         <move element="catalog-search-advanced-link" destination="footer_links" before="-"/>
         <referenceBlock name="search-term-popular-link" remove="true"/>
+		<referenceBlock name="customer_account_navigation_reward" remove="true"/>
 		<referenceBlock name="points.balance" remove="true"/>
 		<referenceBlock name="reviews.tab" remove="true" />
 		<referenceBlock name="ask.tab" remove="true" />

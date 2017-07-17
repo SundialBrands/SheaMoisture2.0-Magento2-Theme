@@ -1,7 +1,8 @@
 var config = {
     map: {
         '*': {
-            giftOptions: 'Magento_GiftMessage/js/giftOptions'            
+            wkplusminus: 'Magento_Catalog/js/catalog',
+            wkaccor: 'Magento_Catalog/js/accordion'
         }
     }
 };

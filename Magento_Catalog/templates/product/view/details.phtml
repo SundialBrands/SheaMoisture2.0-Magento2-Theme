@@ -36,43 +36,10 @@
 		</div>
     </div>
 <?php endif; ?>
-<script>
-    require([
-        'jquery'
-    ], function($){
-		'use strict'; 
-            $(document).ready(function(){
-            setTimeout(function(){ 
-                //$('.data.item.title').removeClass('active');
-               // $('#tab-label-product.info.description').addClass('active');
-//                 $('.data.item.content').css('display','none');
-             }, 500);
-            $("#select_1 option:contains('One Time')").attr("selected", "selected");
-            $('.data.switch').on('click', function(e){
-                e.preventDefault();
-                //debugger;
-                if ($(this).parent().hasClass('active')){ 
-                     $('.data.item.title').removeClass('active');
-                     $('.data.item.content').slideUp();
-                } else {
-                    var getHref = $(this).attr('href');
-                    getHref.slice( 1 );
-                   $(this).parent().addClass('active');
-                   $('#'+getHref).slideDown();
-                }
-                e.stopPropagation();
-            });
-		    
-        /* select first option for custom options */
-            if ($( ".product-options-wrapper" ).length > 0) {
-                if ($(".product-options-wrapper option:first").val() != "") {
-                    $(".product-options-wrapper option:first").attr('selected','selected');
-                } else {
-                    $(".product-options-wrapper option:eq(1)").attr('selected','selected');
-                }
-            }
-    
-        }); 
-        
-    });
+<script type="text/x-magento-init">
+    {
+        ".product.info.detailed" : {
+            "wkaccor":{}
+        }
+    }
 </script>

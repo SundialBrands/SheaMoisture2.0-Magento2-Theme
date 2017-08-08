@@ -158,6 +158,10 @@ ul, ol {
 //  ---------------------------------------------
     // Targets Medium screens
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+.slick-slide .actions-primary {
+    width: 100%;
+    text-align: center;
+}
 .nav-sections .navigation .level0 .submenu a{	
 	color:  @primary__color;	
 	display: inline-block;
@@ -266,6 +270,10 @@ ul, ol {
 
 //Small screens(mobiles)
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .slick-slide .actions-primary {
+        width: 100%;
+        text-align: center;
+    }
 	#get-help-container {
 		position: static !important;
 		display: block;
@@ -374,6 +382,10 @@ ul, ol {
 
 //Mobile
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+.slick-slide .actions-primary {
+    width: 100%;
+    text-align: center;
+}
 .checkout-cart-index .actions-toolbar .charity {
 	clear: both;
 	margin-top: 4px;

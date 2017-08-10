@@ -158,10 +158,7 @@ ul, ol {
 //  ---------------------------------------------
     // Targets Medium screens
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-.slick-slide .actions-primary {
-    width: 100%;
-    text-align: center;
-}
+
 .nav-sections .navigation .level0 .submenu a{	
 	color:  @primary__color;	
 	display: inline-block;
@@ -270,10 +267,7 @@ ul, ol {
 
 //Small screens(mobiles)
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .slick-slide .actions-primary {
-        width: 100%;
-        text-align: center;
-    }
+
 	#get-help-container {
 		position: static !important;
 		display: block;
@@ -382,10 +376,7 @@ ul, ol {
 
 //Mobile
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-.slick-slide .actions-primary {
-    width: 100%;
-    text-align: center;
-}
+
 .checkout-cart-index .actions-toolbar .charity {
 	clear: both;
 	margin-top: 4px;
@@ -601,34 +592,16 @@ ul.items.pages-items a.page, ul.items.pages-items a.page:visited, ul.items.pages
     white-space: pre-wrap;
 }
 
-.slick-slide .actions-primary {
-    width: 100%;
-    text-align: center;
-}
 
-li.item.product.product-item.slick-slide .product-item-info{
-	padding: 0px;
-	text-align: center;
-}
 
 .checkout-cart-index #block-charity .primary{
 	width: 100%;
 }
 
-.block.block-product-slider.slider-list.new {
-    clear: both;
-}
-.block.block-product-slider.slider-list.autorelated {
-    clear: both;
-}
+
 
 .item.product.product-item strong.product.name.product-item-name{
         height:75px;
-}
-
-.block.block-product-slider.slider-list > div.block-title.title {
-    text-align: center;
-    text-transform: uppercase;
 }
 
 .owl-carousel.owl-theme.owl-loaded .product-item-name{
@@ -2855,6 +2828,29 @@ box-shadow: none !important;
         }		
     }
     
+    //Start Trive Revo Slick Slide Common Css
+	
+	.slick-slide .actions-primary {
+	    width: 100%;
+	    text-align: center;
+	}
+
+	li.item.product.product-item.slick-slide {
+		text-align: center;
+			.product-item-info{
+				padding: 0px;
+			}
+	}
+
+	.block.block-product-slider.slider-list {
+	    clear: both;
+	}
+	.block.block-product-slider.slider-list > div.block-title.title {
+	    text-align: center;
+	    text-transform: uppercase;
+	}
+	// End of trive Revo
+	
     #get-help-container {
 		position: fixed;
 		bottom: 0;

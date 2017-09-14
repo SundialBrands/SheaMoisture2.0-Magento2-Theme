@@ -11,7 +11,15 @@
 // Common Css		
 .text-right{
     text-align:right;		
-}		
+}
+
+// To remove edit cart icon from shopping cart
+.cart.table-wrapper {
+      .actions-toolbar > .action-edit {
+        display: none !important;
+    }  
+}
+
 .text-left{		
     text-align:left;		
 }		
@@ -401,6 +409,19 @@ span.cc_link {
 iframe#email_signup {
     height: 1460px;
 }
+
+/*Continue Button on Cart Page*/
+
+    a.action.continue_css{
+        float: left;
+        clear: both;
+        margin-left: -6%;
+        margin-right: 1%;
+        text-decoration: underline;
+    }
+
+/*End*/
+
 .promotional-bottom-block3{
     &,.col-xs-12{
         display: flex;

@@ -4,7 +4,7 @@ Remove,Remove
 Remove This Item,Remove This Item
 Shop By,Shop By
 Clear All,Clear All
-Shopping Options,Shopping Options
+Shopping Options,Filter By
 "%name,","%name,"
 Welcome to %store_name.,Welcome to %store_name.
 "To sign in to our site, use these credentials during checkout or on the <a href=""%customer_url"">My Account</a> page:","To sign in to our site, use these credentials during checkout or on the <a href=""%customer_url"">My Account</a> page:"
@@ -42,5 +42,6 @@ Once your package ships we will send you a tracking number.,Once your package sh
 "Placed on <span class=""no-link"">%created_at</span>","Placed on <span class=""no-link"">%created_at</span>"
 Your shipping confirmation is below. Thank you again for your business.,Your shipping confirmation is below. Thank you again for your business.
 Your Shipment #%shipment_id for Order #%order_id,Your Shipment #%shipment_id for Order #%order_id
-Shopping Cart,Cart List
+Shopping Cart,Shopping Cart
 Thank you for your subscription.,Thanks for signup subscription.Please check your mail to complete subscription.
+Subtotal,Total Amount

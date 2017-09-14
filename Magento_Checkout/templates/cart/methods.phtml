@@ -14,7 +14,7 @@
 <?php $methods = $block->getMethods('methods') ?: $block->getMethods('top_methods') ?>
 <ul class="checkout methods items checkout-methods-items">
 <?php if ($block->getContinueShoppingUrl()): ?>
-            <a class="action continue1"
+            <a class="action continue_css"
                href="<?php echo $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
                title="<?php echo $block->escapeHtml(__('Continue Shopping')); ?>">
                 <span><?php /* @escapeNotVerified */ echo __('Continue Shopping') ?></span>

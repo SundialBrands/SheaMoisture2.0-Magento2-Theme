@@ -6,17 +6,19 @@
 -->
 <li id="shipping" class="checkout-shipping-address" data-bind="fadeVisible: visible()">
     <div class="step-title" data-bind="i18n: 'Shipping Address'" data-role="title"></div>
+	
+	<!-- ko if: rates().length  -->
     <form class="form methods-shipping" id="co-shipping-method-form" data-bind="submit: setShippingInformation" novalidate="novalidate">
-    <div id="onepage-checkout-shipping-method-additional-load">
-                    <!-- ko foreach: getRegion('shippingAdditional') -->
-                    <!-- ko template: getTemplate() --><!-- /ko -->
-                    <!-- /ko -->
-                </div>
-                <!-- ko if: errorValidationMessage().length > 0 -->
-                <div class="message notice">
-                    <span><!-- ko text: errorValidationMessage()--><!-- /ko --></span>
-                </div>
-                <!-- /ko -->
+        <div id="onepage-checkout-shipping-method-additional-load">
+            <!-- ko foreach: getRegion('shippingAdditional') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <!-- ko if: errorValidationMessage().length > 0 -->
+        <div class="message notice">
+            <span><!-- ko text: errorValidationMessage()--><!-- /ko --></span>
+        </div>
+        <!-- /ko -->
         <div class="actions-toolbar" id="shipping-method-buttons-container">
             <div class="primary">
                 <button data-role="opc-continue" type="submit" class="button action continue primary">
@@ -24,7 +26,9 @@
                 </button>
             </div>
         </div>
-    <form>
+    </form>
+    <!-- /ko -->
+	
     <div id="checkout-step-shipping"
          class="step-content"
          data-role="content">

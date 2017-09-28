@@ -1839,6 +1839,11 @@ main#maincontent {
 .nav-sections .navigation .level0 .submenu a{
 	white-space: pre-wrap;
 }
+.page-wrapper .cart button.action.update, .modal-popup .cart button.action.update, .page-wrapper .cart button.action.update:hover, .modal-popup .cart button.action.update:hover{
+	background-color: @color-white;
+    color: @secondary__color;
+    font-weight: bold;
+}
 
 form#shipping-zip-form option[value="delimiter"] {
     display: none;
@@ -2974,12 +2979,12 @@ box-shadow: none !important;
 	}
 	//For all Button Hover effects
 	.page-wrapper,.modal-popup{
-		.quickview-button,.action.primary,button#product-addtocart-button,.action.continue1,.cart button.action.update {
+		.quickview-button,.action.primary,button#product-addtocart-button,.action.continue1 {
 			background-color: @secondary__color;
 			color: @color-white;
 			border: 0;
 		}
-		.quickview-button:hover,.action.primary:hover,button#product-addtocart-button:hover,.action.continue1:hover,.cart button.action.update:hover{
+		.quickview-button:hover,.action.primary:hover,button#product-addtocart-button:hover,.action.continue1:hover{
 			background: @secondary__color__light;
 			text-decoration:none;
 			color:@color-white;

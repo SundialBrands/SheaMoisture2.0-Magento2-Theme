@@ -20,6 +20,10 @@
     }  
 }
 
+.cart-gift-item{
+	display: none;
+}
+
 .text-left{		
     text-align:left;		
 }		
@@ -28,15 +32,14 @@
 }		
 // Other Parts follows
 .hm-block-1 {
-    .slider-block {
-        float: none;
+    .slider-block {        
         width: 100%;
     }
-    .promotion-block-top {
-        float: left;
-        width: 19%;
-        margin-left: 0%;
+    .promotion-block-top {        
+        width: 100%;
+        margin-left: -1%;
         padding-right: 0;
+		margin-bottom: 3%;
         ul {
             margin: 0;
             padding: 0;
@@ -473,12 +476,10 @@ iframe#email_signup {
 //Large screens
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
   .hm-block-1 {
-      .slider-block {
-          float: none;
+      .slider-block {          
           width: 100%;
       }
-		.promotion-block-top {
-			float: none;
+		.promotion-block-top {			
 			width: 100%;
 		}
   }

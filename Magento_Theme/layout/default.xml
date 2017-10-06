@@ -167,7 +167,6 @@
         <referenceBlock name="search-term-popular-link" remove="true"/>
 		
 		<referenceBlock name="search-term-popular-link" remove="true"/>
-		<!-- <referenceBlock name="checkout.cart.order.actions.gift_options" remove="true"/> -->
 		<referenceBlock name="customer_account_navigation_reward" remove="true"/>
 		<referenceBlock name="points.balance" remove="true"/>
 		<referenceBlock name="reviews.tab" remove="true" />

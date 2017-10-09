@@ -890,7 +890,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 		max-width: 100%;
 		width: 100%;
 		z-index: 1000;
-		min-height: 232px;
+		min-height: 170px;
 		max-height: 232px;
         top: 0px;        
     }
@@ -930,7 +930,8 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
         font-weight: 500;	
     }		
     .breadcrumbs{		
-         margin: 0 auto 25px auto;		
+         margin: 1%;
+		 background: @color-white !important;		
          a{		
             color: @primary__color;		
             font-weight: normal;		
@@ -1620,10 +1621,24 @@ div#testing{
 	margin-right:10px;
 }
 }
+@media only screen and (min-width: 1024px) {
+	input#search {
+		padding: 5px 37px 5px 5px;
+		width: 290px;
+		-webkit-transition: all .5s ease;
+		-moz-transition: all .5s ease;
+		transition: all .5s ease;
+		float: right;
+		color: @primary__color;
+	}
+	input#search:focus {
+		width: 290px;
+	}
+}
 	// For Large Screens		
 @media only screen and (min-width: 1200px) {
 .nav-sections {
-	padding-top: 0;
+	padding-top: 10px;
 }
 
 /*body.checkout-index-index.page-layout-checkout #maincontent {
@@ -1696,10 +1711,15 @@ main#maincontent {
     //For Breadcrumbs       
     .page-wrapper {  
         .breadcrumbs{       
-             margin: 0 auto 25px auto;      
+                
+			background: @color-white !important;
+            margin: 1%;
             .items > li{ 
                 font-size: 16px;      
             } 
+			.items > li:first-child{
+            	display: none;
+            }
         }
         .filter {       
             .block-subtitle{        
@@ -1733,8 +1753,8 @@ main#maincontent {
     }
     .mainHeader{
         background-size: 425px;
-		min-height: 193px;
-		max-height: 193px;
+		min-height: 150px;
+		max-height: 150px;
 		top: 0px; 
     }
 	.GuttSpace{
@@ -1826,7 +1846,8 @@ main#maincontent {
 		width: 25%;
         margin: -1em auto 0;
         img {
-        	max-height: 128px;
+        	max-height: 121px;
+			width: 370px;
         }
 	}
 }
@@ -1850,6 +1871,18 @@ form#shipping-zip-form option[value="delimiter"] {
 }
 form#co-shipping-form #shipping-new-address-form .control option[value="delimiter"]{
     display: none;   
+}
+
+/*BreadCrumbs*/
+.breadcrumbs{       
+	 background: @color-white !important;
+	 margin: 1%; 
+	.items > li{ 
+		font-size: 16px;      
+	} 
+	.items > li:first-child{
+		display: none;
+	}
 }
 
 /*Search terms css*/

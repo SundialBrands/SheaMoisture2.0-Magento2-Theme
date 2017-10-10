@@ -7,7 +7,7 @@
         "magento/framework": "100.1.*"
     },
     "type": "magento2-theme",
-    "version": "100.1.67",
+    "version": "100.1.68",
     "license": [
     	"MIT"
     ],

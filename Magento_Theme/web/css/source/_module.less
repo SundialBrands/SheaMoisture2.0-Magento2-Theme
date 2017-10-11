@@ -801,7 +801,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 		}
 		}
 	.fieldset > .field{
-		    margin: 0 0 30px;
+		    margin: 0 0 10px;
 	}
 	.box-tocart .action.tocart{
 		    font-size: 1.4rem;
@@ -886,16 +886,16 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 	    background-repeat:  no-repeat !important;
 	    background-color: #f5f5f5 !important;
 	    background-size: 285px;
-        position: fixed;
+        position: relative;
 		max-width: 100%;
 		width: 100%;
 		z-index: 1000;
-		min-height: 232px;
+		min-height: 170px;
 		max-height: 232px;
         top: 0px;        
     }
 	.GuttSpace{
-		margin-top: 232px;
+		margin-top: 2%;
 	}
 	.modal-popup .modal-inner-wrap {
 		margin: 20rem auto !important;
@@ -930,7 +930,8 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
         font-weight: 500;	
     }		
     .breadcrumbs{		
-         margin: 0 auto 25px auto;		
+         margin: 1%;
+		 background: @color-white !important;		
          a{		
             color: @primary__color;		
             font-weight: normal;		
@@ -1335,7 +1336,7 @@ a.store_locator {
 
 input#search {
     padding: 5px 37px 5px 5px;
-    width: 46px;
+    width: 200px;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
@@ -1343,7 +1344,7 @@ input#search {
 	color: @primary__color;
 }
 input#search:focus {
-    width: 100%;
+    width: 200px;
 }
 .page-wrapper .customer-welcome ul:before{
 	border-color: transparent transparent  @primary__color transparent;
@@ -1620,12 +1621,25 @@ div#testing{
 	margin-right:10px;
 }
 }
+@media only screen and (min-width: 1024px) {
+	input#search {
+		padding: 5px 37px 5px 5px;
+		width: 290px;
+		-webkit-transition: all .5s ease;
+		-moz-transition: all .5s ease;
+		transition: all .5s ease;
+		float: right;
+		color: @primary__color;
+	}
+	input#search:focus {
+		width: 290px;
+	}
+}
 	// For Large Screens		
 @media only screen and (min-width: 1200px) {
 .nav-sections {
-	padding-top: 0;
+	padding-top: 10px;
 }
-
 /*body.checkout-index-index.page-layout-checkout #maincontent {
     padding-left: 15px;
     padding-right: 15px;
@@ -1695,11 +1709,15 @@ main#maincontent {
     }
     //For Breadcrumbs       
     .page-wrapper {  
-        .breadcrumbs{       
-             margin: 0 auto 25px auto;      
+        .breadcrumbs{     
+			background: @color-white !important;
+            margin: 1%;
             .items > li{ 
                 font-size: 16px;      
             } 
+			.items > li:first-child{
+            	display: none;
+            }
         }
         .filter {       
             .block-subtitle{        
@@ -1733,12 +1751,12 @@ main#maincontent {
     }
     .mainHeader{
         background-size: 425px;
-		min-height: 193px;
-		max-height: 193px;
+		min-height: 150px;
+		max-height: 150px;
 		top: 0px; 
     }
 	.GuttSpace{
-		margin-top: 200px;
+		margin-top: 2%;
 	}
     .our-promise-block {
         h1{
@@ -1826,7 +1844,8 @@ main#maincontent {
 		width: 25%;
         margin: -1em auto 0;
         img {
-        	max-height: 128px;
+        	max-height: 121px;
+			width: 370px;
         }
 	}
 }
@@ -1850,6 +1869,18 @@ form#shipping-zip-form option[value="delimiter"] {
 }
 form#co-shipping-form #shipping-new-address-form .control option[value="delimiter"]{
     display: none;   
+}
+
+/*BreadCrumbs*/
+.breadcrumbs{       
+	 background: @color-white !important;
+	 margin: 1%; 
+	.items > li{ 
+		font-size: 16px;      
+	} 
+	.items > li:first-child{
+		display: none;
+	}
 }
 
 /*Search terms css*/
@@ -2657,7 +2688,7 @@ box-shadow: none !important;
             margin:0 auto;
             background-image: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png');
 			background-repeat: no-repeat;
-			background-size: 400px 285px, 652px 300px;
+			background-size: 211px 260px, 292px 248px;
 			background-position: left bottom, right bottom;
 			> .content {
 				height: auto;
@@ -2783,7 +2814,7 @@ box-shadow: none !important;
             margin:0 auto;
             background-image: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png');
                 background-repeat: no-repeat;
-                background-size: 400px 285px, 652px 300px;
+                background-size: 211px 260px, 292px 248px;
                 background-position: left bottom, right bottom;
         }
     }
@@ -2800,7 +2831,7 @@ box-shadow: none !important;
             border-top: none;
              background-image: url('../images/Footer_Ingredients_BottomLeft-010.png'),url('../images/Footer_Ingredients_BottomRight-011.png');
                 background-repeat: no-repeat;
-                background-size: 400px 285px, 652px 300px;
+                background-size: 211px 260px, 292px 248px;
                 background-position: left bottom, right bottom;
         }
     }

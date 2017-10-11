@@ -17,7 +17,7 @@ require([
                     $(searchInput).css('width','46px');
                 }
             }
-        });*/
+        });
       $('input#search').click(function() {
             $('input#search').css('width','100%');
         });
@@ -28,7 +28,8 @@ require([
             else {
                 $('input#search').css('width','46px');
             }
-        });
+        });*/
+		$('input#search').attr('placeholder','Search');
         if($('.nav-toggle').css('display') == 'block'){
             $('.page-wrapper').addClass('IContainer');
         }

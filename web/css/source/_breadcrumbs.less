@@ -10,7 +10,7 @@
 & when (@media-common = true) {
     .breadcrumbs {
         .lib-breadcrumbs();
-        display: none;	
+        display: block;	
     }
 }
 
@@ -20,6 +20,6 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .breadcrumbs {
-        display: none;
+        display: block;
     }
 }

@@ -1,0 +1,280 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+?>
+<?php
+// @codingStandardsIgnoreFile
+/** @var \Magedelight\Subscribenow\Block\Productsubscription\Profile\View $block */
+?>
+<?php $_subscription = $block->getSubscription(); ?>
+<?php $_subscriptionProduct = $block->getProductDetails(); ?>
+<?php $_schedule = $block->getProfileSchedule(); ?>
+<?php $_paymentInfo = $block->getProfilePaymentInfo(); ?>
+<?php $_currencySymbol = $_paymentInfo['currency_symbol']; ?>
+<?php $isvirtual = $_subscriptionProduct['is_virtual']; ?>
+<?php $paymentMethod = $_subscription->getPaymentMethodCode(); ?>
+<?php $currentStatus = $_subscription->getSubscriptionStatus(); ?>
+<?php $cancelStatus = \Magedelight\Subscribenow\Model\Subscriptionstatus::STATUS_CANCELED; ?>
+<?php $failStatus = \Magedelight\Subscribenow\Model\Subscriptionstatus::STATUS_FAILED; ?>
+<?php $completeStatus = \Magedelight\Subscribenow\Model\Subscriptionstatus::STATUS_COMPLETE; ?>
+<?php $expiredStatus = \Magedelight\Subscribenow\Model\Subscriptionstatus::STATUS_EXPIRED; ?>
+
+<div class="col2-set sub-info-box">
+    <div class="col-1-sub" >
+        <div class="info-box">
+            <div class="box-title">
+                <h2><?php echo __('Subscription Details'); ?></h2>
+            </div>
+            <div class="box-content">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Profile ID:'); ?></span></th>
+                            <td>
+                                <?php echo $block->getProfileNumber() ?>
+                            </td>
+                        </tr>  
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Status:'); ?></span></th>
+                            <td>
+                                <?php echo $block->getSubscriptionStatus($_subscription->getSubscriptionStatus()); ?>                                                    
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Product Name:'); ?></span></th>
+                            <td>
+                                <a href="<?php echo $_subscriptionProduct['product_url']; ?>" title="<?php echo $_subscriptionProduct['product_name']; ?>"><?php echo $_subscriptionProduct['product_name'] ?></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('SKU:'); ?></span></th>
+                            <td><?php echo $_subscriptionProduct['product_sku']; ?></td>
+                        </tr>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Quantity:'); ?></span></th>
+                            <td><?php echo $_subscriptionProduct['qty_ordered']; ?></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>    </div>
+    <div class="col-2-sub">
+        <div class="info-box">
+            <div class="box-title">
+                <h2><?php echo __('Payment Details'); ?></h2>
+            </div>
+            <div class="box-content">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Billing Price:'); ?></span></th>
+                            <td><?php echo $_currencySymbol . ($_paymentInfo['billing_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
+                        </tr>
+                        <?php if ($_paymentInfo['trial_amount'] > 0): ?>
+                            <tr>
+                                <th><span class="nobr"><?php echo __('Trial Price:'); ?></span></th>
+                                <td><?php echo $_currencySymbol . ($_paymentInfo['trial_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
+                            </tr>
+                        <?php endif; ?>
+                        <?php if ($_paymentInfo['initial_amount'] > 0): ?>
+                            <tr>
+                                <th><span class="nobr"><?php echo __('Initial Fee:'); ?></span></th>
+                                <td><?php echo $_currencySymbol . ($_paymentInfo['initial_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
+                            </tr>
+                        <?php endif; ?>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Payment Method:'); ?></span></th>
+                            <td>
+                                <?php echo $block->getPaymentMethodLabel($_subscription->getPaymentMethodCode()) ?>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Card Details:'); ?></span></th>
+                            <td>
+                                <?php if ($paymentMethod == 'magedelight_cybersource'): ?>
+                                    <?php $cybersourceNumber = $block->getCardNumber(); ?>
+                                    <?php if ($cybersourceNumber): ?>
+                                        <?php echo 'XXXX-' . $cybersourceNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'md_firstdata'): ?>
+                                    <?php $firstdataNumber = $block->getFirstdataNumber(); ?>
+                                    <?php if ($firstdataNumber): ?>
+                                        <?php echo 'XXXX-' . $firstdataNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'md_moneris'): ?>
+                                    <?php $monerisNumber = $block->getMonerisNumber(); ?>
+                                    <?php if ($monerisNumber): ?>
+                                        <?php echo 'XXXX-' . $monerisNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'md_monerisca'): ?>
+                                    <?php $monerisNumber = $block->getMoneriscaNumber(); ?>
+                                    <?php if ($monerisNumber): ?>
+                                        <?php echo 'XXXX-' . $monerisNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'adyen_cc'): ?>
+                                    <?php $adyenNumber = $block->getAdyenNumber(); ?>
+                                    <?php if ($adyenNumber): ?>
+                                        <?php echo 'XXXX-' . $adyenNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'md_stripe_cards'): ?>
+                                    <?php $stripeNumner = $block->getStripeNumber(); ?>
+                                    <?php if ($stripeNumner): ?>
+                                        <?php echo 'XXXX-' . $stripeNumner; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'md_authorizecim'): ?>
+                                    <?php $authorizecardNumber = $block->getAuthorizeNumber(); ?>
+                                    <?php if ($authorizecardNumber): ?>
+                                        <?php echo $authorizecardNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'authnetcim'): ?>
+                                    <?php $paradoxAuthorizecardNumber = $block->getParadoxAuthorizeNumber(); ?>
+                                    <?php if ($paradoxAuthorizecardNumber): ?>
+                                        <?php echo $paradoxAuthorizecardNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'braintree' || $paymentMethod == 'braintree_cc_vault'):                                    ?>
+                                    <?php $braintreecardNumber = $block->getBraintreeNumber(); ?>
+                                    <?php if ($braintreecardNumber): ?>
+                                        <?php echo 'XXXX-' . $braintreecardNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php elseif ($paymentMethod == 'payflowpro' || $paymentMethod == 'payflowpro_cc_vault'):                                    ?>
+                                    <?php $payflowprocardNumber = $block->getPayflowProNumber(); ?>
+                                    <?php if ($payflowprocardNumber): ?>
+                                        <?php echo 'XXXX-' . $payflowprocardNumber; ?>
+                                    <?php else: ?>
+                                        <?php echo __('Not set yet') ?>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </div>
+</div>
+<div class="col2-set sub-info-box-2">
+    <div class="col-1-sub">
+        <div class="info-box">
+            <div class="box-title">
+                <h2><?php echo __('Subscription History'); ?></h2>        
+            </div>
+            <div class="box-content">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Start Date:'); ?></span></th>
+                            <td> <?php echo $_schedule['start_date']; ?></td>
+                        </tr>    
+                        <?php if (!in_array($currentStatus, [$completeStatus, $failStatus, $cancelStatus])): ?>
+                            <?php if (!empty($block->getNextOccuranceDate())): ?>
+                                <tr>
+                                    <th><span class="nobr"><?php echo __('Next Occurrence Date:'); ?></span></th>
+                                    <td> <?php echo $block->getNextOccuranceDate() ?></td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php if ($block->hasTrial()): ?>
+                            <tr>
+                                <th><span class="nobr"><?php echo __('Number of Trial Occurrence:'); ?></span></th>
+                                <td> <?php echo $block->getTrialOccurance(); ?></td>
+                            </tr>
+                            <tr>
+                                <th><span class="nobr"><?php echo __('Passed Trial Occurrence:'); ?></span></th>
+                                <td> <?php echo $block->getPassedTrialOccurance(); ?></td>
+                            </tr>
+                        <?php endif; ?>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Number of Occurrence:'); ?></span></th>
+                            <td> <?php echo $block->getBillingOccurance(); ?></td>
+                        </tr>
+                        <tr>
+                            <th><span class="nobr"><?php echo __('Passed Occurrence:'); ?></span></th>
+                            <td> <?php echo $block->getPassedBillingOccurance(); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </div>   
+</div>
+
+<div class="block block-order-details-view">
+    <div class="block-title">
+        <strong><?php /* @escapeNotVerified */ echo __('Order Information') ?></strong>
+    </div>
+    <div class="block-content">
+        <div class="col-1-sub">
+            <strong class="box-title">
+                <span><?php /* @escapeNotVerified */ echo __('Billing Address') ?></span>
+            </strong>
+            <div class="box-content">
+                <address><?php /* @escapeNotVerified */ echo $block->getBillingAddress(); ?></address>
+            </div>
+        </div>
+        <?php if (!$isvirtual): ?>
+            <div class="col-1-sub">
+                <strong class="box-title">
+                    <span><?php /* @escapeNotVerified */ echo __('Shipping Address') ?></span>
+                </strong>
+                <div class="box-content">
+                    <address><?php /* @escapeNotVerified */ echo $block->getShippingAddress(); ?></address>
+                </div>
+            </div>
+        <?php endif; ?>    
+    </div>
+</div>
+<div class="back-subscription">
+    <a href="<?php echo $block->getBackUrl(); ?>" title="<?php echo __('Back to Subscription Profiles'); ?>"><small><?php echo __('«') ?></small>&nbsp;<?php echo __('Back to Subscription Profiles'); ?></a>    
+
+</div>
+<style type="text/css">
+    .col-1-sub{
+        width: 48%;
+        float: left;
+    }
+    .col-2-sub{
+        width: 48%;
+        float: left;
+    }
+    .sub-info-box-2{
+        margin-top: 4%;
+    }
+    .col2-set{
+        overflow: hidden;
+    }
+    .col2-set.sub-info-box-2 {        
+        padding-bottom: 4%;
+    }
+    .block.block-order-details-view{
+        border-bottom: 1px solid #c6c6c6;
+        padding-bottom: 3%;
+    }
+</style>

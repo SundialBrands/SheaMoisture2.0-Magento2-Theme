@@ -1,0 +1,66 @@
+<!--
+/*
+ * Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+-->
+<!--@subject Add your card for subscription profile # {{var subscription.getProfileId()}} @-->
+<!--@vars {
+"var formattedBillingAddress|raw":"Billing Address",
+"var order.getEmailCustomerNote()":"Email Order Note",
+"var order.increment_id":"Order Id",
+"layout handle=\"sales_email_order_items\" order=$order area=\"frontend\"":"Order Items Grid",
+"var payment_html|raw":"Payment Details",
+"var formattedShippingAddress|raw":"Shipping Address",
+"var order.getShippingDescription()":"Shipping Description"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "%customer_name," customer_name=$order.getCustomerName()}}</p>
+            <p>
+                {{trans "Thank you for your subscription order from %store_name." store_name=$store.getFrontendName()}}
+                {{trans "To activate your subscription profile # %profile_id,"profile_id=subscription.getProfileId()}}
+                {{trans 'You are kindly requested to add your payment card.' }}
+                {{trans 'If you have questions about your subscription order, you can email us at <a href="mailto:%store_email">%store_email</a>' store_email=$store_email |raw}}
+                {{depend store_phone}}
+                {{trans 'or call us at <a href="tel:%store_phone">%store_phone</a>' store_phone=$store_phone |raw}}
+                {{/depend}}.                
+                {{depend store_hours}}
+                {{trans 'Our hours are <span class="no-link">%store_hours</span>.' store_hours=$store_hours |raw}}
+                {{/depend}}
+            </p>            
+        </td>
+    </tr>
+    <tr class="email-summary">
+        <td>
+            <p>{{trans 'To activate Your subscription profile #' }}{{var subscription.getProfileId()}}</p>
+            <p>{{trans 'Please follow below steps.' }}</p><br/>
+            <ol>
+                <li>{{trans 'Please <a href="%account_url">logging into your account</a>.' account_url=$this.getUrl($store,'customer/account/',[_nosid:1]) |raw}}</li>
+                <li>{{trans 'After logging into your account,click on My Saved Card from left customer account navigation'}}</li>
+                <li>{{trans 'After visiting My Saved Card link, Click on Add New Card and fill the appropriate information to save card.[Ignore this step if you have already saved card]'}}</li>
+                <li>{{trans 'After successfully added card,click on My Subscription Profiles from left navigation.'}}</li>
+                <li>{{trans 'Click on View subscription link for subscription profile #' }}{{var subscription.getProfileId()}}</li>
+                <li>{{trans 'Click on Edit button of subscription to add your payment card.'}}</li>
+                <li>{{trans 'On Card Details drop down,select your card and click on update profile to activate your subscription profile. '}}</li>
+            </ol>  
+        </td>
+    </tr>
+    <tr class="email-information">
+        <td>
+            <P><strong>{{trans "Note: Without adding your payment card your subscription profile won't be activated." }}</strong>  </P>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

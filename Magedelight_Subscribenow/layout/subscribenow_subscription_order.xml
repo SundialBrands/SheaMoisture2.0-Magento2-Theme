@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="page.main.title">
+            <block class="Magedelight\Subscribenow\Block\Productsubscription\Profile\Buttoninfo" name="subscription.button" template="customer/subscription/button.phtml" cacheable="false"/>            
+            <block class="Magedelight\Subscribenow\Block\Productsubscription\Profile\Buttoninfo" name="subscription.about.block" template="customer/subscription/about.phtml" cacheable="false"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Magedelight\Subscribenow\Block\Productsubscription\Profile\Order" name="customer_subscription_order" template="customer/subscription/order.phtml" cacheable="false"/>
+        </referenceContainer>     
+    </body>
+</page>

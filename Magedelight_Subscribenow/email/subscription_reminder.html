@@ -1,0 +1,51 @@
+<!--
+/*
+ * Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+-->
+<!--@subject Subscription profile #{{var subscription.getProfileId()}}  Order Reminder  @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-summary">
+        <td>
+            <p class="greeting">{{trans "%customer_name," customer_name=$subscription.getSubscriberName()}}</p>
+
+        </td>
+    </tr>
+    <tr class="email-intro">
+        <td>            
+            <p>
+                {{trans 'Your subscription order for profile # ' }}{{var subscription.getProfileId()}}                
+                {{trans "will generate on date "}}
+                <b>{{trans ""}}{{var nextdate}}</b>
+                {{trans ". Your Subscribed product is : "}}
+                <b>{{trans " "}}{{var productname}}</b>
+                {{trans "and subscribed qty is : "}}{{var qty}}
+
+            </p>
+            <p>{{trans 'Note: You can modify your subscription profile anytime by '}}
+                {{trans '<a href="%account_url">logging into your account</a>.' account_url=$this.getUrl($store,'customer/account/',[_nosid:1]) |raw}}                            
+            </p>            
+            <p>               
+                {{trans 'If you have questions about your subscription order, you can email us at <a href="mailto:%store_email">%store_email</a>' store_email=$store_email |raw}}
+                {{depend store_phone}}
+                {{trans 'or call us at <a href="tel:%store_phone">%store_phone</a>' store_phone=$store_phone |raw}}
+                {{/depend}}.                
+                {{depend store_hours}}
+                {{trans 'Our hours are <span class="no-link">%store_hours</span>.' store_hours=$store_hours |raw}}
+                {{/depend}}
+            </p>
+        </td>
+    </tr>    
+</table>
+
+{{template config_path="design/email/footer_template"}}

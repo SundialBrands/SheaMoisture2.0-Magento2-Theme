@@ -1,0 +1,339 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+?>
+<?php
+// @codingStandardsIgnoreFile
+/** @var \Magedelight\Subscribenow\Block\Productsubscription\Profile\Edit $block */
+?>
+<?php $_subscription = $block->getSubscription(); ?>
+<?php $_subscriptionProduct = $block->getProductDetails(); ?>
+<?php $_schedule = $block->getProfileSchedule(); ?>
+<?php $_paymentInfo = $block->getProfilePaymentInfo(); ?>
+<?php $_currencySymbol = $_paymentInfo['currency_symbol']; ?>
+<?php $isvirtual = $_subscriptionProduct['is_virtual']; ?>
+<?php $billingAddressOptions = $block->getBillingAddressOptions(); ?>
+<?php $allowMaxQty = $block->getMaxQty(); ?>
+<?php $paymentMethod = $_subscription->getPaymentMethodCode(); ?>
+<?php if (!$isvirtual) : ?>
+    <?php $shippingAddressOptions = $block->getShippingAddressOptions(); ?>
+<?php endif; ?>
+<form action="<?php echo $block->getUpdateUrl(); ?>" name="subscription_profile_update" id="subscription_profile_update" method="post" data-mage-init='{"validation":{}}'>
+    <?php echo $block->getBlockHtml('formkey'); ?>
+    <div class="col2-set sub-info-box">
+        <div class="col-1-sub" >
+            <div class="info-box">
+                <div class="box-title">
+                    <h2><?php /* @escapeNotVerified */ echo __('Subscription Profile'); ?></h2>
+                </div>
+                <div class="box-content">
+                    <table class="info-table">
+                        <tbody>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Profile Number:'); ?></span></th>
+                                <td>
+                                    <?php echo $block->getProfileNumber() ?>
+                                </td>
+                            </tr>  
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Status:'); ?></span></th>
+                                <td>
+                                    <?php echo $block->getSubscriptionStatus($_subscription->getSubscriptionStatus()); ?>                                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Product Name:'); ?></span></th>
+                                <td>
+                                    <a href="<?php echo $_subscriptionProduct['product_url']; ?>" title="<?php echo $_subscriptionProduct['product_name']; ?>"><?php echo $_subscriptionProduct['product_name'] ?></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('SKU:'); ?></span></th>
+                                <td><?php echo $_subscriptionProduct['product_sku']; ?></td>
+                            </tr>
+                            <tr>
+                                <th><span class="nobr required"><?php /* @escapeNotVerified */ echo __('Quantity:'); ?></span></th>
+                                <td> <input <?php if (!empty($allowMaxQty)): ?> max="<?php echo $allowMaxQty; ?>" <?php endif; ?> type="text" value="<?php echo $_subscriptionProduct['qty_ordered']; ?>" class="input-text required-entry validate-greater-than-zero validate-digits" aria-required="true" name="qty">   </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>    </div>
+        <div class="col-2-sub">
+            <div class="info-box">
+                <div class="box-title">
+                    <h2><?php /* @escapeNotVerified */ echo __('Subscription Payment Details'); ?></h2>
+                </div>
+                <div class="box-content">
+                    <table class="info-table">
+                        <tbody>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Billing Price:'); ?></span></th>
+                                <td><?php echo $_currencySymbol . ($_paymentInfo['billing_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
+                            </tr>
+                            <?php if ($_paymentInfo['trial_amount'] > 0): ?>
+                                <tr>
+                                    <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Trial Price:'); ?></span></th>
+                                    <td><?php echo $_currencySymbol . ($_paymentInfo['trial_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
+                                </tr>
+                            <?php endif; ?>
+                            <?php if ($_paymentInfo['initial_amount'] > 0): ?>
+                                <tr>
+                                    <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Initial Fee:'); ?></span></th>
+                                    <td><?php echo $_currencySymbol . ($_paymentInfo['initial_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
+                                </tr>
+                            <?php endif; ?>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Payment Method:'); ?></span></th>
+                                <td>
+                                    <?php echo $block->getPaymentMethodLabel($_subscription->getPaymentMethodCode()) ?>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Card Details:'); ?></span></th>
+                                <td>
+                                    <?php if ($paymentMethod == 'magedelight_cybersource'): ?>
+                                        <?php $cyberSourcecardDetails = $block->getCyberSourceCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry" aria-required="true">
+                                            <?php foreach ($cyberSourcecardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'md_firstdata'): ?>
+                                        <?php $firstDatacardDetails = $block->getFirstDataCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry" aria-required="true">
+                                            <?php foreach ($firstDatacardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'md_moneris'): ?>
+                                        <?php $moneriscardDetails = $block->getMonerisCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry" aria-required="true">
+                                            <?php foreach ($moneriscardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'md_monerisca'): ?>
+                                        <?php $moneriscardDetails = $block->getMoneriscaCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry" aria-required="true">
+                                            <?php foreach ($moneriscardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'adyen_cc'): ?>
+                                        <?php $adyenDetails = $block->getAdyenCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry admin__control-select" aria-required="true">
+                                            <?php foreach ($adyenDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'md_stripe_cards'): ?>
+                                        <?php $stripecardDetails = $block->getStripeCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry" aria-required="true">
+                                            <?php foreach ($stripecardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'md_authorizecim'): ?>
+                                        <?php $authorizecardDetails = $block->getAuthorizeCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry" aria-required="true">
+                                            <?php foreach ($authorizecardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'authnetcim'): ?>
+                                        <?php $paradoxAuthorizecardDetails = $block->getParadoxAuthorizeCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry" aria-required="true">
+                                            <?php foreach ($paradoxAuthorizecardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($cardlabel[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $cardlabel[1] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'braintree' || $paymentMethod == 'braintree_cc_vault'): ?>
+                                        <?php $braintreecardDetails = $block->getBraintreeCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry admin__control-select" aria-required="true">
+                                            <?php foreach ($braintreecardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($block->getCurrenctKey() == $cardKey): ?> selected="selected" <?php endif; ?> ><?php echo $cardlabel ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php elseif ($paymentMethod == 'payflowpro' || $paymentMethod == 'payflowpro_cc_vault'): ?>
+                                        <?php $payflowprocardDetails = $block->getPayflowProCustomerCards(); ?>
+                                        <select id="md_savecard" name="md_savecard" class="validate-select required-entry admin__control-select" aria-required="true">
+                                            <?php foreach ($payflowprocardDetails as $cardKey => $cardlabel): ?>
+                                                <option value="<?php echo $cardKey ?>" <?php if ($block->getPayflowProCurrenctKey() == $cardKey): ?> selected="selected" <?php endif; ?> ><?php echo $cardlabel ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php endif; ?>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <div class="col2-set sub-info-box-2">
+        <div class="col-1-sub">
+            <div class="info-box">
+                <div class="box-title">
+                    <h2><?php /* @escapeNotVerified */ echo __('Subscription History'); ?></h2>        
+                </div>
+                <div class="box-content">
+                    <table class="info-table">
+                        <tbody>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Start Date:'); ?></span></th>
+                                <td> <?php echo $_schedule['start_date']; ?></td>
+                            </tr>     
+                            <?php if (!empty($block->getNextOccuranceDate())): ?>
+                                <tr>
+                                    <th><span class="nobr"><?php echo __('Next Occurrence Date:'); ?></span></th>
+                                    <td>
+                                        <?php if ($block->allowUpdateNextOcurDate()): ?>
+                                            <input type="text" id="md_subscription_start" name="subscription_start_date" class="input-text"  readonly="readonly" value="<?php echo $block->getNextOccuranceDate() ?>" />		
+                                        <?php else: ?>
+                                            <?php echo $block->getNextOccuranceDate(); ?>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                            <?php if ($block->hasTrial()): ?>
+                                <tr>
+                                    <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Number of Trial occurrence:'); ?></span></th>
+                                    <td> <?php echo $block->getTrialOccurance(); ?></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Passed Trial occurrence:'); ?></span></th>
+                                    <td> <?php echo $block->getPassedTrialOccurance(); ?></td>
+                                </tr>
+                            <?php endif; ?>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Number of occurrence:'); ?></span></th>
+                                <td> <?php echo $block->getBillingOccurance(); ?></td>
+                            </tr>
+                            <tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Passed occurrence:'); ?></span></th>
+                                <td> <?php echo $block->getPassedBillingOccurance(); ?></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>   
+    </div>
+
+    <div class="block block-order-details-view">
+        <div class="block-title">
+            <strong><?php /* @escapeNotVerified */ echo __('Order Information') ?></strong>
+        </div>
+        <div class="block-content">
+            <div class="col-1-sub">
+                <strong class="box-title">
+                    <span><?php /* @escapeNotVerified */ echo __('Billing Address') ?></span>
+                </strong>
+                <div class="box-content">
+                    <?php if ($block->allowUpdateBilling()): ?>
+                        <select id="md_billing_address" name="md_billing_address" class="validate-select required-entry" aria-required="true">
+                            <?php foreach ($billingAddressOptions as $billingAddressId => $billingAddressValue): ?>
+                                <option value="<?php echo $billingAddressId ?>" <?php if ($billingAddressValue[0] == true): ?> selected="selected" <?php endif; ?>><?php echo $billingAddressValue[1] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    <?php else : ?>
+                        <address><?php /* @escapeNotVerified */ echo $block->getBillingAddress(); ?></address>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php if (!$isvirtual): ?>
+                <div class="col-1-sub" style="padding-left:3%">
+                    <strong class="box-title">
+                        <span><?php /* @escapeNotVerified */ echo __('Shipping Address') ?></span>
+                    </strong>
+                    <div class="box-content">
+                        <?php if ($block->allowUpdateShipping()): ?>
+                            <select id="md_shipping_address" name="md_shipping_address"  class="validate-select required-entry" aria-required="true">
+                                <?php foreach ($shippingAddressOptions as $shippingAddressId => $shippingAddressValue): ?>
+                                    <option value="<?php echo $shippingAddressId ?>" <?php if ($shippingAddressValue[0] == true): ?> selected="selected"<?php endif; ?>><?php echo $shippingAddressValue[1] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        <?php else : ?>
+                            <address><?php /* @escapeNotVerified */ echo $block->getShippingAddress(); ?></address>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>    
+        </div>
+    </div>
+    <div class="back-subscription">
+        <input type="hidden" name="subscription_id" value="<?php $_subscription->getSubscriptionId(); ?>" />
+
+        <button type="button"  onclick="updatSubscriptionForm()" title="<?php echo __('Update Profile') ?>" class="button button action tocart primary" id="subscription_update">
+            <span>
+                <span>
+                    <?php echo __('Update Profile') ?>
+                </span>
+            </span>
+        </button>
+    </div>
+</form>
+<style type="text/css">
+    .col-1-sub{
+        width: 48%;
+        float: left;
+    }
+    .col-2-sub{
+        width: 48%;
+        float: left;
+    }
+    .sub-info-box-2{
+        margin-top: 4%;
+    }
+    .col2-set{
+        overflow: hidden;
+    }
+    .col2-set.sub-info-box-2 {        
+        padding-bottom: 4%;
+    }
+    .block.block-order-details-view{
+        border-bottom: 1px solid #c6c6c6;
+        padding-bottom: 3%;
+    }
+</style>
+<script type="text/javascript">
+    function updatSubscriptionForm()
+    {
+        var dataForm = jQuery('#subscription_profile_update');
+        dataForm.mage('validation');
+        if (jQuery('#subscription_profile_update').valid()) {
+            jQuery('#subscription_update').attr('disabled', true);
+            jQuery('#subscription_profile_update').submit();
+        }
+    }
+<?php if ($block->allowUpdateNextOcurDate()): ?>
+        require([
+                "jquery",
+                "mage/calendar",
+        ], function ($) {
+            $("#md_subscription_start").calendar({
+            showsTime: false,
+                    hideIfNoPrevNext: true,
+                    buttonText: "<?php echo __('Select Date') ?>",
+                    dateFormat: "yy-mm-dd",
+    <?php if ($block->isStartGreaterToday()): ?>
+                minDate: new Date("<?php echo date("F d,Y", strtotime($_schedule['start_date'])); ?>")
+    <?php else : ?>
+                minDate: new Date()
+    <?php endif; ?>
+        });
+        });
+<?php endif; ?>
+</script>

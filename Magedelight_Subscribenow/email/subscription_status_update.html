@@ -1,0 +1,43 @@
+<!--
+/*
+ * Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+-->
+<!--@subject Your subscription profile #{{var subscription.getProfileId()}}  has been updated @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-summary">
+        <td>
+            <p class="greeting">{{trans "%customer_name," customer_name=$subscription.getSubscriberName()}}</p>
+            <h1>{{trans 'Your subscription profile  #' }}{{var subscription.getProfileId()}}</h1>
+            <p>{{trans 'Placed on <span class="no-link">%created_at</span>' created_at=$subscription.getCreatedAtFormatted(2) |raw}}</p>
+        </td>
+    </tr>
+    <tr class="email-intro">
+        <td>            
+            <p>
+                {{trans "Subscription Profile Updates : "}} {{var updatemessage}}                
+            </p>            
+        </td>
+    </tr>  
+    {{depend next_date}}
+    <tr class="email-summary">
+        <td>
+            <p>
+                {{trans "Your Next Subscription Date is : "}} {{var next_date}}                
+            </p>            
+        </td>
+    </tr>
+    {{/depend}}
+</table>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,57 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+?>
+<?php
+// @codingStandardsIgnoreFile
+/** @var \Magedelight\Subscribenow\Block\Productsubscription\Profile\Order $block */
+?>
+<?php $_historys = $block->getRelatedProfileHistory(); ?>
+<?php
+$modifyByArray = array(
+    "0"=>__('CRON'),
+    "1" => __('Admin'),
+    "2" => __('Customer')
+);
+?>
+<h2><?php echo __('Profile history based on this profile') ?></h2>
+<?php if ($_historys && count($_historys)): ?>
+
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history" id="my-orders-table">
+            <caption class="table-caption"><?php /* @escapeNotVerified */ echo __('Profile History') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id"><?php /* @escapeNotVerified */ echo __('Modify By') ?></th>
+                    <th scope="col" class="col shipping"><?php /* @escapeNotVerified */ echo __('Comment') ?></th>
+                    <th scope="col" class="col shipping"><?php /* @escapeNotVerified */ echo __('Modify On') ?></th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($_historys as $_history): ?>                              
+                    <tr>
+                        <td data-th="<?php echo $block->escapeHtml(__('Modify By')) ?>" class="col id"><?php /* @escapeNotVerified */ echo $modifyByArray[$_history->getModifyBy()] ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Comment')) ?>" class="col status"><?php /* @escapeNotVerified */ echo $_history->getComment(); ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Modify On')) ?>" class="col created"><?php /* @escapeNotVerified */ echo $block->formatDate($_history->getCreatedAt()); ?></td>                        
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('There are no orders for this profile.'); ?></span></div>
+<?php endif ?>
+<div class="back-subscription">
+    <a href="<?php echo $block->getBackUrl(); ?>" title="<?php echo __('Back to Profile Information'); ?>"><small><?php echo __('«') ?></small>&nbsp;<?php echo __('Back to Profile Information'); ?></a>        
+</div>

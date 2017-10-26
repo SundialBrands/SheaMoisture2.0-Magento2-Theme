@@ -1,0 +1,189 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+?>
+<?php
+// @codingStandardsIgnoreFile
+/** @var \Magedelight\Subscribenow\Block\Catalog\Product\View\Subscriptioncontent $block */
+?>
+
+<?php $_product = $block->getCurrentProduct(); ?>
+<?php $updateCart = $block->isCartEdit(); ?>
+<?php $customerDate = $block->getCustomerSubscriptionStartDate(); ?>
+<?php if (!$updateCart && empty($customerDate)): ?>
+    <?php $customerDate = $block->getTodayDate(); ?>
+<?php endif; ?>
+<?php
+$excludeOption = false;
+if ($_product->getTypeId() == \Magento\Bundle\Model\Product\Type::TYPE_CODE || $_product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
+    $excludeOption = true;
+}
+?>
+<?php if ($_product->getIsSubscription()): ?>
+    <input type="hidden" name="productviewpage" value="yes" />				
+    <?php $speicalPricedetails = array(); ?>
+    <?php $purchaseOption = $block->getpurchaseOption(); ?>
+    <?php if ($purchaseOption == 'either'): ?>
+        <?php $speicalPricedetails = $block->getproductSpecialprice(); ?>
+    <?php endif; ?>
+    <?php $speicalPricedetailsjson = json_encode($speicalPricedetails); ?>
+    <?php $subscribeNowDetails = $_product->getSubscriptionNow(); ?>
+    <?php $subscriptionType = isset($subscribeNowDetails['subscription_type']) ? $subscribeNowDetails['subscription_type'] : ""; ?>
+    <?php $disocuntAmount = 0; ?>
+    <?php if ($subscriptionType == "either") : ?>
+        <?php
+        $currentCurrencySymbol = $speicalPricedetails['currency_symbol'];
+        $disocuntAmount = $speicalPricedetails['md_discount_amount'];
+        ?>
+        <?php if ($excludeOption == false): ?>
+            <input type="radio" value="nosubscription" price="0"  class="radio admin__control-radio  <?php if ($disocuntAmount > 0) : ?> required product-custom-option <?php endif; ?>" name="options[_1]" <?php if (!$updateCart) : ?> checked="checked" <?php endif; ?>  ><?php echo __('One-time Purchase') ?> <br/>
+            <input type="radio" value="subscription" price="<?php echo "-" . $disocuntAmount; ?>" class="radio admin__control-radio <?php if ($disocuntAmount > 0) : ?>  required product-custom-option <?php endif; ?>" name="options[_1]" <?php if ($updateCart) : ?> checked="checked" <?php endif; ?>  ><?php if ($disocuntAmount > 0): ?><?php echo __("Would you like to have this product ordered and shipped on a reoccuring basis -  $currentCurrencySymbol$disocuntAmount") ?> <?php else: ?><?php echo __("Would you like to have this product ordered and shipped on a reoccuring basis") ?> <?php endif; ?><br/>
+        <?php else: ?>
+            <input type="radio" value="nosubscription"   class="radio admin__control-radio  " name="options[_1]" <?php if (!$updateCart) : ?> checked="checked" <?php endif; ?>   ><?php echo __('One-time Porchase') ?> <br/>
+            <input type="radio" value="subscription"  class="radio admin__control-radio "  <?php if ($updateCart) : ?> checked="checked" <?php endif; ?>  name="options[_1]"  ><?php echo __("Would you like to have this product ordered and shipped on a reoccuring basis") ?> <br/>
+        <?php endif; ?>
+    <?php else : ?>
+        <input type="hidden" name="options[_1]" value="subscription" />				
+    <?php endif; ?>
+    <?php $subscriptionDetails = $block->getSubscriptionDetails(); ?>	
+    <?php $billingDefine = isset($subscribeNowDetails['billing_period_type']) ? $subscribeNowDetails['billing_period_type'] : ""; ?>	
+    <?php $billingFrequency = $block->getBillingFrequency(); ?>	
+    <?php $billingFrequencyPair = $block->getFrequencyPair(); ?>
+    <?php $frequencyPairjson = json_encode($block->getFrequencyPair()); ?>	
+    <div id="md_subscription_content" style="clear: both; <?php if ($subscriptionType == "either" && !$updateCart) : ?>  display:none <?php endif; ?>" >
+        <?php if (count($subscriptionDetails) > 0): ?>
+            <?php if ($billingDefine == "customer"): ?>					
+                <div id="product-subscription-customer" class="product-options-wrapper" style="margin-top:3%">
+                    <div class="fieldset">            
+                        <div class="field required">
+                            <label for="billing_period" class="label">
+                                <span><?php echo __('Subscription Renewal') ?></span>
+                            </label>
+                            <div class="control">
+                                <select title="<?php echo __('Subscription') ?>" class=" required  admin__control-select" id="billing_period" name="billing_period" onchange="mdChangeoccurance(this.value)" >
+                                    <?php foreach ($billingFrequency as $period => $periodlabel): ?>
+                                        <option value="<?php echo $period ?>"><?php echo $periodlabel ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            <?php else : ?>
+                <div class="product-options-wrapper" id="product-subscription-admin" style="margin-top:3%">
+                    <div><label class="label"><?php echo __('Delivery Every :'); ?> <?php echo $subscriptionDetails['Billing Period Frequency']; ?></label></div>						
+                </div>
+            <?php endif; ?>
+            <div class="product-options-wrapper" id="product-subscription-admin" style="margin-top:3%; display:none;">
+                <div>
+                    <?php if ($billingDefine == "admin"): ?>											
+                        <label class="label"><?php echo __('Number Of Occurrence :'); ?><span><?php echo $subscriptionDetails['Billing No Of Period']; ?></span>   <?php echo __('time(s)'); ?></label>
+
+                    <?php else : ?>
+                        <label class="label"><?php echo __('Number Of Occurrence :'); ?><span id="sub_occurrence" name="sub_occurrence"> <?php echo reset($billingFrequencyPair); ?> </span> <?php echo __('time(s)'); ?></label>
+                        <input type="hidden" name="set_sub_occur"  id="set_sub_occur" value="<?php echo reset($billingFrequencyPair); ?>"/>				
+
+                    <?php endif; ?>
+                </div>					
+            </div>
+            <div class="product-options-wrapper">
+                <div class="field" style="margin-top:2%; display:none;">
+                    <?php if ($subscriptionDetails['subscription start'] == "defined_by_customer"): ?>								
+                        <label for="subscription_start" class="label"><?php echo __('Subscription Start Date :'); ?></label>
+                        <div class="control">
+                            <input type="text" id="md_subscription_start" readonly="readonly" name="subscription_start_date" class="input-text" <?php if ($customerDate): ?>value="<?php echo $customerDate; ?>" <?php endif; ?>/>		
+                        </div>		
+
+                    <?php else : ?>
+                        <label for="subscription_start" class="label"><?php echo __('Subscription Start Date :'); ?></label>
+                        <span><?php echo $block->getSubscriptionStartDate($subscriptionDetails['subscription start']); ?></span>
+                        <input type="hidden" name="subscription_start_date" value="<?php echo $block->getSubscriptionStartDate($subscriptionDetails['subscription start']) ?>" />
+
+                    <?php endif; ?>
+                </div>
+            </div>
+            <h4 style="display:none;"><?php echo __('Subscription Details'); ?></h4>		
+            <table style="border:1px solid silver; display:none;" id="plan-attribute-specs-table" class="data table table-order-items recent">
+                <tbody>
+                    <?php foreach ($subscriptionDetails as $key => $value): ?>
+                        <?php
+                        if (($key == "Billing No Of Period" || $key == "Trial Period" || $key == 'Billing Period Frequency') || $key == "subscription start"): continue;
+                        endif
+                        ?>
+                        <?php if (!empty($value)): ?>
+                            <tr class="first odd">
+                                <th style="border-right: 1px solid silver;border-bottom: 1px solid silver;" class="label"><?php echo $key; ?> </th>
+                                <td class="data last"><?php echo $value; ?></td>
+                            </tr>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+        <script type="text/javascript">
+            var mdpriceglobal, mdpricecontent, mdspecialprice, specialpricedetails, changeflag = false;
+            var mdbillingfrequency =<?php echo $frequencyPairjson; ?>;
+            specialpricedetails =<?php echo $speicalPricedetailsjson ?>;
+            require([
+                "jquery",
+                "mage/calendar",
+                "Magento_Catalog/js/price-options"
+            ], function ($) {
+                mdpriceglobal = jQuery('.product-info-main').find('.product-info-price .price-box.price-final_price').html();
+                $("#md_subscription_start").calendar({
+                    showsTime: false,
+                    hideIfNoPrevNext: true,
+                    buttonText: "<?php echo __('Select Date') ?>",
+                    dateFormat: "yy-mm-dd",
+                    minDate: new Date()
+                });
+                $(function () {
+                    $('input:radio[name="options[_1]"]').change(function (event) {
+                        if (event.originalEvent !== undefined) {
+                            tooglesubscription($(this).val());
+                        }
+                    });
+                });
+            });
+            function tooglesubscription(subtype) {
+                var mdpricecontent = jQuery('.product-info-main').find('.product-info-price .price-box.price-final_price');
+                if (subtype == "subscription") {
+                    jQuery('#md_subscription_content').show()
+                } else {
+                    jQuery('#md_subscription_content').hide()
+                }
+            }
+            function mdChangeoccurance(ocvalue) {
+                jQuery("#sub_occurrence").html("&nbsp;" + mdbillingfrequency[ocvalue]);
+                jQuery("#set_sub_occur").val(mdbillingfrequency[ocvalue]);
+            }
+
+
+        </script>
+
+        <?php
+        if ((count($_product->getOptions()) == 0) && $subscriptionType == "either" && $excludeOption == false && $disocuntAmount > 0) {
+            ?>
+            <script type="text/x-magento-init">
+                {
+                "#product_addtocart_form": {
+                "priceOptions": {
+                "optionConfig": <?php /* @escapeNotVerified */ echo $block->getJsonConfig() ?>,
+                "controlContainer": ".field",
+                "priceHolderSelector": "[data-role=priceBox]"
+                }
+                }
+                }
+            </script>
+        <?php } ?>
+    </div>
+<?php endif; ?>

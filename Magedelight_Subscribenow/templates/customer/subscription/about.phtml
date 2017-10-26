@@ -1,0 +1,28 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+?>
+<?php
+// @codingStandardsIgnoreFile
+/**
+ *
+ * @var $block \Magedelight\Subscribenow\Block\Productsubscription\Profile\Buttoninfo
+ */
+?>
+<?php $urlInfo = $block->getUrlInfo(); ?>
+<div class="block block-addresses-default">
+    <div class="block-title">
+        <span style="font-size: 16px"> <?php echo __('About This Subscription:') ?>   </span>
+        <?php if ($urlInfo['setlink'] == "vh" || $urlInfo['setlink'] == "vo" || $urlInfo['setlink'] == "all"): ?><a href="<?php echo $urlInfo['viewurl'] ?>"> <?php endif; ?><span style="font-size: 16px;margin-left: 3%"> <?php echo __('Subscription Information'); ?></span><?php if ($urlInfo['setlink'] == "vh" || $urlInfo['setlink'] == "vo" || $urlInfo['setlink'] == "all"): ?></a><?php endif; ?>
+        <?php if ($urlInfo['setlink'] == "oh" || $urlInfo['setlink'] == "vo" || $urlInfo['setlink'] == "all"): ?><a href="<?php echo $urlInfo['orderurl'] ?>"><?php endif; ?> <span style="font-size: 16px;margin-left: 3%"><?php echo __('Related Orders'); ?></span><?php if ($urlInfo['setlink'] == "oh" || $urlInfo['setlink'] == "vo" || $urlInfo['setlink'] == "all"): ?></a><?php endif; ?>
+        <?php if ($urlInfo['setlink'] == "oh" || $urlInfo['setlink'] == "vh" || $urlInfo['setlink'] == "all"): ?><a href="<?php echo $urlInfo['history'] ?>"><?php endif; ?> <span style="font-size: 16px;margin-left: 3%"><?php echo __('Profile History'); ?></span><?php if ($urlInfo['setlink'] == "oh" || $urlInfo['setlink'] == "vh" || $urlInfo['setlink'] == "all"): ?></a><?php endif; ?>
+    </div>
+</div>

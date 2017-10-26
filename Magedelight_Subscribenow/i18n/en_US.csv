@@ -1,0 +1,477 @@
+Interval Type,Interval Type
+Number Of Interval,Number Of Interval
+Interval Label,Interval Label
+Add Rule,Add Rule
+Day,Day
+Week,Week
+Month,Month
+Year,Year
+We can't get the subscription profile instance right now.,We can't get the subscription profile instance right now.
+Edit Subscription Profile # %1,Edit Subscription ID # %1
+Are you sure you want to edit this subscription profile?,Are you sure you want to edit this subscription profile?
+Edit Profile,Edit Profile
+Are you sure you want to pause this subscription profile?,Are you sure you want to pause this subscription profile?
+Pause,Pause
+Are you sure you want to cancel this subscription profile?,Are you sure you want to cancel this subscription profile?
+Cancel,Cancel
+Are you sure you want to renew this subscription profile? It will create new subscription profile with same product and other details,Are you sure you want to renew this subscription profile? It will create new subscription profile with same product and other details
+Renew,Renew
+Are you sure you want to Skip this subscription profile for next occurrence?,Are you sure you want to Skip this subscription profile for next occurrence?
+Skip,Skip
+Are you sure you want to activate this subscription profile?,Are you sure you want to activate this subscription profile?
+Resume Profile,Resume Profile
+Subscription Profile # %1,Subscription ID # %1
+Repeats until failed or canceled.,Repeats until failed or canceled.
+Profile Information,Subscription Information
+Subscription Occurrence,Subscription Occurrence
+Occurrence ID,Occurrence ID
+Occurrence Date,Occurrence Date
+Order ID,Order ID
+Order Status,Order Status
+Occurrence Status,Occurrence Status
+Related Orders,Related Orders
+Order #,Order #
+Purchase Point,Purchase Point
+Purchased On,Purchased On
+Bill to Name,Bill to Name
+Grand Total(Base),Grand Total(Base)
+Grand Total(Purchased),Grand Total(Purchased)
+Status,Status
+Action,Action
+View,View
+Profile View,Profile View
+Customer Subscription Report,Customer Subscription Report
+Show Report,Show Report
+Interval,Interval
+Total,Total
+Subtotal,Subtotal
+Customer Name,Customer Name
+Customer Email,Customer Email
+Subscriber Count,Subscriber Count
+Active Subscriber,Active Subscriber
+Pause Subscriber,Pause Subscriber
+Cancel Subscriber,Cancel Subscriber
+CSV,CSV
+Excel XML,Excel XML
+Product Subscription Report,Product Subscription Report
+Product Name,Product Name
+Save Plan Subscription Profile,Save Plan Subscription Profile
+Save and Continue Edit,Save and Continue Edit
+Delete Plan Subscription Profile,Delete Plan Subscription Profile
+Edit Item '%1',Edit Item '%1'
+New Plan Subscription Profile,New Plan Subscription Profile
+Save Profile Address,Save Profile Address
+Shipping,Shipping
+Billing,Billing
+Edit Profile %1 Address,Edit Profile %1 Address
+Comment,Comment
+Created At,Subscription Started
+Id,Id
+Name,Name
+Price,Price
+Row Total,Row Total
+Qty,Qty
+Increment Id,Increment Id
+Purchased From (Store),Purchased From (Store)
+G.T. (Base),G.T. (Base)
+G.T. (Purchased),G.T. (Purchased)
+Plan History,Plan History
+Save Subscription Plan,Save Subscription Plan
+Delete Subscription Plan,Delete Subscription Plan
+New Subscription Plan,New Subscription Plan
+ID,ID
+Type,Type
+Visibility,Visibility
+SKU,SKU
+Position,Position
+Subscription Profile ID,Subscription Profile ID
+Subscriber Name,Subscriber Name
+Subscription Status,Subscription Status
+Next Occurrence Date,Next Processing Date
+Subscription Start Date,Subscription Start Date
+No. of Occurrences Passed,No. of Occurrences Passed
+Subscription Plan Information,Subscription Plan Information
+Plan Title,Plan Title
+URL Key,URL Key
+Description,Description
+Plan Type,Plan Type
+Billing Period,Billing Period
+Number of Billing Cycles,Number of Billing Cycles
+Discount,Discount
+Discount Type,Discount Type
+Allowed Stores,Allowed Stores
+Customer Groups,Customer Groups
+Allow to Skip Subscription,Allow to Skip Subscription
+Allow to Pause Subscription,Allow to Pause Subscription
+Allow to Cancel Subscription,Allow to Cancel Subscription
+Plan Information,Plan Information
+Subscription Plan Details,Subscription Plan Details
+Plan Products,Plan Products
+Plan Subscribers,Plan Subscribers
+Most Viewed,Most Viewed
+Repeats until failed or canceled,Repeats until failed or canceled
+time(s), time(s)
+Your Subscription Plan as configured below,Your Subscription Plan as configured below
+Initial Fee,Initial Fee
+Trial Fee,Trial Fee
+Subscription Plan List,Subscription Plan List
+' Recurring Profile # ' .,' Recurring Profile # ' .
+' Subscription Plan # ' .,' Subscription Plan # ' .
+Subscription Plan List ,Subscription Plan List 
+Plan Status,Plan Status
+Subscription profile has been successfully updated.,Subscription profile has been successfully updated.
+Subscription profile successfully updated.,Subscription profile successfully updated.
+Cybersource(Saved Cards),Cybersource(Saved Cards)
+Are you sure you want edit this profile?,Are you sure you want edit this profile?
+Sales,Sales
+Manage Subscription,Manage Subscription
+This subscription profile no longer exists.,This subscription profile no longer exists.
+Subscription Profile,Subscription Profile
+Nothing to update for this record(s).,Nothing to update for this record(s).
+This profile Id(s) %1 has been updated.,This profile Id(s) %1 has been updated.
+New Subscription profile has been created successfully updated.,New Subscription profile has been created successfully updated.
+An error occurred while showing the customer subscription report. Please review the log and try again.,An error occurred while showing the customer subscription report. Please review the log and try again.
+An error occurred while showing the product subscription report. Please review the log and try again.,An error occurred while showing the product subscription report. Please review the log and try again.
+Edit Subscription Profile Address,Edit Subscription Profile Address
+You updated the profile address.,You updated the profile address.
+This Plan Subscription Profile no longer exists.,This Plan Subscription Profile no longer exists.
+Subscription Plan Profile,Subscription Plan Profile
+Subscription Plan # %1,Subscription Plan # %1
+Manage Plan Subscribers,Manage Plan Subscribers
+Please correct the data sent.,Please correct the data sent.
+Profile Updated Successfully,Profile Updated Successfully
+The plan has been deleted.,The plan has been deleted.
+The plan no longer exists.,The plan no longer exists.
+This subscription plan no longer exists.,This subscription plan no longer exists.
+Manage Subscription Plan Details,Manage Subscription Plan Details
+Please select item(s).,Please select item(s).
+A total of %1 record(s) have been deleted.,A total of %1 record(s) have been deleted.
+Subscription Plan Report,Subscription Plan Report
+An error occurred while showing the product views report. Please review the log and try again.,An error occurred while showing the product views report. Please review the log and try again.
+The plan has been saved.,The plan has been saved.
+URL key for specified plan already exists.,URL key for specified plan already exists.
+My Subscription Profiles,My Subscription
+My Subscription Plans,My Subscription Plans
+You need to choose subscription options for your item.,You need to choose subscription options for your item.
+We can't find the product.,We can't find the product.
+You can not update items of a Fixed Subscription Plan.,You can not update items of a Fixed Subscription Plan.
+This quote item does not exist.,This quote item does not exist.
+We can't save the cron expression.,We can't save the cron expression.
+ Repeats until failed or canceled, Repeats until failed or canceled
+"Your credit card payment has recently declined for subscription order. The decline could be due to card expiration, insufficient funds, card number change, non availability of product etc. In order to prevent discontinuation of subscription service, please verify your subscription information or contact store owner for more details.","Your credit card payment has recently declined for subscription order. The decline could be due to card expiration, insufficient funds, card number change, non availability of product etc. In order to prevent discontinuation of subscription service, please verify your subscription information or contact store owner for more details."
+Pending,Pending
+Activated,Activated
+Paused,Paused
+Expired,Expired
+Cancelled,Cancelled
+Suspended,Suspended
+Failed,Failed
+Updated,Updated
+Your subscription profile has been successfully skip for next occurrence date.,Your subscription profile has been successfully skip for next occurrence date.
+"Your credit card payment has recently declined for subscription plan order. The decline could be due to card expiration, insufficient funds, card number change, non availability of product etc. In order to prevent discontinuation of subscription service, please verify your subscription information or contact store owner for more details.","Your credit card payment has recently declined for subscription plan order. The decline could be due to card expiration, insufficient funds, card number change, non availability of product etc. In order to prevent discontinuation of subscription service, please verify your subscription information or contact store owner for more details."
+Schedule Description,Schedule Description
+Billing Period Unit,Billing Period Unit
+Billing Frequency,Billing Frequency
+Maximum Billing Cycles,Maximum Billing Cycles
+Billing Amount,Billing Amount
+Trial Billing Period Unit,Trial Billing Period Unit
+Trial Billing Frequency,Trial Billing Frequency
+Maximum Trial Billing Cycles,Maximum Trial Billing Cycles
+Trial Billing Amount,Trial Billing Amount
+Currency,Currency
+Shipping Amount,Shipping Amount
+Tax Amount,Tax Amount
+Allow Initial Fee Failure,Allow Initial Fee Failure
+Payment Method,Payment Method
+Payment Reference ID,Payment Reference ID
+Trial Period,Trial Period
+Product Subscription,Product Subscription
+Total Product Subscription Report,Total Product Subscription Report
+Customer Subscription,Customer Subscription
+Total Customer Subscription Report,Total Customer Subscription Report
+Admin,Admin
+Customer,Customer
+Fixed,Fixed
+Percentage,Percentage
+Dynamic,Dynamic
+Subscription Only,Subscription Only
+Either (Single Purchase or Subscription),Either (Single Purchase or Subscription)
+Enabled,Enabled
+Disabled,Disabled
+Moment Of Purchase,Moment Of Purchase
+Defined By Customer,Defined By Customer
+Last Day Of Month,Last Day Of Month
+Exact Day Of Month,Exact Day Of Month
+Yes,Yes
+No,No
+------ Select Saved Card------,------ Select Saved Card------
+------ Select Billing Address ------,------ Select Billing Address ------
+------ Select Shipping Address ------,------ Select Shipping Address ------
+Payment type,Payment type
+Trial period payment,Trial period payment
+Trial ,Trial 
+Please checkout the current plan in your cart first.,Please checkout the current plan in your cart first.
+Discount (%1),Discount (%1)
+Active,Active
+Canceled,Canceled
+Complete,Complete
+First you have to add Subscription Interval type to enable subscribe now.,First you have to add Subscription Interval type to enable subscribe now.
+Cybersource Payment Method,Cybersource Payment Method
+Stripe Payment Method,Stripe Payment Method
+Authorize.net CIM,Authorize.net CIM
+Top Links,Top Links
+Top Navigation,Top Navigation
+The subscribe product maximum can be purchase %1 quantity only.,The subscribe product maximum can be purchase %1 quantity only.
+You must be registered in order to purchase subscription Item,You must be registered in order to purchase subscription Item
+Subscription plan can be purchased standonly only.To proceed please remove other items from the quote.,Subscription plan can be purchased standonly only.To proceed please remove other items from the quote.
+Serial key not found.Please enter valid serial key for 'CyberSource Tokenization' extension.,Serial key not found.Please enter valid serial key for 'CyberSource Tokenization' extension.
+Activation key not found.Please enter valid activation key for 'CyberSource with Recurring Profile' extension.,Activation key not found.Please enter valid activation key for 'CyberSource with Recurring Profile' extension.
+Edit,Edit
+Delete,Delete
+Are you sure you want to delete the Subscription Plan ${ $.$data.plan_title } ?,Are you sure you want to delete the Subscription Plan ${ $.$data.plan_title } ?
+Discount will applied on product price.,Discount will applied on product price.
+Apply only if subscription start from is selected as Exact Day Of Month,Apply only if subscription start from is selected as Exact Day Of Month
+Back To Subscription Profile,Back To Subscription Profile
+Update Profile,Update Profile
+Profile Number,Profile Number
+Profile Status,Status
+Quantity,Quantity
+Subscription Payment Details,Subscription Payment Details
+Billing Price,Billing Price
+Trial Amount,Trial Amount
+Card Details:,Card Details:
+Subscription History,Subscription History
+Start Date,Subscription Started
+Number of Trial occurrence,Number of Trial occurrence
+Passed Trial occurrence,Passed Trial occurrence
+Number of occurrence,Number of occurrence
+Passed occurrence,Orders Fulfilled:
+Address Information,Address Information
+Billing Address,Billing Address
+Shipping Address,Shipping Address
+Select Date,Select Date
+Not set yet,Not set yet
+Profile Reference,Profile Reference
+Purchased Item,Purchased Item
+Profile Schedule,Profile Schedule
+Subscription Payments,Subscription Payments
+Profile Id,Profile Id
+Skip To The Next Occurrence Date,Skip To The Next Occurrence Date
+Plan Name,Plan Name
+Payment Information,Payment Information
+Total Price,Total Price
+Discount Amount,Discount Amount
+Card Information,Card Information
+Credit Card Type:,Credit Card Type:
+Not Found,Not Found
+Credit Card Number:,Credit Card Number:
+Card Details,Card Details
+Number of Occurrences,Number of Occurrences
+Passed Occurrence,Orders Fulfilled:
+--Please select an option--,--Please select an option--
+Plan Items,Plan Items
+Add,Add
+Add after,Add after
+"If this interval is assigned to any product,then affected product falling to last interval of this setting.","If this interval is assigned to any product,then affected product falling to last interval of this setting."
+No Subscription,No Subscription
+Subscribe This Product,Subscribe This Product
+Subscription,Subscription
+Delivery Every :,Delivery Every :
+Number Of Occurrence :,Number Of Occurrence :
+time(s),time(s)
+Subscription Start Date :,Subscription Start Date :
+Subscription Details,Subscription Details
+Your subscription payment profiles:,Your subscription payment profiles:
+Your subscription profile number is: %1.,Your subscription profile number is: %1.
+About This Profile:,About This Subscription:
+Reminder Email,Reminder Email
+Place Order,Place Order
+Are you sure ? You want to resume this subscription profile.,Are you sure ? You want to resume this subscription profile.
+Skip Profile,Skip Profile
+Are you sure ? You want to skip this subscription profile for next occurrence.,Are you sure ? You want to skip this subscription profile for next occurrence.
+Pause Profile,Pause Profile
+Are you sure ? You want to pause this subscription profile.,Are you sure ? You want to pause this subscription profile.
+Cancel Profile,Cancel Profile
+Are you sure ? You want to cancel this subscription profile.,Are you sure ? You want to cancel this subscription profile.
+Are you sure ? You want to edit this subscription profile.,Are you sure ? You want to edit this subscription profile.
+Profile Number:,Profile Number:
+Profile Status:,Profile Status:
+Product Name:,Product Name:
+SKU:,SKU:
+Quantity:,Quantity:
+Billing Price:,Billing Price:
+Trial Price:,Trial Price:
+Initial Fee:,Initial Fee:
+Payment Method:,Payment Method:
+Start Date:,Subscription Started:
+Next Occurrence Date:,Next Occurrence Date:
+Number of Trial occurrence:,Number of Trial occurrence:
+Passed Trial occurrence:,Passed Trial occurrence:
+Number of occurrence:,Number of occurrence:
+Passed occurrence:,Orders Fulfilled:
+Order Information,Order Information
+Subscription ID #,Subscription ID #
+Updated At,Updated At
+Actions,Actions
+View Subscription,View Subscription
+You have not subscribe any products.,You have not subscribe any products.
+Orders based on this profile,Orders based on this profile
+Order ID #,Order ID #
+Date,Date
+Order Total,Order Total
+View Order,View Order
+There are no orders for this profile.,There are no orders for this profile.
+Back to Profile Information,Back to Profile Information
+Number of Trial Occurrence:,Number of Trial Occurrence:
+Passed Trial Occurrence:,Passed Trial Occurrence:
+Number of Occurrence:,Number of Occurrence:
+Passed Occurrence:,Passed Occurrence:
+Back to Subscription Profiles,Back to Subscription Profiles
+Plan Summary,Plan Summary
+Plan Start Date,Plan Start Date
+Plan Description,Plan Description
+No. of Billing Cycles,No. of Billing Cycles
+Allowed to Skip Subscription,Allowed to Skip Subscription
+Allowed to Pause Subscription,Allowed to Pause Subscription
+Allowed to Cancel Subscription,Allowed to Cancel Subscription
+Orders,Orders
+Subscription <br/>Profile ID,Subscription <br/>Profile ID
+Next Occurrence date,Next Occurrence date
+Inactive,Inactive
+Records not available.,Records not available.
+ Related Orders, Related Orders
+ Plan History, Plan History
+Back,Back
+No information available,No information available
+Timestamp,Timestamp
+Are you sure you want to active this profile ?,Are you sure you want to active this profile ?
+Are you sure you want to Skip this profile ?,Are you sure you want to Skip this profile ?
+Are you sure you want to Pause this profile ?,Are you sure you want to Pause this profile ?
+Are you sure you want to cancel this profile ?,Are you sure you want to cancel this profile ?
+Reference,Reference
+Payment Reference Id:,Payment Reference Id:
+Plan Title:,Plan Title:
+Plan Description:,Plan Description:
+Profile State:,Profile State:
+Number Of Occurrence:,Number Of Occurrence:
+Change Date,Change Date
+Allowed To Update Profile Till:,Allowed To Update Profile Till:
+ Day(s) before Next Occurrence Date, Day(s) before Next Occurrence Date
+Default Card Details,Default Card Details
+Credit Cards,Credit Cards
+Update Default Card Details,Update Default Card Details
+Update Shipping Address,Update Shipping Address
+Shipping Method,Shipping Method
+No shipping information available,No shipping information available
+Update Billing Address,Update Billing Address
+Update Items,Update Items
+Items Ordered,Items Ordered
+Excl. Tax,Excl. Tax
+Ordered: ,Ordered: 
+Ship To,Ship To
+You have placed no orders.,You have placed no orders.
+Plan ID,Plan ID
+Total Products,Total Products
+Subscribe Plan,Subscribe Plan
+'View ' .,'View ' .
+View Products,View Products
+Plan Details,Plan Details
+Can Pause,Can Pause
+Can Skip,Can Skip
+Can Cancel,Can Cancel
+Repeats until failed or canceled.,Repeats until failed or canceled.
+Subscription Plan Products,Subscription Plan Products
+Image,Image
+Title,Title
+Configurable Options,Configurable Options
+Customize %1,Customize %1
+No options of this product are available.,No options of this product are available.
+Your Customization,Your Customization
+Summary,Summary
+%1 x %2,%1 x %2
+Choose an Option...,Choose an Option...
+sample,sample
+Select all,Select all
+Unselect all,Unselect all
+Magedelight,Magedelight
+Subscribe Now Configuration,Subscribe Now Configuration
+License Configuration,License Configuration
+Serial Key,Serial Key
+Activation Key,Activation Key
+General Configuration,General Configuration
+Enable Subscription,Enable Subscription
+Manage Subscription Interval,Manage Subscription Interval
+Maximum Payment Failed,Maximum Payment Failed
+Select Payment Gateway,Select Payment Gateway
+Select Shipping Method,Select Shipping Method
+Allowed To Update Billing Address,Allowed To Update Billing Address
+Allowed To Update Shipping Address,Allowed To Update Shipping Address
+Allowed To Update Profile Before,Allowed To Update Profile Before
+Send Reminder Of Occurrence Before,Send Reminder Of Occurrence Before
+Product Subscription Configuration,Product Subscription Configuration
+Allowed Maximum Quantity To Subscribe Per Product,Allowed Maximum Quantity To Subscribe Per Product
+Subscription Product List Page Text,Subscription Product List Page Text
+Enable Summary block on cart page,Enable Summary block on cart page
+Header Summary Text,Header Summary Text
+Summary Text,Summary Text
+Free Shipping For Subscription,Free Shipping For Subscription
+Allow To Pause Subscription,Allow To Pause Subscription
+Allow To Cancel Subscription,Allow To Cancel Subscription
+CRON JOB Frequency,CRON JOB Frequency
+CRON JOB Start Time,CRON JOB Start Time
+Plan Subscription Configuration,Plan Subscription Configuration
+Enable Subscription Plan,Enable Subscription Plan
+Enabled Subscription Plan On,Enabled Subscription Plan On
+Plan List Page Title,Plan List Page Title
+Plan List Page URL,Plan List Page URL
+Plan List Page URL Suffix,Plan List Page URL Suffix
+Product Subscription Email Configuration,Product Subscription Email Configuration
+Subscription Email Sender,Subscription Email Sender
+New Subscription Template,New Subscription Template
+Send New Subscription Email Copy To,Send New Subscription Email Copy To
+Subscription Profile Update Template,Subscription Profile Update Template
+Send Subscription Update Email Copy To,Send Subscription Update Email Copy To
+Payment Failed Template,Payment Failed Template
+Send Payment Failed Email Copy To,Send Payment Failed Email Copy To
+New Subscription Card Add Template,New Subscription Card Add Template
+Send New Subscription Card Email Copy To,Send New Subscription Card Email Copy To
+Subscription Reminder Template,Subscription Reminder Template
+Subscription Reminder Email Copy To,Subscription Reminder Email Copy To
+Plan Subscription Email Configuration,Plan Subscription Email Configuration
+All Websites,All Websites
+Skip Next Occurrence,Skip Next Occurrence
+Are you sure you wan't to skip next occurrence for selected subscriber?,Are you sure you wan't to skip next occurrence for selected subscriber?
+Pause Subscription,Pause Subscription
+Are you sure you wan't to Pause subscription for selected subscriber?,Are you sure you wan't to Pause subscription for selected subscriber?
+Resume Subscription,Resume Subscription
+Are you sure you wan't to resume subscription for selected subscriber?,Are you sure you wan't to resume subscription for selected subscriber?
+Cancel Subscription,Cancel Subscription
+Are you sure you want to cancel subscription for selected subscriber?,Are you sure you want to cancel subscription for selected subscriber?
+Profile Reference ID,Profile Reference ID
+Subscriber Email,Subscriber Email
+Next Occurence Date,Next Occurence Date
+Total Subscribed Products,Total Subscribed Products
+Are you sure you wan't to Skip Next Occurrence for selected subscriber?,Are you sure you wan't to Skip Next Occurrence for selected subscriber?
+Are you sure you wan't to Pause Subscription for selected subscriber?,Are you sure you wan't to Pause Subscription for selected subscriber?
+Are you sure you wan't to Resume Subscription for selected subscriber?,Are you sure you wan't to Resume Subscription for selected subscriber?
+Are you sure you wan't to Cancel Subscription for selected subscriber?,Are you sure you wan't to Cancel Subscription for selected subscriber?
+Email,Email
+Add New Subscription Plan,Add New Subscription Plan
+Delete items,Delete items
+Are you sure you want to delete selected items?,Are you sure you want to delete selected items?
+Manage Stock,Manage Stock
+Use Config Settings,Use Config Settings
+Out-of-Stock Threshold,Out-of-Stock Threshold
+Minimum Qty Allowed in Shopping Cart,Minimum Qty Allowed in Shopping Cart
+Customer Group,Customer Group
+Minimum Qty,Minimum Qty
+Maximum Qty Allowed in Shopping Cart,Maximum Qty Allowed in Shopping Cart
+Qty Uses Decimals,Qty Uses Decimals
+Allow Multiple Boxes for Shipping,Allow Multiple Boxes for Shipping
+Backorders,Backorders
+Use Deferred Stock Update,Use Deferred Stock Update
+Notify for Quantity Below,Notify for Quantity Below
+Enable Qty Increments,Enable Qty Increments
+Qty Increments,Qty Increments
+Stock Status,Stock Status
+Create an Account,Create an Account

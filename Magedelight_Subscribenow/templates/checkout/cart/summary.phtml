@@ -1,0 +1,43 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+
+?>
+<?php
+$summaryProducts = $block->getSummaryProducts();
+if (empty($summaryProducts)) {
+    return;
+}
+?>
+<div id="block-shipping" class="block shipping" data-collapsible="true" role="tablist" data-mage-init='{"collapsible":{"openedState": "active", "saveState": true}}'>
+    <div class="title" data-role="title" aria-controls="product-summary" role="tab" aria-selected="false" aria-expanded="false" tabindex="0">
+        <strong id="block-productsummary-heading" aria-level="2" role="heading">
+            <?php echo $block->getHeaderText(); ?>
+        </strong>
+    </div>
+
+    <div id="plan-summary" class="shipping-form" data-bind="scope:'product-summary'" class="content" data-role="content" aria-labelledby="block-productsummary-heading">
+        <P>
+            <?php echo $block->getsummaryContent(); ?>
+        </P>
+        <table id="product-summary-table">
+
+            <tr>
+                <td class="title"><strong><?php echo __('Product Name') ?></strong></td>                
+            </tr>                    
+            <?php foreach ($summaryProducts as $productName): ?>
+                <tr>                
+                    <td class="col plan-title"><?php echo $productName ?></td>
+                </tr>                    
+            <?php endforeach; ?>
+        </table>	    
+    </div>
+</div>

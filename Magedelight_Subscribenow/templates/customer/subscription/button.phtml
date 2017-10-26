@@ -1,0 +1,64 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+?>
+<?php
+// @codingStandardsIgnoreFile
+/** @var \Magedelight\Subscribenow\Block\Productsubscription\Profile\Buttoninfo $block */
+?>
+<?php if (!$block->isComplete() && !$block->isFail() && !$block->isCancel() && $block->isallowProfileEdit()): ?>    
+    <?php if (!$block->isPending()): ?>
+        <?php if ($block->allowResume() && !$block->isCancel()): ?>
+            <a href="<?php echo $block->getResumeUrl(); ?>" title="<?php echo __('Resume Profile') ?>" onclick="return confirm('<?php echo __('Are you sure ? You want to resume this subscription profile.') ?>');" style="text-decoration: none">
+                <button type="button" title="<?php echo __('Resume Profile') ?>" class="action primary add">
+                    <span><?php /* @escapeNotVerified */ echo __('Resume Profile') ?></span>
+                </button>
+            </a>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php if (!$block->isPending()): ?>
+        <?php if ($block->allowSkip() && !$block->isCancel()): ?>
+            <a href="<?php echo $block->getSkipUrl(); ?>" title="<?php echo __('Skip Profile') ?>" onclick="return confirm('<?php echo __('Are you sure ? You want to skip this subscription profile for next occurrence.') ?>');" style="text-decoration: none">
+                <button type="button" title="<?php echo __('Skip') ?>" class="action primary add">
+                    <span><?php /* @escapeNotVerified */ echo __('Skip') ?></span>
+                </button>
+            </a>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php if (!$block->isPending()): ?>
+        <?php if ($block->allowPause() && !$block->isCancel()): ?>
+            <a href="<?php echo $block->getPauseUrl(); ?>" title="<?php echo __('Pause Profile') ?>" onclick="return confirm('<?php echo __('Are you sure ? You want to pause this subscription profile.') ?>');" style="text-decoration: none">
+                <button type="button" title="<?php echo __('Pause') ?>" class="action primary add">
+                    <span><?php /* @escapeNotVerified */ echo __('Pause') ?></span>
+                </button>
+            </a>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php if ($block->allowCancel() && !$block->isCancel()): ?>
+        <a href="<?php echo $block->getCancelUrl(); ?>" title="<?php echo __('Cancel Profile') ?>" onclick="return confirm('<?php echo __('Are you sure ? You want to cancel this subscription profile.') ?>');" style="text-decoration: none">
+            <button type="button" title="<?php echo __('Cancel') ?>" class="action primary add">
+                <span><?php /* @escapeNotVerified */ echo __('Cancel') ?></span>
+            </button>
+        </a>
+    <?php endif; ?>
+
+
+    <?php if ($block->allowEdit() && !$block->isCancel()): ?>
+        <a href="<?php echo $block->getEditUrl(); ?>" title="<?php echo __('Edit Profile') ?>" onclick="return confirm('<?php echo __('Are you sure ? You want to edit this subscription profile.') ?>');" style="text-decoration: none">
+            <button type="button" title="<?php echo __('Edit') ?>" class="action primary add">
+                <span><?php /* @escapeNotVerified */ echo __('Edit') ?></span>
+            </button>
+        </a>
+    <?php endif; ?>
+<?php endif; ?>

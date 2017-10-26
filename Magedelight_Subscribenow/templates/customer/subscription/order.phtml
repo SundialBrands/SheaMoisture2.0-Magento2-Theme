@@ -1,0 +1,62 @@
+<?php
+/**
+* Magedelight
+ * Copyright (C) 2017 Magedelight <info@magedelight.com>
+ *
+ * @category Magedelight
+ * @package Magedelight_Subscribenow
+ * @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Magedelight <info@magedelight.com>
+ */
+
+?>
+<?php
+
+// @codingStandardsIgnoreFile
+/** @var \Magedelight\Subscribenow\Block\Productsubscription\Profile\Order $block */
+?>
+<?php $_orders = $block->getRelatedOrders(); ?>
+<h2><?php echo __('Orders based on this profile')?></h2>
+<?php if ($_orders && count($_orders)): ?>
+
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history" id="my-orders-table">
+            <caption class="table-caption"><?php /* @escapeNotVerified */ echo __('Related Orders') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id"><?php /* @escapeNotVerified */ echo __('Order ID #') ?></th>
+                    <th scope="col" class="col date"><?php /* @escapeNotVerified */ echo __('Date') ?></th>
+                    <th scope="col" class="col shipping"><?php /* @escapeNotVerified */ echo __('Customer Name') ?></th>
+                    <th scope="col" class="col total"><?php /* @escapeNotVerified */ echo __('Order Total') ?></th>
+                    <th scope="col" class="col status"><?php /* @escapeNotVerified */ echo __('Order Status') ?></th>
+                    <th scope="col" class="col actions">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($_orders as $_order): ?>                              
+                    <tr>
+                        <td data-th="<?php echo $block->escapeHtml(__('Order ID #')) ?>" class="col id"><?php /* @escapeNotVerified */ echo $_order->getIncrementId() ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Date')) ?>" class="col status"><?php /* @escapeNotVerified */ echo $block->formatDate($_order->getCreatedAt()); ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Customer Name')) ?>" class="col created"><?php echo $_order->getBillingAddress() ? $block->escapeHtml($_order->getBillingAddress()->getName()) : '&nbsp;'?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Order Total')) ?>" class="col updated"><?php /* @escapeNotVerified */ echo $_order->formatPrice($_order->getGrandTotal()) ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Order Status')) ?>" class="col method"><?php /* @escapeNotVerified */ echo $_order->getStatusLabel(); ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Actions')) ?>" class="col actions">
+                            <a href="<?php /* @escapeNotVerified */ echo $block->getViewUrl($_order->getId()) ?>" class="action view">
+                                <span><?php /* @escapeNotVerified */ echo __('View Order') ?></span>
+                            </a>                            
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('There are no orders for this profile.'); ?></span></div>
+<?php endif ?>
+<div class="back-subscription">
+    <a href="<?php echo $block->getBackUrl();?>" title="<?php echo __('Back to Profile Information');?>"><small><?php echo __('«')?></small>&nbsp;<?php echo __('Back to Profile Information');?></a>        
+</div>

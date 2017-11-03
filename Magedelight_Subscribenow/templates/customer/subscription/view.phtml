@@ -37,7 +37,7 @@
                 <table class="info-table">
                     <tbody>
                         <tr>
-                            <th><span class="nobr"><?php echo __('Profile ID:'); ?></span></th>
+                            <th><span class="nobr"><?php echo __('Subscription ID:'); ?></span></th>
                             <td>
                                 <?php echo $block->getProfileNumber() ?>
                             </td>
@@ -92,12 +92,12 @@
                                 <td><?php echo $_currencySymbol . ($_paymentInfo['initial_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
                             </tr>
                         <?php endif; ?>
-                        <tr>
-                            <th><span class="nobr"><?php echo __('Payment Method:'); ?></span></th>
+                        <!--<tr>
+                            <th><span class="nobr"><?php //echo __('Payment Method:'); ?></span></th>
                             <td>
-                                <?php echo $block->getPaymentMethodLabel($_subscription->getPaymentMethodCode()) ?>
+                                <?php //echo $block->getPaymentMethodLabel($_subscription->getPaymentMethodCode()) ?>
                             </td>
-                        </tr> 
+                        </tr>--> 
                         <tr>
                             <th><span class="nobr"><?php echo __('Card Details:'); ?></span></th>
                             <td>

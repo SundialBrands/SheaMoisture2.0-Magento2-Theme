@@ -45,10 +45,10 @@ if ($_product->getTypeId() == \Magento\Bundle\Model\Product\Type::TYPE_CODE || $
         ?>
         <?php if ($excludeOption == false): ?>
             <input type="radio" value="nosubscription" price="0"  class="radio admin__control-radio  <?php if ($disocuntAmount > 0) : ?> required product-custom-option <?php endif; ?>" name="options[_1]" <?php if (!$updateCart) : ?> checked="checked" <?php endif; ?>  ><?php echo __('One-time Purchase') ?> <br/>
-            <input type="radio" value="subscription" price="<?php echo "-" . $disocuntAmount; ?>" class="radio admin__control-radio <?php if ($disocuntAmount > 0) : ?>  required product-custom-option <?php endif; ?>" name="options[_1]" <?php if ($updateCart) : ?> checked="checked" <?php endif; ?>  ><?php if ($disocuntAmount > 0): ?><?php echo __("Would you like to have this product ordered and shipped on a reoccuring basis -  $currentCurrencySymbol$disocuntAmount") ?> <?php else: ?><?php echo __("Would you like to have this product ordered and shipped on a reoccuring basis") ?> <?php endif; ?><br/>
+            <input type="radio" value="subscription" price="<?php echo "-" . $disocuntAmount; ?>" class="radio admin__control-radio <?php if ($disocuntAmount > 0) : ?>  required product-custom-option <?php endif; ?>" name="options[_1]" <?php if ($updateCart) : ?> checked="checked" <?php endif; ?>  ><?php if ($disocuntAmount > 0): ?><?php echo __("Subscription Purchase -  $currentCurrencySymbol$disocuntAmount") ?> <?php else: ?><?php echo __("Subscription Purchase") ?> <?php endif; ?><br/>
         <?php else: ?>
-            <input type="radio" value="nosubscription"   class="radio admin__control-radio  " name="options[_1]" <?php if (!$updateCart) : ?> checked="checked" <?php endif; ?>   ><?php echo __('One-time Porchase') ?> <br/>
-            <input type="radio" value="subscription"  class="radio admin__control-radio "  <?php if ($updateCart) : ?> checked="checked" <?php endif; ?>  name="options[_1]"  ><?php echo __("Would you like to have this product ordered and shipped on a reoccuring basis") ?> <br/>
+            <input type="radio" value="nosubscription"   class="radio admin__control-radio  " name="options[_1]" <?php if (!$updateCart) : ?> checked="checked" <?php endif; ?>   ><?php echo __('One-time Purchase') ?> <br/>
+            <input type="radio" value="subscription"  class="radio admin__control-radio "  <?php if ($updateCart) : ?> checked="checked" <?php endif; ?>  name="options[_1]"  ><?php echo __("Subscription Purchase") ?> <br/>
         <?php endif; ?>
     <?php else : ?>
         <input type="hidden" name="options[_1]" value="subscription" />				

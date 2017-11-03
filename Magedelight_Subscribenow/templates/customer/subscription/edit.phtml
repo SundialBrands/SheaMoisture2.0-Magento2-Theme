@@ -32,13 +32,13 @@
         <div class="col-1-sub" >
             <div class="info-box">
                 <div class="box-title">
-                    <h2><?php /* @escapeNotVerified */ echo __('Subscription Profile'); ?></h2>
+                    <h2><?php /* @escapeNotVerified */ echo __('Subscription Details'); ?></h2>
                 </div>
                 <div class="box-content">
                     <table class="info-table">
                         <tbody>
                             <tr>
-                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Profile Number:'); ?></span></th>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Subscription ID:'); ?></span></th>
                                 <td>
                                     <?php echo $block->getProfileNumber() ?>
                                 </td>
@@ -72,7 +72,7 @@
         <div class="col-2-sub">
             <div class="info-box">
                 <div class="box-title">
-                    <h2><?php /* @escapeNotVerified */ echo __('Subscription Payment Details'); ?></h2>
+                    <h2><?php /* @escapeNotVerified */ echo __('Payment Details'); ?></h2>
                 </div>
                 <div class="box-content">
                     <table class="info-table">
@@ -93,12 +93,12 @@
                                     <td><?php echo $_currencySymbol . ($_paymentInfo['initial_amount'] * $_subscriptionProduct['qty_ordered']); ?></td>
                                 </tr>
                             <?php endif; ?>
-                            <tr>
-                                <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Payment Method:'); ?></span></th>
+                            <!--<tr>
+                                <th><span class="nobr"><?php /* @escapeNotVerified */ //echo __('Payment Method:'); ?></span></th>
                                 <td>
-                                    <?php echo $block->getPaymentMethodLabel($_subscription->getPaymentMethodCode()) ?>
+                                    <?php //echo $block->getPaymentMethodLabel($_subscription->getPaymentMethodCode()) ?>
                                 </td>
-                            </tr> 
+                            </tr>--> 
                             <tr>
                                 <th><span class="nobr"><?php /* @escapeNotVerified */ echo __('Card Details:'); ?></span></th>
                                 <td>

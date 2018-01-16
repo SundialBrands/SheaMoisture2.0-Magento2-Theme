@@ -966,7 +966,8 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 			max-width: 100%;
 			    clear: both;
 		}
-        .filter-options-content{		
+        .filter-options-content{
+			display:none;
             a{		
                 display: block;		
                 color: @primary__color;		
@@ -977,7 +978,12 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
             .count{		
                 color:@color-gray34;		
             }		
-        }		
+        }
+		.filter-options{
+			.active > .filter-options-content{
+				display:inline-block;
+			}
+		}
         .filter-options-item{
             border-bottom: 1px solid @colorLightPink;		
         }		

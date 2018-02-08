@@ -863,7 +863,7 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 	}
 	}
 .page-wrapper .mainHeader .page-header {
-	background: transparent !important;
+	/* background: transparent !important; */
 	.header.panel{
 		background: none;
 		padding-bottom: 10px;
@@ -881,11 +881,18 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 	.page-header, .sections.nav-sections, .page-wrapper > div {
 		background-color: #f5f5f5 !important;
 	}
-	.mainHeader{
-	    background-image: url(../images/headertopleft_img.png) !important;
+	.page-wrapper .page-header{
+		background-image: url(../images/headertopleft_img.png) !important;
 	    background-repeat:  no-repeat !important;
 	    background-color: #f5f5f5 !important;
-	    background-size: 285px;
+		background-size: 425px;
+		min-height: 123px;
+	}
+	.mainHeader{
+	    /* background-image: url(../images/headertopleft_img.png) !important;
+	    background-repeat:  no-repeat !important;
+	    background-color: #f5f5f5 !important;
+	    background-size: 285px; */
         position: relative;
 		max-width: 100%;
 		width: 100%;
@@ -966,7 +973,8 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
 			max-width: 100%;
 			    clear: both;
 		}
-        .filter-options-content{		
+        .filter-options-content{
+			display:none;
             a{		
                 display: block;		
                 color: @primary__color;		
@@ -977,7 +985,12 @@ aside.modal-popup.quickview-modal-popup.modal-slide._show{
             .count{		
                 color:@color-gray34;		
             }		
-        }		
+        }
+		.filter-options{
+			.active > .filter-options-content{
+				display:inline-block;
+			}
+		}
         .filter-options-item{
             border-bottom: 1px solid @colorLightPink;		
         }		

@@ -55,18 +55,8 @@
 @minicart-icons-color: @header-icons-color;
 @minicart-icons-color-hover: @header-icons-color-hover;
 
-@color-SheaBrown: #612e4e;
-
-@primary__color: @color-SheaBrown;
-@primary__color__light: fade(@color-SheaBrown, 20%);
-@secondary__color: @color-SheaBrown;
-@secondary__color__light: fade(@color-SheaBrown, 25%);
-
-
-@color__SheaBrown__light: rgba(97, 46, 78, 0.7);
-@footer-content-color: rgba(97, 46, 78, 1);
-//@color__SheaBrown__light: rgba(81, 44, 29, 0.7);
-//@footer-content-color: rgba(28, 28, 28, 1);
+@color__SheaBrown__light: rgba(81, 44, 29, 0.7);
+@footer-content-color: rgba(28, 28, 28, 1);
 
 @price-color: @color-gray34;
 @price-size: 22px;
@@ -298,7 +288,7 @@ ul, ol {
 			border-top: none;
 		}
 		.nav-sections .header.links a, .nav-sections .header.links a:hover{
-				   color: #612e4e !important;
+				   color: #512c1d !important;
 		}
 		.ves-megamenu.nav-mobile .dropdown-menu .subgroup.level1 > a {
 			font-size: 12px;
@@ -564,7 +554,7 @@ ul, ol {
 			margin:0  auto;
 		}
 		ul.items.pages-items a.page, ul.items.pages-items a.page:visited, ul.items.pages-items a.page:hover {
-			color: #612e4e;
+			color: #512c1d;
 		}
 		.nav-sections .navigation li:nth-child(-n+2) .submenu.dropdown-mega, .nav-sections .navigation li:nth-child(4) .submenu.dropdown-mega{
 			column-count: 1;
@@ -575,282 +565,50 @@ ul, ol {
 //  _____________________________________________
 
 	@media (min-width: 768px) {
-		//WP Menu Changes
-		ul#wp-page-list > li {
-		 border-bottom: 1px solid #ede9e8;
-		}
-		.menu-item > a {
-			display: block;
-			padding: 5px;
-			margin: 0 0 5px;
-			color: #333;
-			font-size: 18px;
-			//text-decoration: underline;
-		}
-		.menu-item-has-children>a{
-			display:block;	
-			padding:5px  ;
-			margin:0 0 5px;
-			color:#333;
-			font-size:18px;
-		//	text-decoration:underline;
-		}
-		.menu-item-has-children ul li a,.sub-menu ul{
-			padding:5px;
-			color:#333;
-			font-size:14px;
-			margin-left:7px;
-		}
-		.plusMinus.active:before {
-			content: '\f068';
-		}
-		.plusMinus:before {
-			font-family: 'FontAwesome';
-			content: '\f067';
-			border: 1px solid #612e4e;
-			border-radius: 50%;
-			height: 25px;
-			width:25px;		
-			float: right;
-			padding:4px 5px;
-			line-height:16px;
-			font-size:16px;
-			font-weight:normal;
-		}
-		//End of WP Menu changes
+//WP Menu Changes
+ul#wp-page-list > li {
+ border-bottom: 1px solid #ede9e8;
+}
+.menu-item > a {
+    display: block;
+    padding: 5px;
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 18px;
+    //text-decoration: underline;
+}
+.menu-item-has-children>a{
+	display:block;	
+	padding:5px  ;
+	margin:0 0 5px;
+	color:#333;
+	font-size:18px;
+//	text-decoration:underline;
+}
+.menu-item-has-children ul li a,.sub-menu ul{
+	padding:5px;
+	color:#333;
+	font-size:14px;
+	margin-left:7px;
+}
+.plusMinus.active:before {
+    content: '\f068';
+}
+.plusMinus:before {
+    font-family: 'FontAwesome';
+    content: '\f067';
+    border: 1px solid #512c1d;
+    border-radius: 50%;
+    height: 25px;
+    width:25px;		
+    float: right;
+    padding:4px 5px;
+    line-height:16px;
+    font-size:16px;
+    font-weight:normal;
+}
+//End of WP Menu changes
 
-		.BannerOneTextOne {
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 26%;
-			left: 7%;
-			font-size: 50px;
-			text-align: center;
-			color: @colorWhite;
-			font-weight: lighter;
-		}
-		.BannerOneTextTwo {
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 40%;
-			left: 1%;
-			font-size: 30px;
-			text-align: center;
-			color: @colorWhite;
-			font-weight: lighter;
-		}
-		.img-overlayBannerOne{
-			position: absolute;
-			top: 60%;
-			bottom:0;
-			left: 0;
-			text-align: center;
-		}
-		button.btn1BannerOne{
-			float: left;
-			background: rgb(246, 101, 60);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		button.btn2BannerOne{
-			float: right;
-			background: rgb(47, 47, 47);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		button.btn1BannerOne:hover{
-			float: left;
-			background: rgba(246, 101, 60, 0.8);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		button.btn2BannerOne:hover{
-			float: right;
-			background: rgba(47, 47, 47, 0.8);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		.BannerTwoTextOne {
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 26%;
-			left: 7%;
-			font-size: 50px;
-			text-align: center;
-			color: @colorWhite;
-			font-weight: lighter;
-		}
-		.BannerTwoTextTwo {
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 40%;
-			left: 1%;
-			font-size: 30px;
-			text-align: center;
-			color: @colorWhite;
-			font-weight: lighter;
-		}
-		.img-overlayBannerTwo{
-			position: absolute;
-			top: 60%;
-			bottom:0;
-			left: 0;
-			text-align: center;
-		}
-		button.btn1BannerTwo{
-			float: left;
-			background: rgb(52, 82, 255);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		button.btn1BannerTwo:hover{
-			float: left;
-			background: rgba(52, 82, 255,0.8);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		.BannerThreeTextOne {
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 26%;
-			left: 7%;
-			font-size: 50px;
-			text-align: center;
-			color: @colorWhite;
-			font-weight: lighter;
-		}
-		.BannerThreeTextTwo {
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 40%;
-			left: 1%;
-			font-size: 30px;
-			text-align: center;
-			color: @colorWhite;
-			font-weight: lighter;
-		}
-		.image_ceo_letter{
-			opacity: 1;
-			display: block;
-			width: 100%;
-			height: auto;
-			transition: .5s ease;
-			backface-visibility: hidden;
-		}
-		.middle_ceo_letter{
-			transition: .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 50%;
-			left: 10%;
-			transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
-		}
-		p.blockquote-header{
-			font-size: 30px;
-			color: @colorWhite;
-			font-weight: bold;
-			line-height: 15px;
-		}
-		footer.blockquote-footer{
-			font-size: 20px;
-			color: @colorWhite;
-			font-weight: lighter;
-			line-height: 15px;
-		}
-		footer.blockquote-footer:before{
-			display: none;
-		}
-		video#shampooTransform{
-			opacity: 0.7;
-		}
-		.img-overlay{
-			position: absolute;
-			top: 60%;
-			bottom:0;
-			left: 0;
-			text-align: center;
-		}
-		.textOne{
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 26%;
-			left: 20%;
-			font-size: 50px;
-			text-align: center;
-			color: @colorWhite;
-		}
-		.textTwo{
-			transition : .5s ease;
-			opacity: 1;
-			position: absolute;
-			top: 40%;
-			left: 2%;
-			font-size: 30px;
-			text-align: center;
-			color: @colorWhite;
-		}
-		button.btn1 {
-			float: left;
-			background: rgba(246, 101, 60, 1);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		button.btn2{
-			float: left;
-			background: rgba(47, 47, 47, 1);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		button.btn1:hover {
-			float: left;
-			background: rgba(246, 101, 60, 0.8);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
-		button.btn2:hover {
-			float: left;
-			background: rgba(47, 47, 47, 0.8);
-			color: @colorWhite;
-			font-size: 30px;
-			left: 20%;
-			font-weight: lighter;
-			width: 25%;
-		}
 		.nav-sections .navigation .level0 .submenu a{
 			white-space: pre-wrap;
 		}
@@ -1431,8 +1189,7 @@ ul, ol {
 		}
 		html,
 		body {
-			//color: @primary__color !important;
-			color: #612e4e !important;
+			color: @primary__color !important;
 			height: 100%; //  Stretch screen area for sticky footer
 		}
 		body {
@@ -1988,7 +1745,7 @@ ul, ol {
 			}
 		}
 		.page-wrapper .header.content{
-			margin-bottom: 40px;
+			margin-bottom: 25px;
 			
 		}
 		.mainHeader{
@@ -3342,7 +3099,7 @@ ul, ol {
 			text-decoration: underline;
 		}
 		.minicart-wrapper .action.showcart.active:hover:before {
-			color: #612e4e;
+			color: #512c1d;
 		}
 	 
 		#live-chat-widget > div.chat-button {
@@ -3613,31 +3370,25 @@ ul, ol {
 	@media only screen and (max-width: 425px){
 	  .ccBusinessBlock.img-wrapper h1{
 		font-size:18px;
-		//color:#512C1D;
-		color: @color-SheaBrown;
+		color:#512C1D;
 		background-color:#fff;
 	  }
 	  .ccBusinessBlock.img-wrapper h4{
 		font-size:15px;
-		//color:#512C1D;
-		color: @color-SheaBrown;
+			color:#512C1D;
 		background-color:#fff;
 	  }
 	}
 
 	.ccOES {
 	  clear:both;
- 	  width: 75%;
-	  margin: 10px auto;
+	  background:#2AC4EA;
+	  color:#fff;
 	}
 
 	.ccour_ethical_standards h1{
 	  text-align:center;
 	  text-transform:uppercase;
-	  //color: #512C1D;
-	  color: @color-SheaBrown;
-	  font-weight: 400;
-	  margin-bottom: 10px !important;
 	}
 
 	.jointhefamily_cc.row .join_the_family h1{
@@ -3658,24 +3409,16 @@ ul, ol {
 
 	.ccCommunityCommerce {
 		clear: both;
-		background: rgba(97, 46, 78,1);
+		background: #2AC4EA;
 		color: #fff;
 	}
 
 	.jointhefamily_cc.row {
-		background: #612e4e;
-	}
-	hr.ooesHR{
-		width:85%;
-		margin: 35px auto;
-		height:2px;
-		border:none;
-		//background-color: #512C1D;
-		background-color: @color-SheaBrown;
+		background: #E3E3E3;
 	}
 
 	.ccAboutSM {
-		background: #612e4e;
+		background: #959595;
 	}
 
 	.ccAboutSM h1 {

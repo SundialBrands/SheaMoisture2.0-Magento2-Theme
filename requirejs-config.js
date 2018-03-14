@@ -1,7 +1,8 @@
 var config = {
   	"paths": {
 	   "bootstrap": 'sundialbrands/theme-frontend-sheamoisture/js/bootstrap.min.js',
-	   "youtubepopup": 'sundialbrands/theme-frontend-sheamoisture/js/YouTubePopUp_jquery.js'
+	   "youtubepopup": 'sundialbrands/theme-frontend-sheamoisture/js/YouTubePopUp_jquery.js',
+	   "flexslider": 'Magestore_Bannerslider/js/jquery/slider/jquery-flexslider-min'
    	},
   	"shim": {
      	"bootstrap": {
@@ -9,7 +10,10 @@ var config = {
      	},
      	"youtubepopup": {
      		"deps":["jquery"]
-     	}
+     	},
+	"flexslider": {
+		deps: ['jquery']
+	}
     },
     map: {
         '*': {

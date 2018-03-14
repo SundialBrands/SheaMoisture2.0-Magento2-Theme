@@ -85,44 +85,24 @@
 //Sheamoisture Defined Colors
 //------------------------------
 
+//@color-SheaBrown: #512C1D;
 @color-SheaBrown: #612e4e;
 @color-SheaBrownOpacity: fade(@color-SheaBrown,0.5);
 
 // Color Changes for Purple -- What If
 // ------------------------------------------------
+//@color-SheaRed: #ef555a;
 @color-SheaRed: #612e4e;
+//@color-SheaHoverPink: rgb(239,85,90); //#ef555a
 @color-SheaHoverPink: rgb(97, 46, 78); //#612e4e
 // -------------------------------------
-//@color-SheaBrown: #512C1D;
-@color-SheaBrownOpacity: fade(@color-SheaBrown,0.5);
-//@color-SheaRed: #ef555a;
-//@color-SheaHoverPink: rgb(239,85,90); //#ef555a
-//@color-SheaHoverPinkHover: rgba(239,85,90,0.5); 
-
-@color-SheaHoverPinkHover: fade(@color-SheaBrown,50%);
-
 @hoverColor:@color-SheaRed;
 @body-color: @color-SheaBrown;
 @colorWhite: rgb(255,255,255); //#ffffff
 @colorBlack: rgb(0,0,0); //#000000
 @productName: @color-SheaBrown;
-@color-EmailBackground: #f6efe9;
-@africanBlackSoap: #572701;
-@agaveNector: #f6eee3;
-@aloeLeafJuice : #ffddee;
-@appleCiderVinegar : #ddeecc;
-@apricotOil : #ddffcc;
-@arganOil : #fffeee;
-@avocadoButter : #ffeeef;
-@boababOil : #eeefff;
-@biotin : #dddddd;
-@blackPearlProtein : #ddffcc;
-@blackSeedOil : #f6eee3;
-@deadSeaSalt : #ffddee;
-@ginger : #ffddee;
-@jojobaSeed : #ffeeef;
-@honey : #ddeecc;
-@hibiscusFlower : #f6eee3;
+
+
 //
 //  Color nesting
 //  ---------------------------------------------
@@ -131,10 +111,10 @@
 @primary__color__dark: darken(@primary__color, 25%);
 @primary__color__darker: darken(@primary__color, 12.5%);
 @primary__color__lighter: @primary__color;
-@primary__color__light: fade(@primary__color, 80%);
+@primary__color__light: fade(@primary__color, 20%);
 
 @secondary__color: @color-SheaRed;
-@secondary__color__light: fade(@secondary__color, 80%);
+@secondary__color__light: fade(@secondary__color, 20%);
 
 @page__background-color: @color-white;
 @panel__background-color: darken(@page__background-color, 6%);

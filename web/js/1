@@ -1,6 +1,5 @@
 require([
-        'jquery',
-		'flexslider'
+        'jquery'
     ], function($){
     $(document).ready(function(){
         if($('.nav-toggle').css('display') == 'none'){
@@ -32,12 +31,12 @@ require([
         });*/
 
 		/*WP Menu*/
-				$('.menu-item').has('ul.sub-menu').prepend('<span class="plusMinus"></span>');
-				$(".sub-menu").hide();
-				$('.plusMinus').click(function(e){
-						$(this).toggleClass('active');
-						$(this).siblings(".sub-menu").toggle();
-				});
+			$('.menu-item').has('ul.sub-menu').prepend('<span class="plusMinus"></span>');
+			$(".sub-menu").hide();
+			$('.plusMinus').click(function(e){	
+				$(this).toggleClass('active');
+				$('.menu-item-has-children').siblings(".sub-menu").toggle();
+			});
 
 		/*End of WP Menu*/
 
@@ -55,13 +54,4 @@ require([
             $('.ves-menu nav.navigation .ves-megamenu').append($ll);
         }
     });
-	$(window).load(function() {
-		$('.flexslider').flexslider({
-			animation: "fade",
-			animationLoop: true,
-			video: true,
-			slideshow: true,
-			controlNav: false
-		});
-	});
 });

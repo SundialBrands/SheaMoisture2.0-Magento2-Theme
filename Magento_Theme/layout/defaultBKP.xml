@@ -25,7 +25,6 @@
                 <argument name="logo_img_height" xsi:type="number">43</argument>
             </arguments>
         </referenceBlock>
-		<referenceBlock name="headerLinks">
 		<block class="Magento\Framework\View\Element\Html\Link" name="register-link">
 			<arguments>
 				<argument name="label" xsi:type="string" translate="true">Email SignUp</argument>
@@ -79,37 +78,30 @@
 				</arguments>
 		</block>
 		<move element="motion.link" destination="header.links" after="store-locator"/>
-		</referenceBlock>
 		<referenceBlock name="skip_to_content" remove="true" />
 		<!-- Footer -->
         <referenceContainer name="footer-container">
             <container name="footer-content-customised" htmlTag="div" htmlClass="footer-content-customised" before="-">
-					<block class="Magento\Cms\Block\Block" name="ccAboutSM">
-                                                        <arguments>
-                                                                <argument name="block_id" xsi:type="string">ccAboutSM</argument>
-                                                        </arguments>
-                                        </block>
-					<!--<block class="Magento\Cms\Block\Block" name="footer-content-top">
-							<arguments>
-								<argument name="block_id" xsi:type="string">footer-content-top</argument>
-							</arguments>
-					</block>-->
-<referenceBlock name="footer-content-top" remove="true"/>
-					<!-- <container name="footer-top" label="Footer Top" htmlTag="div" htmlClass="footer-top page-main sheamoisture_footer_contents" before="-">
+                <block class="Magento\Cms\Block\Block" name="footer-content-top">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-content-top</argument>
+                        </arguments>
+                </block>
+                <!-- <container name="footer-top" label="Footer Top" htmlTag="div" htmlClass="footer-top page-main sheamoisture_footer_contents" before="-">
 
-					</container> -->
-					<container name="footer-bottom" as="footer content" label="Footer Bottom" htmlTag="div" htmlClass="footer content" after="-">
-						<block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
-							<arguments>
-								<argument name="css_class" xsi:type="string">footer links</argument>
-							</arguments>
-						</block>
-						<block class="Magento\Cms\Block\Block" name="footer-tags">
-							<arguments>
-								<argument name="block_id" xsi:type="string">footer-tags</argument>
-							</arguments>
-						</block>
-					</container>
+                </container> -->
+                <container name="footer-bottom" as="footer content" label="Footer Bottom" htmlTag="div" htmlClass="footer content" after="-">
+                    <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
+                        <arguments>
+                            <argument name="css_class" xsi:type="string">footer links</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Cms\Block\Block" name="footer-tags">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-tags</argument>
+                        </arguments>
+                    </block>
+                </container>
                 <referenceBlock name="footer_links">
                     <block class="Magento\Framework\View\Element\Html\Link\Current" name="Press">
                         <arguments>

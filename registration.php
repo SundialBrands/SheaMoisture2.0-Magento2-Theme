@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'frontend/Sundialbrands/sheamoisturecc',
+    'frontend/Sundialbrands/sheamoisture',
     __DIR__
 );

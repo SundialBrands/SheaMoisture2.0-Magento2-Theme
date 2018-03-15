@@ -1,5 +1,5 @@
 {
-    "name": "sundialbrands/theme-frontend-sheamoisturecc",
+    "name": "sundialbrands/theme-frontend-sheamoisture",
     "description": "N/A",
     "require": {
         "php": "~5.6.0|7.0.2|~7.0.6",
@@ -7,7 +7,7 @@
         "magento/framework": "^100.1.0|101.0.*"
     },
     "type": "magento2-theme",
-    "version": "100.1.1",
+    "version": "100.1.73",
     "license": [
     	"MIT"
     ],

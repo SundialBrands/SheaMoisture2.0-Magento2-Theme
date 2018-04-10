@@ -162,6 +162,7 @@
         </referenceContainer>
         
         <referenceBlock name="absolute_footer" remove="true"/>
+        <referenceBlock name="head.additional" remove="true"/>
 
         <move element="footer-bottom" destination="footer-content-customised" />
 		

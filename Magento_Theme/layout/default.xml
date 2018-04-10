@@ -160,6 +160,8 @@
                 </referenceBlock>
             </container>            
         </referenceContainer>
+        
+        <referenceBlock name="absolute_footer" remove="true"/>
 
         <move element="footer-bottom" destination="footer-content-customised" />
 		

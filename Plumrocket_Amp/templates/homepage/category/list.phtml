@@ -1,0 +1,48 @@
+<?php
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+
+$homepageHelper = $this->helper('Plumrocket\Amp\Helper\Homepage');
+$categories = $homepageHelper->getTopLevelCategories();
+$mediaUrl = $homepageHelper->getMediaUrl() . 'catalog/category/';
+$defaultImage = $this->getViewFileUrl('Plumrocket_Amp::images/photos/homepage-default.png');
+$imageWidth = 380;
+$imageHeight = 140;
+?>
+<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('amp-home-promotional-msg')->toHtml(); ?>
+<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('amp-home-promotional-banner')->toHtml(); ?>
+<div class="col-main">
+    <div class="std">
+        <div class="amp-cat">
+            <?php foreach ($categories as $_category): ?>
+                <?php 
+                    $ampCategoryImage = $_category->getData('amp_homepage_image');
+                    if (!isset($ampCategoryImage)) continue;
+                ?>
+                <a href="<?php echo $_category->getUrl(); ?>">
+                    <span>
+                        <?php
+            	            $imgUrl = $ampCategoryImage ? $mediaUrl . $ampCategoryImage : $defaultImage;
+                            $cropHeight = min($imageWidth / 1.5, $imageHeight);
+                            $cropWidth = $cropHeight * 1.5;
+                        ?>
+                        <amp-img layout="responsive" src="<?php echo  $imgUrl; ?>" alt="test" height="<?php echo $cropHeight; ?>" width="<?php echo $cropWidth; ?>"></amp-img>
+                    </span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>

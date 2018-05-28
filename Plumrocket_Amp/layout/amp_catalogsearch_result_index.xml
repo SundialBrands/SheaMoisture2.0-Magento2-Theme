@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+-->
+<page layout="pramp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <referenceBlock name="ampcss">
+                <block class="Plumrocket\Amp\Block\Page\Head\Style" name="ampcss.category" as="ampcss.category" template="Plumrocket_Amp::head/css/category.phtml"/>
+            </referenceBlock>
+            <block class="Plumrocket\Amp\Block\Page\Head\Og\Cms" name="amp.ogtags" as="amp.ogtags" template="Plumrocket_Amp::head/ogtags.phtml"/>
+            <block class="Plumrocket\Amp\Block\Page\Head\Ldjson\Cms" name="amp.ldjson" as="amp.ldjson" template="Plumrocket_Amp::head/ldjson.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="ampjs">
+            <action method="addJs">
+                <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-form-0.1.js</argument>
+                <argument name="type" xsi:type="string">amp-form</argument>
+            </action>
+            <action method="addJs">
+                <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-mustache-0.1.js</argument>
+                <argument name="type" xsi:type="string">amp-mustache</argument>
+                <argument name="element" xsi:type="string">template</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="amp.main.content">
+            <block class="Plumrocket\Amp\Block\Catalogsearch\Form" name="amp_catalogsearch_form" template="Plumrocket_Amp::catalogsearch/form.phtml" before="-" />
+        </referenceContainer>
+        <referenceContainer name="amp.content">
+            <block class="Plumrocket\Amp\Block\Catalogsearch\Result" name="amp.search.result" template="Plumrocket_Amp::catalogsearch/result.phtml" cacheable="false"  before="-">
+                <block class="Magento\CatalogSearch\Block\SearchResult\ListProduct" name="amp_search_result_list" template="Plumrocket_Amp::catalog/product/list.phtml" cacheable="false">
+                    <arguments>
+                        <argument name="positioned" xsi:type="string">positions:list-secondary</argument>
+                    </arguments>
+                    <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="amp_product_list_toolbar" template="Plumrocket_Amp::catalog/product/list/toolbar.phtml" cacheable="false">
+                        <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager" cacheable="false"/>
+                    </block>
+                    <action method="setToolbarBlockName">
+                        <argument name="name" xsi:type="string">amp_product_list_toolbar</argument>
+                    </action>
+                </block>
+                <action method="setListOrders"/>
+                <action method="setListModes"/>
+                <action method="setListCollection"/>
+            </block>
+
+            <referenceContainer name="amp.sidebar.main">
+                <block class="Plumrocket\Amp\Block\Catalog\Layer\Navigation\Search" name="amp.catalogsearch.leftnav" before="-" template="Plumrocket_Amp::catalog/layer/view.phtml">
+                    <block class="Magento\LayeredNavigation\Block\Navigation\State" name="amp.catalogsearch.navigation.state" as="amp.state" />
+                    <block class="Magento\LayeredNavigation\Block\Navigation\FilterRenderer" name="amp.catalogsearch.navigation.renderer" as="amp.renderer" template="Plumrocket_Amp::catalog/layer/filter.phtml"/>
+                </block>
+            </referenceContainer>
+
+        </referenceContainer>
+    </body>
+</page>

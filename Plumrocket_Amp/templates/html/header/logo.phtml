@@ -1,0 +1,33 @@
+<?php
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+
+$logoWidth = $block->getLogoWidth() ? $block->getLogoWidth() : '189';
+$logoHeight = $block->getLogoHeight() ? $block->getLogoHeight() : '64';
+$storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();
+?>
+<div class="amp-logo-container">
+	<a class="amp-logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+	    <amp-img
+	    	layout="responsive"
+	        width="<?php echo $logoWidth ?>"
+	        height="<?php echo $logoHeight ?>"
+			src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+	    	<?php /*layout="responsive"*/ ?>
+	        alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+	    ></amp-img>
+	</a>
+</div>

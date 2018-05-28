@@ -1,0 +1,56 @@
+<?php
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+?>
+<div class="newsletter-bottom-block">
+    <div class="amp-home-promotional-msg"><?= $block->escapeHtml(__('Join the family')) ?></div>
+    <div class="newsletter_jtf">
+        <div class="content">
+            <form name="submit" id="newsletter-validate-detail" class="form subscribe" action-xhr="<?= $block->escapeUrl($block->getFormActionUrl()) ?>" method="post" target="_top" data-mage-init='{"validation": {"errorClass": "mage-error"}}'>
+                <div class="field newsletter">
+                    <input id="newsletter block" name="email" type="email" placeholder="<?= $block->escapeHtml(__('Enter your email address')) ?>" required />
+                </div>
+                <div class="actions">
+                    <input type="submit" class="submit-newsletter-footer" value="<?= $block->escapeHtml(__('Go')) ?>" />
+<!--
+                <div submit-success>
+                  <template type="amp-mustache">
+                    Success!
+                  </template>
+                </div>
+                <div submit-error>
+                  <template type="amp-mustache">
+                    Error!
+                  </template>
+                </div>
+-->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--
+
+<form name="submit" method="post" action-xhr="mailchimp-post.php" target="_top">
+    <input type="email" name="email" placeholder="email@domain.com" required>
+    <input type="submit" value="Subscribe!">
+    <div submit-success>
+        <template type="amp-mustache">
+        Thanks! Check {{email}} to confirm your subscription to the newsletter.
+        </template>
+    </div>
+</form>
+-->

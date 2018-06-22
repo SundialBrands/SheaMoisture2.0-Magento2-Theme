@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+-->
+<page layout="pramp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    	<referenceBlock name="head.additional">
+            <referenceBlock name="ampcss">
+                <block class="Plumrocket\Amp\Block\Page\Head\Style" name="ampcss.product" as="ampcss.product" template="Plumrocket_Amp::head/css/product.phtml"/>
+            </referenceBlock>
+        	<referenceBlock name="ampjs">
+                <action method="addJs">
+                    <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-vimeo-0.1.js</argument>
+                    <argument name="type" xsi:type="string">amp-vimeo</argument>
+                </action>
+				<action method="addJs">
+					<argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-form-0.1.js</argument>
+					<argument name="type" xsi:type="string">amp-form</argument>
+				</action>
+				<action method="addJs">
+					<argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-mustache-0.1.js</argument>
+					<argument name="type" xsi:type="string">amp-mustache</argument>
+					<argument name="element" xsi:type="string">template</argument>
+				</action>
+				<action method="addJs">
+					<argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-accordion-0.1.js</argument>
+					<argument name="type" xsi:type="string">amp-accordion</argument>
+				</action>
+<!--
+				<action method="addJs">
+					<argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-social-share-0.1.js</argument>
+					<argument name="type" xsi:type="string">amp-social-share</argument>
+				</action>
+-->
+				<action method="addJs">
+					<argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-iframe-0.1.js</argument>
+					<argument name="type" xsi:type="string">amp-iframe</argument>
+				</action>
+        	</referenceBlock>
+            <block class="Plumrocket\Amp\Block\Page\Head\Og\Product" name="amp.ogtags" as="amp.ogtags" template="Plumrocket_Amp::head/ogtags.phtml"/>
+            <block class="Plumrocket\Amp\Block\Page\Head\Ldjson\Product" name="amp.ldjson" as="amp.ldjson" template="Plumrocket_Amp::head/ldjson.phtml"/>
+    	</referenceBlock>
+        <referenceContainer name="amp.content">
+            <container name="amp.product.info.media" htmlTag="div" htmlClass="amp-product-media" before="amp.product.info.main">
+                <block class="Magento\Catalog\Block\Product\View\Gallery" name="amp.product.info.media.image" template="Plumrocket_Amp::catalog/product/view/gallery.phtml"/>
+            </container>
+            <container name="amp.product.details" htmlTag="div" htmlClass="amp-product-details" after="amp.product.info.media">
+                <!--
+                <block class="Magento\Theme\Block\Html\Title" name="amp.productpage.main.title" template="Plumrocket_Amp::html/title.phtml" before="-">
+    	            <arguments>
+    	                <argument name="id" xsi:type="string">amp-page-title-heading</argument>
+    	            </arguments>
+    	        </block>
+                -->
+                <block class="Magento\Catalog\Block\Product\View" name="amp.product.info.name" template="Plumrocket_Amp::catalog/product/view/name.phtml" before="-" />
+                <block class="Magento\Catalog\Block\Product\View" name="amp.product.info.review" template="product/view/review.phtml" after="amp.product.info.name" />
+                <block class="Magento\Catalog\Block\Product\View\Description" name="amp.product.info.short_description" template="Plumrocket_Amp::catalog/product/view/attribute.phtml" group="detailed_info" after="amp.product.info.name">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getShortDescription</argument>
+                        <argument name="at_code" xsi:type="string">short_description</argument>
+                        <argument name="css_class" xsi:type="string">short_description</argument>
+                    </arguments>
+                </block>
+                <container name="amp.product.info.main" htmlTag="div" htmlClass="amp-product-info-main" before="-">
+                    <container name="amp.product.info.price" label="Product info auxiliary container" htmlTag="div" htmlClass="amp-product-info-price" after="amp.product.info.review">
+                        
+                        <block class="Magento\Catalog\Pricing\Render" name="amp.product.price.final" before="amp.product.info.sku">
+                            <arguments>
+                                <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+                                <argument name="price_type_code" xsi:type="string">final_price</argument>
+                                <argument name="zone" xsi:type="string">item_view</argument>
+                            </arguments>
+                        </block>
+                        <container name="amp.product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="amp-product-info-stock-sku">
+                            <container name="amp.product.info.type" before="-"/>
+                            <block class="Magento\Catalog\Block\Product\View\Description" name="amp.product.info.sku" template="Plumrocket_Amp::catalog/product/view/itemCode.phtml" after="-" />
+                        </container>
+                    </container>
+                    <block class="Magento\Catalog\Pricing\Render" name="amp.product.price.tier" after="amp.product.info.price">
+                        <arguments>
+                            <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+                            <argument name="price_type_code" xsi:type="string">tier_price</argument>
+                            <argument name="zone" xsi:type="string">item_view</argument>
+                        </arguments>
+                    </block>
+                    <container name="amp.alert.urls" as="amp_alert_urls" label="AMP Alert Urls" before="amp.product.info.price"/>
+                    <block class="Magento\Catalog\Block\Product\View" name="amp.product.info" template="Plumrocket_Amp::catalog/product/view/form.phtml" after="amp.product.price.tier">
+                        <arguments>
+                            <argument name="iframe_width" xsi:type="string">400</argument>
+                            <argument name="iframe_height" xsi:type="string">500</argument>
+                        </arguments>
+                        <container name="amp.product.info.form.content" as="amp_product_info_form_content">
+                            <block class="Magento\Catalog\Block\Product\View" name="amp.product.info.addtocart" as="amp_addtocart" template="Plumrocket_Amp::catalog/product/view/addtocart.phtml"/>
+                        </container>
+                    </block>
+<!--                    <block class="Plumrocket\Amp\Block\Page\Share" name="amp-product-page-share" as="amp.share" template="Plumrocket_Amp::html/share.phtml"/>-->
+                </container>
+            </container>
+            <container name="amp.product.details.tabs" htmlTag="div" htmlClass="amp-product-details-tabs" after="amp.product.details">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="amp.product.info.details" template="Plumrocket_Amp::catalog/product/view/details.phtml" after="amp.product.info.description">
+                    <block class="Magento\Catalog\Block\Product\View\Description" name="amp.product.info.tab1" as="amp.product.info.description" template="Plumrocket_Amp::catalog/product/view/attribute.phtml" group="detailed_info">
+                        <arguments>
+                            <argument name="at_call" xsi:type="string">getDescription</argument>
+                            <argument name="at_code" xsi:type="string">description</argument>
+                            <argument name="css_class" xsi:type="string">description</argument>
+                            <argument translate="true" name="title" xsi:type="string">Description</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Catalog\Block\Product\View\Attributes" name="amp.product.info.tab2" as="amp.product.attributes" template="Plumrocket_Amp::catalog/product/view/attributes.phtml" group="detailed_info" after="amp.product.info.main">
+                        <arguments>
+                            <argument translate="true" name="title" xsi:type="string">More Information</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Review\Block\Product\Review"  name="amp.product.info.tab3" as="amp.reviews.tab" template="Plumrocket_Amp::review/review.phtml" group="detailed_info">
+                        <block class="Magento\Review\Block\Product\View\ListView" name="amp.product.reviews.list" template="Plumrocket_Amp::review/product/view/list.phtml"/>
+                        <block class="Magento\Theme\Block\Html\Pager" name="product_review_list.toolbar" template="Plumrocket_Amp::html/pager.phtml" />
+                        <block class="Magento\Review\Block\Form" name="amp.product.review.form" as="amp_review_form" template="Plumrocket_Amp::review/form.phtml" after="amp.product.reviews.list">
+                            <container name="product.review.form.fields.before" as="form_fields_before" label="Review Form Fields Before"/>
+                        </block>
+                    </block>
+                </block>
+            </container>
+            <container name="amp.product.items.block" htmlTag="div" htmlClass="amp-product-items-block" after="-">
+                <referenceBlock name="catalog.product.related" remove="true"/>
+                <block class="Magento\Catalog\Block\Product\ProductList\Related" name="amp.catalog.product.related" template="Plumrocket_Amp::catalog/product/list/items.phtml" before="-">
+                    <arguments>
+                        <argument name="type" xsi:type="string">related</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="amp.product.info.upsell" template="Plumrocket_Amp::catalog/product/list/items.phtml" before="-">
+                    <arguments>
+                        <argument name="type" xsi:type="string">upsell</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

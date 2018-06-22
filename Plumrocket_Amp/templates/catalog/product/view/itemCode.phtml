@@ -1,0 +1,43 @@
+<?php
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+?>
+<?php
+/**
+ * Product view template
+ *
+ * @see \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+<?php
+$_product = $block->getProduct();
+?>
+<div class="stock available" title="Availability">
+    <?php if ($_product->isSaleable()) : ?>
+        <div class="stock available" title="Availability">
+            <span><?php /* @escapeNotVerified */ echo __('In stock') ?></span>
+        </div>
+    <?php else : ?>
+        <div class="stock unavailable" title="Availability">
+            <span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span>
+        </div>
+    <?php endif; ?>
+
+</div>
+
+<div class="product attribute sku">
+    <strong class="type"><?php echo __('Item Code') ?>#:</strong><div class="value" itemprop="sku"><?php echo $_product->getSku() ?></div>
+</div>

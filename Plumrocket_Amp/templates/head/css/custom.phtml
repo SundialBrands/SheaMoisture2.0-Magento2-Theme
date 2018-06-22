@@ -1,5 +1,14 @@
 /*Custom CSS*/
 
+@font-face {
+font-family: 'icomoon';
+src:  url(<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::fonts/icomoon.eot')?>);
+src: url(<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::fonts/icomoon.ttf')?>) format('truetype'),
+    url(<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::fonts/icomoon.woff')?>) format('woff'),
+    url(<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::fonts/icomoon.svg') ?>) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .footer ul li {
     width: 100%;
@@ -25,7 +34,7 @@
     width: 50%;
     float: none;
     margin: auto;
-    max-width: 150px;
+    max-width: 135px;
     min-width: 100px;
     position: relative;
     z-index: 5;
@@ -39,6 +48,11 @@
 //}
 .mobile-menu:hover:before {
     color: #636363;
+    
+}
+
+.mobile-menu {
+    top: 22px;
 }
 
 .footer address {
@@ -114,19 +128,10 @@ body {
     box-sizing: border-box;
 }
 
-//@font-face {
-//font-family:shoppingBag;
-//src: url(<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::fonts/shopping-bag.svg') ?>) format('svg');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-
 .top-shopping-cart {
-    background-image: url(<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::images/shopping-bag.png') ?>);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
+    content:url(<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::images/shopping-bag.png') ?>);
 }
+
 .newsletter-bottom-block {
     text-align: center;
     padding: 1%;
@@ -165,4 +170,30 @@ body {
     float: right;
     margin-top: -38px;
     padding-bottom: 1px;
+}
+
+.search-icon:before {
+    font-size: 30px;
+    line-height: 42px;
+}
+.amp-home-promotional-banner .i-amphtml-layout-size-defined {
+    width: 100% !important;
+}
+.amp-cat a {
+    margin: 3px 0;
+}
+.amp-logo .i-amphtml-fill-content {
+    margin: 1px auto !important;
+}
+body, button, input, select, table, textarea {
+    color: #512c1d;
+}
+.icon-heart:before {
+    font-family: 'icomoon' !important;
+    content: "\e9da";
+    color: #512c1d;
+}
+
+.stock.unavailable {
+    color: #512c1d;
 }

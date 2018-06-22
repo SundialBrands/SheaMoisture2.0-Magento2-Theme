@@ -1,0 +1,112 @@
+<?php
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+?>
+<?php
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+
+$_helperAmpVideo = $this->helper('Plumrocket\Amp\Helper\Video');
+$imageWidth = $block->getImageAttribute('product_page_image_medium', 'width');
+$imageHeight = $block->getImageAttribute('product_page_image_medium', 'height');
+$previewImageWidth = $block->getImageAttribute('product_page_image_small', 'width');
+$previewImageHeight = $block->getImageAttribute('product_page_image_small', 'height');
+$previewIndex = 0;
+
+$gallery = $block->getGalleryImages();
+?>
+<div class="amp-product-gallery">
+    <?php if ($gallery && $gallery->getSize() > 1) : ?>
+        <amp-carousel
+            id="carousel-with-preview"
+            width="<?php echo $imageWidth; ?>"
+            height="<?php echo $imageHeight; ?>"
+            layout="responsive"
+            type="slides"
+            delay="5000"
+        >
+            <?php foreach($gallery as $image) : ?>
+                <?php if (!$image->getData('disabled')): ?>
+                    <?php $videoData = $_helperAmpVideo->getVideoData($image->getData('video_url')) ?>
+                    <?php if ($videoData) : ?>
+                        <amp-<?php echo $videoData['type'] ?>
+                            data-videoid="<?php echo $videoData['id'] ?>"
+                            width="<?php echo $imageWidth ?>"
+                            height="<?php echo $imageHeight ?>"
+                            layout="responsive"
+                            <?php echo $videoData['autoplay'] ? 'autoplay' : '' ?>
+                        >
+                        </amp-youtube>
+                    <?php else : ?>
+                        <amp-img
+                            src="<?php echo $image->getData('large_image_url') ?>"
+                            width="<?php echo $imageWidth ?>"
+                            height="<?php echo $imageHeight ?>"
+                            layout="responsive"
+                        ></amp-img>
+                    <?php endif; ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </amp-carousel>
+        <amp-carousel class="carousel-preview"
+            width="auto"
+            height="auto"
+            layout="fixed-height"
+            type="carousel">
+            <?php foreach($gallery as $image) : ?>
+                    <?php if (!$image->getData('disabled')): ?>
+                        <button on="tap:carousel-with-preview.goToSlide(index=<?php echo $previewIndex; ?>)">
+                            <amp-img
+                                src="<?php echo $image->getData('large_image_url') ?>"
+                                width="<?php echo $image->getData('video_url') ? $previewImageHeight : $previewImageWidth ?>"
+                                height="<?php echo $image->getData('video_url') ? $previewImageWidth : $previewImageHeight ?>"
+                                layout="responsive"
+                            ></amp-img>
+                        </button>
+                        <?php $previewIndex++; ?>
+                    <?php endif; ?>
+            <?php endforeach; ?>
+        </amp-carousel>
+    <?php elseif ($gallery && $gallery->getSize() == 1) : ?>
+        <?php
+            $image = $gallery->getFirstItem();
+            $videoData = $_helperAmpVideo->getVideoData($image->getData('video_url'));
+        ?>
+        <?php if ($videoData) : ?>
+            <amp-<?php echo $videoData['type'] ?>
+                data-videoid="<?php echo $videoData['id'] ?>"
+                width="<?php echo $imageWidth ?>"
+                height="<?php echo $imageHeight ?>"
+                layout="responsive"
+                <?php echo $videoData['autoplay'] ? 'autoplay' : '' ?>
+            >
+            </amp-youtube>
+        <?php else : ?>
+            <?php
+                $other = $this->getImage($this->getProduct(), 'product_page_image_medium');
+            ?>
+            <amp-img
+                width="<?php echo $imageWidth ?>"
+                height="<?php echo $imageHeight ?>"
+                layout="responsive"
+                src="<?php echo $other->getData('image_url') ?>" >
+            </amp-img>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>

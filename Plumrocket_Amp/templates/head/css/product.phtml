@@ -1,0 +1,203 @@
+<?php
+/**
+ * Plumrocket Inc.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End-user License Agreement
+ * that is available through the world-wide-web at this URL:
+ * http://wiki.plumrocket.net/wiki/EULA
+ * If you are unable to obtain it through the world-wide-web, please
+ * send an email to support@plumrocket.com so we can send you a copy immediately.
+ *
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (http://www.plumrocket.com)
+ * @license     http://wiki.plumrocket.net/wiki/EULA  End-user License Agreement
+ */
+?>
+<?php
+$priceTextColor = $this->_dataHelper->getPriceTextColor();
+$buttonTextColor = $this->_dataHelper->getButtonTextColor();
+$buttonTextColorHover = $this->_dataHelper->getButtonTextColorHover();
+$buttonBgColor = $this->_dataHelper->getButtonBgColor();
+$buttonBgColorHover = $this->_dataHelper->getButtonBgColorHover();
+?>
+
+.f-fullstar,.f-halfstar,.f-emptystar{display:inline-block}
+.f-fullstar:before{content:"\e90a"}
+.f-halfstar:before{content:"\e90b"}
+.f-emptystar:before{content:"\e90c"}
+
+.page-title{margin-bottom:5px}
+.product-review-list{margin:25px 0 0 0}
+.product-review-summary h4{font-size:11px}
+.prod-rate-hld{white-space:nowrap;margin-left:-3px}
+.prod-rate-hld > div{font-size:0}
+#product-review-form-table .icon,.prod-rate-hld .icon{color:#f9c80c;width:auto;height:auto;line-height:normal}
+#product-review-form-table .icon.f-emptystar,.prod-rate-hld .icon.f-emptystar{color:#d3d3d3}
+#product-review-form-table .icon:before,.prod-rate-hld .icon:before{font-size:19px;width:26px;height:25px;line-height:25px}
+#product-review-list-table{margin:15px 0}
+#product-review-list-table th{padding-right:20px;font-size:12px}
+.review-toolbar{margin-top:15px}
+.review-ratings .prod-rate-hld{display:inline-block;vertical-align:middle;margin-left:0;margin-top:-3px;}
+.review-content{margin-top:10px;}
+.review-title{font-size:20px;line-height:20px;margin-bottom:8px;}
+.review-ratings .label{font-weight: 700;}
+
+.special-price .price-label,
+.old-price .price-label{display:none;}
+.special-price, .old-price{display:block;}
+.old-price .price{text-decoration:line-through;color:#b3b3b3;}
+span[data-price-type="finalPrice"]{color:<?php echo $priceTextColor ?>;font-size:20px;}
+.attribute.sku{font-size:12px;}
+.amp-product-info-price{margin:15px 0 20px;padding:0 15px 0 0}
+
+/* buttons */
+.qty-input{text-align:center;}
+input[type="submit"],
+.amp-product-addtocart a{text-align:center;display:block;background:<?php echo $buttonBgColor ?>;line-height:50px;padding:0 50px;color:<?php echo $buttonTextColor ?>;margin:24px 0 48px 0;font-size:20px;border-radius:5px;border:0;}
+input[type="submit"]{width:100%;-webkit-appearance: none;}
+input[type="submit"]:hover,
+.amp-product-addtocart a:hover{background:<?php echo $buttonBgColorHover ?>;color:<?php echo $buttonTextColorHover ?>;text-decoration:none;}
+
+.additional-attributes-wrapper{text-align:left;}
+.additional-attributes-wrapper th,
+.additional-attributes-wrapper td{vertical-align:top;}
+.additional-attributes-wrapper .label{padding-right:7px;}
+.additional-attributes-wrapper caption{text-align:left;background:#e6e6e6;padding:5px;}
+.amp-product-items-block {margin:0 auto;text-align:center;width:60%}
+.items-block-heading {font-size:14px;text-align:left;display:block;background:#e6e6e6;padding:10px;clear:both;outline:none;}
+.dir-rtl .items-block-heading{text-align: right;}
+.items-block-heading .counter:before{content:'('}
+.items-block-heading .counter:after{content:')'}
+.dir-rtl .items-block-heading .counter:before{content:')'}
+.dir-rtl .items-block-heading .counter:after{content:'('}
+
+.amp-product-gallery{margin-top:30px;margin-bottom:30px}
+#choose-options{width:100%}
+.amp-product-media{min-height:330px}
+.carousel-preview {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;}
+.carousel-preview button { min-width:60px;margin:4px;padding:0;}
+.carousel-preview button:active { opacity:0.5;}
+.review-item{border-bottom:1px solid #a9a9a9;margin-top:15px;}
+.review-details{margin:13px 0 10px 0}
+.review-details p{font-size: 11px;margin: 0;display: inline-block;}
+#amp-review-form .input-text{width:100%;}
+#amp-review-form div.field{margin-bottom:10px}
+#amp-review-form #amp-review-form-submit{margin-top:0}
+
+/* prooduct tabs */
+.amp-product-details-tabs{padding:20px 0px;clear:both;width:100%}
+#product-data-tabs .tab-content{padding:10px}
+#product-data-tabs .table-caption{display:none;}
+#product-data-tabs section header.items-block-heading:before{content:"";width:0;height:0;border-style:solid;border-width:9px 9px 0;border-color:#333 transparent transparent;display:inline-block;vertical-align:middle;position:absolute;right:11px;top:17px}
+#product-data-tabs section header.items-block-heading:after{content:"";width:0;height:0;border-style:solid;border-width:9px 9px 0;border-color:#e6e6e6 transparent transparent;display:inline-block;vertical-align:middle;position:absolute;right:11px;top:15px}
+#product-data-tabs section header.items-block-heading[aria-expanded="true"]:before{transform:rotate(180deg);}
+#product-data-tabs section header.items-block-heading[aria-expanded="true"]:after{transform:rotate(180deg);top:19px;}
+#product-data-tabs section header.items-block-heading:before,
+#product-data-tabs section header.items-block-heading:after{left: auto;right: 11px;}
+.dir-rtl #product-data-tabs section header.items-block-heading:before,
+.dir-rtl #product-data-tabs section header.items-block-heading:after{left: 11px;right: auto;}
+
+/* review */
+.review-fieldset,.review-field-ratings{border:0;margin:0;padding:0;}
+.review-field-ratings{margin-top:15px;}
+.review-field-text textarea{width:100%;box-sizing:border-box;}
+.review-legend + br{display:none;}
+.icon-digit{font-weight: 400;font-size: 11px;}
+
+<?php
+/* limiter *
+.limiter{margin:10px 0;}
+.limiter span,.limiter strong,.limiter .limiter-options{display:inline-block;vertical-align:middle}
+.limiter .limiter-options{margin:0 4px}
+.limiter .limiter-options a{background-color:#f0f0f0;box-shadow:inset 0 1px 0 0 #fff,inset 0 -1px 0 0 rgba(204,204,204,0.3);border-radius:3px;display:inline-block;border:1px solid #ccc;color:#333;padding:5px;margin:0 1px}
+*/ ?>
+
+@media (max-width:770px){
+.amp-product-gallery,
+.additional-attributes-wrapper table{width:100%;}
+.amp-product-items-block{width:100%}
+}
+
+
+@media (min-width:769px){
+.amp-product-addtocart input[type="submit"]{width:auto;display:inline-block;}
+.amp-product-addtocart a,
+.attribute.sku>div{display:inline-block;}
+.amp-product-media{float:left;width:60%;}
+.dir-rtl .amp-product-media{float: right;}
+.amp-product-details{float:right;width:40%;box-sizing:border-box;padding-left:20px;}
+.dir-rtl .amp-product-details{float: left;padding-left: 0;padding-right: 20px;}
+.attribute.sku{float:none;text-align:left;}
+.dir-rtl .attribute.sku{text-align:right;}
+span[data-price-type="finalPrice"]{margin-top:15px;display:inline-block;}
+}
+
+@media (max-width:400px){
+.amp-product-media,.amp-product-details-tabs{min-height:0}
+}
+
+/* ---- Sundial Custom Style starts here  ---- */
+
+@font-face {
+    font-family: 'Futura Heavy font';
+    src: url('<?php echo $this->getAmpSkinUrl('Plumrocket_Amp::fonts/futura-heavy-font.ttf')?>');
+}
+
+.amp-product-details .page-title-wrapper .page-title {
+    color: #512c1d;
+    font-style: normal;
+    font-size: 1rem;
+    text-align: center;
+    font-family: 'Futura Heavy font';
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.amp-product-info-main .sku {
+    word-break: break-all;
+    word-wrap: break-word;
+    text-align: right;
+    margin-bottom: 15px;
+}
+.amp-product-info-main .sku .type {
+    font-weight: normal;
+    margin-right: 5px;
+}
+.amp-product-info-main .sku .value {
+    display: inline-block;
+}
+.amp-product-info-main .stock.available, .amp-product-info-main .stock.unavailable {
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #512c1d;
+    font-family: 'Futura Heavy font';
+    font-style: normal;
+    line-height: 1.42857143;
+    font-size: 1.0rem;
+    text-align: right;
+}
+.amp-product-info-price {
+    color: #512c1d;
+    border-bottom: 1px solid #c1c1c1;
+}
+.amp-product-info-price .price-container .price {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 22px;
+}
+.amp-product-info-price .price-box {
+    float: left;
+}
+.amp-product-gallery .amp-carousel-slide {
+    background: #FFFFFF;
+}
+.newsletter-bottom-block .newsletter_jtf .actions .submit-newsletter-footer {
+    font-size: 14px;
+    margin:0;
+    line-height: 1.5;
+}

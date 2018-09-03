@@ -8,13 +8,13 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="checkout.cart.container">
-            <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-" />
-        </referenceContainer>
-       
+        
+        <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" />
         <move element="checkout.cart.coupon" destination="cart.discount" />
+        <move element="cart.discount" destination="checkout.cart.items" before="checkout.cart.aw.giftcard" />
+        
         <move element="checkout.cart.shortcut.buttons" destination="checkout.cart.methods" after="checkout.cart.methods.onepage.bottom"/>
 		
-	<move element="cart.summary" destination="checkout.cart.container" />
+        <move element="cart.summary" destination="checkout.cart.container" />
     </body>
 </page>

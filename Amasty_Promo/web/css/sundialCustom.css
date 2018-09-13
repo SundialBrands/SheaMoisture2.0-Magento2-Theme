@@ -1,0 +1,19 @@
+/* notification */
+.ampromo-items-add{
+    border:none;
+    padding:1px;
+    text-align:left;
+    margin-bottom:12px;
+    font-family:inherit;
+    font-size:18px;
+    font-weight:bold;
+    text-transform:uppercase;
+    padding-top:12px;
+}
+.ampromo-overlay {
+    position: fixed;
+}
+
+.ampromo-items {
+    top: 7%;
+}

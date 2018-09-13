@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Promo
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_Promo::css/sundialCustom.css"/>
+    </head>
+    <update handle="ampromo_popup" />
+    <body>
+        <move element="ampromo.add" destination="cart.discount" after="-" />
+        <referenceBlock name="amasty.promo.notification" remove="true"/>
+    </body>
+</page>

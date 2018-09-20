@@ -10,7 +10,7 @@
 <script>
     require([
         'jquery',
-        'Amasty_Promo/js/popup',
+        'amasty_popup',
         'domReady!'
     ], function ($) {
         var autoOpen = <?= $block->isOpenAutomatically() ? 'true' : 'false' ?> || window.location.hash == '#choose-gift';

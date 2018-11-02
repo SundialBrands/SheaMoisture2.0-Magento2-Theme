@@ -53,7 +53,7 @@ define(
              */
             initModal: function(element) {
                 agreementsModal.createModal(element);
-            }
+            }			
         });
     }
 );

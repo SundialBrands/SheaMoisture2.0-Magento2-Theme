@@ -1,0 +1,39 @@
+body.checkout-index-index.modalOverlay {
+    position: fixed; /* Sit on top of the page content */
+    visibility: hidden;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+div#popupOverlay {
+    visibility: visible;
+    background: #fff;
+    width: 80vw;
+    overflow-y: scroll;
+    height: 50vh !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: auto;
+    padding: 2rem 1rem 1rem;
+}
+
+.popUpClose {
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+}
+
+a.closeButton {/* background: red; *//* width: 100%; *//* left: 67%; */float: right;}
+
+.modalPopContent {
+	white-space: pre-wrap;
+}

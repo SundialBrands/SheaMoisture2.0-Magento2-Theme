@@ -36,14 +36,30 @@ define(
                 };
                 modal(options, $(this.modalWindow));
             },
-
             /** Show login popup window */
-            showModal: function() {
-				var agreementText = jQuery('.checkout-agreements-item-content').text();
-				jQuery('p.checkout-agreements-item-content-text').innerHTML = agreementText;
-				jQuery('#myModal .modal-content').css({"background": "#fff", "height":"400px", "overflow-y": "auto"})
-                //$(this.modalWindow).modal('openModal');
-            }
+            showModal: function() {				
+				var agreementText = document.getElementsByClassName('checkout-agreements-item-content')[0].textContent;
+				if(jQuery('.payment-method._active')){
+					jQuery('<div class="modalPopContent"></div>').insertBefore('div.checkout-agreement');												
+					this.popUpModal(agreementText);			
+				}
+            },
+			popUpModal: function(agreementText){				
+				jQuery('body.checkout-index-index').addClass('modalOverlay');
+				jQuery('.modalPopContent').wrap('<div class="overlay" id="popupOverlay"></div>');
+				jQuery('<div class="popUpClose"><a href="#" class="closeButton">&times;</a></div>').insertBefore('.modalPopContent');
+				jQuery('div.modalPopContent').text("");										
+				jQuery('div.modalPopContent').show(function(){
+					jQuery(this).html(agreementText);
+				});
+				jQuery('div.popUpClose a.closeButton').click(function(){					
+					jQuery('#popupOverlay, div.modalPopContent, div.popUpClose').remove();
+					jQuery('body.checkout-index-index').removeClass('modalOverlay');
+					jQuery('div.modalPopContent').show(function(){
+						jQuery(this).html("");
+					});
+				});
+			}
         }
     }
 );

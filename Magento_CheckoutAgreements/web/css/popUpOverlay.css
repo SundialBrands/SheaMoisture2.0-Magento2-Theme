@@ -37,3 +37,20 @@ a.closeButton {/* background: red; *//* width: 100%; *//* left: 67%; */float: ri
 .modalPopContent {
 	white-space: pre-wrap;
 }
+.popUpCloseButton {
+    float: right;
+    border: 1px solid;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #ccc;
+    font-size: 1.8rem;
+    color: #512C1D;
+    background-color: #fff;
+	position: relative;
+}
+
+.popUpCloseButton button {
+    color: #512C1D;
+    font-weight: bold;
+    font-size: 1.7rem;
+}

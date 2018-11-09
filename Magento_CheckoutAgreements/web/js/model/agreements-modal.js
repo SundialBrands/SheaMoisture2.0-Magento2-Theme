@@ -11,10 +11,10 @@ define(
     ],
     function ($, modal, $t) {
         'use strict';
-        jQuery.noConflict();
+        jQuery.noConflict();		
         return {
-            modalWindow: null,
-
+            modalWindow: null,			
+			
             /** Create popUp window for provided element */
             createModal: function(element) {
                 this.modalWindow = element;
@@ -38,25 +38,30 @@ define(
             },
             /** Show login popup window */
             showModal: function() {				
-				var agreementText = document.getElementsByClassName('checkout-agreements-item-content')[0].textContent;
-				if(jQuery('.payment-method._active')){
-					jQuery('<div class="modalPopContent"></div>').insertBefore('div.checkout-agreement');												
-					this.popUpModal(agreementText);			
+				var agreementText = document.getElementsByClassName('checkout-agreements-item-content')[0].textContent;				
+				if($('.payment-method._active')){
+					$('<div class="modalPopContent"></div>').insertBefore('div.checkout-agreement');												
+					this.popUpModal(agreementText);
+					this.popUpCloseModal();
 				}
             },
 			popUpModal: function(agreementText){				
-				jQuery('body.checkout-index-index').addClass('modalOverlay');
-				jQuery('.modalPopContent').wrap('<div class="overlay" id="popupOverlay"></div>');
-				jQuery('<div class="popUpClose"><a href="#" class="closeButton">&times;</a></div>').insertBefore('.modalPopContent');
-				jQuery('div.modalPopContent').text("");										
-				jQuery('div.modalPopContent').show(function(){
-					jQuery(this).html(agreementText);
+				$('body.checkout-index-index').addClass('modalOverlay');
+				$('.modalPopContent').wrap('<div class="overlay" id="popupOverlay"></div>');
+				$('<div class="popUpClose"><a href="#" class="closeButton">&times;</a></div>').insertBefore('.modalPopContent');
+				$('div.modalPopContent').text("");										
+				$('div.modalPopContent').show(function(){
+					$(this).html(agreementText);
 				});
-				jQuery('div.popUpClose a.closeButton').click(function(){					
-					jQuery('#popupOverlay, div.modalPopContent, div.popUpClose').remove();
-					jQuery('body.checkout-index-index').removeClass('modalOverlay');
-					jQuery('div.modalPopContent').show(function(){
-						jQuery(this).html("");
+				$('<div class="popUpClose popUpCloseButton"><button>Close</button></div>').insertAfter('.modalPopContent');
+				
+			},
+			popUpCloseModal: function(){
+				$('div.popUpClose').click(function(){			
+					$('#popupOverlay, div.modalPopContent, div.popUpClose, div.popUpCloseButton').remove();
+					$('body.checkout-index-index').removeClass('modalOverlay');
+					$('div.modalPopContent').show(function(){
+						$(this).html("");
 					});
 				});
 			}

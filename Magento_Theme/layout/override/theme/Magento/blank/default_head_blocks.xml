@@ -24,10 +24,6 @@
 		<script src="js/YouTubePopUp_jquery.js" />
 <!-- 		<script src="https://cdn.livefyre.com/Livefyre.js" src_type="url" /> -->
 		<script src="js/desk_chat_widget.js" />
-		<script src="js/mp_linkcode.js" />
-		<!--– mp_snippet_begins -->
-		<script src="js/mp_snippet.js" />
-		<!--– mp_snippet_ends -->
 		<script src="js/customHead.js" />
 		
     </head>

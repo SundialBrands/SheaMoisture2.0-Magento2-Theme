@@ -46,13 +46,8 @@ $welcomeMessage = $block->getWelcome();
         'use strict'; 
             $(document).ready(function(){
                 $('.page-header, .sections.nav-sections').wrapAll('<div class="mainHeader"></div>');
-				$('.mainHeader').after('<div class="GuttSpace"></div>') 
-				$('.langLink').each( function() {
-					if($(this).text() === 'Español') {
-						$(this).attr('href', 'https://es.sheamoisture.com');
-					}
-				});
-				try{Typekit.load({ async: true });}catch(e){}
+				$('.mainHeader').after('<div class="GuttSpace"></div>');
+				try{Typekit.load({ async: true });}catch(e){console.error(e);}
             });
         
     });

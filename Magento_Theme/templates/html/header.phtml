@@ -36,3 +36,19 @@ $welcomeMessage = $block->getWelcome();
     <?php break; ?>
 
 <?php endswitch; ?>
+<script>
+    require([
+        'jquery',
+        'mage/mage',
+        'Magento_Catalog/product/view/validation',
+        'Magento_Catalog/js/catalog-add-to-cart'
+    ], function ($) {
+        'use strict'; 
+            $(document).ready(function(){
+                $('.page-header, .sections.nav-sections').wrapAll('<div class="mainHeader"></div>');
+				$('.mainHeader').after('<div class="GuttSpace"></div>');
+				try{Typekit.load({ async: true });}catch(e){console.error(e);}
+            });
+        
+    });
+</script>

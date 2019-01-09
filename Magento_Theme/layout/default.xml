@@ -33,16 +33,6 @@
 			</arguments>
 		</block>			
 		<move element="register-link" destination="header.links" before="authorization-link"/>
-		
-		<!--<block class="Magento\Framework\View\Element\Html\Link" name="comcom.link" after="about-us">
-			<arguments>
-				<argument name="label" xsi:type="string" translate="true">Community Commerce</argument>
-				<argument name="path" xsi:type="string" translate="false">community-commerce</argument>
-				<argument name="class" xsi:type="string">community_commerece</argument>
-			</arguments>
-		</block>
-		<move element="comcom.link" destination="header.links" after="createAccount"/>-->
-				
 		<block class="Magento\Framework\View\Element\Html\Link" name="story.link" after="comunity-commerce">
 			<arguments>
 				<argument name="label" xsi:type="string" translate="true">Our Story</argument>

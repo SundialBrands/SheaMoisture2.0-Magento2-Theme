@@ -7,8 +7,8 @@ require([
         } else {
             $('.header.links br').remove()
         }
-        var searchInput = document.getElementById('search');	
-		$('input#search').attr('placeholder','Search');
+        var searchInput = document.getElementById('search');
+        $('input#search').attr('placeholder','Search');
         if($('.nav-toggle').css('display') == 'block'){
             $('.page-wrapper').addClass('IContainer');
         }
